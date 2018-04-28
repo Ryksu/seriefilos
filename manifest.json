@@ -1,0 +1,25 @@
+{
+  "short_name": "Seriefilos",
+  "name": "Seriefilos: web para amantes de las series",
+  "icons":[
+    {
+      "src": "img/pattern_icon.png",
+      "type": "image/png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "img/pattern_icon_2.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "img/pattern_icon_3.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+
+
+  ],
+  "start_url":"/?utm_source=homescreen",
+  "display":"standalone"
+}

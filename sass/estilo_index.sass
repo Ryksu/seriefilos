@@ -1,0 +1,512 @@
+@import "master.sass"
+
+
+/* movil pequeños  */
+@media screen  and (max-width:600px)
+  div.container
+    min-width: $web_mobile_low
+    display: grid
+    grid-template-columns: auto
+    grid-template-rows: 47px auto
+    height: 100%
+
+  header.cabecera
+    display: flex
+    flex-direction: row
+    background: $back_default
+
+    nav.menu
+      display: inline-flex
+      flex-direction: row
+      background: $back_default
+      @include font-title($texto,.9em)
+      justify-content: space-between
+      ul
+        margin: 0
+        padding: 0
+        list-style: none
+        overflow: hidden
+        li
+          float: left
+          a
+            display: block
+            text-decoration: none
+            padding: .9em 1em
+            color: $letra
+            &:hover
+              font-weight: bold
+              background: $hover
+        &.none
+          display: none
+      div.c-buscador
+        display: inline-flex
+        align-self: center
+
+        form.b-buscador
+          color: $letra
+          display: flex
+          width: 100%
+          justify-content: center
+          button.m-buscador
+            float: left
+            background: none
+            border: none
+            padding: 6px 10px
+            border-radius: 8px 0 0 8px
+            background: #e4e4e4
+            font-size: 1em
+            &:focus
+              outline: none
+              outline-offset: none
+            &:hover
+              cursor: pointer
+              background: #ededed
+
+            span.fa-search::before
+              content: fa-content($fa-var-search)
+              font-style: none
+              color: $hover
+          input[type=search]
+            display: none
+            &.enable
+              display: block
+              padding: 8px 6px
+              border: none
+              border-radius: 0 8px 8px 0
+              background: #f8f7f7
+              text-align: left
+              font-size: 1em
+            &:focus
+              width: 100%
+              animation-name: animacion_caja
+              animation-duration: 0.4s
+              outline: none
+              outline-offset: none
+
+
+        &.toggle
+          padding: .9em 1em
+          display: flex
+          width: 100%
+          justify-content: center
+  main.contenido
+    display: flex
+    flex-direction: column
+    flex-wrap: nowrap
+    div.t-logo
+      background: url("../img/background.svg"), url("../img/background.png")  no-repeat
+      background-size: cover
+      width: 100%
+      text-align: center
+      display: inline-flex
+      flex-direction: column
+      justify-content: center
+      align-items: center
+      h1
+        text-align: center
+        color: $letra
+        font-family: $titulo
+      h2
+        font-family: $texto
+        font-weight: bold
+        color: $letra
+        text-align: center
+
+    div.c-descripcion
+      display: flex
+      flex-direction: column
+      article
+        padding: 1em 2em
+        h2
+          font-size: 2em
+          font-family: $titulo
+          text-align: center
+        p
+          font-size: .8em
+          font-family: $texto
+        div.d-img
+          display: flex
+          width: 100%
+          justify-content: center
+          img
+            max-width: 30%
+
+  footer
+    display: flex
+    flex-direction: column
+    justify-content: center
+
+    div.redes_sociales
+      display: flex
+      justify-content: center
+      ul
+        padding: 0
+        margin: 0
+        list-style: none
+        overflow: hidden
+        li
+          float: left
+          a
+            display: block
+            text-decoration: none
+            padding: 8px 6px
+            color: $back_default
+            font-family: $texto
+            &:hover
+              background: $hover
+              color: $letra
+
+            span.fa-facebook::before
+              content: fa-content($fa-var-facebook-square)
+              color: #4267B2
+              font-size: 1.5em
+
+
+
+            span.fa-twitter::before
+              content: fa-content($fa-var-twitter-square)
+              color: #1DA1F2
+              font-size: 1.5em
+
+
+
+            span.fa-instagram::before
+              content: fa-content($fa-var-instagram)
+              color: #D90055
+              font-size: 1.5em
+
+
+/* media screen web_table
+
+@media screen and (min-width:$web_table)  and (max-width:$web_full)
+  div.container
+    display: grid
+    grid-template-columns: auto
+    grid-template-rows: 50px auto
+    height: 100%
+
+  header.cabecera
+    //grid-column: 1 /5
+    display: flex
+    flex-direction: column
+    nav.menu
+      @include font-title($texto,.9em)
+      //grid-column: 1 /5
+      background: $back_default
+      display: inline-flex
+      justify-content: space-between
+
+      ul
+        margin: 0
+        padding: 0
+        list-style-type: none
+        overflow: hidden
+        li
+          float: left
+          a
+            display: block
+            text-decoration: none
+            padding: 14px 16px
+            color: $letra
+            &:hover
+              font-weight: bold
+              background: $hover
+      div.c-buscador
+        display: inline-flex
+        align-self: center
+        width: 40%
+
+        form.b-buscador
+          color: $letra
+          display: flex
+          width: 100%
+          justify-content: center
+          button.m-buscador
+            float: left
+            background: none
+            border: none
+            padding: 6px 10px
+            border-radius: 8px 0 0 8px
+            background: #e4e4e4
+            &:hover
+              cursor: pointer
+              background: #ededed
+            &:focus
+              outline: none
+              outline-offset: none;
+
+            span.fa-search::before
+              content: fa-content($fa-var-search)
+              font-style: none
+              color: $hover
+
+          input[type=search]
+            padding: 6px 10px
+            border: none
+            border-radius: 0 8px 8px 0
+            background: #f8f7f7
+            text-align: left
+            width: 56%
+
+            &:focus
+              animation-name: animacion_caja
+              animation-duration: 0.4s
+              width: 80%
+              border: none
+              outline: none
+              outline-offset: none
+  main.contenido
+    display: flex
+    flex-direction: column
+    flex-wrap: nowrap
+    div.t-logo
+      background: url("../img/background.svg"), url("../img/background.png")  no-repeat
+
+      background-size: cover
+      width: 100%
+      text-align: center
+      display: inline-flex
+      flex-direction: column
+      justify-content: center
+      align-items: center
+      h1
+        text-align: center
+        color: $letra
+        @include font-title($titulo,8em)
+      h2
+        @include font-title($texto,1em)
+        font-weight: bold
+        color: $letra
+        text-align: center
+    div.c-descripcion
+      article
+        padding: 1em 2em
+        h2
+          font-size: 2em
+          font-family: $titulo
+          text-align: center
+        p
+          font-size: .8em
+          font-family: $texto
+        div.d-img
+          display: flex
+          width: 100%
+          justify-content: center
+          img
+            max-width: 30%
+
+
+  footer
+    display: flex
+    flex-direction: column
+    justify-content: center
+
+    div.redes_sociales
+      display: flex
+      justify-content: center
+      ul
+        padding: 0
+        margin: 0
+        list-style: none
+        overflow: hidden
+        li
+          float: left
+          a
+            display: block
+            text-decoration: none
+            padding: 8px 6px
+            color: $back_default
+            font-family: $texto
+            &:hover
+              background: $hover
+              color: $letra
+
+            span.fa-facebook::before
+              content: fa-content($fa-var-facebook-square)
+              color: #4267B2
+              font-size: 1.5em
+
+
+
+            span.fa-twitter::before
+              content: fa-content($fa-var-twitter-square)
+              color: #1DA1F2
+              font-size: 1.5em
+
+
+
+            span.fa-instagram::before
+              content: fa-content($fa-var-instagram)
+              color: #D90055
+              font-size: 1.5em
+
+
+
+
+/* @media screen 1024px */
+@media screen and (min-width:$web_full)
+  div.container
+    display: grid
+    grid-template-columns: auto
+    grid-template-rows: 50px auto
+    height: 100%
+
+  header.cabecera
+    display: flex
+    flex-direction: column
+    nav.menu
+      @include font-title($texto,1em)
+      //grid-column: 1 /5
+      background: $back_default
+      display: inline-flex
+      justify-content: space-between
+
+      ul
+        margin: 0
+        padding: 0
+        list-style-type: none
+        overflow: hidden
+        li
+          float: left
+          a
+            display: block
+            text-decoration: none
+            padding: 14px 16px
+            color: $letra
+            &:hover
+              font-weight: bold
+              background: $hover
+      div.c-buscador
+        display: inline-flex
+        align-self: center
+        width: 25%
+        form.b-buscador
+          color: $letra
+          display: flex
+          width: 100%
+          justify-content: center
+
+          button.m-buscador
+            float: left
+            background: none
+            border: none
+            padding: 6px 10px
+            border-radius: 8px 0 0 8px
+            background: #e4e4e4
+            font-size: 1em
+            &:hover
+              cursor: pointer
+              background: #ededed
+            &:focus
+              outline: none
+              outline-offset: none;
+
+            span.fa-search::before
+              content: fa-content($fa-var-search)
+              font-style: none
+              color: $hover
+
+          input[type=search]
+            padding: 6px 10px
+            border: none
+            border-radius: 0 8px 8px 0
+            background: #f8f7f7
+            text-align: left
+            font-size: 1em
+
+            &:focus
+              animation-name: animacion_caja
+              animation-duration: 0.4s
+              width: 80%
+              outline: none
+              outline-offset: none;
+
+  main.contenido
+
+    display: flex
+    flex-direction: column
+
+
+    div.t-logo
+        background: url("../img/background.svg"), url("../img/background.png")  no-repeat
+
+        background-size: cover
+        width: 100%
+        text-align: center
+        display: inline-flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        h1
+          text-align: center
+          color: $letra
+          @include font-title($titulo,10em)
+        h2
+          @include font-title($texto,2em)
+          font-weight: bold
+          color: $letra
+          text-align: center
+    div.c-descripcion
+      display: grid
+      grid-template-columns: repeat(3,1fr)
+      grid-gap: 1%
+      article
+        padding: 1em 2em
+        h2
+          font-size: 2em
+          font-family: $titulo
+          text-align: center
+        p
+          font-size: .8em
+          font-family: $texto
+        div.d-img
+          display: flex
+          width: 100%
+          justify-content: center
+          img
+            max-width: 30%
+
+
+  footer
+    display: flex
+    flex-direction: column
+    justify-content: center
+
+    div.redes_sociales
+      display: flex
+      justify-content: center
+      ul
+        padding: 0
+        margin: 0
+        list-style: none
+        overflow: hidden
+        li
+          float: left
+          a
+            display: block
+            text-decoration: none
+            padding: 8px 6px
+            color: $back_default
+            font-family: $texto
+            &:hover
+              background: $hover
+              color: $letra
+
+            span.fa-facebook::before
+              content: fa-content($fa-var-facebook-square)
+              color: #4267B2
+              font-size: 1.5em
+
+
+
+            span.fa-twitter::before
+              content: fa-content($fa-var-twitter-square)
+              color: #1DA1F2
+              font-size: 1.5em
+
+
+
+            span.fa-instagram::before
+              content: fa-content($fa-var-instagram)
+              color: #D90055
+              font-size: 1.5em

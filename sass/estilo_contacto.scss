@@ -1,0 +1,1182 @@
+@import "master.sass";
+
+
+
+/*web_mobile_low */
+@media screen and (max-width:$web_mobile_medium) {
+  div.container{
+
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 47px auto 47px;
+
+    height: 100%;
+  }
+  header.cabecera{
+    display: flex;
+    flex-direction: row;
+    background: $back_default;
+    div.t-logo{
+      align-self: center;
+      a{
+        color: $letra;
+        font-family: $titulo;
+        font-size: 1.2em;
+        text-decoration: none;
+        display: block;
+        padding: 0 .9em;
+      }
+      animation: Titulo .3s  ease-in;
+
+    }
+    nav.menu{
+      background: $back_default;
+      display: inline-flex;
+      flex-direction: row;
+      @include font-title($texto,.9em);
+      justify-content: space-between;
+      ul{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        overflow: hidden;
+        li{
+          float: left;
+          a{
+            display:block;
+            text-decoration: none;
+            padding: .9em 1em;
+            color: $letra;
+            &:hover{
+              font-weight: bold;
+              background: $hover;
+            }
+            }
+          }
+        &.none{
+          display:none;
+        }
+        }
+      }
+      div.c-buscador{
+        display: inline-flex;
+        align-self: center;
+        form.b-buscador{
+          color: $letra;
+          display: flex;
+          width: 100%;
+          justify-content: center;
+          button.m-buscador{
+            float: left;
+            background: none;
+            border: none;
+            padding: 6px 10px;
+            border-radius: 8px 0 0 8px;
+            background: #e4e4e4;
+            font-size: 1em;
+            &:hover{
+              cursor: pointer;
+              background: #ededed;
+
+            }
+            &:focus{
+              outline: none;
+              outline-offset: none;
+            }
+            span.fa-search::before{
+              content: fa-content($fa-var-search);
+              color: $hover;
+            }
+          }
+          input[type=search]{
+            display: none;
+            &.enable{
+              display: block;
+              border: none;
+              border-radius: 0 8px 8px 0;
+              text-align: left;
+              background: #f8f7f7;
+              font-size: 1em;
+              padding: 8px 6px;
+            }
+            &:focus{
+              width: 100%;
+              animation-name: animacion_caja;
+              animation-duration: 0.4s;
+              outline: none;
+              outline-offset: none;
+
+            }
+
+          }
+        }
+        &.toggle{
+          padding: .9em 1em;
+          display: flex;
+          width: 100%;
+          justify-content: center;
+        }
+      }
+  }
+  main.contenido{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 16px 10px;
+
+    h1{
+      text-align: center;
+      font-family: $titulo;
+    }
+    div.formulario{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      form.Contactos{
+        display: flex;
+        flex-direction: column;
+        @include font-title($texto,1em);
+        align-self: center;
+        width: 100%;
+        fieldset{
+          width: 100%;
+          align-self: center;
+          display: flex;
+          flex-direction: column;
+          border: 1px  #d8ded9  solid;
+          margin-bottom: 10px;
+          border-radius: 8px 8px 8px 8px;
+          div.disable{
+            display: none;
+          }
+          div.serie{
+            margin-top: 1em;
+            display: flex;
+            flex-direction: column;
+            div.year_temporada{
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+              padding: 10px 16px;
+              label{
+                align-self: center;
+              }
+              input{
+                width: 20%;
+              }
+
+            }
+
+          }
+          div.consulta{
+            display: flex;
+            flex-direction: column;
+            padding: 10px 16px;
+
+          }
+          textarea{
+            max-width: 100%;
+            height: 200px;
+            font-family: $texto;
+            font-size: 1em;
+            border-radius: 8px 8px 8px 8px;
+            border: 1px solid #c0c5c6;
+            resize: none;
+
+
+
+          }
+          input[type="text"],input[type="email"]{
+            border: 1px solid #c0c5c6;
+            padding: 6px 8px;
+            border-radius: 8px 8px 8px 8px;
+            width: 100%
+          }
+          input[type=number]{
+            border: 1px solid #c0c5c6;
+            padding: 6px 8px;
+            border-radius: 8px 8px 8px 8px;
+            -moz-appearance: textfield;
+            text-align: center;
+            background: #f8f7f7;
+            &:invalid{
+              background: $error;
+              color: $letra
+            }
+          }
+          /* chrome y opera */
+          input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{
+            -webkit-appearance:none;
+            margin: 0;
+          }
+          select{
+            border: 1px solid #c0c5c6;
+            padding: 6px 8px;
+            width: 100%
+          }
+        }
+        div.c-enviar{
+          display: inline-flex;
+          justify-content: space-around;
+
+          button[type=reset]{
+            border: 1px solid #d8ded9;
+            padding: 8px 6px;
+            background: #e4e4e4;
+            border-radius: 4px 4px 4px 4px;
+
+            span::before{
+              content: fa-content($fa-var-redo-alt);
+            }
+            &:hover{
+              cursor: pointer;
+              background: #ededed;
+            }
+          }
+          button[type=submit]{
+            border: 1px solid #d8ded9;
+            padding: 8px 6px;
+            background: #e4e4e4;
+            border-radius: 4px 4px 4px 4px;
+
+            span::before{
+              content: fa-content($fa-var-paper-plane);
+            }
+            &:hover{
+              cursor: pointer;
+              background: #ededed;
+            }
+          }
+        }
+      }
+
+    }
+  }
+  footer{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    div.redes_sociales{
+      display: flex;
+      justify-content: center;
+      ul{
+        padding: 0;
+        margin: 0;
+        list-style:none;
+        overflow: hidden;
+        li{
+          float: left;
+          a{
+            display: block;
+            text-decoration: none;
+            padding: 8px 6px;
+            color: $back_default;
+            font-family: $texto;
+            &:hover{
+              background: $hover;
+              color: $letra;
+            }
+
+            span.fa-facebook::before{
+              content: fa-content($fa-var-facebook-square);
+              color: #4267B2;
+              font-size: 1.5em;
+            }
+            span.fa-twitter::before{
+              content: fa-content($fa-var-twitter-square);
+              color: #1DA1F2;
+              font-size: 1.5em;
+
+            }
+            span.fa-instagram::before{
+              content: fa-content($fa-var-instagram);
+              color: #D90055;
+              font-size: 1.5em;
+
+            }
+          }
+        }
+      }
+    }
+  }
+}
+/*web_mobile_medium */
+@media screen and (min-width:481px) and (max-width:600px){
+  div.container{
+    display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 50px auto 50px;
+  height: 100%;
+  }
+  header.cabecera{
+    display: flex;
+    flex-direction: row;
+    background: $back_default;
+    div.t-logo{
+      align-self: center;
+      a{
+        color: $letra;
+        font-family: $titulo;
+        font-size: 1.2em;
+        text-decoration: none;
+        display: block;
+        padding: 6px 8px;
+      }
+      animation: Titulo .3s  ease-in;
+
+    }
+    nav.menu{
+      background: $back_default;
+
+      display: inline-flex;
+      flex-direction: row;
+      @include font-title($texto,1em);
+      justify-content: space-between;
+      ul{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        overflow: hidden;
+        li{
+          float: left;
+          a{
+            display:block;
+            text-decoration: none;
+            padding: .9em 1em;
+            color: $letra;
+            &:hover{
+              font-weight: bold;
+              background: $hover;
+            }
+            }
+          }
+        &.none{
+          display:none;
+        }
+        }
+      }
+      div.c-buscador{
+        display: inline-flex;
+        align-self: center;
+        form.b-buscador{
+          color: $letra;
+          display: flex;
+          width: 100%;
+          justify-content: center;
+          button.m-buscador{
+            float: left;
+            background: none;
+            border: none;
+            padding: 6px 10px;
+            border-radius: 8px 0 0 8px;
+            background: #e4e4e4;
+            font-size: 1em;
+            &:hover{
+              cursor: pointer;
+              background: #ededed;
+            }
+            &:focus{
+              outline: none;
+              outline-offset: none;
+            }
+            span.fa-search::before{
+              content: fa-content($fa-var-search);
+              color: $hover;
+            }
+          }
+          input[type=search]{
+            display: none;
+            &.enable{
+              display: block;
+              padding: 6px 10px;
+              border: none;
+              border-radius: 0 8px 8px 0;
+              text-align: left;
+              background: #f8f7f7;
+              font-size: 1em;
+            }
+            &:focus{
+              width: 100%;
+              animation-name: animacion_caja;
+              animation-duration: 0.4s;
+              outline: none;
+              outline-offset: none;
+            }
+
+          }
+        }
+        &.toggle{
+          padding: .9em 1em;
+          display: flex;
+          width: 100%;
+          justify-content: center;
+        }
+      }
+  }
+  main.contenido{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 16px 10px;
+
+    h1{
+      text-align: center;
+      font-family: $titulo;
+    }
+    div.formulario{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      form.Contactos{
+        display: flex;
+        flex-direction: column;
+        @include font-title($texto,1em);
+        width: 100%;
+        align-self: center;
+        fieldset{
+          align-self: center;
+          display: flex;
+          flex-direction: column;
+          border: 1px  #d8ded9  solid;
+          margin-bottom: 10px;
+          border-radius: 8px 8px 8px 8px;
+          width: 100%;
+          div.disable{
+            display: none;
+          }
+          div.serie{
+            margin-top: 1em;
+            display: flex;
+            flex-direction: column;
+            div.year_temporada{
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+              padding: 10px 16px;
+              label{
+                align-self: center;
+              }
+              input{
+                width: 20%;
+              }
+
+            }
+
+          }
+          div.consulta{
+            display: flex;
+            flex-direction: column;
+            padding: 10px 16px;
+          }
+          textarea{
+            max-width: 100%;
+            height: 200px;
+            font-family: $texto;
+            font-size: 1em;
+            border-radius: 8px 8px 8px 8px;
+            border: 1px solid #c0c5c6;
+            resize: none;
+
+
+          }
+
+          input[type="text"],input[type="email"]{
+            border: 1px solid #c0c5c6;
+            padding: 6px 8px;
+            border-radius: 8px 8px 8px 8px;
+            width: 100%
+          }
+          input[type=number]{
+            border: 1px solid #c0c5c6;
+            padding: 6px 8px;
+            border-radius: 8px 8px 8px 8px;
+            -moz-appearance: textfield;
+            text-align: center;
+            background: #f8f7f7;
+            &:invalid{
+              background: $error;
+              color: $letra
+            }
+          }
+          /* chrome y opera */
+          input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{
+            -webkit-appearance:none;
+            margin: 0;
+          }
+          select{
+            border: 1px solid #c0c5c6;
+            padding: 6px 8px;
+            width: 100%
+          }
+        }
+        div.c-enviar{
+          display: inline-flex;
+          justify-content: space-around;
+
+          button[type=reset]{
+            border: 1px solid #d8ded9;
+            padding: 8px 6px;
+            background: #e4e4e4;
+            border-radius: 4px 4px 4px 4px;
+
+            span::before{
+              content: fa-content($fa-var-redo-alt);
+            }
+            &:hover{
+              cursor: pointer;
+              background: #ededed;
+            }
+          }
+          button[type=submit]{
+            border: 1px solid #d8ded9;
+            padding: 8px 6px;
+            background: #e4e4e4;
+            border-radius: 4px 4px 4px 4px;
+
+            span::before{
+              content: fa-content($fa-var-paper-plane);
+            }
+            &:hover{
+              cursor: pointer;
+              background: #ededed;
+            }
+          }
+        }
+      }
+
+    }
+  }
+  footer{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    div.redes_sociales{
+      display: flex;
+      justify-content: center;
+      ul{
+        padding: 0;
+        margin: 0;
+        list-style:none;
+        overflow: hidden;
+        li{
+          float: left;
+          a{
+            display: block;
+            text-decoration: none;
+            padding: 8px 6px;
+            color: $back_default;
+            font-family: $texto;
+            &:hover{
+              background: $hover;
+              color: $letra;
+            }
+
+            span.fa-facebook::before{
+              content: fa-content($fa-var-facebook-square);
+              color: #4267B2;
+              font-size: 1.5em;
+            }
+            span.fa-twitter::before{
+              content: fa-content($fa-var-twitter-square);
+              color: #1DA1F2;
+              font-size: 1.5em;
+
+            }
+            span.fa-instagram::before{
+              content: fa-content($fa-var-instagram);
+              color: #D90055;
+              font-size: 1.5em;
+
+            }
+          }
+        }
+      }
+    }
+  }
+}
+/* table_web */
+@media screen and (min-width:$web_table) and (max-width:$web_full) {
+  div.container{
+    display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 50px auto 50px;
+  height: 100%;
+  }
+  header.cabecera{
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    background: $back_default;
+    div.t-logo{
+      align-self: center;
+      a{
+        color: $letra;
+        font-family: $titulo;
+        font-size: 1.2em;
+        text-decoration: none;
+        display: block;
+        padding: 6px 8px;
+      }
+      animation: Titulo .3s  ease-in;
+
+    }
+  nav.menu{
+    display: inline-flex;
+    flex-direction: row;
+    @include font-title($texto,1em);
+    justify-content: space-between;
+    ul{
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      overflow: hidden;
+      li{
+        float: left;
+        a{
+          display:block;
+          text-decoration: none;
+          padding: .9em 1em;
+          color: $letra;
+          &:hover{
+            font-weight: bold;
+            background: $hover;
+          }
+        }
+      }
+    }
+  }
+  div.c-buscador{
+    display: inline-flex;
+    align-self: center;
+    width: 40%;
+    font-size: 1.1em;
+    form.b-buscador{
+      color: $letra;
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      button.m-buscador{
+        float: left;
+        background: none;
+        border: none;
+        padding: 6px 10px;
+        border-radius: 8px 0 0 8px;
+        background: #e4e4e4;
+        &:hover{
+          cursor: pointer;
+          background: #ededed;
+        }
+        &:focus{
+          outline: none;
+          outline-offset: none;
+        }
+        span.fa-search::before{
+          content: fa-content($fa-var-search);
+          color: $hover;
+        }
+      }
+      input[type=search]{
+          display: block;
+          padding: 6px 10px;
+          border: none;
+          border-radius: 0 8px 8px 0;
+          text-align: left;
+          background: #f8f7f7;
+          width: 56%;
+          &:focus{
+          width: 100%;
+          animation-name: animacion_caja;
+          animation-duration: 0.4s;
+          width: 80%;
+          outline: none;
+          outline-offset: none;
+        }
+
+      }
+    }
+  }
+}
+main.contenido{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 16px 10px;
+
+  h1{
+    text-align: center;
+    font-family: $titulo;
+  }
+  div.formulario{
+    display: flex;
+    flex-direction: column;
+    form.Contactos{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      @include font-title($texto,1em);
+      width: 100%;
+      align-self: center;
+      fieldset{
+        width: 100%;
+        align-self: center;
+        display: flex;
+        flex-direction: column;
+        border: 1px  #d8ded9  solid;
+        margin-bottom: 10px;
+        border-radius: 8px 8px 8px 8px;
+        div.disable{
+          display: none;
+        }
+        div.serie{
+          margin-top: 1em;
+          display: flex;
+          flex-direction: column;
+          div.year_temporada{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 10px 16px;
+            label{
+              align-self: center;
+            }
+            input{
+              width: 20%;
+            }
+          }
+
+        }
+        div.consulta{
+          display: flex;
+          flex-direction: column;
+          padding: 10px 16px;
+        }
+        textarea{
+          max-width: 100%;
+          height: 200px;
+          font-family: $texto;
+          font-size: 1em;
+          border-radius: 8px 8px 8px 8px;
+          border: 1px solid #c0c5c6;
+          resize: none;
+
+
+
+        }
+
+        input[type="text"],input[type="email"]{
+          border: 1px solid #c0c5c6;
+          padding: 6px 8px;
+          border-radius: 8px 8px 8px 8px;
+          width: 100%
+        }
+        input[type=number]{
+          border: 1px solid #c0c5c6;
+          padding: 6px 8px;
+          border-radius: 8px 8px 8px 8px;
+          -moz-appearance: textfield;
+          text-align: center;
+          background: #f8f7f7;
+          &:invalid{
+            background: $error;
+            color: $letra
+          }
+        }
+        /* chrome y opera */
+        input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{
+          -webkit-appearance:none;
+          margin: 0;
+        }
+        select{
+          border: 1px solid #c0c5c6;
+          padding: 6px 8px;
+          width: 100%
+        }
+      }
+      div.c-enviar{
+        display: inline-flex;
+        justify-content: space-around;
+
+        button[type=reset]{
+          border: 1px solid #d8ded9;
+          padding: 8px 6px;
+          background: #e4e4e4;
+          border-radius: 4px 4px 4px 4px;
+
+          span::before{
+            content: fa-content($fa-var-redo-alt);
+          }
+          &:hover{
+            cursor: pointer;
+            background: #ededed;
+          }
+        }
+        button[type=submit]{
+          border: 1px solid #d8ded9;
+          padding: 8px 6px;
+          background: #e4e4e4;
+          border-radius: 4px 4px 4px 4px;
+
+          span::before{
+            content: fa-content($fa-var-paper-plane);
+          }
+          &:hover{
+            cursor: pointer;
+            background: #ededed;
+          }
+        }
+      }
+    }
+
+  }
+}
+footer{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  div.redes_sociales{
+    display: flex;
+    justify-content: center;
+    ul{
+      padding: 0;
+      margin: 0;
+      list-style:none;
+      overflow: hidden;
+      li{
+        float: left;
+        a{
+          display: block;
+          text-decoration: none;
+          padding: 8px 6px;
+          color: $back_default;
+          font-family: $texto;
+          &:hover{
+            background: $hover;
+            color: $letra;
+          }
+
+          span.fa-facebook::before{
+            content: fa-content($fa-var-facebook-square);
+            color: #4267B2;
+            font-size: 1.5em;
+          }
+          span.fa-twitter::before{
+            content: fa-content($fa-var-twitter-square);
+            color: #1DA1F2;
+            font-size: 1.5em;
+
+          }
+          span.fa-instagram::before{
+            content: fa-content($fa-var-instagram);
+            color: #D90055;
+            font-size: 1.5em;
+
+          }
+        }
+      }
+    }
+  }
+}
+}
+/* web_full */
+@media  screen and (min-width:$web_full) {
+  div.container{
+    display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 50px auto 50px;
+  height: 100%;
+
+
+  }
+  header.cabecera{
+    //: header;
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    background: $back_default;
+    overflow: hidden;
+    div.t-logo{
+      align-self: center;
+      a{
+        color: $letra;
+        font-family: $titulo;
+        font-size: 1.2em;
+        text-decoration: none;
+        display: block;
+        padding: 14px 16px;
+      }
+      animation: Titulo .3s  ease-in;
+
+    }
+  nav.menu{
+    display: inline-flex;
+    flex-direction: row;
+    @include font-title($texto,1em);
+    justify-content: space-between;
+    ul{
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      overflow: hidden;
+      li{
+        float: left;
+        a{
+          display:block;
+          text-decoration: none;
+          padding: 14px 16px;
+          color: $letra;
+          &:hover{
+            font-weight: bold;
+            background: $hover;
+          }
+        }
+      }
+    }
+  }
+  div.c-buscador{
+    display: inline-flex;
+    align-self: center;
+    width: 25%;
+    form.b-buscador{
+      color: $letra;
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      button.m-buscador{
+        font-size: 1em;
+        float: left;
+        background: none;
+        border: none;
+        padding: 6px 10px;
+        border-radius: 8px 0 0 8px;
+        background: #e4e4e4;
+        &:hover{
+          cursor: pointer;
+          background: #ededed;
+        }
+        &:focus{
+          outline: none;
+          outline-offset: none;
+        }
+        span.fa-search::before{
+          content: fa-content($fa-var-search);
+          color: $hover;
+        }
+      }
+      input[type=search]{
+          display: block;
+          padding: 6px 10px;
+          border: none;
+          border-radius: 0 8px 8px 0;
+          text-align: left;
+          background: #f8f7f7;
+          font-size: 1em;
+
+          &:focus{
+          animation-name: animacion_caja;
+          animation-duration: 0.4s;
+          width: 80%;
+          outline: none;
+          outline-offset: none;
+        }
+
+      }
+    }
+  }
+}
+
+main.contenido{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+
+  h1{
+    text-align: center;
+    font-family: $titulo;
+  }
+  div.formulario{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    form.Contactos{
+      display: flex;
+      flex-direction: column;
+      @include font-title($texto,1em);
+      width: 50%;
+      align-self: center;
+      fieldset{
+        align-self: center;
+        display: flex;
+        flex-direction: column;
+        border: 1px  #d8ded9  solid;
+        margin-bottom: 10px;
+        border-radius: 8px 8px 8px 8px;
+        width: 50%;
+        div.disable{
+          display: none;
+        }
+        div.serie{
+          margin-top: 1em;
+          display: flex;
+          flex-direction: column;
+          div.year_temporada{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 10px 16px;
+            label{
+              align-self: center;
+            }
+            input{
+              width: 20%;
+            }
+          }
+
+        }
+        div.consulta{
+          display: flex;
+          flex-direction: column;
+          padding: 10px 16px;
+        }
+        textarea{
+          max-width: 100%;
+          height: 200px;
+          font-family: $texto;
+          font-size: 1em;
+          border-radius: 8px 8px 8px 8px;
+          border: 1px solid #c0c5c6;
+          resize: none;
+
+
+
+
+        }
+        input[type="text"],input[type="email"]{
+          border: 1px solid #c0c5c6;
+          padding: 6px 8px;
+          border-radius: 8px 8px 8px 8px;
+          width: 100%
+        }
+        input[type=number]{
+          border: 1px solid #c0c5c6;
+          padding: 6px 8px;
+          border-radius: 8px 8px 8px 8px;
+          -moz-appearance: textfield;
+          text-align: center;
+          background: #f8f7f7;
+          &:invalid{
+            background: $error;
+            color: $letra
+          }
+        }
+        /* chrome y opera */
+        input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{
+          -webkit-appearance:none;
+          margin: 0;
+        }
+        select{
+          border: 1px solid #c0c5c6;
+          padding: 6px 8px;
+          width: 100%
+        }
+
+
+      }
+      div.c-enviar{
+        display: inline-flex;
+        justify-content: space-around;
+
+        button[type=reset]{
+          border: 1px solid #d8ded9;
+          padding: 8px 6px;
+          background: #e4e4e4;
+          border-radius: 4px 4px 4px 4px;
+
+          span::before{
+            content: fa-content($fa-var-redo-alt);
+          }
+          &:hover{
+            cursor: pointer;
+            background: #ededed;
+          }
+        }
+        button[type=submit]{
+          border: 1px solid #d8ded9;
+          padding: 8px 6px;
+          background: #e4e4e4;
+          border-radius: 4px 4px 4px 4px;
+
+          span::before{
+            content: fa-content($fa-var-paper-plane);
+          }
+          &:hover{
+            cursor: pointer;
+            background: #ededed;
+          }
+        }
+      }
+    }
+
+  }
+}
+footer{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  div.redes_sociales{
+    display: flex;
+    justify-content: center;
+    ul{
+      padding: 0;
+      margin: 0;
+      list-style:none;
+      overflow: hidden;
+      li{
+        float: left;
+        a{
+          display: block;
+          text-decoration: none;
+          padding: 8px 6px;
+          color: $back_default;
+          font-family: $texto;
+          &:hover{
+            background: $hover;
+            color: $letra;
+          }
+
+          span.fa-facebook::before{
+            content: fa-content($fa-var-facebook-square);
+            color: #4267B2;
+            font-size: 1.5em;
+          }
+          span.fa-twitter::before{
+            content: fa-content($fa-var-twitter-square);
+            color: #1DA1F2;
+            font-size: 1.5em;
+
+          }
+          span.fa-instagram::before{
+            content: fa-content($fa-var-instagram);
+            color: #D90055;
+            font-size: 1.5em;
+
+          }
+        }
+      }
+    }
+  }
+}
+}
+
+
+@keyframes Titulo {
+  from {
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}

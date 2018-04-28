@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <title>Seriefilos: La web para amantes de las series </title>
+  <link rel="icon" href="img/favicon.png" type="image/x-png">
+  <link rel="manifest" href="manifest.json" >
+  <link rel="stylesheet" href="css/estilo_index.css">
+  <link rel="stylesheet" href="css/fontawesome.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="js/buscador.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <header class="cabecera">
+      <nav class="menu">
+        <ul>
+          <li><a href="#t-logo">Inicio</a></li>
+          <li><a href="page/catalogos.php">Catálogo</a></li>
+          <!-- <ul>
+      TODO
+    </ul> -->
+          <li><a href="page/contacto.html">Contactos</a></li>
+        </ul>
+        <div class="c-buscador">
+          <form class="b-buscador" id="form_search" method="get" action="page/catalogos.php">
+            <button id="button_search" type="button" class="m-buscador">
+        <span class="fa fa-search"></span>
+      </button>
+            <input type="search" id="buscador" name="buscador" value="" placeholder="Buscar..">
+          </form>
+        </div>
+      </nav>
+      <!-- menu -->
+    </header>
+    <!-- cabecera -->
+    <main class="contenido">
+      <div class="t-logo" id="t-logo">
+        <h1>Seriefilos</h1>
+        <h2>La web para amantes de las series </h2>
+      </div>
+      <div class="c-descripcion">
+        <article class="articulo">
+          <h2>Busca...</h2>
+          <div class="d-img">
+            <img src="img/busca.svg" alt="Buscar-icon">
+          </div>
+
+        </article>
+        <article class="articulo">
+          <h2>Puntua... </h2>
+
+          <div class="d-img">
+            <img src="img/fav.svg" alt="Favorito-icon">
+          </div>
+        </article>
+        <article class="articulo">
+          <h2>Y comparte.. </h2>
+
+          <div class="d-img">
+            <img src="img/share.svg" alt="Compartir-icon">
+
+          </div>
+        </article>
+      </div>
+    </main>
+    <!-- fin contenido-->
+    <footer>
+      <div class="redes_sociales">
+        <ul>
+          <li>
+            <a href="https://facebook.com/">
+        <span class="fab fa-facebook"></span>
+        facebook
+      </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/">
+        <span class="fab fa-twitter"></span>
+        twitter
+      </a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/">
+        <span class="fab fa-instagram"></span>
+        instagram
+      </a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+  </div>
+  <!-- fin container-->
+</body>
+
+</html>
