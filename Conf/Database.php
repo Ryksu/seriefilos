@@ -3,7 +3,7 @@
  *
  */
 
-class Config
+class Database
 {
   private  $nombre_db = 'localhost';
   private $nombre_user = 'ajwedevckqmoucho';
@@ -26,7 +26,7 @@ public function conectar()
     echo "Fallo en la base de datos: " . $e -> getMessage();
 
   }
-  return $this->conexion;
+  return $conexion;
 }
 
 

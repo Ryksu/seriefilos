@@ -2,7 +2,7 @@
 /**
  *
  */
-class Crud extends Config
+class Crud extends Database
 {
 /**
  * [contarColumna Cuentas la filas]
@@ -12,6 +12,7 @@ class Crud extends Config
   public function contarColumna()
   {
     $query = "SELECT Count(id) FROM Serie ";
+    $this->conectar();
     $n_fila = $this->conexion->prepare($query);
     $n_fila -> execute();
     return  $n_fila -> fetchColumn();
@@ -26,6 +27,7 @@ class Crud extends Config
   public function getCatalogos($inicio,$pub_limite)
   {
     $query = "SELECT id,Poster,Titulo FROM Serie ORDER BY Titulo ASC LIMIT ".$inicio.",".$pub_limite;
+    $this->conectar();
     $sql = $this->conexion -> prepare($query);
     $sql -> execute();
      return $sql -> fetchAll(PDO::FETCH_ASSOC);
@@ -39,6 +41,7 @@ class Crud extends Config
   public function getSerie($id)
   {
     $query = "SELECT * FROM Serie WHERE id = $id";
+    $this->conectar();
     $sql = $this->conexion -> prepare($query);
     $sql -> execute();
     return $sql -> fetch(PDO::FETCH_ASSOC);
@@ -54,6 +57,8 @@ class Crud extends Config
   public function getBusqueda($nomtabla,$get,$inicio,$pub_limite)
   {
     $query = "SELECT id,Poster,Titulo FROM $nomtabla WHERE Titulo LIKE '%{$get}%' OR Year LIKE '{$get}' OR Temporada LIKE '{$get}' OR Categoria LIKE '{$get}' LIMIT ".$inicio.",".$pub_limite;
+    $this->conectar();
+
     $sql = $this->conexion->prepare($query);
     $sql -> execute();
     return $sql -> fetchAll(PDO::FETCH_ASSOC);
@@ -68,6 +73,7 @@ class Crud extends Config
   public function getColumnRes($nomtabla,$get)
   {
     $query = "SELECT count(*) FROM $nomtabla WHERE Titulo LIKE '%{$get}%' OR Year LIKE '{$get}' OR temporada LIKE '{$get}' OR Categoria LIKE '{$get}'";
+    $this->conectar();
 
     $sql = $this->conexion->prepare($query);
     $sql-> execute();
@@ -90,6 +96,8 @@ public function setSerie($nomtabla,$poster,$titulo,$texto,$categoria,$year,$temp
 
   $query = "INSERT INTO $nomtabla(Poster,Titulo,Texto,Categoria,Year,Temporada,Estado) VALUES('".$poster."','".$titulo."','".$texto
   ."','".$categoria."','".$year."','".$temporada."','".$estado."')";
+  $this->conectar();
+
   $sql = $this->conexion->prepare($query);
   $sql-> execute();
 }
@@ -116,6 +124,7 @@ public function setSerie($nomtabla,$poster,$titulo,$texto,$categoria,$year,$temp
   {
     $vacio = false;
     $res = $this->getBusqueda($nomtabla,$get,$inicio,$pub_limite);
+    $this->conectar();    
     if (count($res)==0) {
       $vacio = true;
     }
