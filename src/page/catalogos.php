@@ -1,7 +1,6 @@
 <?php
 
-require '../php/Config.php';
-require '../php/Crud.php';
+require_once '../../Conf/Crud.php';
 $conexion = new Crud();
 $conexion->conectar();
 # preparando Paginacion
@@ -25,8 +24,8 @@ include '../php/buscador.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <meta charset="utf-8">
      <link rel="icon" href="../img/favicon.png" type="image/x-png">
-     <link rel="stylesheet" href="../css/estilo_catalogo.css">
-     <link rel="stylesheet" href="../css/fontawesome.css">
+     <link rel="stylesheet" href="../../estilo/css/estilo_catalogo.css">
+     <link rel="stylesheet" href="../../estilo/css/fontawesome.css">
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
      <script src="../js/Categorias.js"></script>
 

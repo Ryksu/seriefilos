@@ -5,10 +5,10 @@
 
 class Database
 {
-  private  $nombre_db = 'localhost';
-  private $nombre_user = 'ajwedevckqmoucho';
-  private $password = 'Farolito92';
-  private $baseD = 'ajwedevckqmoucho';
+  private  $nombre_db = DATABASE[0];
+  private $nombre_user = DATABASE[1];
+  private $password = DATABASE[2];
+  private $baseD = DATABASE[3];
   protected $conexion;
 
 

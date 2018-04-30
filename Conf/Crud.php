@@ -2,6 +2,7 @@
 /**
  *
  */
+ require_once 'Database.php';
 class Crud extends Database
 {
 /**
@@ -124,7 +125,7 @@ public function setSerie($nomtabla,$poster,$titulo,$texto,$categoria,$year,$temp
   {
     $vacio = false;
     $res = $this->getBusqueda($nomtabla,$get,$inicio,$pub_limite);
-    $this->conectar();    
+    $this->conectar();
     if (count($res)==0) {
       $vacio = true;
     }
