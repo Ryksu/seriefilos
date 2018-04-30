@@ -5,10 +5,10 @@
 
 class Database
 {
-  private  $nombre_db = DATABASE[0];
-  private $nombre_user = DATABASE[1];
-  private $password = DATABASE[2];
-  private $baseD = DATABASE[3];
+  private  $nombre_host = "localhost";
+  private $nombre_user = "ajwedevckqmoucho";
+  private $password ="Farolito92";
+  private $baseD = "ajwedevckqmoucho";
   protected $conexion;
 
 
@@ -17,7 +17,7 @@ class Database
 
 public function conectar()
 {
-  $nb = 'mysql:host='.$this->nombre_db.';dbname='.$this->baseD;
+  $nb = 'mysql:host='.$this->nombre_host.';dbname='.$this->baseD;
 
   try {
     $this->conexion = new PDO($nb,$this->nombre_user,$this->password,array(PDO::MYSQL_ATTR_INIT_COMMAND=> 'SET NAMES \'UTF8\''));
@@ -26,7 +26,7 @@ public function conectar()
     echo "Fallo en la base de datos: " . $e -> getMessage();
 
   }
-  return $conexion;
+  return $this->conexion;
 }
 
 
