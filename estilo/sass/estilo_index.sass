@@ -89,60 +89,83 @@
           width: 100%
           justify-content: center
   main.contenido
-    display: flex
-    flex-direction: column
-    flex-wrap: nowrap
+    display: grid
+    grid-template-columns: auto
+    grid-template-rows: repeat(3,1fr)
+
     div.t-logo
       background: url("../../img/background/background.svg"), url("../../img/background/background.png")  no-repeat
       background-size: cover
       width: 100%
       text-align: center
-      display: inline-flex
+      display: flex
       flex-direction: column
       justify-content: center
-      align-items: center
+
       h1
-        text-align: center
+        align-self: center
         color: $letra
         font-family: $titulo
       h2
         font-family: $texto
         font-weight: bold
         color: $letra
-        text-align: center
-
+        align-self: center
     div.c-descripcion
+      display: grid
+      grid-template-columns: auto
+      grid-template-rows: repeat(3,1fr)
+    div.articulo:nth-child(2n+1)
       display: flex
-      flex-direction: column
-      div.articulo
-        padding: 1em 2em
-        h2
-          font-size: 2em
-          font-family: $titulo
-          text-align: center
-        p
-          font-size: .8em
-          font-family: $texto
-        div.d-img
-          display: flex
-          width: 100%
-          justify-content: center
-          img
-            max-width: 30%
+      justify-content: space-around
+      width: 100%
+      h2
+        font-size: 2em
+        font-family: $titulo
+        align-self: center
+      p
+        font-size: .8em
+        font-family: $texto
+      img
+        align-self: center
+        display: flex
+        max-width: 20%
+
+    div.articulo:nth-child(2n+0)
+      display: flex
+      flex-direction: row-reverse
+      justify-content: space-around
+      width: 100%
+      h2
+        font-size: 2em
+        font-family: $titulo
+        align-self: center
+      p
+        font-size: .8em
+        font-family: $texto
+      img
+        align-self: center
+        display: flex
+        max-width: 20%
+
     div.c-registrar
       display: flex
       flex-direction: column
+      justify-content: center
+      background: linear-gradient(0deg,#ffff,#aeddb8,#66c2c0,#429bbc)
+      color: #fafafa
       form.registro
         display: flex
         flex-direction: column
-        justify-content: center
+        align-self: center
+        width: 100%
         @include font-title($texto,1em)
         fieldset
           width: 100%
           align-self: center
           display: flex
           flex-direction: column
-          border: 1px  #d8ded9  solid
+          border: none
           margin-bottom: 10px
           border-radius: 8px 8px 8px 8px
         legend
@@ -303,9 +326,6 @@
               outline: none
               outline-offset: none
   main.contenido
-    // display: flex
-    // flex-direction: column
-    // flex-wrap: nowrap
     display: grid
     grid-template-columns: auto
     grid-template-rows: repeat(3,1fr)
@@ -327,15 +347,11 @@
         color: $letra
         align-self: center
     div.c-descripcion
-      // display: flex
-      // flex-direction: column
-      // justify-content: center
       display: grid
       grid-template-columns: auto
       grid-template-rows: repeat(3,1fr)
       div.articulo:nth-child(2n+1)
         display: flex
-        // flex-direction: row
         justify-content: space-around
         width: 100%
         h2

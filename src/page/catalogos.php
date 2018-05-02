@@ -2,7 +2,6 @@
 
 require_once '../../Conf/Crud.php';
 $conexion = new Crud();
-$conexion->conectar();
 # preparando Paginacion
 $pub_limite = 6;
 $inicio = 0;
