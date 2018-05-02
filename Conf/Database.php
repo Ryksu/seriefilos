@@ -2,11 +2,10 @@
 /**
  *
  */
-
 class Database
 {
   private  $nombre_host = "localhost";
-  private $nombre_user = "ajwedevckqmoucho";
+  private $nombre_user ="ajwedevckqmoucho";
   private $password ="Farolito92";
   private $baseD = "ajwedevckqmoucho";
   protected $conexion;

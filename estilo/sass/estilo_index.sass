@@ -303,58 +303,89 @@
               outline: none
               outline-offset: none
   main.contenido
-    display: flex
-    flex-direction: column
-    flex-wrap: nowrap
+    // display: flex
+    // flex-direction: column
+    // flex-wrap: nowrap
+    display: grid
+    grid-template-columns: auto
+    grid-template-rows: repeat(3,1fr)
+
     div.t-logo
       background: url("../../img/background/background.svg"), url("../../img/background/background.png")  no-repeat
-
       background-size: cover
       width: 100%
-      text-align: center
-      display: inline-flex
-      flex-direction: column
       justify-content: center
-      align-items: center
+      display: flex
+      flex-direction: column
       h1
-        text-align: center
+        align-self: center
         color: $letra
         @include font-title($titulo,8em)
       h2
         @include font-title($texto,1em)
         font-weight: bold
         color: $letra
-        text-align: center
+        align-self: center
     div.c-descripcion
-      div.articulo
-        padding: 1em 2em
+      // display: flex
+      // flex-direction: column
+      // justify-content: center
+      display: grid
+      grid-template-columns: auto
+      grid-template-rows: repeat(3,1fr)
+      div.articulo:nth-child(2n+1)
+        display: flex
+        // flex-direction: row
+        justify-content: space-around
+        width: 100%
         h2
-          font-size: 2em
+          font-size: 3em
           font-family: $titulo
-          text-align: center
+          align-self: center
         p
           font-size: .8em
           font-family: $texto
-        div.d-img
+        img
+          align-self: center
           display: flex
-          width: 100%
-          justify-content: center
-          img
-            max-width: 30%
+          max-width: 20%
+
+      div.articulo:nth-child(2n+0)
+        display: flex
+        flex-direction: row-reverse
+        justify-content: space-around
+        width: 100%
+        h2
+          font-size: 3em
+          font-family: $titulo
+          align-self: center
+        p
+          font-size: .8em
+          font-family: $texto
+        img
+          align-self: center
+          display: flex
+          max-width: 20%
+
     div.c-registrar
       display: flex
       flex-direction: column
+      justify-content: center
+      background: linear-gradient(0deg,#ffff,#aeddb8,#66c2c0,#429bbc)
+
       form.registro
         display: flex
         flex-direction: column
-        justify-content: center
-        @include font-title($texto,1em)
+        align-self: center
+        width: 50%
+        @include font-title($texto,1.2em)
+        color: #fafafa
         fieldset
           width: 100%
           align-self: center
           display: flex
           flex-direction: column
-          border: 1px  #d8ded9  solid
+          border: none
           margin-bottom: 10px
           border-radius: 8px 8px 8px 8px
         legend
@@ -365,6 +396,7 @@
           border: 1px solid #c0c5c6
           padding: 6px 8px
           border-radius: 8px 8px 8px 8px
+          margin-bottom: 1em
           width: 100%
         div.c-enviar
           display: inline-flex
@@ -495,7 +527,7 @@
               background: #ededed
             &:focus
               outline: none
-              outline-offset: none;
+              outline-offset: none
 
             span.fa-search::before
               content: fa-content($fa-var-search)
@@ -515,12 +547,10 @@
               animation-duration: 0.4s
               width: 80%
               outline: none
-              outline-offset: none;
+              outline-offset: none
 
   main.contenido
-
     display: grid
-    // flex-direction: column
     grid-template-rows: repeat(3,1fr)
 
     div.t-logo
@@ -544,12 +574,14 @@
       display: grid
       grid-template-rows: repeat(3,1fr)
       grid-gap: 1%
+      width: 100%
       div.articulo:nth-child(2n+1)
         display: flex
         flex-direction: row
         justify-content: space-around
+        padding: 0 1.5em
         h2
-          font-size: 2em
+          font-size: 4em
           font-family: $titulo
           align-self: center
         p
@@ -557,15 +589,17 @@
           font-family: $texto
         img
           display: flex
-          justify-content: center
-          width: 20%
+          align-self: center
+          width: 15%
 
     div.articulo:nth-child(2n+0)
       display: flex
       flex-direction: row-reverse
       justify-content: space-around
+      padding: 0 1.5em
+
       h2
-        font-size: 2em
+        font-size: 4em
         font-family: $titulo
         align-self: center
       p
@@ -573,41 +607,50 @@
         font-family: $texto
       img
         display: flex
-        justify-content: center
-        width: 20%
+        align-self: center
+        width: 15%
+
     div.c-registrar
       display: flex
       flex-direction: column
-      align-self: center
+      justify-content: center
+      background: linear-gradient(0deg,#ffff,#aeddb8,#66c2c0,#429bbc)
+
       form.registro
         display: flex
         flex-direction: column
-        justify-content: center
-        width: 100%
-        @include font-title($texto,1em)
+        align-self: center
+        width: 30%
+        color: #fafafa
+
+
         fieldset
           width: 100%
           align-self: center
           display: flex
           flex-direction: column
-          border: 1px  #d8ded9  solid
+          border: none
           margin-bottom: 10px
           border-radius: 8px 8px 8px 8px
+          @include font-title($texto,1.2em)
+
         legend
           align-self: center
-          font-size: 2em
+          font-size: 3em
           font-family: $titulo
+        label
         input[type="text"],input[type="email"],input[type="password"]
           border: 1px solid #c0c5c6
           padding: 6px 8px
           border-radius: 8px 8px 8px 8px
           width: 100%
+          margin-bottom: 1em
         div.c-enviar
           display: inline-flex
           justify-content: space-around
           button[type="reset"]
             border: 1px solid #d8ded9
-            padding: 8px 6px
+            padding: 14px 16px
             background: #e4e4e4
             border-radius: 4px 4px 4px 4px
             span::before
@@ -617,7 +660,7 @@
               background: #ededed
           button[type=submit]
             border: 1px solid #d8ded9
-            padding: 8px 6px
+            padding: 14px 16px
             background: #e4e4e4
             border-radius: 4px 4px 4px 4px
             span::before
