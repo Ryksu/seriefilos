@@ -18,12 +18,16 @@
     <header class="cabecera">
       <nav class="menu">
         <ul>
-          <li><a href="#t-logo">Inicio</a></li>
+          <li><a href="#t-logo">Inicio</a>
+          </li>
           <li><a href="src/page/catalogos.php">Catálogo</a></li>
-          <!-- <ul>
-      TODO
-    </ul> -->
           <li><a href="src/page/contacto.html">Contactos</a></li>
+          <li class="s-menu">
+            <a href="src/login.html">Iniciar Sesión</a>
+            <div class="s-menu-contenido">
+              <a href="#Registrate">Registarte</a>
+            </div>
+          </li>
         </ul>
         <div class="c-buscador">
           <form class="b-buscador" id="form_search" method="get" action="src/page/catalogos.php">
@@ -47,7 +51,7 @@
           <h2>Busca...</h2>
 
             <img src="img/icons/busca.svg" alt="Buscar-icon">
-          
+
 
         </div>
         <div class="articulo">
@@ -66,7 +70,7 @@
       </div>
       <div class="c-registrar">
 
-        <form class="registro" action="index.html" method="post">
+        <form id="Registrate" class="registro" action="index.html" method="post">
           <fieldset>
             <legend>¡Registrate!</legend>
             <label for="usuario">Nombre de usuario</label>

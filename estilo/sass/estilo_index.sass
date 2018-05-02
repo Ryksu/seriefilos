@@ -38,56 +38,55 @@
               background: $hover
         &.none
           display: none
-      div.c-buscador
-        display: inline-flex
-        align-self: center
+    div.c-buscador
+      display: inline-flex
+      align-self: center
+      form.b-buscador
+        color: $letra
+        display: flex
+        width: 100%
+        justify-content: center
+        button.m-buscador
+          float: left
+          background: none
+          border: none
+          padding: 6px 10px
+          border-radius: 8px 0 0 8px
+          background: #e4e4e4
+          font-size: 1em
+          &:focus
+            outline: none
+            outline-offset: none
+          &:hover
+            cursor: pointer
+            background: #ededed
 
-        form.b-buscador
-          color: $letra
-          display: flex
-          width: 100%
-          justify-content: center
-          button.m-buscador
-            float: left
-            background: none
+          span.fa-search::before
+            content: fa-content($fa-var-search)
+            font-style: none
+            color: $hover
+        input[type=search]
+          display: none
+          &.enable
+            display: block
+            padding: 8px 6px
             border: none
-            padding: 6px 10px
-            border-radius: 8px 0 0 8px
-            background: #e4e4e4
+            border-radius: 0 8px 8px 0
+            background: #f8f7f7
+            text-align: left
             font-size: 1em
-            &:focus
-              outline: none
-              outline-offset: none
-            &:hover
-              cursor: pointer
-              background: #ededed
+          &:focus
+            width: 100%
+            animation-name: animacion_caja
+            animation-duration: 0.4s
+            outline: none
+            outline-offset: none
 
-            span.fa-search::before
-              content: fa-content($fa-var-search)
-              font-style: none
-              color: $hover
-          input[type=search]
-            display: none
-            &.enable
-              display: block
-              padding: 8px 6px
-              border: none
-              border-radius: 0 8px 8px 0
-              background: #f8f7f7
-              text-align: left
-              font-size: 1em
-            &:focus
-              width: 100%
-              animation-name: animacion_caja
-              animation-duration: 0.4s
-              outline: none
-              outline-offset: none
-
-        &.toggle
-          padding: .9em 1em
-          display: flex
-          width: 100%
-          justify-content: center
+      &.toggle
+        padding: .9em 1em
+        display: flex
+        width: 100%
+        justify-content: center
   main.contenido
     display: grid
     grid-template-columns: auto
@@ -282,50 +281,50 @@
             &:hover
               font-weight: bold
               background: $hover
-      div.c-buscador
-        display: inline-flex
-        align-self: center
-        width: 40%
+    div.c-buscador
+      display: inline-flex
+      align-self: center
+      width: 40%
 
-        form.b-buscador
-          color: $letra
-          display: flex
-          width: 100%
-          justify-content: center
-          button.m-buscador
-            float: left
-            background: none
+      form.b-buscador
+        color: $letra
+        display: flex
+        width: 100%
+        justify-content: center
+        button.m-buscador
+          float: left
+          background: none
+          border: none
+          padding: 6px 10px
+          border-radius: 8px 0 0 8px
+          background: #e4e4e4
+          &:hover
+            cursor: pointer
+            background: #ededed
+          &:focus
+            outline: none
+            outline-offset: none;
+
+          span.fa-search::before
+            content: fa-content($fa-var-search)
+            font-style: none
+            color: $hover
+
+        input[type=search]
+          padding: 6px 10px
+          border: none
+          border-radius: 0 8px 8px 0
+          background: #f8f7f7
+          text-align: left
+          width: 56%
+
+          &:focus
+            animation-name: animacion_caja
+            animation-duration: 0.4s
+            width: 80%
             border: none
-            padding: 6px 10px
-            border-radius: 8px 0 0 8px
-            background: #e4e4e4
-            &:hover
-              cursor: pointer
-              background: #ededed
-            &:focus
-              outline: none
-              outline-offset: none;
-
-            span.fa-search::before
-              content: fa-content($fa-var-search)
-              font-style: none
-              color: $hover
-
-          input[type=search]
-            padding: 6px 10px
-            border: none
-            border-radius: 0 8px 8px 0
-            background: #f8f7f7
-            text-align: left
-            width: 56%
-
-            &:focus
-              animation-name: animacion_caja
-              animation-duration: 0.4s
-              width: 80%
-              border: none
-              outline: none
-              outline-offset: none
+            outline: none
+            outline-offset: none
   main.contenido
     display: grid
     grid-template-columns: auto
@@ -511,6 +510,21 @@
         padding: 0
         list-style-type: none
         overflow: hidden
+        li.s-menu
+          display: flex
+          flex-direction: column
+          div.s-menu-contenido
+            display: none
+        li.s-menu:hover
+          div.s-menu-contenido
+            display: block
+            z-index: 1
+            position: absolute
+            top: 50px
+            left: 350px
+            background: $back_default
+            border-radius: 8px 8px 8px 8px #e3e3e3
+
         li
           float: left
           a
@@ -521,50 +535,51 @@
             &:hover
               font-weight: bold
               background: $hover
-      div.c-buscador
-        display: inline-flex
-        align-self: center
-        width: 25%
-        form.b-buscador
-          color: $letra
-          display: flex
-          width: 100%
-          justify-content: center
 
-          button.m-buscador
-            float: left
-            background: none
-            border: none
-            padding: 6px 10px
-            border-radius: 8px 0 0 8px
-            background: #e4e4e4
-            font-size: 1em
-            &:hover
-              cursor: pointer
-              background: #ededed
-            &:focus
-              outline: none
-              outline-offset: none
+    div.c-buscador
+      display: inline-flex
+      align-self: center
+      width: 25%
+      form.b-buscador
+        color: $letra
+        display: flex
+        width: 100%
+        justify-content: center
 
-            span.fa-search::before
-              content: fa-content($fa-var-search)
-              font-style: none
-              color: $hover
+        button.m-buscador
+          float: left
+          background: none
+          border: none
+          padding: 6px 10px
+          border-radius: 8px 0 0 8px
+          background: #e4e4e4
+          font-size: 1em
+          &:hover
+            cursor: pointer
+            background: #ededed
+          &:focus
+            outline: none
+            outline-offset: none
 
-          input[type=search]
-            padding: 6px 10px
-            border: none
-            border-radius: 0 8px 8px 0
-            background: #f8f7f7
-            text-align: left
-            font-size: 1em
+          span.fa-search::before
+            content: fa-content($fa-var-search)
+            font-style: none
+            color: $hover
 
-            &:focus
-              animation-name: animacion_caja
-              animation-duration: 0.4s
-              width: 80%
-              outline: none
-              outline-offset: none
+        input[type=search]
+          padding: 6px 10px
+          border: none
+          border-radius: 0 8px 8px 0
+          background: #f8f7f7
+          text-align: left
+          font-size: 1em
+
+          &:focus
+            animation-name: animacion_caja
+            animation-duration: 0.4s
+            width: 80%
+            outline: none
+            outline-offset: none
 
   main.contenido
     display: grid

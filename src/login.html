@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <title>Seriefilos: Contactos</title>
+  <link rel="icon" href="../img/favicon.png" type="image/x-png">
+  <link rel="stylesheet" href="../estilo/css/estilo_contacto.css">
+  <link rel="stylesheet" href="../estilo/css/fontawesome.css">
+  <script src="../lib/jquery/jquery-3.3.1.min.js"></script>
+  <script src="../js/buscador.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <header class="cabecera">
+      <div class="t-logo">
+        <a href="../index.html">Seriefilos</a>
+      </div>
+      <!--t-logo-->
+      <nav class="menu">
+        <ul>
+          <li><a href="catalogos.php">Catálogo</a></li>
+          <!-- <ul>
+      TODO
+    </ul> -->
+          <li><a href="#contenido">Contactos</a></li>
+        </ul>
+        <div class="c-buscador">
+          <form class="b-buscador" id="form_search" method="get" action="catalogos.php">
+            <button id="button_search" type="button" class="m-buscador">
+        <span class="fa fa-search"></span>
+      </button>
+            <input type="search" id="buscador" name="buscador" value="" placeholder="Buscar..">
+          </form>
+        </div>
+      </nav>
+      <!-- menu -->
+    </header>
+    <!-- cabecera-->
+    <main class="contenido" id="contenido">
+      <h1>Contactos</h1>
+      <div class="formulario">
+        <form class="Contactos" id="Contactos" action="../php/formulario.php" method="post" enctype="multipart/form-data">
+          <fieldset>
+            <legend>Datos del usuario</legend>
+            <label for="nombre">Nombre de usuario</label>
+            <input type="text" name="nombre" id="nombre" value="" placeholder="Nombre" required>
+            <label for="correo">Correo</label>
+            <input type="email" name="correo" id="correo" value="" placeholder="tucorreo@Correo.com" required>
+          </fieldset>
+          <div class="c-enviar">
+            <button type="reset" name="Deshacer">
+              <span class="fas fa-redo-alt"></span>
+              Deshacer
+            </button>
+            <button type="submit" name="Enviar">
+              <span class="far fa-paper-plane"></span>
+              Enviar
+            </button>
+          </div>
+        </form>
+      </div>
+    </main>
+    <footer>
+      <div class="redes_sociales">
+        <ul>
+          <li>
+            <a href="https://facebook.com/">
+        <span class="fab fa-facebook"></span>
+        facebook
+      </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/">
+        <span class="fab fa-twitter"></span>
+        twitter
+      </a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/">
+        <span class="fab fa-instagram"></span>
+        instagram
+      </a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+  </div>
+</body>
+
+</html>

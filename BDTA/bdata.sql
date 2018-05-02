@@ -11,6 +11,11 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
+
+-- Volcando estructura de base de datos para ajwedevckqmoucho
+CREATE DATABASE IF NOT EXISTS `ajwedevckqmoucho` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `ajwedevckqmoucho`;
+
 -- Volcando estructura para tabla ajwedevckqmoucho.serie
 CREATE TABLE IF NOT EXISTS `serie` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -23,9 +28,9 @@ CREATE TABLE IF NOT EXISTS `serie` (
   `Estado` tinyint(1) NOT NULL,
   `Trailer` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla ajwedevckqmoucho.serie: ~19 rows (aproximadamente)
+-- Volcando datos para la tabla ajwedevckqmoucho.serie: ~20 rows (aproximadamente)
 /*!40000 ALTER TABLE `serie` DISABLE KEYS */;
 INSERT INTO `serie` (`id`, `Poster`, `Titulo`, `Texto`, `Categoria`, `Year`, `Temporada`, `Estado`, `Trailer`) VALUES
 	(1, '../../img/poster/merli_tv.jpg', 'Merlí', 'El profesor de filosofía Merlí Bergeron (Francesc Orella) escoge un grupo de alumnos de bachillerato para convertirlos en los peripatéticos del siglo XXI. Como si tratara de un nuevo Aristóteles, Merlí les enseñará a cuestionar las cosas y a reflexionar. Pero, por su carácter irónico e irritante, despierta antipatías en el instituto, porque no todos los profesores están dispuestos a aguantar sus manías. Ni tampoco su hijo, el alumno más difícil que ha tenido jamás y con el que intentará mejorar su relación. ', 'Drama', '2015', 3, 1, ''),
@@ -46,8 +51,45 @@ INSERT INTO `serie` (`id`, `Poster`, `Titulo`, `Texto`, `Categoria`, `Year`, `Te
 	(21, '../../img/poster/Modern_Family_S8_Poster-2.jpg', 'Modern Family', 'Aclamada serie -es la sitcom más premiada en los últimos años- que narra el día a día de una gran familias compuesta por Jay Pritchett (Ed O’Neill) y su joven mujer Gloria Delgado (Sofia Vergara), madre de Manny (Rico Rodriguez), y al mismo tiempo muestra la vida de las dos familias compuestas por sus hijos ya adultos: el abogado gay Mitchell (Jesse Tyler Ferguson), casado con Cameron Tucker (Eric Stonestreet) y padres adoptivos de la pequeña Lily, y su hija Claire (Julie Bowen), casada con Phil Dunphy (Ty Burrell) y que son padres de 3 hijos, la pija Haley (Sarah Hyland), la estudiosa Alex (Ariel Winter) y el simple Luke (Nolan Gould)', 'Comedia', '2009', 9, 2, ''),
 	(29, '../../img/poster/StrangerThings.jpg', 'Stranger Things', 'Primera temporada: 8 episodios. Homenaje a los clásicos misterios sobrenaturales de los años 80, "Stranger Things" es la historia de un niño que desaparece en el pequeño pueblo de Hawkins, Indiana, sin dejar rastro en 1983. En su búsqueda desesperada, tanto sus amigos y familiares como el sheriff local se ven envueltos en un enigma extraordinario: experimentos ultrasecretos, fuerzas paranormales terroríficas y una niña muy, muy rara... ', 'Sobrenaturales', '2016', 2, 2, ''),
 	(30, '../../img/poster/Doctorwho.jpg', 'Doctor who ', 'Continuación de la mítica y longeva serie británica que empezó en 1963 y duró hasta 1989. El Doctor es un aventurero que viaja por el tiempo y el espacio visitando desde fantasmas del pasado hasta alienígenas del futuro, desde el día que la Tierra murió en una bola de fuego hsta el fin del universo', 'Ciencia ficción', '2005', 11, 2, ''),
-	(32, '../../img/poster/Por_trece_razones.jpg', 'Por trece razones', 'El adolescente Clay Jensen (Dylan Minnette) vuelve un día a casa después del colegio y encuentra una misteriosa caja con su nombre. Dentro descubre una cinta grabada por Hannah Baker (Katherine Langford), una compañera de clase por la que sentía algo especial y que se suicidó tan solo dos semanas atrás. En la cinta, Hannah cuenta que hay trece razones por las que ha decidido quitarse la vida. ¿Será Clay una de ellas? Si lo escucha, tendrá oportunidad de conocer cada motivo de su lista.', 'Drama', '2017', 1, 2, '');
+	(32, '../../img/poster/Por_trece_razones.jpg', 'Por trece razones', 'El adolescente Clay Jensen (Dylan Minnette) vuelve un día a casa después del colegio y encuentra una misteriosa caja con su nombre. Dentro descubre una cinta grabada por Hannah Baker (Katherine Langford), una compañera de clase por la que sentía algo especial y que se suicidó tan solo dos semanas atrás. En la cinta, Hannah cuenta que hay trece razones por las que ha decidido quitarse la vida. ¿Será Clay una de ellas? Si lo escucha, tendrá oportunidad de conocer cada motivo de su lista.', 'Drama', '2017', 1, 2, ''),
+	(35, '', 'THE FLASH', 'AFADFDFAFD', 'DRAMA', '2014', 4, 0, '');
 /*!40000 ALTER TABLE `serie` ENABLE KEYS */;
+
+-- Volcando estructura para tabla ajwedevckqmoucho.usuarios
+CREATE TABLE IF NOT EXISTS `usuarios` (
+  `Foto` varchar(16) NOT NULL,
+  `Usuario` varchar(16) NOT NULL,
+  `Password` varchar(16) NOT NULL,
+  `Email` varchar(16) NOT NULL,
+  `Nombre` varchar(36) DEFAULT NULL,
+  `Apellidos` varchar(36) DEFAULT NULL,
+  `Cumple` date DEFAULT current_timestamp(),
+  `Rol` tinyint(1) NOT NULL COMMENT '0  Usuarios sin permisos, 1 Para usuario de admin',
+  PRIMARY KEY (`Usuario`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Volcando datos para la tabla ajwedevckqmoucho.usuarios: ~1 rows (aproximadamente)
+/*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
+INSERT INTO `usuarios` (`Foto`, `Usuario`, `Password`, `Email`, `Nombre`, `Apellidos`, `Cumple`, `Rol`) VALUES
+	('', 'Admin', 'abc123.', 'admin@admin.com', NULL, NULL, '2018-05-02', 0);
+/*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
+
+-- Volcando estructura para tabla ajwedevckqmoucho.usuarios_series
+CREATE TABLE IF NOT EXISTS `usuarios_series` (
+  `id_Usuarios` varchar(16) NOT NULL,
+  `id_Serie` int(11) NOT NULL,
+  KEY `FK_Usuarios_Series_serie` (`id_Serie`),
+  KEY `FK_Usuarios_Series_usuarios` (`id_Usuarios`),
+  CONSTRAINT `FK_Usuarios_Series_serie` FOREIGN KEY (`id_Serie`) REFERENCES `serie` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `FK_Usuarios_Series_usuarios` FOREIGN KEY (`id_Usuarios`) REFERENCES `usuarios` (`Usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Los usuarios  pude publicar una o más series \r\nLas series pude ser publicadas por uno o más usuarios ';
+
+-- Volcando datos para la tabla ajwedevckqmoucho.usuarios_series: ~2 rows (aproximadamente)
+/*!40000 ALTER TABLE `usuarios_series` DISABLE KEYS */;
+INSERT INTO `usuarios_series` (`id_Usuarios`, `id_Serie`) VALUES
+	('Admin', 1),
+	('Admin', 35);
+/*!40000 ALTER TABLE `usuarios_series` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
