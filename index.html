@@ -43,28 +43,52 @@
         <h2>La web para amantes de las series </h2>
       </div>
       <div class="c-descripcion">
-        <article class="articulo">
+        <div class="articulo">
           <h2>Busca...</h2>
-          <div class="d-img">
-            <img src="img/icons/busca.svg" alt="Buscar-icon">
-          </div>
 
-        </article>
-        <article class="articulo">
+            <img src="img/icons/busca.svg" alt="Buscar-icon">
+          
+
+        </div>
+        <div class="articulo">
           <h2>Puntua... </h2>
 
-          <div class="d-img">
             <img src="img/icons/fav.svg" alt="Favorito-icon">
-          </div>
-        </article>
-        <article class="articulo">
+
+        </div>
+        <div class="articulo">
           <h2>Y comparte.. </h2>
 
-          <div class="d-img">
             <img src="img/icons/share.svg" alt="Compartir-icon">
 
+
+        </div>
+      </div>
+      <div class="c-registrar">
+
+        <form class="registro" action="index.html" method="post">
+          <fieldset>
+            <legend>¡Registrate!</legend>
+            <label for="usuario">Nombre de usuario</label>
+            <input type="text" name="usuario" value="">
+            <label for="password">Contraseña</label>
+            <input type="password" name="password" value="">
+            <label for="repeat">Repetir Contraseña</label>
+            <input type="password" name="repeat" value="">
+            <label for="Email">Email</label>
+            <input type="email" name="Email" value="">
+          </fieldset>
+          <div class="c-enviar">
+            <button type="reset" name="Deshacer">
+              <span class="fas fa-redo-alt"></span>
+              Deshacer
+            </button>
+            <button type="submit" name="Registarse">
+              <span class="far fa-paper-plane"></span>
+              Registarse
+            </button>
           </div>
-        </article>
+        </form>
       </div>
     </main>
     <!-- fin contenido-->

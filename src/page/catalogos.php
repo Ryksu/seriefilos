@@ -26,9 +26,9 @@ include_once '../../modulos/buscador.php';
      <link rel="stylesheet" href="../../estilo/css/estilo_catalogo.css">
      <link rel="stylesheet" href="../../estilo/css/fontawesome.css">
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-     <script src="../js/Categorias.js"></script>
+     <script src="../../js/Categorias.js"></script>
 
-     <script src="../js/caja_busqueda.js"></script>
+     <script src="../../js/caja_busqueda.js"></script>
 
      <title>Seriefilos: Catálogo</title>
    </head>
@@ -36,7 +36,7 @@ include_once '../../modulos/buscador.php';
      <div class="container">
        <header class="cabecera">
          <div class="t-logo">
-           <a href="../index.html#t-logo">Seriefilos</a>
+           <a href="../../index.html#t-logo">Seriefilos</a>
          </div>
          <!--t-logo-->
          <nav class="menu">

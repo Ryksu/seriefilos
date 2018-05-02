@@ -1,11 +1,6 @@
 <?php
-// ini_set('display_errors',1);
-// ini_set('display_starup_errors',1);
-// error_reporting(E_ALL);
-require '../php/Config.php';
-require '../php/Crud.php';
+require_once '../../Conf/Crud.php';
 $conexion = new Crud();
-$conexion->conectar();
 $id = $_GET['id'];
 $row = $conexion->getSerie($id);
   $titulo = $row['Titulo'];
@@ -27,12 +22,12 @@ $url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <meta charset="utf-8">
      <link rel="icon" href="../img/favicon.png" type="image/x-png">
-     <link rel="stylesheet" href="../css/estilo_catalogo.css">
-     <link rel="stylesheet" href="../css/estilo_series.css">
-     <link rel="stylesheet" href="../css/fontawesome.css">
+     <link rel="stylesheet" href="../../estilo/css/estilo_catalogo.css">
+     <link rel="stylesheet" href="../../estilo/css/estilo_series.css">
+     <link rel="stylesheet" href="../../estilo/css/fontawesome.css">
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-     <script src="../js/Categorias.js" ></script>
-     <script src="../js/caja_busqueda.js" ></script>
+     <script src="../../js/Categorias.js" ></script>
+     <script src="../../js/caja_busqueda.js" ></script>
 
      <title>Seriefilos: <?php echo " ".  $titulo  ?></title>
    </head>
