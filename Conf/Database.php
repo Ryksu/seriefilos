@@ -1,13 +1,14 @@
 <?php
+include 'datos.inc';
 /**
  *
  */
 class Database
 {
-  private  $nombre_host = "localhost";
-  private $nombre_user ="ajwedevckqmoucho";
-  private $password ="Farolito92";
-  private $baseD = "ajwedevckqmoucho";
+  private  $nombre_host = NOMBRE_HOST;
+  private $nombre_user =NOMBRE_USER;
+  private $password =PASSWORD;
+  private $baseD = BASEDATA;
   protected $conexion;
 
 
