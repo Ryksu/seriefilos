@@ -2,7 +2,7 @@
 -- Host:                         127.0.0.1
 -- Versión del servidor:         10.2.14-MariaDB - mariadb.org binary distribution
 -- SO del servidor:              Win64
--- HeidiSQL Versión:             9.4.0.5125
+-- HeidiSQL Versión:             9.5.0.5196
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -11,9 +11,28 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
+
+-- Volcando estructura de base de datos para ajwedevckqmoucho
+CREATE DATABASE IF NOT EXISTS `ajwedevckqmoucho` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `ajwedevckqmoucho`;
+
+-- Volcando estructura para tabla ajwedevckqmoucho.serie
+CREATE TABLE IF NOT EXISTS `serie` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `Poster` varchar(50) NOT NULL,
+  `Titulo` varchar(36) NOT NULL,
+  `Texto` text NOT NULL,
+  `Categoria` varchar(16) NOT NULL,
+  `Year` year(4) NOT NULL,
+  `Temporada` int(11) NOT NULL,
+  `Estado` tinyint(1) NOT NULL,
+  `Trailer` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8;
+
 -- Volcando datos para la tabla ajwedevckqmoucho.serie: ~19 rows (aproximadamente)
 /*!40000 ALTER TABLE `serie` DISABLE KEYS */;
-REPLACE INTO `serie` (`id`, `Poster`, `Titulo`, `Texto`, `Categoria`, `Year`, `Temporada`, `Estado`, `Trailer`) VALUES
+INSERT INTO `serie` (`id`, `Poster`, `Titulo`, `Texto`, `Categoria`, `Year`, `Temporada`, `Estado`, `Trailer`) VALUES
 	(1, '../../img/poster/merli_tv.jpg', 'Merlí', 'El profesor de filosofía Merlí Bergeron (Francesc Orella) escoge un grupo de alumnos de bachillerato para convertirlos en los peripatéticos del siglo XXI. Como si tratara de un nuevo Aristóteles, Merlí les enseñará a cuestionar las cosas y a reflexionar. Pero, por su carácter irónico e irritante, despierta antipatías en el instituto, porque no todos los profesores están dispuestos a aguantar sus manías. Ni tampoco su hijo, el alumno más difícil que ha tenido jamás y con el que intentará mejorar su relación. ', 'Drama', '2015', 3, 1, ''),
 	(2, '../../img/poster/friends.jpg', 'F.r.i.e.n.d.s', '"Friends" narra las aventuras y desventuras de seis jóvenes de Nueva York. Rachel (Jennifer Aniston), Monica (Courteney Cox), Phoebe (Lisa Kudrow), Ross (David Schwimmer), Chandler (Matthew Perry) y Joey (Matt LeBlanc) forman una unida pandilla de amigos que viven en Manhattan y que suelen reunirse en sus apartamentos o en su bar habitual, el Central Perk. A pesar de los numerosos cambios que se producen en sus vidas, su amistad es inquebrantable en la dura batalla por salir adelante en sus periplos profesionales y personales.', 'Sitcom', '1994', 10, 1, ''),
 	(3, '../../img/poster/la-casa-de-papel.jpg', 'La casa de papel', 'La Casa de Papel narra lo que se espera que sea el atraco perfecto al Museo de la Fábrica Nacional de Moneda y Timbre. La mente que idea este plan es El Profesor, un hombre que recluta a siete personas para llevar a cabo el gran golpe. Tokio es una joven atracadora muy buscada por la policía, Berlín asume el papel de "el cabecilla", Moscú es el experto en perforaciones, Río es "el informático", Nairobi  es la falsificadora, Denver es el hijo de Moscú y, como siempre, falta la fuerza bruta: Helsinki y Oslo.\r\n\r\nLa banda planea cada paso durante cinco meses, valoran todos los inconvenientes, todas las posibilidades y cuando llega el día, se encierran durante once días en la Fábrica Nacional de Moneda y Timbre con 67 rehenes. Su objetivo es salir de allí con su propio dinero de curso legal recién impreso y sin registrar, algo que será difícil ya que la policía ha sitiado el lugar.', 'Drama', '2015', 2, 1, ''),
