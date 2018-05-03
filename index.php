@@ -9,8 +9,9 @@
   <link rel="manifest" href="manifest.json" >
   <link rel="stylesheet" href="estilo/css/estilo_index.css">
   <link rel="stylesheet" href="estilo/css/fontawesome.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="lib/jquery/jquery-3.3.1.min.js"></script>
   <script src="js/buscador.js"></script>
+    <script src="js/CrearUsuarios.js" charset="utf-8"></script>
 </head>
 
 <body>
@@ -66,9 +67,9 @@
           <fieldset>
             <legend>¡Registrate!</legend>
             <label for="usuario">Nombre de usuario</label>
-            <input type="text" name="usuario" value="">
+            <input type="text" name="usuario" value="" id="usuario">
             <label for="password">Contraseña</label>
-            <input type="password" name="password" value="">
+            <input type="password" name="password" value="" id=password>
             <label for="repeat">Repetir Contraseña</label>
             <input type="password" name="repeat" value="">
             <label for="Email">Email</label>
@@ -114,6 +115,7 @@
     </footer>
   </div>
   <!-- fin container-->
+
 </body>
 
 </html>

@@ -12,7 +12,8 @@ class NewCrud extends Database
     $this->conectar();
     $sql = $this->conexion->prepare($query);
     $sql-> execute();
-    return $sql->fetchAll(PDO::FETCH_ASSOC);
+    $encode = json_encode($sql->fetchAll(PDO::FETCH_ASSOC));
+    return $encode;
   }
 
   function Insertar($tabla,$nombre_columnas,$datos_columnas)
