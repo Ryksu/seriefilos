@@ -17,7 +17,7 @@ $vacio = false;
 include_once '../../modulos/buscador.php';
 ?>
  <!DOCTYPE html>
- <html lang="es">
+ <html lang="es" dir="ltr">
    <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <meta charset="utf-8">
@@ -41,10 +41,13 @@ include_once '../../modulos/buscador.php';
          <nav class="menu">
            <ul>
              <li><a href="catalogos.php#contenido">Catálogo</a></li>
-             <!-- <ul>
-         TODO
-       </ul> -->
              <li><a href="contacto.html">Contactos</a></li>
+             <li class="s-menu">
+               <a href="../login.html">Iniciar sesión</a>
+               <div class="s-menu-contenido">
+                 <a href="../../index.html#Registrate">Registrate</a>
+               </div>
+             </li>
            </ul>
            <div class="hamburger-menu">
              <button class="hamburger" type="button" name="button">

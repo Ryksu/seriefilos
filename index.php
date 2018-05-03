@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" dir="ltr">
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,9 +23,9 @@
           <li><a href="src/page/catalogos.php">Catálogo</a></li>
           <li><a href="src/page/contacto.html">Contactos</a></li>
           <li class="s-menu">
-            <a href="src/login.html">Iniciar Sesión</a>
+            <a href="src/login.html">Iniciar sesión</a>
             <div class="s-menu-contenido">
-              <a href="#Registrate">Registarte</a>
+              <a href="#Registrate">Registrate</a>
             </div>
           </li>
         </ul>
@@ -49,27 +49,19 @@
       <div class="c-descripcion">
         <div class="articulo">
           <h2>Busca...</h2>
-
             <img src="img/icons/busca.svg" alt="Buscar-icon">
-
-
         </div>
         <div class="articulo">
           <h2>Puntua... </h2>
-
             <img src="img/icons/fav.svg" alt="Favorito-icon">
-
         </div>
         <div class="articulo">
           <h2>Y comparte.. </h2>
-
             <img src="img/icons/share.svg" alt="Compartir-icon">
-
-
         </div>
       </div>
-      <div class="c-registrar">
 
+      <div class="c-registrar">
         <form id="Registrate" class="registro" action="index.html" method="post">
           <fieldset>
             <legend>¡Registrate!</legend>

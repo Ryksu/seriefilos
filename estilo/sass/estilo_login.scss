@@ -1,0 +1,397 @@
+@import "master.sass";
+@media screen and (max-width:$web_mobile_medium){
+  main.contenido{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 16px 10px;
+
+    h1{
+      text-align: center;
+      font-family: $titulo;
+    }
+    div.formulario{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      form.Usuario{
+        display: flex;
+        flex-direction: column;
+        @include font-title($texto,.9em);
+        fieldset{
+          width: 100%;
+          align-self: center;
+          display: flex;
+          flex-direction: column;
+          border: none;
+          margin-bottom: 10px;
+          border-radius: 8px 8px 8px 8px;
+
+          legend{
+          @include font-title($titulo,2em);
+
+          }
+          input[type="text"],input[type="password"]{
+            border: 1px solid #c0c5c6;
+            padding: 6px 8px;
+            border-radius: 8px 8px 8px 8px;
+            width: 100%;
+            margin-bottom: 10px;
+          }
+
+          /* chrome y opera */
+          input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{
+            -webkit-appearance:none;
+            margin: 0;
+          }
+          select{
+            border: 1px solid #c0c5c6;
+            padding: 6px 8px;
+            width: 100%
+          }
+        }
+        div.c-recordar{
+          display: inline-flex;
+          flex-direction: row;
+          font-size: .8em;
+          margin-bottom: 10px;
+        }
+        div.c-enviar{
+          display: inline-flex;
+          justify-content: space-around;
+
+          button[type=reset]{
+            border: 1px solid #d8ded9;
+            padding: 8px 6px;
+            background: #e4e4e4;
+            border-radius: 4px 4px 4px 4px;
+
+            span::before{
+              content: fa-content($fa-var-redo-alt);
+            }
+            &:hover{
+              cursor: pointer;
+              background: #ededed;
+            }
+          }
+          button[type=submit]{
+            border: 1px solid #d8ded9;
+            padding: 8px 6px;
+            background: #e4e4e4;
+            border-radius: 4px 4px 4px 4px;
+
+            span::before{
+              content: fa-content($fa-var-paper-plane);
+            }
+            &:hover{
+              cursor: pointer;
+              background: #ededed;
+            }
+          }
+        }
+      }
+
+    }
+  }
+}
+
+/* media movil medium */
+@media screen and (min-width:481px) and (max-width:600px){
+  main.contenido{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 16px 10px;
+
+    h1{
+      text-align: center;
+      font-family: $titulo;
+    }
+    div.formulario{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      form.Usuario{
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        width: 60%;
+        @include font-title($texto,.9em);
+        fieldset{
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          border: none;
+          margin-bottom: 10px;
+          border-radius: 8px 8px 8px 8px;
+
+          legend{
+          @include font-title($titulo,2em);
+
+          }
+          input[type="text"],input[type="password"]{
+            border: 1px solid #c0c5c6;
+            padding: 6px 8px;
+            border-radius: 8px 8px 8px 8px;
+            width: 100%;
+            margin-bottom: 10px;
+          }
+
+          /* chrome y opera */
+          input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{
+            -webkit-appearance:none;
+            margin: 0;
+          }
+          select{
+            border: 1px solid #c0c5c6;
+            padding: 6px 8px;
+            width: 100%
+          }
+        }
+        div.c-recordar{
+          display: inline-flex;
+          flex-direction: row;
+          font-size: .8em;
+          margin-bottom: 10px;
+        }
+        div.c-enviar{
+          display: inline-flex;
+          justify-content: space-around;
+
+          button[type=reset]{
+            border: 1px solid #d8ded9;
+            padding: 8px 6px;
+            background: #e4e4e4;
+            border-radius: 4px 4px 4px 4px;
+
+            span::before{
+              content: fa-content($fa-var-redo-alt);
+            }
+            &:hover{
+              cursor: pointer;
+              background: #ededed;
+            }
+          }
+          button[type=submit]{
+            border: 1px solid #d8ded9;
+            padding: 8px 6px;
+            background: #e4e4e4;
+            border-radius: 4px 4px 4px 4px;
+
+            span::before{
+              content: fa-content($fa-var-paper-plane);
+            }
+            &:hover{
+              cursor: pointer;
+              background: #ededed;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+/* media table_web */
+
+@media screen and (min-width:$web_table) and (max-width:$web_full) {
+  main.contenido{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 16px 10px;
+
+    h1{
+      text-align: center;
+      font-family: $titulo;
+    }
+    div.formulario{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      form.Usuario{
+        display: flex;
+        flex-direction: column;
+        @include font-title($texto,.9em);
+        align-self: center;
+        width: 50%;
+        fieldset{
+          width: 100%;
+          align-self: center;
+          display: flex;
+          flex-direction: column;
+          border: none;
+          margin-bottom: 10px;
+          border-radius: 8px 8px 8px 8px;
+
+          legend{
+          @include font-title($titulo,2em);
+
+          }
+          input[type="text"],input[type="password"]{
+            border: 1px solid #c0c5c6;
+            padding: 6px 8px;
+            border-radius: 8px 8px 8px 8px;
+            width: 100%;
+            margin-bottom: 10px;
+          }
+
+          /* chrome y opera */
+          input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{
+            -webkit-appearance:none;
+            margin: 0;
+          }
+          select{
+            border: 1px solid #c0c5c6;
+            padding: 6px 8px;
+            width: 100%
+          }
+        }
+        div.c-recordar{
+          display: inline-flex;
+          flex-direction: row;
+          font-size: .8em;
+          margin-bottom: 10px;
+        }
+        div.c-enviar{
+          display: inline-flex;
+          justify-content: space-around;
+
+          button[type=reset]{
+            border: 1px solid #d8ded9;
+            padding: 8px 6px;
+            background: #e4e4e4;
+            border-radius: 4px 4px 4px 4px;
+
+            span::before{
+              content: fa-content($fa-var-redo-alt);
+            }
+            &:hover{
+              cursor: pointer;
+              background: #ededed;
+            }
+          }
+          button[type=submit]{
+            border: 1px solid #d8ded9;
+            padding: 8px 6px;
+            background: #e4e4e4;
+            border-radius: 4px 4px 4px 4px;
+
+            span::before{
+              content: fa-content($fa-var-paper-plane);
+            }
+            &:hover{
+              cursor: pointer;
+              background: #ededed;
+            }
+          }
+        }
+      }
+
+    }
+  }
+}
+
+
+/* Media full web */
+@media screen and (min-width:$web_full){
+  main.contenido{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 16px 10px;
+
+    h1{
+      text-align: center;
+      font-family: $titulo;
+    }
+    div.formulario{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-self: center;
+      width: 25%;
+
+      form.Usuario{
+        display: flex;
+        flex-direction: column;
+        @include font-title($texto,.9em);
+        width: 100%;
+        fieldset{
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          border: none;
+          margin-bottom: 10px;
+          border-radius: 8px 8px 8px 8px;
+
+          legend{
+          @include font-title($titulo,2em);
+
+          }
+          input[type="text"],input[type="password"]{
+            border: 1px solid #c0c5c6;
+            padding: 6px 8px;
+            border-radius: 8px 8px 8px 8px;
+            width: 100%;
+            margin-bottom: 10px;
+          }
+
+          /* chrome y opera */
+          input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{
+            -webkit-appearance:none;
+            margin: 0;
+          }
+          select{
+            border: 1px solid #c0c5c6;
+            padding: 6px 8px;
+            width: 100%
+          }
+        }
+        div.c-recordar{
+          display: inline-flex;
+          flex-direction: row;
+          font-size: .8em;
+          margin-bottom: 10px;
+        }
+        div.c-enviar{
+          display: inline-flex;
+          justify-content: space-around;
+
+          button[type=reset]{
+            border: 1px solid #d8ded9;
+            padding: 8px 6px;
+            background: #e4e4e4;
+            border-radius: 4px 4px 4px 4px;
+
+            span::before{
+              content: fa-content($fa-var-redo-alt);
+            }
+            &:hover{
+              cursor: pointer;
+              background: #ededed;
+            }
+          }
+          button[type=submit]{
+            border: 1px solid #d8ded9;
+            padding: 8px 6px;
+            background: #e4e4e4;
+            border-radius: 4px 4px 4px 4px;
+
+            span::before{
+              content: fa-content($fa-var-paper-plane);
+            }
+            &:hover{
+              cursor: pointer;
+              background: #ededed;
+            }
+          }
+        }
+      }
+
+    }
+  }
+}

@@ -21,20 +21,25 @@
       background: $back_default
       @include font-title($texto,.9em)
       justify-content: space-between
+      ul:hover
+        overflow: none
+        z-index: 1
       ul
         margin: 0
         padding: 0
         list-style: none
-        overflow: hidden
+        display: flex
+        flex-direction: column
+        flex-wrap: nowrap
         li
           float: left
+          background: $back_default
           a
             display: block
             text-decoration: none
             padding: .9em 1em
             color: $letra
             &:hover
-              font-weight: bold
               background: $hover
         &.none
           display: none
@@ -152,7 +157,7 @@
       flex-direction: column
       justify-content: center
       background: linear-gradient(0deg,#ffff,#aeddb8,#66c2c0,#429bbc)
-      color: #fafafa
+      color: $letra
       form.registro
         display: flex
         flex-direction: column
@@ -248,7 +253,7 @@
 
 /* media screen web_table
 
-@media screen and (min-width:$web_table)  and (max-width:$web_full)
+@media screen and (min-width:601px)  and (max-width:$web_full)
   div.container
     display: grid
     grid-template-columns: auto
@@ -258,20 +263,26 @@
   header.cabecera
     //grid-column: 1 /5
     display: flex
-    flex-direction: column
+    flex-wrap: nowrap
     nav.menu
-      @include font-title($texto,.9em)
+      @include font-title($texto,1em)
       //grid-column: 1 /5
       background: $back_default
       display: inline-flex
       justify-content: space-between
-
+      ul:hover
+        z-index: 1
+        overflow: visible
       ul
         margin: 0
         padding: 0
         list-style-type: none
-        overflow: hidden
+        display: flex
+        flex-direction: column
+        flex-wrap: nowrap
+
         li
+          background: $back_default
           float: left
           a
             display: block
@@ -279,52 +290,51 @@
             padding: 14px 16px
             color: $letra
             &:hover
-              font-weight: bold
               background: $hover
-    div.c-buscador
-      display: inline-flex
-      align-self: center
-      width: 40%
+      div.c-buscador
+        display: inline-flex
+        align-self: center
+        width: 40%
+        form.b-buscador
+          color: $letra
+          display: flex
+          width: 100%
+          justify-content: center
 
-      form.b-buscador
-        color: $letra
-        display: flex
-        width: 100%
-        justify-content: center
-        button.m-buscador
-          float: left
-          background: none
-          border: none
-          padding: 6px 10px
-          border-radius: 8px 0 0 8px
-          background: #e4e4e4
-          &:hover
-            cursor: pointer
-            background: #ededed
-          &:focus
-            outline: none
-            outline-offset: none;
-
-          span.fa-search::before
-            content: fa-content($fa-var-search)
-            font-style: none
-            color: $hover
-
-        input[type=search]
-          padding: 6px 10px
-          border: none
-          border-radius: 0 8px 8px 0
-          background: #f8f7f7
-          text-align: left
-          width: 56%
-
-          &:focus
-            animation-name: animacion_caja
-            animation-duration: 0.4s
-            width: 80%
+          button.m-buscador
+            float: left
+            background: none
             border: none
-            outline: none
-            outline-offset: none
+            padding: 6px 10px
+            border-radius: 8px 0 0 8px
+            background: #e4e4e4
+            font-size: 1em
+            &:hover
+              cursor: pointer
+              background: #ededed
+            &:focus
+              outline: none
+              outline-offset: none
+
+            span.fa-search::before
+              content: fa-content($fa-var-search)
+              font-style: none
+              color: $hover
+
+          input[type=search]
+            padding: 6px 10px
+            border: none
+            border-radius: 0 8px 8px 0
+            background: #f8f7f7
+            text-align: left
+
+            &:focus
+              animation-name: animacion_caja
+              animation-duration: 0.4s
+              width: 80%
+              outline: none
+              outline-offset: none
+
   main.contenido
     display: grid
     grid-template-columns: auto
@@ -395,7 +405,7 @@
         align-self: center
         width: 50%
         @include font-title($texto,1.2em)
-        color: #fafafa
+        color: $letra
         fieldset
           width: 100%
           align-self: center
@@ -462,8 +472,8 @@
             color: $back_default
             font-family: $texto
             &:hover
-              background: $hover
               color: $letra
+              background: $hover
 
             span.fa-facebook::before
               content: fa-content($fa-var-facebook-square)
@@ -523,7 +533,7 @@
             top: 50px
             left: 350px
             background: $back_default
-            border-radius: 8px 8px 8px 8px #e3e3e3
+            box-shadow: 5px 5px 10px #7e7e7e
 
         li
           float: left
@@ -533,53 +543,52 @@
             padding: 14px 16px
             color: $letra
             &:hover
-              font-weight: bold
               background: $hover
 
-    div.c-buscador
-      display: inline-flex
-      align-self: center
-      width: 25%
-      form.b-buscador
-        color: $letra
-        display: flex
-        width: 100%
-        justify-content: center
+      div.c-buscador
+        display: inline-flex
+        align-self: center
+        width: 25%
+        form.b-buscador
+          color: $letra
+          display: flex
+          width: 100%
+          justify-content: center
 
-        button.m-buscador
-          float: left
-          background: none
-          border: none
-          padding: 6px 10px
-          border-radius: 8px 0 0 8px
-          background: #e4e4e4
-          font-size: 1em
-          &:hover
-            cursor: pointer
-            background: #ededed
-          &:focus
-            outline: none
-            outline-offset: none
+          button.m-buscador
+            float: left
+            background: none
+            border: none
+            padding: 6px 10px
+            border-radius: 8px 0 0 8px
+            background: #e4e4e4
+            font-size: 1em
+            &:hover
+              cursor: pointer
+              background: #ededed
+            &:focus
+              outline: none
+              outline-offset: none
 
-          span.fa-search::before
-            content: fa-content($fa-var-search)
-            font-style: none
-            color: $hover
+            span.fa-search::before
+              content: fa-content($fa-var-search)
+              font-style: none
+              color: $hover
 
-        input[type=search]
-          padding: 6px 10px
-          border: none
-          border-radius: 0 8px 8px 0
-          background: #f8f7f7
-          text-align: left
-          font-size: 1em
+          input[type=search]
+            padding: 6px 10px
+            border: none
+            border-radius: 0 8px 8px 0
+            background: #f8f7f7
+            text-align: left
+            font-size: 1em
 
-          &:focus
-            animation-name: animacion_caja
-            animation-duration: 0.4s
-            width: 80%
-            outline: none
-            outline-offset: none
+            &:focus
+              animation-name: animacion_caja
+              animation-duration: 0.4s
+              width: 80%
+              outline: none
+              outline-offset: none
 
   main.contenido
     display: grid
@@ -653,7 +662,7 @@
         flex-direction: column
         align-self: center
         width: 30%
-        color: #fafafa
+        color: $letra
 
 
         fieldset

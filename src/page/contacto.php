@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" dir="ltr">
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,17 +18,20 @@
 <body>
   <div class="container">
     <header class="cabecera">
-      <div class="t-logo">
-        <a href="../../index.html">Seriefilos</a>
-      </div>
       <!--t-logo-->
       <nav class="menu">
         <ul>
+          <li class="t-logo">
+            <a href="../../index.html">Seriefilos</a>
+          </li>
           <li><a href="catalogos.php">Catálogo</a></li>
-          <!-- <ul>
-      TODO
-    </ul> -->
           <li><a href="#contenido">Contactos</a></li>
+          <li class="s-menu">
+            <a href="../login.html">Iniciar sesión</a>
+            <div class="s-menu-contenido">
+              <a href="../../index.html#Registrate">Registrate</a>
+            </div>
+          </li>
         </ul>
         <div class="c-buscador">
           <form class="b-buscador" id="form_search" method="get" action="catalogos.php">
@@ -43,11 +46,10 @@
     </header>
     <!-- cabecera-->
     <main class="contenido" id="contenido">
-      <h1>Contactos</h1>
       <div class="formulario">
         <form class="Contactos" id="Contactos" action="../php/formulario.php" method="post" enctype="multipart/form-data">
           <fieldset>
-            <legend>Datos del usuario</legend>
+            <legend>Contacto</legend>
             <label for="nombre">Nombre de usuario</label>
             <input type="text" name="nombre" id="nombre" value="" placeholder="Nombre" required>
             <label for="correo">Correo</label>
