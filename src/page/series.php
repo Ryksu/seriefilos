@@ -45,16 +45,14 @@ $url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_
      <div class="container">
        <header class="cabecera">
          <div class="t-logo">
-           <a href="../index.html#t-logo">Seriefilos</a>
+           <a href="../../index.php#t-logo">Seriefilos</a>
          </div>
          <!--t-logo-->
          <nav class="menu">
            <ul>
              <li><a href="catalogos.php">Catálogo</a></li>
-             <!-- <ul>
-         TODO
-       </ul> -->
-             <li><a href="contacto.html">Contactos</a></li>
+
+             <li><a href="contacto.php">Contactos</a></li>
            </ul>
            <div class="hamburger-menu">
              <button class="hamburger" type="button" name="button">

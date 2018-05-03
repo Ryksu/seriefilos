@@ -41,9 +41,9 @@ include_once '../../modulos/buscador.php';
          <nav class="menu">
            <ul>
              <li><a href="catalogos.php#contenido">Catálogo</a></li>
-             <li><a href="contacto.html">Contactos</a></li>
+             <li><a href="contacto.php">Contactos</a></li>
              <li class="s-menu">
-               <a href="../login.html">Iniciar sesión</a>
+               <a href="../login.php">Iniciar sesión</a>
                <div class="s-menu-contenido">
                  <a href="../../index.html#Registrate">Registrate</a>
                </div>

@@ -21,9 +21,9 @@
           <li><a href="#t-logo">Inicio</a>
           </li>
           <li><a href="src/page/catalogos.php">Catálogo</a></li>
-          <li><a href="src/page/contacto.html">Contactos</a></li>
+          <li><a href="src/page/contacto.php">Contactos</a></li>
           <li class="s-menu">
-            <a href="src/login.html">Iniciar sesión</a>
+            <a href="src/login.php">Iniciar sesión</a>
             <div class="s-menu-contenido">
               <a href="#Registrate">Registrate</a>
             </div>

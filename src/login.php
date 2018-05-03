@@ -19,11 +19,11 @@
       <nav class="menu">
         <ul>
           <li class="t-logo">
-            <a href="../index.html">Seriefilos</a>
+            <a href="../index.php">Seriefilos</a>
           </li>
           <!--t-logo-->
           <li><a href="page/catalogos.php">Catálogo</a></li>
-          <li><a href="page/contacto.html">Contactos</a></li>
+          <li><a href="page/contacto.php">Contactos</a></li>
         </ul>
         <div class="c-buscador">
           <form class="b-buscador" id="form_search" method="get" action="catalogos.php">

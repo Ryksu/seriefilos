@@ -22,14 +22,14 @@
       <nav class="menu">
         <ul>
           <li class="t-logo">
-            <a href="../../index.html">Seriefilos</a>
+            <a href="../../index.php">Seriefilos</a>
           </li>
           <li><a href="catalogos.php">Catálogo</a></li>
           <li><a href="#contenido">Contactos</a></li>
           <li class="s-menu">
-            <a href="../login.html">Iniciar sesión</a>
+            <a href="../login.php">Iniciar sesión</a>
             <div class="s-menu-contenido">
-              <a href="../../index.html#Registrate">Registrate</a>
+              <a href="../../index.php#Registrate">Registrate</a>
             </div>
           </li>
         </ul>
