@@ -63,7 +63,7 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `Email` varchar(16) NOT NULL,
   `Nombre` varchar(36) DEFAULT NULL,
   `Apellidos` varchar(36) DEFAULT NULL,
-  `Cumple` date DEFAULT current_timestamp(),
+  `Cumple` date,
   `Rol` tinyint(1) NOT NULL COMMENT '0  Usuarios sin permisos, 1 Para usuario de admin',
   PRIMARY KEY (`Usuario`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

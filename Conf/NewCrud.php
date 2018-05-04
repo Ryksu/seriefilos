@@ -16,12 +16,20 @@ class NewCrud extends Database
     return $encode;
   }
 
-  function Insertar($tabla,$nombre_columnas,$datos_columnas)
+  function Insertar($tabla,array $nombre_columnas,array $datos_columnas)
   {
-    $query = "INSERT INTO $tabla('".$nombre_columnas."') VALUES('".$datos_columnas."')";
-    $this->conectar();
-    $sql= $this->conexion->prepare($query);
-    $sql->execute();
+    try {
+      $nombre = implode(",",$nombre_columnas);
+      $datos = implode(",",$datos_columnas);
+      $query = "INSERT INTO $tabla($nombre) VALUES ($datos)";
+      $this->conectar();
+      $sql= $this->conexion->prepare($query);
+      $sql->execute();
+
+    } catch (PDOException $e) {
+      echo "Fallo". $e->getMessage();
+    }
+
   }
 
   function Eliminar($tablas,$condicion){
@@ -38,7 +46,7 @@ class NewCrud extends Database
     $n_fila -> execute();
     return  $n_fila -> fetchColumn();
   }
-
-
 }
+
+
  ?>

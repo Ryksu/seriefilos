@@ -11,7 +11,6 @@
   <link rel="stylesheet" href="estilo/css/fontawesome.css">
   <script src="lib/jquery/jquery-3.3.1.min.js"></script>
   <script src="js/buscador.js"></script>
-    <script src="js/CrearUsuarios.js" charset="utf-8"></script>
 </head>
 
 <body>
@@ -63,24 +62,24 @@
       </div>
 
       <div class="c-registrar">
-        <form id="Registrate" class="registro" action="index.html" method="post">
+        <form id="Registrate" class="registro" action="Controlador/CrearUsuario.php" method="post">
           <fieldset>
             <legend>¡Registrate!</legend>
             <label for="usuario">Nombre de usuario</label>
-            <input type="text" name="usuario" value="" id="usuario">
+            <input type="text" name="usuario" value="" id="usuario" pattern="[a-zA-z-0-9]{4,8}" required>
             <label for="password">Contraseña</label>
-            <input type="password" name="password" value="" id=password>
+            <input type="password" name="password" value="" id=password required>
             <label for="repeat">Repetir Contraseña</label>
-            <input type="password" name="repeat" value="">
+            <input type="password" name="repeat" value="" id="repeat" required>
             <label for="Email">Email</label>
-            <input type="email" name="Email" value="">
+            <input type="email" name="Email" value="" required>
           </fieldset>
           <div class="c-enviar">
             <button type="reset" name="Deshacer">
               <span class="fas fa-redo-alt"></span>
               Deshacer
             </button>
-            <button type="submit" name="Registarse">
+            <button type="submit" name="Registarse" id="Registrate">
               <span class="far fa-paper-plane"></span>
               Registarse
             </button>
@@ -89,6 +88,7 @@
       </div>
     </main>
     <!-- fin contenido-->
+    <script src="js/CrearUsuarios.js" charset="utf-8"></script>
     <footer>
       <div class="redes_sociales">
         <ul>
