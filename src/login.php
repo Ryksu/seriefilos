@@ -1,3 +1,7 @@
+<?php
+
+
+ ?>
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
 
@@ -11,6 +15,7 @@
   <link rel="stylesheet" href="../estilo/css/fontawesome.css">
   <script src="../lib/jquery/jquery-3.3.1.min.js"></script>
   <script src="../js/buscador.js"></script>
+
 </head>
 
 <body>
@@ -39,7 +44,7 @@
     <!-- cabecera-->
     <main class="contenido" id="contenido">
       <div class="formulario">
-        <form class="Usuario" id="Usuario" action="../php/formulario.php" method="post" enctype="multipart/form-data">
+        <form class="Usuario" id="Login" method="post" enctype="multipart/form-data">
           <fieldset>
             <legend>Iniciar sesión</legend>
             <label for="usuario">Nombre de usuario</label>
@@ -51,12 +56,13 @@
             <input type="checkbox" id="recodar" name="recodar" value="1">
             <label for="recodar">Recodar sesión</label>
           </div>
+            <div id="msg"></div>
           <div class="c-enviar">
             <button type="reset" name="Deshacer">
               <span class="fas fa-redo-alt"></span>
               Deshacer
             </button>
-            <button type="submit" name="Enviar">
+            <button type="submit" name="Enviar" id="Enviar">
               <span class="far fa-paper-plane"></span>
               Iniciar
             </button>
@@ -64,6 +70,7 @@
         </form>
       </div>
     </main>
+    <script src="../js/iniciarSesion.js" charset="utf-8"></script>
     <footer>
       <div class="redes_sociales">
         <ul>

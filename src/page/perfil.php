@@ -1,4 +1,8 @@
-<?php  ?>
+<?php
+  session_start();
+  $_SESSION['usuario'] = $_POST['usuario'];
+  
+?>
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
   <head>

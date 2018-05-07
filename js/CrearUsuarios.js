@@ -23,6 +23,7 @@ $(document).ready(function(){
     ComprobarRepeat();
   })
 
+
 });
 
 
@@ -36,8 +37,6 @@ function siExiste(data){
   {
     if(expr.exec(inputUsuario.value)!=null){
       inputUsuario.style.border = "2px solid green";
-      
-
     }
     else {
       inputUsuario.style.border = "2px solid red";

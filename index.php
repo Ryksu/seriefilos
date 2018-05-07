@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
 
@@ -62,7 +63,7 @@
       </div>
 
       <div class="c-registrar">
-        <form id="Registrate" class="registro" action="Controlador/CrearUsuario.php" method="post">
+        <form id="Registrate" class="registro" method="post" action="Controlador/CrearUsuario.php">
           <fieldset>
             <legend>¡Registrate!</legend>
             <label for="usuario">Nombre de usuario</label>
@@ -71,15 +72,16 @@
             <input type="password" name="password" value="" id=password required>
             <label for="repeat">Repetir Contraseña</label>
             <input type="password" name="repeat" value="" id="repeat" required>
-            <label for="Email">Email</label>
-            <input type="email" name="Email" value="" required>
+            <label for="email">Email</label>
+            <input type="email" name="email" value="" id="email" required>
           </fieldset>
+          <div id="msg"></div>
           <div class="c-enviar">
             <button type="reset" name="Deshacer">
               <span class="fas fa-redo-alt"></span>
               Deshacer
             </button>
-            <button type="submit" name="Registarse" id="Registrate">
+            <button type="submit" name="singup" id="singup">
               <span class="far fa-paper-plane"></span>
               Registarse
             </button>

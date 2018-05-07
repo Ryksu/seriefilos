@@ -18,7 +18,7 @@ class NewCrud extends Database
 
   function Insertar($tabla,array $nombre_columnas,array $datos_columnas)
   {
-    try {
+
       $nombre = implode(",",$nombre_columnas);
       $datos = implode(",",$datos_columnas);
       $query = "INSERT INTO $tabla($nombre) VALUES ($datos)";
@@ -26,9 +26,6 @@ class NewCrud extends Database
       $sql= $this->conexion->prepare($query);
       $sql->execute();
 
-    } catch (PDOException $e) {
-      echo "Fallo". $e->getMessage();
-    }
 
   }
 
