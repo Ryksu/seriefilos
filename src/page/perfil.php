@@ -1,4 +1,7 @@
-<?php session_start();?>
+<?php
+include '../../Controlador/ObtenerUsuario.php';
+
+?>
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
 
@@ -8,6 +11,7 @@
   <title>Seriefilos: <?php echo $_SESSION['usuario'] ?></title>
   <link rel="icon" href="../img/favicon.png" type="image/x-png">
   <link rel="stylesheet" href="../../estilo/css/estilo_contacto.css">
+  <link rel="stylesheet" href="../../estilo/css/estilo_perfil.css">
   <link rel="stylesheet" href="../../estilo/css/fontawesome.css">
   <script src="../../lib/jquery/jquery-3.3.1.min.js"></script>
   <script src="../../js/buscador.js"></script>
@@ -42,26 +46,43 @@
     <!-- cabecera-->
     <main class="contenido" id="contenido">
       <div class="formulario">
-        <form class="" method="post">
+        <form class="perfil" method="post">
           <fieldset>
-            <legend><?php echo $_SESSION['usuario'] ?></legend>
+            <legend>Datos del usuario</legend>
             <div class="foto">
-              <img src="" id="foto" alt="<?php echo "imagen de perfil de ". $_SESSION['usuario'] ?>">
+              <img src="<?php echo $resultado[0]['foto'] ?>" id="foto" alt="<?php echo "imagen de perfil de ". $_SESSION['usuario'] ?>">
+
             </div>
               <label for="usuario">Usuario</label>
-              <input type="text" name="usuario" id="usuario" value="" disabled>
+              <input type="text" name="usuario" id="usuario" value="<?php echo $resultado[0]['usuario']?>" disabled>
               <label for="email">Email</label>
-              <input type="email" name="email" id="email" value="" disabled>
+              <input type="email" name="email" id="email" value="<?php echo $resultado[0]['email'] ?>" disabled>
           </fieldset>
           <fieldset>
             <legend>Datos personales</legend>
             <label for="nombre">Nombre</label>
-            <input type="text" name="nombre" id="nombre" value="" disabled>
+            <input type="text" name="nombre" id="nombre" value="<?php echo $resultado[0]['nombre'] ?>" disabled>
             <label for="apellidos">Apellidos</label>
-            <input type="text" name="apellidos" id="apellidos" value="" disabled>
+            <input type="text" name="apellidos" id="apellidos" value="<?php echo $resultado[0]['apellidos']; ?>" disabled>
             <label for="cumple">Cumpleaño</label>
-            <input type="date" name="cumple" id="cumple" value="" disabled>
+            <input type="date" name="cumple" id="cumple" value="<?php echo $resultado[0]['cumple']; ?>" disabled>
           </fieldset>
+          <div class="c-editar" id="c-editar">
+              <button name="Editar">
+                <span class="fas fa-edit"></span>
+                Editar
+              </button>
+          </div>
+          <div hidden id="c-enviar">
+            <button type="reset" name="Deshacer">
+              <span class="fas fa-redo-alt"></span>
+              Deshacer
+            </button>
+            <button type="submit" name="Enviar">
+              <span class="far fa-paper-plane"></span>
+              Enviar
+            </button>
+          </div>
         </form>
       </div>
     </main>

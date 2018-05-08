@@ -10,7 +10,7 @@ class Usuarios extends NewCrud
 /* pasamos los datos importante del usuario y registramos en la base de datos */
   function CrearUsuario($usuario,$password,$email)
   {
-    $this->Insertar("usuarios",array("Usuario","Password","Email","rol"),array("'$usuario'","'$password'","'$email'","'0'"));
+    $this->Insertar("usuarios",array("Foto","Usuario","Password","Email","rol"),array("'../../img/perfiles/user-default.svg'","'$usuario'","'$password'","'$email'","'0'"));
 
   }
   /* Comprueba primero si el usuario se encuentra en la bdta si lo encuentra verifica el hash de la contraseña dada dara true si es correcto, false si es incorrecto */
