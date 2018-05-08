@@ -69,19 +69,19 @@
       </div>
 
       <div class="c-registrar">
-        <form id="Registrate" class="registro" method="post" action="Controlador/CrearUsuario.php">
+        <form id="Registrate" class="registro" method="post">
           <fieldset>
             <legend>¡Registrate!</legend>
             <label for="usuario">Nombre de usuario</label>
             <input type="text" name="usuario" value="" id="usuario" pattern="[a-zA-z-0-9]{4,8}" required>
             <label for="password">Contraseña</label>
-            <input type="password" name="password" value="" id=password required>
+            <input type="password" name="password" value="" id=password pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&#.$($)$-$_])[A-Za-z\d$@$!%*?&#.$($)$-$_]{8,15}$" required>
             <label for="repeat">Repetir Contraseña</label>
-            <input type="password" name="repeat" value="" id="repeat" required>
+            <input type="password" name="repeat" value="" id="repeat" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&#.$($)$-$_])[A-Za-z\d$@$!%*?&#.$($)$-$_]{8,15}$" required>
             <label for="email">Email</label>
             <input type="email" name="email" value="" id="email" required>
           </fieldset>
-          <div id="msg"></div>
+          <div id="msg" class="msg"></div>
           <div class="c-enviar">
             <button type="reset" name="Deshacer">
               <span class="fas fa-redo-alt"></span>

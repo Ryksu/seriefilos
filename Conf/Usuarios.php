@@ -3,9 +3,9 @@
  *
  */
  require_once "NewCrud.php";
-
 class Usuarios extends NewCrud
 {
+  public $usuario;
 
 /* pasamos los datos importante del usuario y registramos en la base de datos */
   function CrearUsuario($usuario,$password,$email)
@@ -13,6 +13,7 @@ class Usuarios extends NewCrud
     $this->Insertar("usuarios",array("Usuario","Password","Email","rol"),array("'$usuario'","'$password'","'$email'","'0'"));
 
   }
+  /* Comprueba primero si el usuario se encuentra en la bdta si lo encuentra verifica el hash de la contraseña dada dara true si es correcto, false si es incorrecto */
   function iniciarUsuarios($usuario,$password){
     $iniciar = false;
   $condicion = "WHERE usuario = '$usuario'";
@@ -25,5 +26,13 @@ class Usuarios extends NewCrud
    }
    return $iniciar;
   }
+
+  function obtenerUsusario($usuario){
+    $condicion = "WHERE usuario = '$usuario'";
+    $resultado = $this->Leer("foto,usuario,email,nombre,apellidos,cumple,rol","usuarios",$condicion);
+    return $resultado;
+  }
+
 }
+
  ?>

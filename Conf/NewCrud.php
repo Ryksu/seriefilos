@@ -28,6 +28,12 @@ class NewCrud extends Database
 
 
   }
+  function Actulizar($tabla,$columnas,$condicion){
+    $query = "UPDATE $tabla SET $columnas WHERE $condicion";
+    $this->conectar();
+    $sql = $this->conexion->prepare($query);
+    $sql->execute();
+  }
 
   function Eliminar($tablas,$condicion){
     $query = "DELETE FROM $tablas WHERE $condicion";

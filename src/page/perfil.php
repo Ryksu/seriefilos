@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
 
@@ -42,7 +42,27 @@
     <!-- cabecera-->
     <main class="contenido" id="contenido">
       <div class="formulario">
-
+        <form class="" method="post">
+          <fieldset>
+            <legend><?php echo $_SESSION['usuario'] ?></legend>
+            <div class="foto">
+              <img src="" id="foto" alt="<?php echo "imagen de perfil de ". $_SESSION['usuario'] ?>">
+            </div>
+              <label for="usuario">Usuario</label>
+              <input type="text" name="usuario" id="usuario" value="" disabled>
+              <label for="email">Email</label>
+              <input type="email" name="email" id="email" value="" disabled>
+          </fieldset>
+          <fieldset>
+            <legend>Datos personales</legend>
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre" id="nombre" value="" disabled>
+            <label for="apellidos">Apellidos</label>
+            <input type="text" name="apellidos" id="apellidos" value="" disabled>
+            <label for="cumple">Cumpleaño</label>
+            <input type="date" name="cumple" id="cumple" value="" disabled>
+          </fieldset>
+        </form>
       </div>
     </main>
     <footer>
