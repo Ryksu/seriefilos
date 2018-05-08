@@ -1,3 +1,4 @@
+<?php session_start() ?>
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
 
@@ -27,9 +28,15 @@
           <li><a href="catalogos.php">Catálogo</a></li>
           <li><a href="#contenido">Contactos</a></li>
           <li class="s-menu">
-            <a href="../login.php">Iniciar sesión</a>
-            <div class="s-menu-contenido">
-              <a href="../../index.php#Registrate">Registrate</a>
+            <?php if (isset($_SESSION['usuario'])&&!empty($_SESSION['usuario'])): ?>
+              <a href="perfil.php"><?php echo $_SESSION['usuario'] ?></a>
+              <div class="s-menu-contenido">
+             <a href="../../index.html#Registrate">Cerrar sesión</a>
+            <?php else: ?>
+              <a href="../login.php">Iniciar sesión</a>
+              <div class="s-menu-contenido">
+                <a href="../../index.html#Registrate">Registrate</a>
+            <?php endif; ?>
             </div>
           </li>
         </ul>

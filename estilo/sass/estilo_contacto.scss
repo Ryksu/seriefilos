@@ -616,7 +616,7 @@
   }
 }
 /* table_web */
-@media screen and (min-width:$web_table) and (max-width:$web_full) {
+@media screen and (min-width:$web_table) and (max-width:1023px) {
   div.container{
     display: grid;
   grid-template-columns: auto;

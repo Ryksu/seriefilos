@@ -1,5 +1,5 @@
 <?php
-
+ session_start();
 require_once '../../Conf/Crud.php';
 $conexion = new Crud();
 # preparando Paginacion
@@ -34,18 +34,25 @@ include_once '../../modulos/buscador.php';
    <body>
      <div class="container">
        <header class="cabecera">
-         <div class="t-logo">
-           <a href="../../index.html#t-logo">Seriefilos</a>
-         </div>
-         <!--t-logo-->
          <nav class="menu">
            <ul>
+             <li class="t-logo">
+               <a href="../../index.php">Seriefilos</a>
+             </li>
+             <!--t-logo-->
              <li><a href="catalogos.php#contenido">Catálogo</a></li>
              <li><a href="contacto.php">Contactos</a></li>
              <li class="s-menu">
-               <a href="../login.php">Iniciar sesión</a>
-               <div class="s-menu-contenido">
-                 <a href="../../index.html#Registrate">Registrate</a>
+               <?php if (isset($_SESSION['usuario'])&&!empty($_SESSION['usuario'])): ?>
+                 <a href="perfil.php"><?php echo $_SESSION['usuario'] ?></a>
+                 <div class="s-menu-contenido">
+                <a href="add.php">Añadir serie</a>
+                <a href="logout.php">Cerrar sesión</a>
+               <?php else: ?>
+                 <a href="../login.php">Iniciar sesión</a>
+                 <div class="s-menu-contenido">
+                   <a href="../../index.html#Registrate">Registrate</a>
+               <?php endif; ?>
                </div>
              </li>
            </ul>

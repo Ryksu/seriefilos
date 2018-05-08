@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once '../../Conf/Crud.php';
 $conexion = new Crud();
 $id = $_GET['id'];

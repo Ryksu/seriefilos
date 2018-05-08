@@ -11,18 +11,6 @@
     display: flex;
     flex-direction: row;
     background: $back_default;
-    div.t-logo{
-      align-self: center;
-      a{
-        color: $letra;
-        font-family: $titulo;
-        font-size: 1.2em;
-        text-decoration: none;
-        display: block;
-        padding: 0 .9em;
-      }
-      animation: Titulo .3s  ease-in;
-    }
     nav.menu{
       background: $back_default;
       display: inline-flex;
@@ -34,8 +22,23 @@
         padding: 0;
         list-style: none;
         overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        li.t-logo{
+          animation: Titulo .3s  ease-in;
+          a{
+            color: $letra;
+            font-family: $titulo;
+            font-size: 1.2em;
+            text-decoration: none;
+            display: block;
+            padding: .9em 1em;
+          }
+        }
         li{
           float: left;
+          background: $back_default;
           a{
             display:block;
             text-decoration: none;
@@ -46,6 +49,11 @@
             }
             }
           }
+          &:hover{
+            z-index: 1;
+            overflow: visible;
+          }
+
 
         }
         div.hamburger-menu{
@@ -346,19 +354,6 @@
     display: flex;
     flex-direction: row;
     background: $back_default;
-    div.t-logo{
-      align-self: center;
-      a{
-        color: $letra;
-        font-family: $titulo;
-        font-size: 1.2em;
-        text-decoration: none;
-        display: block;
-        padding: 6px 8px;
-      }
-      animation: Titulo .3s  ease-in;
-
-    }
     nav.menu{
       background: $back_default;
       display: inline-flex;
@@ -370,8 +365,23 @@
         padding: 0;
         list-style: none;
         overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        li.t-logo{
+          animation: Titulo .3s  ease-in;
+          a{
+            color: $letra;
+            font-family: $titulo;
+            font-size: 1.2em;
+            text-decoration: none;
+            display: block;
+            padding: .9em 1em;
+          }
+        }
         li{
           float: left;
+          background: $back_default;
           a{
             display:block;
             text-decoration: none;
@@ -382,7 +392,10 @@
             }
             }
           }
-
+          &:hover{
+            z-index: 1;
+            overflow: visible;
+          }
         }
         div.hamburger-menu{
           display: inline-flex;
@@ -679,19 +692,6 @@
       flex-direction: row;
       flex-wrap: nowrap;
       background: $back_default;
-      div.t-logo{
-        align-self: center;
-        a{
-          color: $letra;
-          font-family: $titulo;
-          font-size: 1.2em;
-          text-decoration: none;
-          display: block;
-          padding: 6px 8px;
-        }
-        animation: Titulo .3s  ease-in;
-
-      }
       nav.menu{
         background: $back_default;
 
@@ -704,20 +704,50 @@
           padding: 0;
           list-style: none;
           overflow: hidden;
+          li.t-logo{
+            align-self: center;
+            a{
+              color: $letra;
+              font-family: $titulo;
+              font-size: 1.2em;
+              text-decoration: none;
+              display: block;
+              padding: 14px 16px;
+            }
+            animation: Titulo .3s  ease-in;
+
+          }
+          li.s-menu{
+            display: flex;
+            flex-direction: column;
+            div.s-menu-contenido{
+              display: none;
+            }
+            &:hover{
+              div.s-menu-contenido{
+                display: block;
+                z-index: 1;
+                position: absolute;
+                top: 50px;
+                left: 350px;
+                background: $back_default;
+                box-shadow: 5px 5px 10px #7e7e7e
+              }
+            }
+          }
           li{
             float: left;
             a{
               display:block;
               text-decoration: none;
-              padding: .9em 1em;
+              padding: 14px 16px;
               color: $letra;
               &:hover{
                 background: $hover;
               }
-              }
             }
-
           }
+        }
           div.hamburger-menu{
             display: inline-flex;
             align-self:  center;
@@ -1014,19 +1044,6 @@ footer{
     flex-direction: row;
     flex-wrap: nowrap;
     background: $back_default;
-    div.t-logo{
-      align-self: center;
-      a{
-        color: $letra;
-        font-family: $titulo;
-        font-size: 1.2em;
-        text-decoration: none;
-        display: block;
-        padding: 14px 16px;
-      }
-      animation: Titulo .3s  ease-in;
-
-    }
     nav.menu{
       background: $back_default;
 
@@ -1039,20 +1056,50 @@ footer{
         padding: 0;
         list-style: none;
         overflow: hidden;
+        li.t-logo{
+          align-self: center;
+          a{
+            color: $letra;
+            font-family: $titulo;
+            font-size: 1.2em;
+            text-decoration: none;
+            display: block;
+            padding: 14px 16px;
+          }
+          animation: Titulo .3s  ease-in;
+
+        }
+        li.s-menu{
+          display: flex;
+          flex-direction: column;
+          div.s-menu-contenido{
+            display: none;
+          }
+          &:hover{
+            div.s-menu-contenido{
+              display: block;
+              z-index: 1;
+              position: absolute;
+              top: 50px;
+              left: 350px;
+              background: $back_default;
+              box-shadow: 5px 5px 10px #7e7e7e
+            }
+          }
+        }
         li{
           float: left;
           a{
             display:block;
             text-decoration: none;
-            padding: .9em 1em;
+            padding: 14px 16px;
             color: $letra;
             &:hover{
               background: $hover;
             }
-            }
           }
-
         }
+      }
         div.hamburger-menu{
           display: none;
 
