@@ -157,10 +157,11 @@
         max-width: 20%
 
     div.c-registrar
+      padding: .9em 1em
       display: flex
       flex-direction: column
       justify-content: center
-      background: linear-gradient(0deg,#ffff,#aeddb8,#66c2c0,#429bbc)
+      background: linear-gradient(0deg,#ffff,#66c2c0,#429bbc,#2e76b2)
       color: $letra
       form.registro
         display: flex
@@ -405,7 +406,7 @@
       display: flex
       flex-direction: column
       justify-content: center
-      background: linear-gradient(0deg,#ffff,#aeddb8,#66c2c0,#429bbc)
+      background: linear-gradient(0deg,#ffff,#66c2c0,#429bbc,#2e76b2)
 
       form.registro
         display: flex
@@ -436,6 +437,7 @@
           @include font-title($texto,.9em)
           color: $hover
           align-self: center
+
         div.c-enviar
           display: inline-flex
           justify-content: space-around
@@ -667,7 +669,7 @@
       display: flex
       flex-direction: column
       justify-content: center
-      background: linear-gradient(0deg,#ffff,#aeddb8,#66c2c0,#429bbc)
+      background: linear-gradient(0deg,#ffff,#66c2c0,#429bbc,#2e76b2)
 
       form.registro
         display: flex
@@ -699,9 +701,11 @@
           width: 100%
           margin-bottom: 1em
         div.msg
-          @include font-title($texto,.9em)
+          @include font-title($texto,1em)
           color: $hover
           align-self: center
+          display: flex
+
         div.c-enviar
           display: inline-flex
           justify-content: space-around

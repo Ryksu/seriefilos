@@ -50,8 +50,11 @@ include '../../Controlador/ObtenerUsuario.php';
           <fieldset>
             <legend>Datos del usuario</legend>
             <div class="foto">
-              <img src="<?php echo $resultado[0]['foto'] ?>" id="foto" alt="<?php echo "imagen de perfil de ". $_SESSION['usuario'] ?>">
-
+              <img src="<?php echo $resultado[0]['foto'] ?>" id="imagen" alt="<?php echo "imagen de perfil de ". $_SESSION['usuario'] ?>">
+              <div id="c-subir" hidden>
+                <label for="subir">Subir foto de perfil</label>
+                <input type="file" name="subir" id="subir" value="">
+              </div>
             </div>
               <label for="usuario">Usuario</label>
               <input type="text" name="usuario" id="usuario" value="<?php echo $resultado[0]['usuario']?>" disabled>
@@ -68,7 +71,7 @@ include '../../Controlador/ObtenerUsuario.php';
             <input type="date" name="cumple" id="cumple" value="<?php echo $resultado[0]['cumple']; ?>" disabled>
           </fieldset>
           <div class="c-editar" id="c-editar">
-              <button name="Editar">
+              <button  type="button" name="Editar" id="Editar">
                 <span class="fas fa-edit"></span>
                 Editar
               </button>
@@ -78,12 +81,14 @@ include '../../Controlador/ObtenerUsuario.php';
               <span class="fas fa-redo-alt"></span>
               Deshacer
             </button>
-            <button type="submit" name="Enviar">
+            <button type="submit" name="Enviar" id="Enviar">
               <span class="far fa-paper-plane"></span>
               Enviar
             </button>
           </div>
         </form>
+        <script src="../../js/EditarUsuario.js"></script>
+
       </div>
     </main>
     <footer>

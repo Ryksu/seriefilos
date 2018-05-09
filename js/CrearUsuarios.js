@@ -1,4 +1,10 @@
 $(document).ready(function(){
+
+  $("#password").click(function(){
+    $("#msg").html("<ul><li>8 o 15 caracteres</li><li>Al menos una minusculas y/o mayuscula, numeros y/o caracteres especiales</li></ul>");
+  })
+
+
   $("#usuario").keyup(function(){
     var getUsuario = $(this).val();
     $.ajax({
@@ -18,6 +24,7 @@ $(document).ready(function(){
   $("#password").keyup(function(){
     ComprobarPass();
   })
+
 
   $("#repeat").keyup(function(){
     ComprobarRepeat();
@@ -70,7 +77,7 @@ function siExiste(data){
     console.log("Ya existe");
     inputUsuario.style.border = "2px solid red";
     document.getElementById("singup").disabled= true;
-    
+
   }
 }
 
