@@ -46,15 +46,14 @@ include '../../Controlador/ObtenerUsuario.php';
     <!-- cabecera-->
     <main class="contenido" id="contenido">
       <div class="formulario">
-        <form class="perfil" method="post">
+        <form class="perfil" id="perfil" method="post">
           <fieldset>
             <legend>Datos del usuario</legend>
-            <div class="foto">
+            <div class="c-foto">
               <img src="<?php echo $resultado[0]['foto'] ?>" id="imagen" alt="<?php echo "imagen de perfil de ". $_SESSION['usuario'] ?>">
               <div id="c-subir" hidden>
                 <label for="subir">Subir foto de perfil</label>
-                <input type="file" name="subir" id="subir" value="">
-              </div>
+                <input type="file" name="foto" id="foto" accept="image/jpeg image/x-png" value="">
             </div>
               <label for="usuario">Usuario</label>
               <input type="text" name="usuario" id="usuario" value="<?php echo $resultado[0]['usuario']?>" disabled>

@@ -33,6 +33,11 @@ class Usuarios extends NewCrud
     return $resultado;
   }
 
+  function setFoto($url,$usuario){
+    return $this->Actulizar("usuarios","Foto = '$url'","usuario = '$usuario'");
+
+  }
+
 }
 
  ?>

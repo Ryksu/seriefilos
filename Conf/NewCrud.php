@@ -24,7 +24,7 @@ class NewCrud extends Database
       $query = "INSERT INTO $tabla($nombre) VALUES ($datos)";
       $this->conectar();
       $sql= $this->conexion->prepare($query);
-      $sql->execute();
+      return $sql->execute();
 
 
   }
@@ -32,14 +32,14 @@ class NewCrud extends Database
     $query = "UPDATE $tabla SET $columnas WHERE $condicion";
     $this->conectar();
     $sql = $this->conexion->prepare($query);
-    $sql->execute();
+    return $sql->execute();
   }
 
   function Eliminar($tablas,$condicion){
     $query = "DELETE FROM $tablas WHERE $condicion";
     $this->conectar();
     $sql= $this->conexion->prepare($query);
-    $sql->execute();
+   return $sql->execute();
   }
 
   function ContadorColumna($columna,$tablas,$condicion =NULL){
