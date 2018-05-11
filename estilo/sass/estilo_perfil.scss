@@ -19,6 +19,19 @@
         display: flex;
         flex-direction: column;
         @include font-title($texto,.9em);
+      div.c-foto{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        img{
+          height: 200px;
+          width: 200px;
+          align-self: center;
+          border-radius: 50%;
+
+        }
+      }
+
         fieldset{
           width: 100%;
           align-self: center;
@@ -105,6 +118,79 @@
       }
 
     }
+    div.c-panel{
+      @include font-title($titulo,1.2em);
+      align-self: center;
+      margin-top: 3em;
+      button{
+        border: 1px solid #d8ded9;
+        padding: 8px 16px;
+        background: #e4e4e4;
+        border-radius: 4px 4px 4px 4px;
+
+        span::before{
+          content: fa-content($fa-var-users);
+        }
+        &:hover{
+          cursor: pointer;
+          background: #ededed;
+        }
+      }
+    }
+    div.disabled{
+      display: none;
+    }
+    div.c-Todo{
+      margin-top: 1em;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      overflow: hidden;
+      @include font-title($texto,.8em);
+      table{
+        width: 100%;
+        border-collapse: collapse;
+        padding: 10px;
+        display: flex;
+        th{
+          background:$back_default;
+          color:$letra;
+          @include font-title($titulo,1.2em);
+          border-collapse: collapse;
+          padding: 10px;
+        }
+        td{
+          text-align: center;
+          border-collapse:collapse;
+          padding: 5px;
+        }
+        tr:nth-child(2n+1){
+          background: #e3e3e3;
+        }
+        tr:nth-child(2n+0){
+          background: #ededed;
+
+        }
+        td.delete{
+          background-color: none;
+          button{
+            border: 1px solid #d8ded9;
+            padding: 8px 16px;
+            background: #e4e4e4;
+            border-radius: 4px 4px 4px 4px;
+
+            span::before{
+              content: fa-content($fa-var-trash-alt);
+            }
+            &:hover{
+              cursor: pointer;
+              background: #ededed;
+            }
+          }
+
+        }
+      }
+    }
   }
 }
 
@@ -129,6 +215,19 @@
         flex-direction: column;
         align-self: center;
         width: 60%;
+        div.c-foto{
+          display: flex;
+          flex-direction: column;
+
+          img{
+            height: 200px;
+            width: 200px;
+            align-self: center;
+            border-radius: 50%;
+            border:1px solid #c0c5c6;
+          }
+
+        }
         @include font-title($texto,.9em);
         fieldset{
           width: 100%;
@@ -214,6 +313,86 @@
         }
       }
     }
+
+
+    div.c-panel{
+      h2{
+        font-family: $titulo;
+      }
+      display: flex;
+      flex-direction: column;
+      align-self: center;
+      margin-top: 3em;
+      button{
+        border: 1px solid #d8ded9;
+        padding: 8px 16px;
+        background: #e4e4e4;
+        border-radius: 4px 4px 4px 4px;
+
+        span::before{
+          content: fa-content($fa-var-users);
+        }
+        &:hover{
+          cursor: pointer;
+          background: #ededed;
+        }
+      }
+    }
+    div.disabled{
+      display: none;
+    }
+    div.c-Todo{
+      margin-top: 1em;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      align-self: center;
+      @include font-title($texto,.8em);
+      table{
+        width: 100%;
+        border-collapse: collapse;
+        padding: 10px;
+        display: flex;
+        th{
+          background:$back_default;
+          color:$letra;
+          @include font-title($titulo,1.2em);
+          border-collapse: collapse;
+          padding: 10px;
+        }
+        td{
+          text-align: center;
+          border-collapse:collapse;
+          padding: 5px;
+        }
+        tr:nth-child(2n+1){
+          background: #e3e3e3;
+        }
+        tr:nth-child(2n+0){
+          background: #ededed;
+
+        }
+        td.delete{
+          background-color: none;
+          button{
+            border: 1px solid #d8ded9;
+            padding: 8px 16px;
+            background: #e4e4e4;
+            border-radius: 4px 4px 4px 4px;
+
+            span::before{
+              content: fa-content($fa-var-trash-alt);
+            }
+            &:hover{
+              cursor: pointer;
+              background: #ededed;
+            }
+          }
+
+        }
+      }
+    }
+
   }
 }
 
@@ -242,6 +421,19 @@
         @include font-title($texto,.9em);
         align-self: center;
         width: 50%;
+        div.c-foto{
+          display: flex;
+          flex-direction: column;
+
+          img{
+            height: 200px;
+            width: 200px;
+            align-self: center;
+            border-radius: 50%;
+            border:1px solid #c0c5c6;
+          }
+
+        }
         fieldset{
           width: 100%;
           align-self: center;
@@ -335,6 +527,85 @@
       }
 
     }
+    div.c-panel{
+      @include font-title($titulo,1.2em);
+      align-self: center;
+      margin-top: 3em;
+      button{
+        border: 1px solid #d8ded9;
+        padding: 8px 16px;
+        background: #e4e4e4;
+        border-radius: 4px 4px 4px 4px;
+
+        span::before{
+          content: fa-content($fa-var-users);
+        }
+        &:hover{
+          cursor: pointer;
+          background: #ededed;
+        }
+      }
+    }
+    div.disabled{
+      display: none;
+    }
+    div.c-Todo{
+      margin-top: 1em;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      align-self: center;
+      @include font-title($texto,.8em);
+      table{
+        width: 100%;
+        border-collapse: collapse;
+        padding: 10px;
+        display: flex;
+        th{
+          background:$back_default;
+          color:$letra;
+          @include font-title($titulo,1.2em);
+          border-collapse: collapse;
+          padding: 10px;
+        }
+        td{
+          text-align: center;
+          border-collapse:collapse;
+          padding: 5px;
+        }
+        tr:nth-child(2n+1){
+          background: #e3e3e3;
+        }
+        tr:nth-child(2n+0){
+          background: #ededed;
+
+        }
+        td.delete{
+          background-color: none;
+          button{
+            border: 1px solid #d8ded9;
+            padding: 8px 16px;
+            background: #e4e4e4;
+            border-radius: 4px 4px 4px 4px;
+
+            span::before{
+              content: fa-content($fa-var-trash-alt);
+            }
+            &:hover{
+              cursor: pointer;
+              background: #ededed;
+            }
+          }
+
+        }
+      }
+    }
+
+
+
+
+
+
   }
 }
 
@@ -366,9 +637,13 @@
         div.c-foto{
           display: flex;
           flex-direction: column;
+
           img{
-            width: 50%;
+            height: 200px;
+            width: 200px;
             align-self: center;
+            border-radius: 50%;
+            border:1px solid #c0c5c6;
           }
 
         }
@@ -456,6 +731,79 @@
         }
       }
 
+    }
+    div.c-panel{
+      @include font-title($titulo,1.2em);
+      align-self: center;
+      margin-top: 3em;
+      button{
+        border: 1px solid #d8ded9;
+        padding: 8px 16px;
+        background: #e4e4e4;
+        border-radius: 4px 4px 4px 4px;
+
+        span::before{
+          content: fa-content($fa-var-users);
+        }
+        &:hover{
+          cursor: pointer;
+          background: #ededed;
+        }
+      }
+    }
+    div.disabled{
+      display: none;
+    }
+    div.c-Todo{
+      margin-top: 1em;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      align-self: center;
+      @include font-title($texto,.8em);
+      table{
+        width: 100%;
+        border-collapse: collapse;
+        padding: 10px;
+        display: flex;
+        th{
+          background:$back_default;
+          color:$letra;
+          @include font-title($titulo,1.2em);
+          border-collapse: collapse;
+          padding: 10px;
+        }
+        td{
+          text-align: center;
+          border-collapse:collapse;
+          padding: 5px;
+        }
+        tr:nth-child(2n+1){
+          background: #e3e3e3;
+        }
+        tr:nth-child(2n+0){
+          background: #ededed;
+
+        }
+        td.delete{
+          background-color: none;
+          button{
+            border: 1px solid #d8ded9;
+            padding: 8px 16px;
+            background: #e4e4e4;
+            border-radius: 4px 4px 4px 4px;
+
+            span::before{
+              content: fa-content($fa-var-trash-alt);
+            }
+            &:hover{
+              cursor: pointer;
+              background: #ededed;
+            }
+          }
+
+        }
+      }
     }
   }
 }

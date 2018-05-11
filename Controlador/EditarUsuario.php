@@ -5,26 +5,33 @@ $usuario = $_SESSION['usuario'];
 $Usuarios = new Usuarios();
 
 if (isset($_FILES['foto'])&&!empty($_FILES['foto'])) {
-if(is_uploaded_file($_FILES['foto']['tmp_name'])&&$_FILES['foto']['size']<=1000000) {
+  if ($_FILES['foto']['size']<=1000000) {
+    var_dump($_FILES);
+  if(is_uploaded_file($_FILES['foto']['tmp_name'])) {
+    var_dump($_FILES);
   $foto = $_FILES['foto']['name'];
   $extension = explode(".",$foto);
   $foto_tipo = $_FILES['foto']['type'];
-    if ($foto_tipo == "image/jpeg" || $poster_tipo == "image/x-png") {
+    if ($foto_tipo == "image/jpeg" || $foto_tipo == "image/png" || $foto_tipo == "image/gif") {
       $hora = date('dmy');
       $alt = rand();
       $image = "$alt".$hora.".".$extension[1];
       $url = "../img/perfiles/".$image;
-      move_uploaded_file($_FILES['foto']['tmp_name'],$url);
+      var_dump(move_uploaded_file($_FILES['foto']['tmp_name'],$url));
 
       $Usuarios->setFoto("../".$url,$usuario);
       echo 0; // La imagen se cargado correctamente
     }
+    else{
+      echo 2; // Lo siento aun no tenemos soporte para esta extension prueba con jpg, png o gif
+    }
   }
   else {
-    echo 1; //  La imagen es muy pesada imagen menos de 1MB
+    echo 1;
   }
-
 }
+}
+
 
 if (isset($_POST['email'])&&!empty($_POST['email'])) {
   $email =$_POST['email'];

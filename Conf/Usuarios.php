@@ -32,6 +32,9 @@ class Usuarios extends NewCrud
     $resultado = $this->Leer("foto,usuario,email,nombre,apellidos,cumple,rol","usuarios",$condicion);
     return $resultado;
   }
+  function obtenerUsusarios(){
+    return $this->Leer("foto,usuario,email,nombre,apellidos,cumple,rol","usuarios","WHERE usuario != 'Admin'");
+  }
 
   function setFoto($url,$usuario){
     return $this->Actulizar("usuarios","Foto = '$url'","usuario = '$usuario'");

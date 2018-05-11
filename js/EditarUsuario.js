@@ -1,6 +1,7 @@
 $(document).ready(function(){
   $("#Editar").click(function(){
     Cargar();
+    var usuario= document.getElementById('usuario').value;
   })
   $("#perfil").submit(function(e){
     e.preventDefault();
@@ -25,10 +26,13 @@ $(document).ready(function(){
         alert("La imagen es muy pesada imagen menos de 1MB");
 
       }
+      if (data === "2") {
+        alert("Lo siento aun no tenemos soporte para esta extension prueba con jpg, png o gif ");
+      }
 
     })
     .always(function(data){
-      if (data != "1") {
+      if (data != "1" || data !="2") {
         location.reload();
       }
     })

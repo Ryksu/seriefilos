@@ -1,6 +1,5 @@
 <?php
 include '../../Controlador/ObtenerUsuario.php';
-
 ?>
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
@@ -53,13 +52,14 @@ include '../../Controlador/ObtenerUsuario.php';
               <img src="<?php echo $resultado[0]['foto'] ?>" id="imagen" alt="<?php echo "imagen de perfil de ". $_SESSION['usuario'] ?>">
               <div id="c-subir" hidden>
                 <label for="subir">Subir foto de perfil</label>
-                <input type="file" name="foto" id="foto" accept="image/jpeg image/x-png" value="">
+                <input type="file" name="foto" id="foto" value="" accept="image/jpeg,image/gif,image/x-png">
             </div>
+          </div>
               <label for="usuario">Usuario</label>
               <input type="text" name="usuario" id="usuario" value="<?php echo $resultado[0]['usuario']?>" disabled>
               <label for="email">Email</label>
               <input type="email" name="email" id="email" value="<?php echo $resultado[0]['email'] ?>" disabled>
-          </fieldset>
+            </fieldset>
           <fieldset>
             <legend>Datos personales</legend>
             <label for="nombre">Nombre</label>
@@ -87,8 +87,44 @@ include '../../Controlador/ObtenerUsuario.php';
           </div>
         </form>
         <script src="../../js/EditarUsuario.js"></script>
-
       </div>
+      <?php if ($resultado[0]['rol']=="1"): ?>
+        <div class="c-panel" id="c-panel">
+          <h2>Adminitrador</h2>
+          <div class="c-mostar">
+            <button type="button" name="mostrar" id="mostrar">
+              <span class="fas fa-users"></span> Todos los Usuarios</button>
+          </div>
+
+        </div>
+        <div  id="c-Todo" class="disabled">
+          <table >
+            <tr>
+              <th>Usuario</th>
+              <th>Email</th>
+              <th>Nombre</th>
+              <th>Apellidos</th>
+              <th>Cumpleaño</th>
+              <th>Borrar</th>
+            </tr>
+            <?php foreach ($todos as $key => $value): ?>
+              <tr>
+                <td><?php echo $value['usuario'] ?></td>
+                <td><?php echo $value['email'] ?></td>
+                <td><?php echo $value['nombre'] ?></td>
+                <td><?php echo $value['apellidos'] ?></td>
+                <td><?php echo $value['cumple']; ?></td>
+                <td class="delete">
+                  <button type="button" name="eliminar">
+                    <span class="fas fa-trash-alt"></span>
+                    </button>
+                </td
+              </tr>
+            <?php endforeach; ?>
+          </table>
+        </div>
+        <script src="../../js/Adminitrador.js"></script>
+      <?php endif; ?>
     </main>
     <footer>
       <div class="redes_sociales">
