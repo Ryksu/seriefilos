@@ -1,5 +1,7 @@
 <?php
 include '../../Controlador/ObtenerUsuario.php';
+include '../../Controlador/ObtenerSeries.php';
+
 ?>
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
@@ -92,12 +94,14 @@ include '../../Controlador/ObtenerUsuario.php';
         <div class="c-panel" id="c-panel">
           <h2>Adminitrador</h2>
           <div class="c-mostar">
-            <button type="button" name="mostrar" id="mostrar">
+            <button type="button" class="Usuarios" name="Usuarios" id="Usuarios">
               <span class="fas fa-users"></span> Todos los Usuarios</button>
+
+            <button type="button" class="Series" name="Series" id="Series"><span class="fas fa-film"></span> Todas las series</button>
           </div>
 
         </div>
-        <div  id="c-Todo" class="disabled">
+        <div  id="c-Usuarios" class="disabled">
           <table>
             <tr>
               <th>Usuario</th>
@@ -115,7 +119,7 @@ include '../../Controlador/ObtenerUsuario.php';
                 <td><?php echo $value['apellidos'] ?></td>
                 <td><?php echo $value['cumple']; ?></td>
                 <td class="delete">
-                  <button type="button" class="eliminar" value="<?php echo $value['usuario'] ?>" name="eliminar">
+                  <button type="button" class="eliminarUsuarios" value="<?php echo $value['usuario'] ?>" name="eliminar">
                     <span class="fas fa-trash-alt"></span>
                     </button>
                 </td>
@@ -123,6 +127,61 @@ include '../../Controlador/ObtenerUsuario.php';
             <?php endforeach; ?>
           </table>
         </div>
+
+        <div id="c-series" class="disabled">
+          <table>
+            <tr>
+              <th>ID</th>
+              <th>Titulo</th>
+              <th>Sinopsis</th>
+              <th>Categoria</th>
+              <th>Años</th>
+              <th>Temporada</th>
+              <th>Estado</th>
+              <th>Trailer</th>
+              <th>Poster</th>
+              <th>Puntuacion</th>
+              <th>Borrar</th>
+              <th>Editar</th>
+            </tr>
+        <?php foreach ($series as $key => $value): ?>
+        <tr>
+          <td><?php echo $value['id'] ?></td>
+          <td><?php echo $value['Titulo'] ?></td>
+          <td><?php echo $texto = ($value['Texto']) ? "Si" : "No";?></td>
+          <td><?php echo $value['Categoria'] ?></td>
+          <td><?php echo $value['Year'] ?></td>
+          <td><?php echo $value['Temporada'] ?></td>
+          <td><?php switch ($value['Estado']) {
+            case 0:
+              echo "En emisión";
+              break;
+
+            case 1:
+            echo "Terminado";
+            break;
+            case 2:
+            echo "Esperando nueva temporada";
+              break;
+          } ?></td>
+          <td><?php echo $trailer = (isset($value['Trailer'])&&!empty($value['Trailer'])) ?  "Si" :  "No" ; ?></td>
+          <td><?php echo $poster = (isset($value['Poster'])&&!empty($value['Poster'])) ? "Si" :  "No" ; ?></td>
+          <td><?php echo $value['Puntuacion']; ?></td>
+
+          <td class="delete">
+            <button type="button" class="eliminarSeries" value="<?php echo $value['id'] ?>" name="eliminar">
+              <span class="fas fa-trash-alt"></span>
+              </button>
+          </td>
+          <td class="edit">
+            <button type="button" class="editarSeries" value="<?php echo $value['id'] ?>" name="editar">
+              <span class="fas fa-trash-alt"></span>
+              </button>
+          </td>
+        </tr>
+        <?php endforeach; ?>
+                </table>
+              </div>
         <script src="../../js/Adminitrador.js"></script>
       <?php endif; ?>
     </main>

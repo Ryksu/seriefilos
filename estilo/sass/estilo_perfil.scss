@@ -122,7 +122,7 @@
       @include font-title($titulo,1.2em);
       align-self: center;
       margin-top: 3em;
-      button{
+      button.Usuarios{
         border: 1px solid #d8ded9;
         padding: 8px 16px;
         background: #e4e4e4;
@@ -130,6 +130,20 @@
 
         span::before{
           content: fa-content($fa-var-users);
+        }
+        &:hover{
+          cursor: pointer;
+          background: #ededed;
+        }
+      }
+      button.Series{
+        border: 1px solid #d8ded9;
+        padding: 8px 16px;
+        background: #e4e4e4;
+        border-radius: 4px 4px 4px 4px;
+
+        span::before{
+          content: fa-content($fa-var-film);
         }
         &:hover{
           cursor: pointer;
@@ -181,6 +195,24 @@
 
             span::before{
               content: fa-content($fa-var-trash-alt);
+            }
+            &:hover{
+              cursor: pointer;
+              background: #ededed;
+            }
+          }
+
+        }
+        td.edit{
+          background-color: none;
+          button{
+            border: 1px solid #d8ded9;
+            padding: 8px 16px;
+            background: #e4e4e4;
+            border-radius: 4px 4px 4px 4px;
+
+            span::before{
+              content: fa-content($fa-var-edit);
             }
             &:hover{
               cursor: pointer;
@@ -323,7 +355,7 @@
       flex-direction: column;
       align-self: center;
       margin-top: 3em;
-      button{
+      button.Usuarios{
         border: 1px solid #d8ded9;
         padding: 8px 16px;
         background: #e4e4e4;
@@ -331,6 +363,20 @@
 
         span::before{
           content: fa-content($fa-var-users);
+        }
+        &:hover{
+          cursor: pointer;
+          background: #ededed;
+        }
+      }
+      button.Series{
+        border: 1px solid #d8ded9;
+        padding: 8px 16px;
+        background: #e4e4e4;
+        border-radius: 4px 4px 4px 4px;
+
+        span::before{
+          content: fa-content($fa-var-film);
         }
         &:hover{
           cursor: pointer;
@@ -382,6 +428,24 @@
 
             span::before{
               content: fa-content($fa-var-trash-alt);
+            }
+            &:hover{
+              cursor: pointer;
+              background: #ededed;
+            }
+          }
+
+        }
+        td.edit{
+          background-color: none;
+          button{
+            border: 1px solid #d8ded9;
+            padding: 8px 16px;
+            background: #e4e4e4;
+            border-radius: 4px 4px 4px 4px;
+
+            span::before{
+              content: fa-content($fa-var-edit);
             }
             &:hover{
               cursor: pointer;
@@ -531,7 +595,7 @@
       @include font-title($titulo,1.2em);
       align-self: center;
       margin-top: 3em;
-      button{
+      button.Usuarios{
         border: 1px solid #d8ded9;
         padding: 8px 16px;
         background: #e4e4e4;
@@ -539,6 +603,20 @@
 
         span::before{
           content: fa-content($fa-var-users);
+        }
+        &:hover{
+          cursor: pointer;
+          background: #ededed;
+        }
+      }
+      button.Series{
+        border: 1px solid #d8ded9;
+        padding: 8px 16px;
+        background: #e4e4e4;
+        border-radius: 4px 4px 4px 4px;
+
+        span::before{
+          content: fa-content($fa-var-film);
         }
         &:hover{
           cursor: pointer;
@@ -590,6 +668,24 @@
 
             span::before{
               content: fa-content($fa-var-trash-alt);
+            }
+            &:hover{
+              cursor: pointer;
+              background: #ededed;
+            }
+          }
+
+        }
+        td.edit{
+          background-color: none;
+          button{
+            border: 1px solid #d8ded9;
+            padding: 8px 16px;
+            background: #e4e4e4;
+            border-radius: 4px 4px 4px 4px;
+
+            span::before{
+              content: fa-content($fa-var-edit);
             }
             &:hover{
               cursor: pointer;
@@ -736,7 +832,7 @@
       @include font-title($titulo,1.2em);
       align-self: center;
       margin-top: 3em;
-      button{
+      button.Usuarios{
         border: 1px solid #d8ded9;
         padding: 8px 16px;
         background: #e4e4e4;
@@ -750,6 +846,21 @@
           background: #ededed;
         }
       }
+      button.Series{
+        border: 1px solid #d8ded9;
+        padding: 8px 16px;
+        background: #e4e4e4;
+        border-radius: 4px 4px 4px 4px;
+
+        span::before{
+          content: fa-content($fa-var-film);
+        }
+        &:hover{
+          cursor: pointer;
+          background: #ededed;
+        }
+      }
+
     }
     div.disabled{
       display: none;
@@ -803,6 +914,25 @@
           }
 
         }
+        td.edit{
+          background-color: none;
+          button{
+            border: 1px solid #d8ded9;
+            padding: 8px 16px;
+            background: #e4e4e4;
+            border-radius: 4px 4px 4px 4px;
+
+            span::before{
+              content: fa-content($fa-var-edit);
+            }
+            &:hover{
+              cursor: pointer;
+              background: #ededed;
+            }
+          }
+
+        }
+
       }
     }
   }
