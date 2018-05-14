@@ -36,6 +36,12 @@ class Usuarios extends NewCrud
     return $this->Leer("foto,usuario,email,nombre,apellidos,cumple,rol","usuarios","WHERE usuario != 'Admin'");
   }
 
+  function borrarUsuario($usuario)
+  {
+    return $this->Eliminar("usuarios","usuario = '$usuario'");
+
+  }
+
   function setFoto($url,$usuario){
     return $this->Actulizar("usuarios","Foto = '$url'","usuario = '$usuario'");
 

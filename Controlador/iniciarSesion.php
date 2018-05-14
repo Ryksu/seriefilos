@@ -3,7 +3,9 @@ session_start();
 require_once '../Conf/Usuarios.php';
 $iniciar = new Usuarios();
 $resultado = $iniciar->iniciarUsuarios($_POST['usuario'],$_POST['password']);
-$_SESSION['usuario'] = $_POST['usuario'];
+if ($resultado) {
+  $_SESSION['usuario'] = $_POST['usuario'];
+}
 if (isset($_POST['recodar'])) {
   setcookie('usuario_cookie',$_POST['usuario'],time()+60*60*60*3600,"/");
 }

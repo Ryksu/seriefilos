@@ -46,7 +46,11 @@
           <fieldset>
             <legend>Iniciar sesión</legend>
             <label for="usuario">Nombre de usuario</label>
-            <input type="text" name="usuario" id="usuario" value="" required>
+            <?php if (isset($_COOKIE['usuario_cookie'])&&!empty($_COOKIE['usuario_cookie'])): ?>
+              <input type="text" name="usuario" id="usuario" value="<?php echo $_COOKIE['usuario_cookie'] ?>" required>
+          <?php else: ?>
+              <input type="text" name="usuario" id="usuario" value="" required>
+            <?php endif; ?>
             <label for="password">Contraseña</label>
             <input type="password" name="password" id="password" value="" required>
           </fieldset>

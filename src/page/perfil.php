@@ -98,7 +98,7 @@ include '../../Controlador/ObtenerUsuario.php';
 
         </div>
         <div  id="c-Todo" class="disabled">
-          <table >
+          <table>
             <tr>
               <th>Usuario</th>
               <th>Email</th>
@@ -115,10 +115,10 @@ include '../../Controlador/ObtenerUsuario.php';
                 <td><?php echo $value['apellidos'] ?></td>
                 <td><?php echo $value['cumple']; ?></td>
                 <td class="delete">
-                  <button type="button" name="eliminar">
+                  <button type="button" class="eliminar" value="<?php echo $value['usuario'] ?>" name="eliminar">
                     <span class="fas fa-trash-alt"></span>
                     </button>
-                </td
+                </td>
               </tr>
             <?php endforeach; ?>
           </table>
