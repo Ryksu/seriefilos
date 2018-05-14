@@ -13,8 +13,9 @@ if (isset($_GET['pg'])){
 $pagina_total = ceil($conexion->contarColumna() / $pub_limite);
 /*obteniendo el catalogos */
 $res = $conexion->getCatalogos($inicio,$pub_limite);
+
 $vacio = false;
-include_once '../../modulos/buscador.php';
+// include_once '../../modulos/buscador.php';
 ?>
  <!DOCTYPE html>
  <html lang="es" dir="ltr">

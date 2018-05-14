@@ -72,7 +72,7 @@
         </form>
       </div>
     </main>
-    <script src="../js/iniciarSesion.js" charset="utf-8"></script>
+    <script src="../js/IniciarSesion.js" charset="utf-8"></script>
     <footer>
       <div class="redes_sociales">
         <ul>

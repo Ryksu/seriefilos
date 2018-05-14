@@ -1,5 +1,5 @@
 <?php
-include 'datos.inc';
+include_once 'Datos.inc';
 /**
  *
  */

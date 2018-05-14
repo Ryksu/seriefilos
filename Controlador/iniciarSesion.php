@@ -7,7 +7,7 @@ if ($resultado) {
   $_SESSION['usuario'] = $_POST['usuario'];
 }
 if (isset($_POST['recodar'])) {
-  setcookie('usuario_cookie',$_POST['usuario'],time()+60*60*60*3600,"/");
+  setcookie('usuario_cookie',$_POST['usuario'],time()+60*60*3600,"/",".ajwebdev.com");
 }
 $resultado = json_encode($resultado);
 header("Content-Type: application/json; charset=UTF-8");

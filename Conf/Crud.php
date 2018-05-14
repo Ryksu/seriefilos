@@ -12,7 +12,7 @@ class Crud extends Database
 
   public function contarColumna()
   {
-    $query = "SELECT Count(id) FROM Serie ";
+    $query = "SELECT Count(id) FROM serie ";
     $this->conectar();
     $n_fila = $this->conexion->prepare($query);
     $n_fila -> execute();
@@ -27,10 +27,10 @@ class Crud extends Database
 
   public function getCatalogos($inicio,$pub_limite)
   {
-    $query = "SELECT id,Poster,Titulo FROM Serie ORDER BY Titulo ASC LIMIT ".$inicio.",".$pub_limite;
+    $query = "SELECT id,Poster,Titulo FROM serie ORDER BY Titulo ASC LIMIT ".$inicio.",".$pub_limite;
     $this->conectar();
-    $sql = $this->conexion -> prepare($query);
-    $sql -> execute();
+    $sql = $this->conexion->prepare($query);
+    $sql->execute();
      return $sql -> fetchAll(PDO::FETCH_ASSOC);
 
   }
@@ -41,10 +41,10 @@ class Crud extends Database
  */
   public function getSerie($id)
   {
-    $query = "SELECT * FROM Serie WHERE id = $id";
+    $query = "SELECT * FROM serie WHERE id = $id";
     $this->conectar();
-    $sql = $this->conexion -> prepare($query);
-    $sql -> execute();
+    $sql = $this->conexion->prepare($query);
+    $sql->execute();
     return $sql -> fetch(PDO::FETCH_ASSOC);
   }
 /**
@@ -59,9 +59,8 @@ class Crud extends Database
   {
     $query = "SELECT id,Poster,Titulo FROM $nomtabla WHERE Titulo LIKE '%{$get}%' OR Year LIKE '{$get}' OR Temporada LIKE '{$get}' OR Categoria LIKE '{$get}' LIMIT ".$inicio.",".$pub_limite;
     $this->conectar();
-
     $sql = $this->conexion->prepare($query);
-    $sql -> execute();
+    $sql >execute();
     return $sql -> fetchAll(PDO::FETCH_ASSOC);
 
   }
@@ -77,7 +76,7 @@ class Crud extends Database
     $this->conectar();
 
     $sql = $this->conexion->prepare($query);
-    $sql-> execute();
+    $sql->execute();
     return $sql->fetchColumn();
   }
 /**
@@ -100,7 +99,7 @@ public function setSerie($nomtabla,$poster,$titulo,$texto,$categoria,$year,$temp
   $this->conectar();
 
   $sql = $this->conexion->prepare($query);
-  $sql-> execute();
+  $sql->execute();
 }
 /**
  * [expYear expression regular para comprobar el año]
