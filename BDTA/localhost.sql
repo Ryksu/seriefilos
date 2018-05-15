@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 08-05-2018 a las 16:09:31
+-- Tiempo de generación: 15-05-2018 a las 11:58:04
 -- Versión del servidor: 10.1.29-MariaDB-6
--- Versión de PHP: 7.2.3-1ubuntu1
+-- Versión de PHP: 7.2.5-0ubuntu0.18.04.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -66,8 +66,7 @@ INSERT INTO `serie` (`id`, `Poster`, `Titulo`, `Texto`, `Categoria`, `Year`, `Te
 (21, '../../img/poster/Modern_Family_S8_Poster-2.jpg', 'Modern Family', 'Aclamada serie -es la sitcom más premiada en los últimos años- que narra el día a día de una gran familias compuesta por Jay Pritchett (Ed O’Neill) y su joven mujer Gloria Delgado (Sofia Vergara), madre de Manny (Rico Rodriguez), y al mismo tiempo muestra la vida de las dos familias compuestas por sus hijos ya adultos: el abogado gay Mitchell (Jesse Tyler Ferguson), casado con Cameron Tucker (Eric Stonestreet) y padres adoptivos de la pequeña Lily, y su hija Claire (Julie Bowen), casada con Phil Dunphy (Ty Burrell) y que son padres de 3 hijos, la pija Haley (Sarah Hyland), la estudiosa Alex (Ariel Winter) y el simple Luke (Nolan Gould)', 'Comedia', 2009, 9, 2, 0, ''),
 (29, '../../img/poster/StrangerThings.jpg', 'Stranger Things', 'Primera temporada: 8 episodios. Homenaje a los clásicos misterios sobrenaturales de los años 80, \"Stranger Things\" es la historia de un niño que desaparece en el pequeño pueblo de Hawkins, Indiana, sin dejar rastro en 1983. En su búsqueda desesperada, tanto sus amigos y familiares como el sheriff local se ven envueltos en un enigma extraordinario: experimentos ultrasecretos, fuerzas paranormales terroríficas y una niña muy, muy rara... ', 'Sobrenaturales', 2016, 2, 2, 0, ''),
 (30, '../../img/poster/Doctorwho.jpg', 'Doctor who ', 'Continuación de la mítica y longeva serie británica que empezó en 1963 y duró hasta 1989. El Doctor es un aventurero que viaja por el tiempo y el espacio visitando desde fantasmas del pasado hasta alienígenas del futuro, desde el día que la Tierra murió en una bola de fuego hsta el fin del universo', 'Ciencia ficción', 2005, 11, 2, 0, ''),
-(32, '../../img/poster/Por_trece_razones.jpg', 'Por trece razones', 'El adolescente Clay Jensen (Dylan Minnette) vuelve un día a casa después del colegio y encuentra una misteriosa caja con su nombre. Dentro descubre una cinta grabada por Hannah Baker (Katherine Langford), una compañera de clase por la que sentía algo especial y que se suicidó tan solo dos semanas atrás. En la cinta, Hannah cuenta que hay trece razones por las que ha decidido quitarse la vida. ¿Será Clay una de ellas? Si lo escucha, tendrá oportunidad de conocer cada motivo de su lista.', 'Drama', 2017, 1, 2, 0, ''),
-(35, '', 'THE FLASH', 'AFADFDFAFD', 'DRAMA', 2014, 4, 0, 0, '');
+(32, '../../img/poster/Por_trece_razones.jpg', 'Por trece razones', 'El adolescente Clay Jensen (Dylan Minnette) vuelve un día a casa después del colegio y encuentra una misteriosa caja con su nombre. Dentro descubre una cinta grabada por Hannah Baker (Katherine Langford), una compañera de clase por la que sentía algo especial y que se suicidó tan solo dos semanas atrás. En la cinta, Hannah cuenta que hay trece razones por las que ha decidido quitarse la vida. ¿Será Clay una de ellas? Si lo escucha, tendrá oportunidad de conocer cada motivo de su lista.', 'Drama', 2017, 1, 2, 0, '');
 
 -- --------------------------------------------------------
 
@@ -91,9 +90,8 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`Foto`, `Usuario`, `Password`, `Email`, `Nombre`, `Apellidos`, `Cumple`, `Rol`) VALUES
-('/img/perfiles/user-default.svg', 'Admin', '$2b$10$iGt4GlAob/ZA8tEPaPswruLOCkLeAQ65S2ENA/5VsZIAwN2SLindy', 'admin@admin.com', NULL, NULL, NULL, 1),
-(NULL, 'Alexis', '$2y$10$ve1dHHexaVeULmMym6KRhOvoE9pUo1crlV0ZQmKFl.4pHTLTmCVyq', 'alesisjesus9@gmail.com', NULL, NULL, NULL, 0),
-(NULL, 'ryksu', '$2y$10$IXZmYZVLGgyNhjxaEnky1.1YxeulnssuEhLiLeF0KVKbaKIFprId2', 'alesisjesus9@gmail.com', NULL, NULL, NULL, 0);
+('../../img/perfiles/450804570140518.gif', 'Admin', '$2b$10$iGt4GlAob/ZA8tEPaPswruLOCkLeAQ65S2ENA/5VsZIAwN2SLindy', 'admin@admin.com', NULL, NULL, NULL, 1),
+('../../img/perfiles/1119425497140518.gif', 'ryksu', '$2y$10$IXZmYZVLGgyNhjxaEnky1.1YxeulnssuEhLiLeF0KVKbaKIFprId2', 'alesisjesus9@gmail.com', 'Alexis', 'Sierra', '1992-08-09', 0);
 
 -- --------------------------------------------------------
 
@@ -103,16 +101,33 @@ INSERT INTO `usuarios` (`Foto`, `Usuario`, `Password`, `Email`, `Nombre`, `Apell
 
 CREATE TABLE `usuarios_series` (
   `id_Usuarios` varchar(8) NOT NULL,
-  `id_Serie` int(11) NOT NULL
+  `id_serie` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Los usuarios  pude publicar una o más series \r\nLas series pude ser publicadas por uno o más usuarios ';
 
 --
 -- Volcado de datos para la tabla `usuarios_series`
 --
 
-INSERT INTO `usuarios_series` (`id_Usuarios`, `id_Serie`) VALUES
-('Admin', 1),
-('Admin', 35);
+INSERT INTO `usuarios_series` (`id_Usuarios`, `id_serie`) VALUES
+('Admin', 2),
+('Admin', 3),
+('Admin', 4),
+('Admin', 5),
+('Admin', 6),
+('Admin', 7),
+('Admin', 8),
+('Admin', 9),
+('Admin', 10),
+('Admin', 11),
+('Admin', 12),
+('Admin', 13),
+('Admin', 14),
+('Admin', 20),
+('Admin', 21),
+('Admin', 29),
+('Admin', 30),
+('Admin', 32),
+('Admin', 1);
 
 --
 -- Índices para tablas volcadas
@@ -134,8 +149,8 @@ ALTER TABLE `usuarios`
 -- Indices de la tabla `usuarios_series`
 --
 ALTER TABLE `usuarios_series`
-  ADD KEY `FK_Usuarios_Series_serie` (`id_Serie`),
-  ADD KEY `FK_Usuarios_Series_usuario` (`id_Usuarios`);
+  ADD KEY `FK_Usuarios_Series_usuario` (`id_Usuarios`),
+  ADD KEY `FK_Usuarios_Series_serie` (`id_serie`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -145,7 +160,7 @@ ALTER TABLE `usuarios_series`
 -- AUTO_INCREMENT de la tabla `serie`
 --
 ALTER TABLE `serie`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- Restricciones para tablas volcadas
@@ -155,7 +170,7 @@ ALTER TABLE `serie`
 -- Filtros para la tabla `usuarios_series`
 --
 ALTER TABLE `usuarios_series`
-  ADD CONSTRAINT `FK_Usuarios_Series_serie` FOREIGN KEY (`id_Serie`) REFERENCES `serie` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `FK_Usuarios_Series_serie` FOREIGN KEY (`id_serie`) REFERENCES `serie` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `FK_Usuarios_Series_usuario` FOREIGN KEY (`id_Usuarios`) REFERENCES `usuarios` (`Usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
