@@ -70,7 +70,7 @@
 
 
           }
-          input[type="text"],input[type="password"],input[type='email']{
+          input{
             border: 1px solid #c0c5c6;
             padding: 6px 8px;
             border-radius: 8px 8px 8px 8px;
@@ -276,5 +276,286 @@
 
     }
   }
+
+}
+
+@media screen and (min-width:$web_table) and (max-width:$web_full) {
+  main.contenido{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 16px 10px;
+
+    h1{
+      text-align: center;
+      font-family: $titulo;
+    }
+    div.formulario{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      form.Agregar{
+        display: flex;
+        flex-direction: column;
+        @include font-title($texto,.9em);
+        align-self: center;
+        width: 50%;
+        fieldset{
+          width: 100%;
+          align-self: center;
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 10px;
+          border: none;
+        legend{
+          @include font-title($titulo,2em);
+        }
+          div.serie{
+            margin-top: 1em;
+            display: flex;
+            flex-direction: column;
+            div.year_temporada{
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+              padding: 10px 16px;
+              label{
+                align-self: center;
+              }
+              input{
+                width: 20%;
+              }
+
+            }
+
+          }
+          div.consulta{
+            display: flex;
+            flex-direction: column;
+            padding: 10px 16px;
+
+          }
+          textarea{
+            max-width: 100%;
+            height: 200px;
+            font-family: $texto;
+            font-size: 1em;
+            border-radius: 8px 8px 8px 8px;
+            border: 1px solid #c0c5c6;
+            resize: none;
+            padding: 1em;
+
+
+
+
+          }
+          input{
+            border: 1px solid #c0c5c6;
+            padding: 6px 8px;
+            border-radius: 8px 8px 8px 8px;
+            width: 100%
+          }
+          input[type=number]{
+            border: 1px solid #c0c5c6;
+            padding: 6px 8px;
+            border-radius: 8px 8px 8px 8px;
+            -moz-appearance: textfield;
+            text-align: center;
+            background: #f8f7f7;
+            &:invalid{
+              border:2px solid $error;
+              color: $hover;
+            }
+          }
+          /* chrome y opera */
+          input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{
+            -webkit-appearance:none;
+            margin: 0;
+          }
+          select{
+            border: 1px solid #c0c5c6;
+            padding: 6px 8px;
+            width: 100%
+          }
+        }
+        div.c-enviar{
+          display: inline-flex;
+          justify-content: space-around;
+
+          button[type=reset]{
+            border: 1px solid #d8ded9;
+            padding: 8px 6px;
+            background: #e4e4e4;
+            border-radius: 4px 4px 4px 4px;
+
+            span::before{
+              content: fa-content($fa-var-redo-alt);
+            }
+            &:hover{
+              cursor: pointer;
+              background: #ededed;
+            }
+          }
+          button[type=submit]{
+            border: 1px solid #d8ded9;
+            padding: 8px 6px;
+            background: #e4e4e4;
+            border-radius: 4px 4px 4px 4px;
+
+            span::before{
+              content: fa-content($fa-var-paper-plane);
+            }
+            &:hover{
+              cursor: pointer;
+              background: #ededed;
+            }
+          }
+        }
+      }
+
+    }
+  }
+
+}
+
+@media screen and (min-width:$web_full){
+  main.contenido{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 16px 10px;
+
+    h1{
+      text-align: center;
+      font-family: $titulo;
+    }
+    div.formulario{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      form.Agregar{
+        display: flex;
+        flex-direction: column;
+        @include font-title($texto,.9em);
+        align-self: center;
+        width: 30%;
+        fieldset{
+          width: 100%;
+          align-self: center;
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 10px;
+          border: none;
+        legend{
+          @include font-title($titulo,2em);
+        }
+          div.serie{
+            margin-top: 1em;
+            display: flex;
+            flex-direction: column;
+            div.year_temporada{
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+              padding: 10px 16px;
+              label{
+                align-self: center;
+              }
+              input{
+                width: 20%;
+              }
+
+            }
+
+          }
+          div.consulta{
+            display: flex;
+            flex-direction: column;
+            padding: 10px 16px;
+
+          }
+          textarea{
+            max-width: 100%;
+            height: 200px;
+            font-family: $texto;
+            font-size: 1em;
+            border-radius: 8px 8px 8px 8px;
+            border: 1px solid #c0c5c6;
+            resize: none;
+            padding: 1em;
+
+
+
+
+          }
+          input{
+            border: 1px solid #c0c5c6;
+            padding: 6px 8px;
+            border-radius: 8px 8px 8px 8px;
+            width: 100%
+          }
+          input[type=number]{
+            border: 1px solid #c0c5c6;
+            padding: 6px 8px;
+            border-radius: 8px 8px 8px 8px;
+            -moz-appearance: textfield;
+            text-align: center;
+            background: #f8f7f7;
+            &:invalid{
+              border:2px solid $error;
+              color: $hover;
+            }
+          }
+          /* chrome y opera */
+          input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{
+            -webkit-appearance:none;
+            margin: 0;
+          }
+          select{
+            border: 1px solid #c0c5c6;
+            padding: 6px 8px;
+            width: 100%
+          }
+        }
+        div.c-enviar{
+          display: inline-flex;
+          justify-content: space-around;
+
+          button[type=reset]{
+            border: 1px solid #d8ded9;
+            padding: 8px 6px;
+            background: #e4e4e4;
+            border-radius: 4px 4px 4px 4px;
+
+            span::before{
+              content: fa-content($fa-var-redo-alt);
+            }
+            &:hover{
+              cursor: pointer;
+              background: #ededed;
+            }
+          }
+          button[type=submit]{
+            border: 1px solid #d8ded9;
+            padding: 8px 6px;
+            background: #e4e4e4;
+            border-radius: 4px 4px 4px 4px;
+
+            span::before{
+              content: fa-content($fa-var-paper-plane);
+            }
+            &:hover{
+              cursor: pointer;
+              background: #ededed;
+            }
+          }
+        }
+      }
+
+    }
+  }
+
 
 }

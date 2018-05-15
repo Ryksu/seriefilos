@@ -65,6 +65,8 @@ include_once '../../modulos/buscador.php';
          </nav><!-- menu -->
        </header>
        <main class="contenido" id="contenido">
+         <div class="c-catalogo">
+
 <?php if ($vacio): ?>
   <div class="consulta">
     <h1>Lo siento :(</h1>
@@ -89,6 +91,8 @@ include_once '../../modulos/buscador.php';
       </a>
     <?php endforeach; ?>
   </div><!--fin categologos-->
+</div>
+
 <?php endif; ?>
          <div class="c-buscador">
            <form class="form_search" method="get" >

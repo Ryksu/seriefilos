@@ -77,6 +77,7 @@
             </select>
           <label for="Estado">Estado</label>
             <select name="Estado" id="Estado">
+            </select>
           <label for="Texto">Sinopsis</label>
             <textarea name="Texto" id="Texto"></textarea>
           </div>
