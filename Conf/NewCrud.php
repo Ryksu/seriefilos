@@ -42,12 +42,12 @@ class NewCrud extends Database
    return $sql->execute();
   }
 
-  function ContadorColumna($columna,$tablas,$condicion =NULL){
-    $query = "SELECT Count('".$columna."') FROM $tablas "." $condicion";
+  function ContadorFila($columna,$tablas,$condicion =NULL){
+    $query = "SELECT $columna FROM $tablas "." $condicion";
     $this->conectar();
     $n_fila = $this->conexion->prepare($query);
     $n_fila -> execute();
-    return  $n_fila -> fetchColumn();
+    return  $n_fila ->rowCount();
   }
 }
 
