@@ -47,7 +47,7 @@ $vacio = false;
                <?php if (isset($_SESSION['usuario'])&&!empty($_SESSION['usuario'])): ?>
                  <a href="perfil.php"><?php echo $_SESSION['usuario'] ?></a>
                  <div class="s-menu-contenido">
-                <a href="add.php">Añadir serie</a>
+                <a href="agregar.php">Añadir serie</a>
                 <a href="logout.php">Cerrar sesión</a>
                <?php else: ?>
                  <a href="../login.php">Iniciar sesión</a>

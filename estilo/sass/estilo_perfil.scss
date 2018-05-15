@@ -246,7 +246,7 @@
         display: flex;
         flex-direction: column;
         align-self: center;
-        width: 60%;
+        width: 70%;
         div.c-foto{
           display: flex;
           flex-direction: column;
@@ -273,7 +273,7 @@
           @include font-title($titulo,2em);
 
           }
-          input[type="text"],input[type="password"],input[type='email'],input[type='date']{
+          input{
             border: 1px solid #c0c5c6;
             padding: 6px 8px;
             border-radius: 8px 8px 8px 8px;
