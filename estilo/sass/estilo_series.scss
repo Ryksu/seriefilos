@@ -3,9 +3,10 @@
 @media  screen  and (max-width:$web_mobile_medium) {
   main.contenido{
     div.c-serie{
-      padding: 1em;
+      margin: 1em 0;
       display: flex;
       flex-direction: column;
+      padding: 0 1em;
       div.trailer{
         display: flex;
         justify-content: center;
@@ -83,7 +84,7 @@
 @media  screen  and (min-width:481px) and (max-width:775px )  {
   main.contenido{
     div.c-serie{
-      padding: 1em;
+      margin: 1em 0;
       display: flex;
       flex-direction: column;
       div.trailer{
@@ -123,6 +124,8 @@
       article.serie{
         display: flex;
         flex-direction: column;
+        align-self: center;
+        width: 70%;
         padding: 10px 16px;
         background: #ebedee;
         border-radius: 4px 4px 4px 4px;
@@ -171,9 +174,10 @@
 @media screen and (min-width:776px ) and (max-width:1024px) {
   main.contenido{
     div.c-serie{
-      padding: 1em;
+      margin: 1em 0;
       display: flex;
       flex-direction: column;
+      justify-content: center;
       div.trailer{
         display: flex;
         justify-content: center;
@@ -211,6 +215,8 @@
       article.serie{
         display: flex;
         flex-direction: column;
+        align-self: center;
+        width: 50%;
         padding: 10px 16px;
         background: #ebedee;
         border-radius: 4px 4px 4px 4px;
@@ -259,13 +265,13 @@
 }
 
 /* web_full */
-@media screen and (min-width:$web_full) {
+@media screen and (min-width:1025px) {
   main.contenido{
     div.c-serie{
       padding: 1em;
       display: flex;
       flex-direction: column;
-      width: 100%;
+      width: 80%;
       iframe{
         align-self: center;
       }
@@ -299,11 +305,11 @@
       article.serie{
         display: flex;
         flex-direction: column;
-        max-width: 50%;
-        align-self: center;
         padding: 10px 16px;
+        align-self: center;
+        width: 50%;
         background: #ebedee;
-        border-radius: 4px 4px 4px 4px;
+        border-radius: 8px 8px 8px 8px;
         div.trailer{
           display: flex;
           justify-content: center;

@@ -3,7 +3,7 @@
 require_once '../../Conf/Crud.php';
 $conexion = new Crud();
 # preparando Paginacion
-$pub_limite = 6;
+$pub_limite = 8;
 $inicio = 0;
 $pagina  = 1;
 if (isset($_GET['pg'])){

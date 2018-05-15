@@ -18,9 +18,9 @@ class Series extends NewCrud
 
 
 
-  function ObtenerSeries(){
+  function ObtenerSeries($inicio,$limite){
 
-    return $this->Leer("serie.*,usuarios_series.id_Usuarios","serie","RIGHT JOIN usuarios_series  ON serie.id = usuarios_series.id_serie ORDER BY serie.id  LIMIT 0,10");
+    return $this->Leer("serie.*,usuarios_series.id_Usuarios","serie","RIGHT JOIN usuarios_series  ON serie.id = usuarios_series.id_serie ORDER BY serie.id  LIMIT $inicio,$limite");
 
   }
 
