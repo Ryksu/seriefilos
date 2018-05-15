@@ -140,6 +140,7 @@ include '../../Controlador/ObtenerSeries.php';
               <th>Estado</th>
               <th>Trailer</th>
               <th>Poster</th>
+              <th>Publicado por</th>
               <th>Puntuacion</th>
               <th>Borrar</th>
               <th>Editar</th>
@@ -166,6 +167,7 @@ include '../../Controlador/ObtenerSeries.php';
           } ?></td>
           <td><?php echo $trailer = (isset($value['Trailer'])&&!empty($value['Trailer'])) ?  "Si" :  "No" ; ?></td>
           <td><?php echo $poster = (isset($value['Poster'])&&!empty($value['Poster'])) ? "Si" :  "No" ; ?></td>
+          <td> <?php echo $value['id_Usuarios'] ?></td>
           <td><?php echo $value['Puntuacion']; ?></td>
 
           <td class="delete">
