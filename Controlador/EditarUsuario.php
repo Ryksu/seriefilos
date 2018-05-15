@@ -5,7 +5,7 @@ $usuario = $_SESSION['usuario'];
 $Usuarios = new Usuarios();
 
 if (isset($_FILES['foto'])&&!empty($_FILES['foto'])) {
-  if ($_FILES['foto']['size']<=1000000) {
+  if ($_FILES['foto']['size']<=2000000) {
     var_dump($_FILES);
   if(is_uploaded_file($_FILES['foto']['tmp_name'])) {
     var_dump($_FILES);
