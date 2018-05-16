@@ -37,7 +37,7 @@
             font-size: 1.2em;
             text-decoration: none;
             display: block;
-            padding: .9em 1em;
+            padding: 14px 16px;
         }
         li{
           float: left;
@@ -338,13 +338,12 @@
         overflow: hidden;
         li.t-logo{
           animation: Titulo .3s  ease-in;
-
-            color: $letra;
-            font-family: $titulo;
-            font-size: 1.2em;
-            text-decoration: none;
-            display: block;
-
+          color: $letra;
+          font-family: $titulo;
+          font-size: 1.2em;
+          text-decoration: none;
+          display: block;
+          padding: 14px 16px;
 
         }
         li{
@@ -614,7 +613,7 @@
   }
 }
 /* table_web */
-@media screen and (min-width:$web_table) and (max-width:1023px) {
+@media screen and (min-width:$web_table) and (max-width:1024px) {
   div.container{
     display: grid;
   grid-template-columns: auto;
@@ -641,14 +640,12 @@
       overflow: hidden;
       li.t-logo{
         animation: Titulo .3s  ease-in;
-
+        padding: 14px 16px;
           color: $letra;
           font-family: $titulo;
           font-size: 1.2em;
           text-decoration: none;
           display: block;
-
-
       }
       li{
         float: left;
@@ -956,7 +953,7 @@ footer{
             z-index: 1;
             position: absolute;
             top: 50px;
-            left: 350px;
+            left: 385px;
             background: $back_default;
             box-shadow: 5px 5px 10px #7e7e7e
           }
