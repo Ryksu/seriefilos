@@ -8,11 +8,11 @@
   <meta charset="utf-8">
   <title>Seriefilos: Iniciar sesión</title>
   <link rel="icon" href="../img/favicon.png" type="image/x-png">
-  <link rel="stylesheet" href="../estilo/css/estilo_contacto.css">
-  <link rel="stylesheet" href="../estilo/css/estilo_login.css">
-  <link rel="stylesheet" href="../estilo/css/fontawesome.css">
-  <script src="../lib/jquery/jquery-3.3.1.min.js"></script>
-  <script src="../js/buscador.js"></script>
+  <link rel="stylesheet" href="../../estilo/css/estilo_contacto.css">
+  <link rel="stylesheet" href="../../estilo/css/estilo_signup.css">
+  <link rel="stylesheet" href="../../estilo/css/fontawesome.css">
+  <script src="../../lib/jquery/jquery-3.3.1.min.js"></script>
+  <script src="../../js/buscador.js"></script>
 
 </head>
 
@@ -22,12 +22,13 @@
       <nav class="menu">
         <ul>
           <li class="t-logo">
-            Seriefilos
+            <a href="../../index.php">Seriefilos</a>
           </li>
           <!--t-logo-->
-          <li><a href="../index.php">inicio</a></li>
-          <li><a href="page/catalogos.php">Catálogo</a></li>
-          <li><a href="page/contacto.php">Contactos</a></li>
+          <li><a href="catalogos.php">Catálogo</a></li>
+          <li><a href="contacto.php">Contactos</a></li>
+          <li><a href="../login.php">Iniciar sesión</a></li>
+
         </ul>
         <div class="c-buscador">
           <form class="b-buscador" id="form_search" method="get" action="catalogos.php">
@@ -42,38 +43,34 @@
     </header>
     <!-- cabecera-->
     <main class="contenido" id="contenido">
-      <div class="formulario">
-        <form class="Usuario" id="Login" method="post" enctype="multipart/form-data">
+      <div class="c-registrar">
+        <form id="Registrate" class="registro" method="post">
           <fieldset>
-            <legend>Iniciar sesión</legend>
+            <legend>¡Registrate!</legend>
             <label for="usuario">Nombre de usuario</label>
-            <?php if (isset($_COOKIE['usuario_cookie'])&&!empty($_COOKIE['usuario_cookie'])): ?>
-              <input type="text" name="usuario" id="usuario" value="<?php echo $_COOKIE['usuario_cookie'] ?>" required>
-          <?php else: ?>
-              <input type="text" name="usuario" id="usuario" value="" required>
-            <?php endif; ?>
+            <input type="text" name="usuario" value="" id="usuario" pattern="[a-zA-z-0-9]{4,8}" required>
             <label for="password">Contraseña</label>
-            <input type="password" name="password" id="password" value="" required>
+            <input type="password" name="password" value="" id=password pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&#.$($)$-$_])[A-Za-z\d$@$!%*?&#.$($)$-$_]{8,15}$" required>
+            <label for="repeat">Repetir Contraseña</label>
+            <input type="password" name="repeat" value="" id="repeat" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&#.$($)$-$_])[A-Za-z\d$@$!%*?&#.$($)$-$_]{8,15}$" required>
+            <label for="email">Email</label>
+            <input type="email" name="email" value="" id="email" required>
           </fieldset>
-          <div class="c-recordar">
-            <input type="checkbox" id="recodar" name="recodar" value="1">
-            <label for="recodar">Recodar sesión</label>
-          </div>
-            <div id="msg"></div>
+          <div id="msg" class="msg"></div>
           <div class="c-enviar">
             <button type="reset" name="Deshacer">
               <span class="fas fa-redo-alt"></span>
               Deshacer
             </button>
-            <button type="submit" name="Enviar" id="Enviar">
+            <button type="submit" name="singup" id="singup">
               <span class="far fa-paper-plane"></span>
-              Iniciar
+              Registarse
             </button>
           </div>
         </form>
       </div>
     </main>
-    <script src="../js/IniciarSesion.js" charset="utf-8"></script>
+    <script src="../../js/CrearUsuarios.js" charset="utf-8"></script>
     <footer>
       <div class="redes_sociales">
         <ul>

@@ -8,7 +8,7 @@ $(document).ready(function(){
   $("#usuario").keyup(function(){
     var getUsuario = $(this).val();
     $.ajax({
-      url:"Controlador/ComprobarUsuario.php",
+      url:"../../Controlador/ComprobarUsuario.php",
       data:{usuario:getUsuario},
       type:"POST"
     })

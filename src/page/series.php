@@ -48,9 +48,10 @@ $url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_
          <nav class="menu">
            <ul>
              <li class="t-logo">
-               <a href="../../index.php#t-logo">Seriefilos</a>
+              Seriefilos
              </li>
              <!--t-logo-->
+             <li> <a href="../../index.php#t-logo">Inicio</a></li>
              <li><a href="catalogos.php">Catálogo</a></li>
              <li><a href="contacto.php">Contactos</a></li>
              <li class="s-menu">
@@ -62,10 +63,11 @@ $url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_
                <?php else: ?>
                  <a href="../login.php">Iniciar sesión</a>
                  <div class="s-menu-contenido">
-                   <a href="../../index.html#Registrate">Registrate</a>
+                   <a href="signup.php">Registrate</a>
                <?php endif; ?>
              </div>
-           </ul>
+           </li>
+          </ul>
            <div class="hamburger-menu">
              <button class="hamburger" type="button" name="button">
                <span class="fas fa-bars"></span>

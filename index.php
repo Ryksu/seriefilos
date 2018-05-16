@@ -19,8 +19,7 @@
     <header class="cabecera">
       <nav class="menu">
         <ul>
-          <li><a href="#t-logo">Inicio</a>
-          </li>
+          <li class="t-logo">Inicio</li>
           <li><a href="src/page/catalogos.php">Catálogo</a></li>
           <li><a href="src/page/contacto.php">Contactos</a></li>
           <li class="s-menu">
@@ -31,7 +30,7 @@
             <?php else: ?>
               <a href="src/login.php">Iniciar sesión</a>
               <div class="s-menu-contenido">
-                <a href="#Registrate">Registrate</a>
+                <a href="src/page/signup.php#Registrate">Registrate</a>
             <?php endif; ?>
             </div>
           </li>
@@ -68,32 +67,6 @@
         </div>
       </div>
 
-      <div class="c-registrar">
-        <form id="Registrate" class="registro" method="post">
-          <fieldset>
-            <legend>¡Registrate!</legend>
-            <label for="usuario">Nombre de usuario</label>
-            <input type="text" name="usuario" value="" id="usuario" pattern="[a-zA-z-0-9]{4,8}" required>
-            <label for="password">Contraseña</label>
-            <input type="password" name="password" value="" id=password pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&#.$($)$-$_])[A-Za-z\d$@$!%*?&#.$($)$-$_]{8,15}$" required>
-            <label for="repeat">Repetir Contraseña</label>
-            <input type="password" name="repeat" value="" id="repeat" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&#.$($)$-$_])[A-Za-z\d$@$!%*?&#.$($)$-$_]{8,15}$" required>
-            <label for="email">Email</label>
-            <input type="email" name="email" value="" id="email" required>
-          </fieldset>
-          <div id="msg" class="msg"></div>
-          <div class="c-enviar">
-            <button type="reset" name="Deshacer">
-              <span class="fas fa-redo-alt"></span>
-              Deshacer
-            </button>
-            <button type="submit" name="singup" id="singup">
-              <span class="far fa-paper-plane"></span>
-              Registarse
-            </button>
-          </div>
-        </form>
-      </div>
     </main>
     <!-- fin contenido-->
     <script src="js/CrearUsuarios.js" charset="utf-8"></script>

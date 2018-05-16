@@ -23,19 +23,20 @@
       <nav class="menu">
         <ul>
           <li class="t-logo">
-            <a href="../../index.php">Seriefilos</a>
+            Seriefilos
           </li>
+          <li><a href="../../index.php">Inicio</a></li>
           <li><a href="catalogos.php">Catálogo</a></li>
           <li><a href="#contenido">Contactos</a></li>
           <li class="s-menu">
             <?php if (isset($_SESSION['usuario'])&&!empty($_SESSION['usuario'])): ?>
               <a href="perfil.php"><?php echo $_SESSION['usuario'] ?></a>
               <div class="s-menu-contenido">
-             <a href="../../index.html#Registrate">Cerrar sesión</a>
+             <a href="logout.php">Cerrar sesión</a>
             <?php else: ?>
               <a href="../login.php">Iniciar sesión</a>
               <div class="s-menu-contenido">
-                <a href="../../index.html#Registrate">Registrate</a>
+                <a href="signup.php#Registrate">Registrate</a>
             <?php endif; ?>
             </div>
           </li>

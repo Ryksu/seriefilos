@@ -32,14 +32,12 @@
         overflow: hidden;
         li.t-logo{
           animation: Titulo .3s  ease-in;
-          a{
             color: $letra;
             font-family: $titulo;
             font-size: 1.2em;
             text-decoration: none;
             display: block;
             padding: .9em 1em;
-          }
         }
         li{
           float: left;
@@ -340,13 +338,13 @@
         overflow: hidden;
         li.t-logo{
           animation: Titulo .3s  ease-in;
-          a{
+
             color: $letra;
             font-family: $titulo;
             font-size: 1.2em;
             text-decoration: none;
             display: block;
-          }
+
 
         }
         li{
@@ -643,13 +641,13 @@
       overflow: hidden;
       li.t-logo{
         animation: Titulo .3s  ease-in;
-        a{
+
           color: $letra;
           font-family: $titulo;
           font-size: 1.2em;
           text-decoration: none;
           display: block;
-        }
+
 
       }
       li{
@@ -936,14 +934,13 @@ footer{
       overflow: hidden;
       li.t-logo{
         align-self: center;
-        a{
+
           color: $letra;
           font-family: $titulo;
           font-size: 1.2em;
           text-decoration: none;
           display: block;
           padding: 14px 16px;
-        }
         animation: Titulo .3s  ease-in;
 
       }

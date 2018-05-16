@@ -25,7 +25,7 @@
       background: $back_default
       @include font-title($texto,.9em)
       justify-content: space-between
-      ul:hover
+      ul:active,ul:hover
         overflow: none
         z-index: 1
       ul
@@ -35,9 +35,17 @@
         display: flex
         flex-direction: column
         flex-wrap: nowrap
+        li.t-logo
+          display: block
+          text-decoration: none
+          padding: .9em 1em
+          color: #fef9f0
+
         li
           float: left
+          display: block
           background: $back_default
+
           a
             display: block
             text-decoration: none
@@ -99,7 +107,7 @@
   main.contenido
     display: grid
     grid-template-columns: auto
-    grid-template-rows: repeat(3,1fr)
+    grid-template-rows: repeat(2,1fr)
 
     div.t-logo
       background: url("../../img/background/background.svg"), url("../../img/background/background.png")  no-repeat
@@ -156,64 +164,7 @@
         display: flex
         max-width: 20%
 
-    div.c-registrar
-      padding: .9em 1em
-      display: flex
-      flex-direction: column
-      justify-content: center
-      background: linear-gradient(0deg,#ffff,#66c2c0,#429bbc,#2e76b2)
-      color: $letra
-      form.registro
-        display: flex
-        flex-direction: column
-        align-self: center
-        width: 75%
-        @include font-title($texto,1em)
-        fieldset
-          width: 100%
-          align-self: center
-          display: flex
-          flex-direction: column
-          border: none
-          margin-bottom: 10px
-          border-radius: 8px 8px 8px 8px
-        legend
-          align-self: center
-          font-size: 2em
-          font-family: $titulo
-        input[type="text"],input[type="email"],input[type="password"]
-          border: 1px solid #c0c5c6
-          padding: 6px 8px
-          border-radius: 8px 8px 8px 8px
-          width: 100%
-          margin-bottom: 1em
-        div.msg
-          @include font-title($texto,.9em)
-          color: $hover
-          align-self: center
-        div.c-enviar
-          display: inline-flex
-          justify-content: space-around
-          button[type="reset"]
-            border: 1px solid #d8ded9
-            padding: 8px 6px
-            background: #e4e4e4
-            border-radius: 4px 4px 4px 4px
-            span::before
-              content: fa-content($fa-var-redo-alt)
-            &:hover
-              cursor: pointer
-              background: #ededed
-          button[type=submit]
-            border: 1px solid #d8ded9
-            padding: 8px 6px
-            background: #e4e4e4
-            border-radius: 4px 4px 4px 4px
-            span::before
-              content: fa-content($fa-var-paper-plane)
-            &:hover
-              cursor: pointer
-              background: #ededed
+
 
   footer
     display: flex
@@ -289,6 +240,11 @@
         display: flex
         flex-direction: column
         flex-wrap: nowrap
+        li.t-logo
+          display: block
+          text-decoration: none
+          padding: .9em 1em
+          color: #fef9f0
 
         li
           background: $back_default
@@ -347,7 +303,7 @@
   main.contenido
     display: grid
     grid-template-columns: auto
-    grid-template-rows: repeat(3,1fr)
+    grid-template-rows: repeat(2,1fr)
 
     div.t-logo
       background: url("../../img/background/background.svg"), url("../../img/background/background.png")  no-repeat
@@ -534,6 +490,11 @@
         padding: 0
         list-style-type: none
         overflow: hidden
+        li.t-logo
+          display: block
+          text-decoration: none
+          padding: .9em 1em
+          color: #fef9f0
         li.s-menu
           display: flex
           flex-direction: column
@@ -606,7 +567,7 @@
 
   main.contenido
     display: grid
-    grid-template-rows: repeat(3,1fr)
+    grid-template-rows: repeat(2,1fr)
 
     div.t-logo
         background: url("../../img/background/background.svg"), url("../../img/background/background.png")  no-repeat

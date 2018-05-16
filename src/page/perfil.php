@@ -25,9 +25,10 @@ include '../../Controlador/ObtenerSeries.php';
       <nav class="menu">
         <ul>
           <li class="t-logo">
-            <a href="../../index.php">Seriefilos</a>
+            Seriefilos
           </li>
           <!--t-logo-->
+          <li><a href="../../index.php">Inicio</a></li>
           <li><a href="catalogos.php">Catálogo</a></li>
           <li><a href="contacto.php">Contactos</a></li>
 
