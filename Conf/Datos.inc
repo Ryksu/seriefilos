@@ -7,5 +7,4 @@ define('PASSWORD','Farolito92');
 define('BASEDATA','ajwedevckqmoucho');
 
 
-
  ?>

@@ -119,14 +119,24 @@
 
     }
     div.c-panel{
-      @include font-title($titulo,1.2em);
-      align-self: center;
-      margin-top: 3em;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      h2{
+        @include font-title($titulo,2em);
+        align-self: center;
+        margin-top: 3em;
+      }
+      div.c-mostrar{
+        display: flex;
+        justify-content: center;
+      }
       button.Usuarios{
         border: 1px solid #d8ded9;
         padding: 8px 16px;
         background: #e4e4e4;
         border-radius: 4px 4px 4px 4px;
+        margin-right: .8em;
 
         span::before{
           content: fa-content($fa-var-users);
@@ -150,7 +160,7 @@
           background: #ededed;
         }
       }
-    }
+
     div.disabled{
       display: none;
     }
@@ -222,8 +232,38 @@
 
         }
       }
+      div.paginacion{
+        display: flex;
+        justify-content: center;
+        padding: 14px 16px;
+        p{
+          padding: 14px 14px;
+          margin: 0;
+          display: block;
+          font-size: 1.2em;
+          font-family: $texto;
+          color: $letra;
+          background: $hover;
+          border-radius: 4px 4px 4px 4px;
+        }
+        a{
+          padding: 14px 14px;
+          display: block;
+          text-decoration: none;
+          font-size: 1.2em;
+          font-family: $texto;
+          background: #e4e4e4;
+          border:1px solid  #d8ded9;
+          color: $enlaces;
+          &:hover{
+            cursor: pointer;
+            background: #ededed;
+          }
+        }
+      }
     }
   }
+}
 }
 
 /* media movil medium */
@@ -349,17 +389,23 @@
 
     div.c-panel{
       h2{
-        font-family: $titulo;
+        align-self: center;
+        @include font-title($titulo,2em);
       }
       display: flex;
       flex-direction: column;
       align-self: center;
       margin-top: 3em;
+      div.c-mostrar{
+        display: flex;
+        justify-content: center;
+      }
       button.Usuarios{
         border: 1px solid #d8ded9;
         padding: 8px 16px;
         background: #e4e4e4;
         border-radius: 4px 4px 4px 4px;
+        margin-right: 1em;
 
         span::before{
           content: fa-content($fa-var-users);
@@ -383,7 +429,6 @@
           background: #ededed;
         }
       }
-    }
     div.disabled{
       display: none;
     }
@@ -456,6 +501,37 @@
         }
       }
     }
+    div.paginacion{
+      display: flex;
+      justify-content: center;
+      padding: 14px 16px;
+      p{
+        padding: 14px 14px;
+        margin: 0;
+        display: block;
+        font-size: 1.2em;
+        font-family: $texto;
+        color: $letra;
+        background: $hover;
+        border-radius: 4px 4px 4px 4px;
+      }
+      a{
+        padding: 14px 14px;
+        display: block;
+        text-decoration: none;
+        font-size: 1.2em;
+        font-family: $texto;
+        background: #e4e4e4;
+        border:1px solid  #d8ded9;
+        color: $enlaces;
+        &:hover{
+          cursor: pointer;
+          background: #ededed;
+        }
+      }
+
+    }
+  }
 
   }
 }
@@ -592,14 +668,24 @@
 
     }
     div.c-panel{
-      @include font-title($titulo,1.2em);
-      align-self: center;
-      margin-top: 3em;
+      display: flex;
+      flex-direction: column;
+
+      h2{
+        @include font-title($titulo,2em);
+        align-self: center;
+        margin-top: 3em;
+      }
+      div.c-mostrar{
+        display: flex;
+        justify-content: center;
+      }
       button.Usuarios{
         border: 1px solid #d8ded9;
         padding: 8px 16px;
         background: #e4e4e4;
         border-radius: 4px 4px 4px 4px;
+        margin-right: 1em;
 
         span::before{
           content: fa-content($fa-var-users);
@@ -623,7 +709,6 @@
           background: #ededed;
         }
       }
-    }
     div.disabled{
       display: none;
     }
@@ -635,10 +720,8 @@
       align-self: center;
       @include font-title($texto,.8em);
       table{
-        width: 100%;
         border-collapse: collapse;
-        padding: 10px;
-        display: flex;
+
         th{
           background:$back_default;
           color:$letra;
@@ -697,10 +780,38 @@
       }
     }
 
+    div.paginacion{
+      display: flex;
+      justify-content: center;
+      padding: 14px 16px;
+      p{
+        padding: 14px 14px;
+        margin: 0;
+        display: block;
+        font-size: 1.2em;
+        font-family: $texto;
+        color: $letra;
+        background: $hover;
+        border-radius: 4px 4px 4px 4px;
+      }
+      a{
+        padding: 14px 14px;
+        display: block;
+        text-decoration: none;
+        font-size: 1.2em;
+        font-family: $texto;
+        background: #e4e4e4;
+        border:1px solid  #d8ded9;
+        color: $enlaces;
+        &:hover{
+          cursor: pointer;
+          background: #ededed;
+        }
+      }
 
+    }
 
-
-
+  }
 
   }
 }
@@ -829,14 +940,27 @@
 
     }
     div.c-panel{
-      @include font-title($titulo,1.2em);
-      align-self: center;
-      margin-top: 3em;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      div.c-mostrar{
+        display: flex;
+        justify-content:center;
+      }
+      h2{
+        @include font-title($titulo,2em);
+        align-self: center;
+        margin-top: 3em;
+      }
+
+
       button.Usuarios{
         border: 1px solid #d8ded9;
         padding: 8px 16px;
         background: #e4e4e4;
         border-radius: 4px 4px 4px 4px;
+        margin-right: 1em;
+
 
         span::before{
           content: fa-content($fa-var-users);
@@ -861,7 +985,6 @@
         }
       }
 
-    }
     div.disabled{
       display: none;
     }
@@ -873,15 +996,12 @@
       align-self: center;
       @include font-title($texto,.8em);
       table{
-        width: 100%;
         border-collapse: collapse;
-        padding: 10px;
-        display: flex;
+
         th{
           background:$back_default;
           color:$letra;
           @include font-title($titulo,1.2em);
-          border-collapse: collapse;
           padding: 10px;
         }
         td{
@@ -934,6 +1054,37 @@
         }
 
       }
+      div.paginacion{
+        display: flex;
+        justify-content: center;
+        padding: 14px 16px;
+        p{
+          padding: 14px 14px;
+          margin: 0;
+          display: block;
+          font-size: 1.2em;
+          font-family: $texto;
+          color: $letra;
+          background: $hover;
+          border-radius: 4px 4px 4px 4px;
+        }
+        a{
+          padding: 14px 14px;
+          display: block;
+          text-decoration: none;
+          font-size: 1.2em;
+          font-family: $texto;
+          background: #e4e4e4;
+          border:1px solid  #d8ded9;
+          color: $enlaces;
+          &:hover{
+            cursor: pointer;
+            background: #ededed;
+          }
+        }
+
+      }
     }
   }
+}
 }

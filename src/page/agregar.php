@@ -29,7 +29,7 @@
           </li>
           <li><a href="../../index.php">Inicio</a></li>
           <li><a href="catalogos.php">Catálogo</a></li>
-          <li><a href="#contenido">Contactos</a></li>
+          <li><a href="contacto.php">Contactos</a></li>
           <li class="s-menu">
             <?php if (isset($_SESSION['usuario'])&&!empty($_SESSION['usuario'])): ?>
               <a href="perfil.php"><?php echo $_SESSION['usuario'] ?></a>

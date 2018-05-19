@@ -51,6 +51,7 @@
       <div class="t-logo" id="t-logo">
         <h1>Seriefilos</h1>
         <h2>La web para amantes de las series </h2>
+
       </div>
       <div class="c-descripcion">
         <div class="articulo">

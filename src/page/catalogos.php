@@ -1,19 +1,18 @@
 <?php
  session_start();
-require_once '../../Conf/Crud.php';
-$conexion = new Crud();
+require_once '../../Conf/Series.php';
+$conexion = new Series();
 # preparando Paginacion
-$pub_limite = 8;
-$inicio = 0;
+$limite = 8;
 $pagina  = 1;
 if (isset($_GET['pg'])){
   $pagina = $_GET['pg'];
-  $inicio = ($pagina - 1 ) * $pub_limite;
 }
-$pagina_total = ceil($conexion->contarColumna() / $pub_limite);
+$inicio = ($pagina - 1 ) * $limite;
+$pagina_total = ceil($conexion->ContadorFila("id","serie") / $limite);
 /*obteniendo el catalogos */
-$res = $conexion->getCatalogos($inicio,$pub_limite);
-
+$res = $conexion->ObtenerSeries($inicio,$limite);
+$res = json_decode($res,true);
 $vacio = false;
 include_once '../../modulos/buscador.php';
 ?>
@@ -131,25 +130,8 @@ include_once '../../modulos/buscador.php';
 
 
        </main>
+        <?php include '../../modulos/paginacion.php'; ?>
 
-         <?php if ($pagina_total>1): ?>
-           <div class="paginacion">
-             <?php for ($i=1; $i <= $pagina_total ; $i++) {
-               if ($pagina==$i) {
-                 echo "<p>$i</p>";
-               }
-               elseif (isset($_GET['buscador'])) {
-
-                   echo '<a href="'.$_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING'].'&pg='.$i.'">'.$i.'</a>';
-               }
-
-               else  {
-                 echo '<a href="'.$_SERVER['PHP_SELF'].'?pg='.$i.'">'.$i.'</a>';
-
-               }
-             } ?>
-           </div><!--fin caja caja paginacion-->
-         <?php endif;?>
 <footer>
   <div class="redes_sociales">
     <ul>
