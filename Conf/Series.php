@@ -5,8 +5,6 @@
  require_once 'NewCrud.php';
 class Series extends NewCrud
 {
-  public static $pagina_total = 0;
-  public static $npagina = 0;
   function ObtenerSerie($id)
   {
     return $this->Leer("*","serie","WHERE id = '$id'");

@@ -32,20 +32,6 @@ $(document).ready(function(){
     })
     .done(function(data){
        CargarSeries(data);
-       $(".eliminarSeries").click(function(e){
-         var valor = $(this).val();
-         e.preventDefault();
-         $(this).closest('tr').remove();
-         $.ajax({
-           url:"../../Controlador/BorrarSerie.php",
-           data:{serie:valor},
-           type:"post"
-         })
-         .done(function(){
-           alert("Eliminado");
-         })
-       })
-
     })
   });
   $(".npage").on("click",function(){
@@ -148,10 +134,10 @@ function CargarSeries(data){
       }
 
       var trailer = document.createElement('td');
-      if (data[valor]['Trailer'].length>0) {
-        trailer.append('Si');
-      }else {
+      if (data[valor]['Trailer']===null) {
         trailer.append('No');
+      }else {
+        trailer.append('Si');
       }
 
       var poster = document.createElement('td');

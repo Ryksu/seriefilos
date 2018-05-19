@@ -88,13 +88,14 @@
               <span class="fas fa-redo-alt"></span>
               Deshacer
             </button>
-            <button type="submit" name="Enviar">
+            <button type="submit" name="Enviar" >
               <span class="far fa-paper-plane"></span>
               Enviar
             </button>
           </div>
         </form>
       </div>
+      <script src="../../js/InsertarSerie.js"></script>
     </main>
     <footer>
       <div class="redes_sociales">

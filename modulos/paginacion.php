@@ -2,7 +2,7 @@
   <div class="paginacion">
     <?php
     for ($i=1; $i <= $pagina_total ; $i++) {
-       if (isset($_GET['buscador'])) {
+      if (isset($_GET['buscador'])) {
 
           echo '<a class="npage" data='.$i.'>'.$i.'</a>';
       }

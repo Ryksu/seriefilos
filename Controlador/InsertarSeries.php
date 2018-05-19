@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once '../Conf/Series.php';
 $Series = new Series();
 $url = '';
@@ -31,6 +32,11 @@ $year = $_POST['Year'];
 $temporada = $_POST['Temporada'];
 $categoria = $_POST["Categoria"];
 $estado = $_POST['Estado'];
+if (isset($_POST['Trailer'])&&!empty($_POST['Trailer'])) {
+  $trailer = $_POST['Trailer'];
+}else{
+  $trailer = NULL;
+}
 
 $Series->AgregarSerie($url,$titulo,$texto,$categoria,$year,$temporada,$estado,$trailer,$_SESSION['usuario']);
  ?>
