@@ -58,7 +58,7 @@ $url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_
                <?php if (isset($_SESSION['usuario'])&&!empty($_SESSION['usuario'])): ?>
                  <a href="perfil.php"><?php echo $_SESSION['usuario'] ?></a>
                  <div class="s-menu-contenido">
-                <a href="Agregar.php">Añadir serie</a>
+                <a href="agregar.php">Añadir serie</a>
                 <a href="logout.php">Cerrar sesión</a>
                <?php else: ?>
                  <a href="../login.php">Iniciar sesión</a>
