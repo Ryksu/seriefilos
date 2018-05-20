@@ -226,7 +226,7 @@
               margin: 0;
             }
           }
-          div.c-categorias{
+          div.c-categorias,div.c-estados,div.c-estados{
             display: inline-flex;
             flex-direction: row;
             justify-content: space-between;
@@ -578,7 +578,7 @@
               margin: 0;
             }
           }
-          div.c-categorias{
+          div.c-categorias,div.c-estados{
             display: inline-flex;
             flex-direction: row;
             justify-content: space-between;
@@ -943,7 +943,7 @@
             margin: 0;
           }
         }
-        div.c-categorias{
+        div.c-categorias,div.c-estados{
           display: inline-flex;
           flex-direction: row;
           justify-content: space-between;
@@ -1312,7 +1312,7 @@ main.contenido{
           margin: 0;
         }
       }
-      div.c-categorias{
+      div.c-categorias,div.c-estados{
         display: inline-flex;
         flex-direction: row;
         justify-content: space-between;

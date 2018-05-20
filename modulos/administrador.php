@@ -39,9 +39,6 @@
         <th>Editar</th>
       </tr>
     </table>
-    <?php
-    $pagina_total = $_SESSION['$pagina_total'];
-     ?>
 <?php
   include 'paginacion.php';
 

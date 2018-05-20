@@ -1,20 +1,9 @@
 <?php
  session_start();
-require_once '../../Conf/Series.php';
-$conexion = new Series();
-# preparando Paginacion
-$limite = 8;
-$pagina  = 1;
-if (isset($_GET['pg'])){
-  $pagina = $_GET['pg'];
-}
-$inicio = ($pagina - 1 ) * $limite;
-$pagina_total = ceil($conexion->ContadorFila("id","serie") / $limite);
-/*obteniendo el catalogos */
-$res = $conexion->ObtenerSeries($inicio,$limite);
-$res = json_decode($res,true);
 $vacio = false;
+require_once '../../Controlador/ObtenerCatalogo.php';
 include_once '../../modulos/buscador.php';
+
 ?>
  <!DOCTYPE html>
  <html lang="es" dir="ltr">
@@ -26,9 +15,8 @@ include_once '../../modulos/buscador.php';
      <link rel="stylesheet" href="../../estilo/css/fontawesome.css">
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
      <script src="../../js/Categorias.js"></script>
-
      <script src="../../js/caja_busqueda.js"></script>
-
+     <script src="../../js/ObtenerSeries.js"></script>
      <title>Seriefilos: Catálogo</title>
    </head>
    <body>
@@ -79,18 +67,19 @@ include_once '../../modulos/buscador.php';
       <a href="contacto.html">Contacto</a></p>
   </div>
 <?php else: ?>
-  <div class="catalogos">
-    <?php foreach($res as $row):?>
-      <a href="series.php?id=<?php echo $row['id']?>">
-        <article class="serie">
-          <img src="<?php echo $row['Poster'];?>" alt="<?php echo $row['Titulo']?>">
+   <div class="catalogos" id="catalogo">
+     <?php foreach($res as $row):?>
+       <a href="series.php?id=<?php echo $row['id']?>">
+         <article class="serie">
+           <img src="<?php echo $row['Poster'];?>" alt="<?php echo $row['Titulo']?>">
 
-          <h1><?php echo $row['Titulo']?></h1>
-        </article>
+           <h1><?php echo $row['Titulo']?></h1>
+         </article>
 
-      </a>
-    <?php endforeach; ?>
-  </div><!--fin categologos-->
+       </a>
+     <?php endforeach; ?>
+   </div><!--fin categologos -->
+
 </div>
 
 <?php endif; ?>
@@ -108,13 +97,18 @@ include_once '../../modulos/buscador.php';
              <div class="c-temporada">
                <label for="temporada">Temporada</label>
                <input type="number" name="temporada" id="temporada" value="">
-             </div>
-             <div class="c-categorias">
-               <label for="Categoria">Categorias</label>
-               <select class="categorias" name="Categoria" id="Categoria">
-                 <option value="" selected>Todos</option>
-                 </select>
-             </div>
+           </div>
+           <div class="c-categorias">
+             <label for="Categoria">Categorias</label>
+             <select class="categorias" name="Categoria" id="Categoria">
+               <option value="">Todos</option>
+             </select>
+           </div>
+           <div class="c-estados">
+             <label for="Estado">Estado</label>
+             <select class="estados" name="Estado" id="Estado">
+             </select>
+           </div>
              <div class="c-enviar">
                <button type="reset" name="Deshacer">
                <span class="fas fa-redo-alt"></span>
@@ -127,11 +121,8 @@ include_once '../../modulos/buscador.php';
            </div>
            </form>
          </div><!-- fin caja de busqueda-->
-
-
        </main>
-        <?php include '../../modulos/paginacion.php'; ?>
-
+        <?php include_once '../../modulos/paginaciones.php'; ?>
 <footer>
   <div class="redes_sociales">
     <ul>

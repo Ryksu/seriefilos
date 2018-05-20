@@ -15,7 +15,7 @@ class Series extends NewCrud
     return $this->Eliminar("serie","id = '$id'");
   }
 
-  function AgregarSerie($poster,$titulo,$texto,$categoria,$year,$temporada,$estado,$trailer = NULL,$usuario){
+  function AgregarSerie($poster,$titulo,$texto,$categoria,$year,$temporada,$estado,$usuario,$trailer = NULL){
     $agregar = false;
     $serie = $this->Insertar("serie",array("Poster","Titulo","Texto","Categoria","Year","Temporada","Estado","Trailer"),array("'$poster'","'$titulo'","'$texto'","'$categoria'","'$year'","'$temporada'","'$estado'","'$trailer'"));
      $ultimoID = $this->conexion->lastInsertId();
@@ -30,7 +30,7 @@ class Series extends NewCrud
 
   function ObtenerSeries($inicio,$limite){
 
-    return $this->Leer("serie.*,usuarios_series.id_Usuarios","serie","RIGHT JOIN usuarios_series  ON serie.id = usuarios_series.id_serie ORDER BY serie.id  LIMIT $inicio,$limite");
+    return $this->Leer("serie.*,usuarios_series.id_Usuarios","serie","RIGHT JOIN usuarios_series  ON serie.id = usuarios_series.id_serie ORDER BY serie.Titulo  LIMIT $inicio,$limite");
 
   }
 }

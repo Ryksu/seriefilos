@@ -1,7 +1,8 @@
 <?php
 // session_start();
 
-include '../../Controlador/ObtenerUsuario.php';
+require_once '../../Controlador/ObtenerUsuario.php';
+// require_once '../../Controlador/ObtenerSeries.php';
 ?>
 <!DOCTYPE html>
 <html lang="es" dir="ltr">

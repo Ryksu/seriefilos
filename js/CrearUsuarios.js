@@ -38,7 +38,7 @@ $(document).ready(function(){
     var email = $("#email").val();
 
     $.ajax({
-      url:"Controlador/CrearUsuario.php",
+      url:"../../Controlador/CrearUsuario.php",
       data:{usuario:usuario,password:password,repeat:repeat,email:email},
       type:"POST"
     })

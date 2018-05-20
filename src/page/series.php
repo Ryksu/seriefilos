@@ -58,7 +58,7 @@ $url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_
                <?php if (isset($_SESSION['usuario'])&&!empty($_SESSION['usuario'])): ?>
                  <a href="perfil.php"><?php echo $_SESSION['usuario'] ?></a>
                  <div class="s-menu-contenido">
-                <a href="add.php">Añadir serie</a>
+                <a href="Agregar.php">Añadir serie</a>
                 <a href="logout.php">Cerrar sesión</a>
                <?php else: ?>
                  <a href="../login.php">Iniciar sesión</a>
@@ -168,6 +168,11 @@ $url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_
                <select class="categorias" name="Categoria" id="Categoria">
                  <option value="" selected>Todos </option>
                  </select>
+             </div>
+             <div class="c-estados">
+               <label for="Estado">Estado</label>
+               <select class="estados" name="Estado" id="Estado">
+               </select>
              </div>
              <div class="c-enviar">
                <button type="reset" name="Deshacer">

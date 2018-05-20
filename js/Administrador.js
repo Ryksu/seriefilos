@@ -10,7 +10,6 @@ $(document).ready(function(){
       $(".eliminarUsuarios").click(function(e){
         e.preventDefault();
         var valor = $(this).val();
-        console.log();
         $(this).closest('tr').remove();
         $.ajax({
           url:"../../Controlador/BorrarUsuario.php",
@@ -23,7 +22,6 @@ $(document).ready(function(){
       });
     })
   });
-
   $("#Series").click(function(){
     $("#c-series").toggleClass("c-Todo");
     $.ajax({
@@ -31,21 +29,56 @@ $(document).ready(function(){
       type:"POST"
     })
     .done(function(data){
-       CargarSeries(data);
-    })
+      CargarSeries(data);
+      $(".eliminarSeries").click(function(e){
+        e.preventDefault();
+        var valor = $(this).val();
+        $(this).closest('tr').remove();
+        $.ajax({
+          url:"../../Controlador/BorrarSerie.php",
+          data:{serie:valor},
+          type:"POST"
+        })
+        .done(function(data){
+          if (data) {
+            alert("Borrado");
+          }
+        })
+      })
+      $(".npage").on("click",function(){
+        valor = $(this).attr("data");
+        console.log(valor);
+        $.ajax({
+          url:"../../Controlador/ObtenerSeries.php",
+          data:{pg:valor},
+          type:"POST"
+        })
+        .done(function(data){
+          CargarSeries(data);
+          $(".eliminarSeries").click(function(e){
+            e.preventDefault();
+            var valor = $(this).val();
+            $(this).closest('tr').remove();
+            $.ajax({
+              url:"../../Controlador/BorrarSerie.php",
+              data:{serie:valor},
+              type:"POST"
+            })
+            .done(function(data){
+              if (data) {
+                alert("Borrado");
+              }
+            })
+          })
+        })
+      })
+
+
+    });
   });
-  $(".npage").on("click",function(){
-    valor = $(this).attr("data");
-    console.log(valor);
-    $.ajax({
-      url:"../../Controlador/ObtenerSeries.php",
-      data:{pg:valor},
-      type:"GET"
-    })
-    .done(function(data){
-        CargarSeries(data);
-    })
-  })
+
+
+
 
 
 
@@ -134,10 +167,10 @@ function CargarSeries(data){
       }
 
       var trailer = document.createElement('td');
-      if (data[valor]['Trailer']===null) {
-        trailer.append('No');
-      }else {
+      if (data[valor]['Trailer'].length>0) {
         trailer.append('Si');
+      }else {
+        trailer.append('No');
       }
 
       var poster = document.createElement('td');

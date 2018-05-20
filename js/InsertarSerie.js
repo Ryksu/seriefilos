@@ -11,7 +11,11 @@ $(document).ready(function(){
       type:"POST"
     })
     .done(function(data){
-      console.log(data);
+    })
+    .always(function(data){
+      if (data !='2' | data!='2') {
+        location.replace('catalogos.php');
+      }
     })
   })
 })

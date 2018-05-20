@@ -62,25 +62,26 @@
             <legend>Agregar Serie</legend>
           <div id="serie" class="serie">
             <label for="Poster">Poster</label>
-            <input type="file" name="Poster" id="Poster" value="" accept="image/x-png,image/jpeg">
-            <label for="Titulo">Titulo</label>
-            <input type="text" name="Titulo" id="Titulo" value="" >
+            <input type="file" name="Poster" id="Poster" value="" accept="image/x-png,image/jpeg" required>
+            <label for="Titulo">Titulo</label >
+            <input type="text" name="Titulo" id="Titulo" value="" required>
             <div class="year_temporada">
               <label for="Year">Año</label>
-              <input type="number" name="Year" id="Year" value="" min="1900" max="2020" maxlength="4">
+              <input type="number" name="Year" id="Year" value="" min="1900" max="2020" maxlength="4" required>
               <label for="Temporada">Temporada</label>
-              <input type="number" name="Temporada" id="Temporada" value="" >
+              <input type="number" name="Temporada" id="Temporada" value="" required>
 
             </div>
             <label for="Categoria">Categoria</label>
-            <select  name="Categoria" id="Categoria" >
-
+            <select  required name="Categoria" id="Categoria" >
+              <option value="">Seleccione una Categoria</option>
             </select>
           <label for="Estado">Estado</label>
-            <select name="Estado" id="Estado">
+            <select required name="Estado" id="Estado" >
+              <option value="">Seleccione un Estado de emisión</option>
             </select>
           <label for="Texto">Sinopsis</label>
-            <textarea name="Texto" id="Texto"></textarea>
+            <textarea name="Texto" id="Texto" required></textarea>
           </div>
           </fieldset>
           <div class="c-enviar">
