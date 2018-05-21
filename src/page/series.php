@@ -13,6 +13,8 @@ require_once '../../Controlador/ObtenerSerie.php';
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
      <script src="../../js/Categorias.js" ></script>
      <script src="../../js/caja_busqueda.js" ></script>
+     <script src="../../js/Puntuacion.js" ></script>
+
 
      <title>Seriefilos: <?php echo " ".  $titulo  ?></title>
    </head>
@@ -72,7 +74,7 @@ require_once '../../Controlador/ObtenerSerie.php';
                </li>
                <li>
                  <span class="fas fa-angel-left"></span>
-                 <a href="series.php#serie"><?php echo $titulo ?></a>
+                 <?php echo $titulo ?>
                </li>
              </ul>
            </nav>
@@ -118,13 +120,13 @@ require_once '../../Controlador/ObtenerSerie.php';
                </div>
                <div class="c-puntuacion">
 
-                 <button type="button" name="button" value="<?php echo $_GET['id'] ?>" id="thumbup" class="thumbup"><span class="fa fas-thumbs-up"></span></button>
+                 <button type="button" name="button" value="<?php echo $_GET['id'] ?>" id="thumbup" class="thumbup"><span class="far fas-thumbs-up"></span></button>
 
-                 <div class="punto">
-                
+                 <div class="punto" id="punto">
+
                  </div>
 
-                 <button type="button" name="button" value="<?php echo $_GET['id'] ?>" id="thumbdown" class="thumbdown"> <span class="fa fas-thumbs-down"></span></button>
+                 <button type="button" name="button" value="<?php echo $_GET['id'] ?>" id="thumbdown" class="thumbdown"> <span class="far fas-thumbs-down"></span></button>
                </div>
                <div class="redes">
                  <div class="fb-share-button" data-href="<?php  echo $url ?>" data-layout="button_count" data-size="small">

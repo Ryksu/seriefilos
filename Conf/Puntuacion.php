@@ -5,7 +5,7 @@
  require_once 'NewCrud.php';
  final class Puntuacion extends NewCrud
 {
-  public static $punto;
+  public $punto;
   public $id;
   function __construct($id)
   {
@@ -20,10 +20,14 @@
     $this->punto = $this->punto + 10;
      return $this->Actulizar("serie","Puntuacion ='$this->punto'","id = '$this->id'" );
   }
-  
+
   function thumbDown(){
     $this->punto = $this->punto - 10;
       return $this->Actulizar("serie","Puntuacion ='$this->punto'","id = '$this->id'" );
+  }
+
+  function getPunto(){
+    return $this->punto;
   }
 
 }

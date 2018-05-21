@@ -45,7 +45,7 @@
         display: flex;
         flex-direction: column;
         padding: 10px 16px;
-        background: #ebedee;
+        // background: #ebedee;
         border-radius: 4px 4px 4px 4px;
         justify-content: center;
         img{
@@ -88,6 +88,7 @@
           justify-content: center;
           margin: 1em 0;
 
+
           button.thumbup{
             border: 1px solid #d8ded9;
             padding: 8px 16px;
@@ -97,6 +98,7 @@
 
             span::before{
               content: fa-content($fa-var-thumbs-up);
+              font-size: 1.5em;
             }
             &:hover{
               cursor: pointer;
@@ -107,8 +109,11 @@
             border: 1px solid $hover;
             border-radius: 4px 4px 4px 4px;
             padding: 0 16px;
+
             cursor: default;
             p{
+              font-size: 1em;
+              font-family: $texto;
               font-weight: bold;
             }
           }
@@ -121,6 +126,8 @@
 
             span::before{
               content: fa-content($fa-var-thumbs-down);
+              font-size: 1.5em;
+
             }
             &:hover{
               cursor: pointer;
@@ -130,7 +137,56 @@
 
         }
       }
+      div.c-comentarios{
+        display: flex;
+        flex-direction: column;
+        margin: 1em auto;
+        h2{
+          font-size: 2em;
+          align-self: center;
+          font-family: $titulo;
+        }
+        p{
+          align-self: center;
+          @include font-title($texto,1.2em);
+        }
+        div.c-comentario{
+          width: 100%;
+          display: flex;
+          margin: .8em auto;
+          justify-content: center;
+          border-radius: 8px 8px 8px 8px;
+
+          div.c-usuario{
+            display: flex;
+            flex-direction: column;
+            padding: .5em;
+            img{
+              width: 64px;
+              border-radius: 50%;
+              align-self: center;
+            }
+            h3{
+              align-self: center;
+              font-size: 1em;
+              font-family: $titulo;
+            }
+          }
+          div.c-texto{
+            display: flex;
+            align-self: flex-start;
+            padding: .5em;
+            width: 100%;
+            flex-wrap: nowrap;
+            font-family: $texto;
+            font-size: .9em;
+            border-radius: 1em 1em 1em 0;
+            background: #ebedee;
+          }
+        }
+      }
     }
+
 
 
   }
@@ -182,7 +238,7 @@
         align-self: center;
         width: 70%;
         padding: 10px 16px;
-        background: #ebedee;
+        // background: #ebedee;
         border-radius: 4px 4px 4px 4px;
         img{
           max-width: 65%;
@@ -206,6 +262,7 @@
           display: flex;
           flex-direction: row;
           justify-content: center;
+          font-size: .9em;
 
           p{
             display: block;
@@ -234,8 +291,11 @@
             border-radius: 4px 4px 4px 4px;
             margin: 0 1em;
 
+
             span::before{
               content: fa-content($fa-var-thumbs-up);
+              font-size: 1.5em;
+
             }
             &:hover{
               cursor: pointer;
@@ -246,6 +306,8 @@
             border: 1px solid $hover;
             border-radius: 4px 4px 4px 4px;
             padding: 0 16px;
+            font-family: $texto;
+
             cursor: default;
             p{
               font-weight: bold;
@@ -260,19 +322,70 @@
 
             span::before{
               content: fa-content($fa-var-thumbs-down);
+              font-size: 1.5em;
             }
             &:hover{
               cursor: pointer;
               background: #ededed;
             }
           }
-
         }
-
       }
+      div.c-comentarios{
+        display: flex;
+        flex-direction: column;
+        margin: 1em auto;
+        width: 70%;
+        padding: 1em;
+        h2{
+          font-size: 2em;
+          align-self: center;
+          font-family: $titulo;
+        }
+        p{
+          align-self: center;
+          @include font-title($texto,1.2em);
+        }
+        div.c-comentario{
+          width: 100%;
+          display: flex;
+          padding: .5em;
+          margin: .8em auto;
+          justify-content: center;
+          border-radius: 8px 8px 8px 8px;
+          div.c-usuario{
+            display: flex;
+            flex-direction: column;
+            padding: .5em;
+            img{
+              width: 128px;
+              border-radius: 50%;
+              align-self: center;
+            }
+            h3{
+              align-self: center;
+              font-size: 1em;
+              font-family: $titulo;
+            }
+          }
+          div.c-texto{
+            display: flex;
+            align-self: flex-start;
+            padding: .5em;
+            width: 100%;
+            flex-wrap: nowrap;
+            font-family: $texto;
+            border-radius: 1em 1em 1em 0;
+            background: #ebedee;
+
+
+          }
+        }
+      }
+
+
+
     }
-
-
   }
 }
 /* table web */
@@ -323,7 +436,7 @@
         align-self: center;
         width: 50%;
         padding: 10px 16px;
-        background: #ebedee;
+        // background: #ebedee;
         border-radius: 4px 4px 4px 4px;
         img{
           max-width: 65%;
@@ -378,6 +491,8 @@
 
             span::before{
               content: fa-content($fa-var-thumbs-up);
+              font-size: 1.5em;
+
             }
             &:hover{
               cursor: pointer;
@@ -402,6 +517,8 @@
 
             span::before{
               content: fa-content($fa-var-thumbs-down);
+              font-size: 1.5em;
+
             }
             &:hover{
               cursor: pointer;
@@ -410,7 +527,57 @@
           }
 
         }
+      }
 
+      div.c-comentarios{
+        display: flex;
+        flex-direction: column;
+        margin: 1em auto;
+        width: 50%;
+        padding: 1em;
+        h2{
+          font-size: 2em;
+          align-self: center;
+          font-family: $titulo;
+        }
+        p{
+          align-self: center;
+          @include font-title($texto,1.2em);
+        }
+        div.c-comentario{
+          width: 100%;
+          display: flex;
+          padding: .5em;
+          margin: .8em auto;
+          justify-content: center;
+          border-radius: 8px 8px 8px 8px;
+          div.c-usuario{
+            display: flex;
+            flex-direction: column;
+            padding: .5em;
+            img{
+              width: 128px;
+              border-radius: 50%;
+              align-self: center;
+            }
+            h3{
+              align-self: center;
+              font-size: 1em;
+              font-family: $titulo;
+            }
+          }
+          div.c-texto{
+            display: flex;
+            align-self: flex-start;
+            padding: .5em;
+            width: 100%;
+            flex-wrap: nowrap;
+            border-radius: 1em 1em 1em 0;
+            font-family: $texto;
+            background: #ebedee;
+
+          }
+        }
       }
     }
 
@@ -462,7 +629,7 @@
         padding: 10px 16px;
         align-self: center;
         width: 50%;
-        background: #ebedee;
+        // background: #ebedee;
         border-radius: 8px 8px 8px 8px;
         div.trailer{
           display: flex;
@@ -519,6 +686,8 @@
 
             span::before{
               content: fa-content($fa-var-thumbs-up);
+              font-size: 1.5em;
+
             }
             &:hover{
               cursor: pointer;
@@ -530,7 +699,7 @@
             border-radius: 4px 4px 4px 4px;
             padding: 0 16px;
             cursor: default;
-            
+
             p{
               font-weight: bold;
             }
@@ -544,6 +713,8 @@
 
             span::before{
               content: fa-content($fa-var-thumbs-down);
+              font-size: 1.5em;
+
             }
             &:hover{
               cursor: pointer;
@@ -551,6 +722,56 @@
             }
           }
 
+        }
+      }
+      div.c-comentarios{
+        display: flex;
+        flex-direction: column;
+        margin: 1em auto;
+        width: 50%;
+        padding: 1em;
+        h2{
+          font-size: 2em;
+          align-self: center;
+          font-family: $titulo;
+        }
+        p{
+          align-self: center;
+          @include font-title($texto,1.2em);
+        }
+        div.c-comentario{
+          width: 100%;
+          display: flex;
+          padding: .5em;
+          margin: .8em auto;
+          justify-content: center;
+          border-radius: 8px 8px 8px 8px;
+          div.c-usuario{
+            display: flex;
+            flex-direction: column;
+            padding: .5em;
+            img{
+              width: 128px;
+              border-radius: 50%;
+              align-self: center;
+            }
+            h3{
+              align-self: center;
+              font-size: 1em;
+              font-family: $titulo;
+            }
+          }
+          div.c-texto{
+            display: flex;
+            align-self: flex-start;
+            padding: .5em;
+            width: 100%;
+            flex-wrap: nowrap;
+            border-radius: 1em 1em 1em 0;
+            font-family: $texto;
+            background: #ebedee;
+
+          }
         }
       }
     }
