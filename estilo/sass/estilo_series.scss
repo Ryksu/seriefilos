@@ -18,7 +18,7 @@
         display:inline-flex;
         flex-direction: row;
         font-family: $texto;
-        font-size: .8em;
+        font-size: .7em;
         ul{
           padding: 0;
           margin: 0;
@@ -47,9 +47,11 @@
         padding: 10px 16px;
         background: #ebedee;
         border-radius: 4px 4px 4px 4px;
+        justify-content: center;
         img{
           max-width: 100%;
           align-self: center;
+          width: 250px;
           border-radius: 8px 8px 8px 8px;
         }
         h1{
@@ -66,6 +68,7 @@
           display: flex;
           flex-direction: row;
           justify-content: center;
+          font-size: .8em;
           p{
             display: block;
             padding: 1em;
@@ -78,6 +81,53 @@
           display: flex;
           flex-direction: row;
           justify-content: space-around;
+        }
+        div.c-puntuacion{
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          margin: 1em 0;
+
+          button.thumbup{
+            border: 1px solid #d8ded9;
+            padding: 8px 16px;
+            background: #e4e4e4;
+            border-radius: 4px 4px 4px 4px;
+            margin: 0 1em;
+
+            span::before{
+              content: fa-content($fa-var-thumbs-up);
+            }
+            &:hover{
+              cursor: pointer;
+              background: #ededed;
+            }
+          }
+          div.punto{
+            border: 1px solid $hover;
+            border-radius: 4px 4px 4px 4px;
+            padding: 0 16px;
+            cursor: default;
+            p{
+              font-weight: bold;
+            }
+          }
+          button.thumbdown{
+            border: 1px solid #d8ded9;
+            padding: 8px 16px;
+            background: #e4e4e4;
+            border-radius: 4px 4px 4px 4px;
+            margin: 0 1em;
+
+            span::before{
+              content: fa-content($fa-var-thumbs-down);
+            }
+            &:hover{
+              cursor: pointer;
+              background: #ededed;
+            }
+          }
+
         }
       }
     }
@@ -170,6 +220,55 @@
           flex-direction: row;
           justify-content: space-around;
         }
+
+        div.c-puntuacion{
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          margin: 1em 0;
+
+          button.thumbup{
+            border: 1px solid #d8ded9;
+            padding: 8px 16px;
+            background: #e4e4e4;
+            border-radius: 4px 4px 4px 4px;
+            margin: 0 1em;
+
+            span::before{
+              content: fa-content($fa-var-thumbs-up);
+            }
+            &:hover{
+              cursor: pointer;
+              background: #ededed;
+            }
+          }
+          div.punto{
+            border: 1px solid $hover;
+            border-radius: 4px 4px 4px 4px;
+            padding: 0 16px;
+            cursor: default;
+            p{
+              font-weight: bold;
+            }
+          }
+          button.thumbdown{
+            border: 1px solid #d8ded9;
+            padding: 8px 16px;
+            background: #e4e4e4;
+            border-radius: 4px 4px 4px 4px;
+            margin: 0 1em;
+
+            span::before{
+              content: fa-content($fa-var-thumbs-down);
+            }
+            &:hover{
+              cursor: pointer;
+              background: #ededed;
+            }
+          }
+
+        }
+
       }
     }
 
@@ -264,6 +363,54 @@
           flex-direction: row;
           justify-content: space-around;
         }
+        div.c-puntuacion{
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          margin: 1em 0;
+
+          button.thumbup{
+            border: 1px solid #d8ded9;
+            padding: 8px 16px;
+            background: #e4e4e4;
+            border-radius: 4px 4px 4px 4px;
+            margin: 0 1em;
+
+            span::before{
+              content: fa-content($fa-var-thumbs-up);
+            }
+            &:hover{
+              cursor: pointer;
+              background: #ededed;
+            }
+          }
+          div.punto{
+            border: 1px solid $hover;
+            border-radius: 4px 4px 4px 4px;
+            padding: 0 16px;
+            cursor: default;
+            p{
+              font-weight: bold;
+            }
+          }
+          button.thumbdown{
+            border: 1px solid #d8ded9;
+            padding: 8px 16px;
+            background: #e4e4e4;
+            border-radius: 4px 4px 4px 4px;
+            margin: 0 1em;
+
+            span::before{
+              content: fa-content($fa-var-thumbs-down);
+            }
+            &:hover{
+              cursor: pointer;
+              background: #ededed;
+            }
+          }
+
+        }
+
       }
     }
 
@@ -355,6 +502,55 @@
           display: flex;
           flex-direction: row;
           justify-content: space-around;
+        }
+
+        div.c-puntuacion{
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          margin: 1em 0;
+
+          button.thumbup{
+            border: 1px solid #d8ded9;
+            padding: 8px 16px;
+            background: #e4e4e4;
+            border-radius: 4px 4px 4px 4px;
+            margin: 0 1em;
+
+            span::before{
+              content: fa-content($fa-var-thumbs-up);
+            }
+            &:hover{
+              cursor: pointer;
+              background: #ededed;
+            }
+          }
+          div.punto{
+            border: 1px solid $hover;
+            border-radius: 4px 4px 4px 4px;
+            padding: 0 16px;
+            cursor: default;
+            
+            p{
+              font-weight: bold;
+            }
+          }
+          button.thumbdown{
+            border: 1px solid #d8ded9;
+            padding: 8px 16px;
+            background: #e4e4e4;
+            border-radius: 4px 4px 4px 4px;
+            margin: 0 1em;
+
+            span::before{
+              content: fa-content($fa-var-thumbs-down);
+            }
+            &:hover{
+              cursor: pointer;
+              background: #ededed;
+            }
+          }
+
         }
       }
     }

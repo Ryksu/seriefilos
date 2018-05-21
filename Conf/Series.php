@@ -7,7 +7,7 @@ class Series extends NewCrud
 {
   function ObtenerSerie($id)
   {
-    return $this->Leer("*","serie","WHERE id = '$id'");
+    return $this->Leer("*","serie RIGHT JOIN usuarios_series","ON serie.id = usuarios_series.id_serie WHERE serie.id = '$id'");
   }
 
   function BorrarSerie($id)
@@ -25,6 +25,11 @@ class Series extends NewCrud
       $agregar = true;
     }
     return $agregar;
+  }
+
+  function getComentarios($id){
+    return $this->Leer("usuarios.Foto,comentarios.*","usuarios, comentarios"," WHERE comentarios.id_usuario = usuarios.Usuario and comentarios.id_serie = '$id'");
+
   }
 
 

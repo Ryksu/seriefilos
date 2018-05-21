@@ -1,21 +1,5 @@
 <?php
-session_start();
-require_once '../../Conf/Crud.php';
-$conexion = new Crud();
-$id = $_GET['id'];
-$row = $conexion->getSerie($id);
-  $titulo = $row['Titulo'];
-  $poster = $row['Poster'];
-  $texto = $row['Texto'];
-  $categoria = $row['Categoria'];
-  $temporada = $row['Temporada'];
-  $year = $row['Year'];
-  $estado = $row['Estado'];
-  $trailer = $row['Trailer'];
-
-
-$url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-
+require_once '../../Controlador/ObtenerSerie.php';
  ?>
  <!DOCTYPE html>
  <html lang="es" dir="ltr">
@@ -127,6 +111,20 @@ $url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_
                    <span>Temporada:</span>
                    <?php echo $temporada ?>
                  </p>
+                 <p>
+                   <span>Publicado  por:</span>
+                   <?php echo $posteado ?>
+                 </p>
+               </div>
+               <div class="c-puntuacion">
+
+                 <button type="button" name="button" value="<?php echo $_GET['id'] ?>" id="thumbup" class="thumbup"><span class="fa fas-thumbs-up"></span></button>
+
+                 <div class="punto">
+                
+                 </div>
+
+                 <button type="button" name="button" value="<?php echo $_GET['id'] ?>" id="thumbdown" class="thumbdown"> <span class="fa fas-thumbs-down"></span></button>
                </div>
                <div class="redes">
                  <div class="fb-share-button" data-href="<?php  echo $url ?>" data-layout="button_count" data-size="small">
@@ -134,7 +132,7 @@ $url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_
                  <div class="twiter">
                    <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js"></script>
                  </div>
-               </div>
+             </div>
                <p>
                <?php echo $texto ?>
              </p>
@@ -143,10 +141,8 @@ $url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_
                <?php echo $trailer ?>
                </div>
              <?php endif; ?>
-
-
-
            </article>
+          <?php include_once '../../modulos/comentarios.php'; ?>
          </div>
          <div class="c-buscador">
            <form class="form_search" method="get" action="catalogos.php">
