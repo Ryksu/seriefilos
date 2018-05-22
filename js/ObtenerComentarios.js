@@ -1,5 +1,15 @@
 $(document).ready(function(){
   var id = getURLparamentro("id");
+  $(document).ajaxStart(function(){
+    // loading.show();
+    $(".fa-pulse").attr("hidden",false);
+  })
+
+  $(document).ajaxStop(function(){
+    // loading.hide();
+    $(".fa-pulse").attr("hidden",true);
+
+  })
 
     $.ajax({
     url:"../../Controlador/ObtenerComentarios.php",
@@ -40,6 +50,7 @@ $("#comment").click(function(e){
 
       $("#texto").val('');
       $(".c-comentario").remove();
+
       CargarComentarios(data);
 
 
@@ -49,6 +60,7 @@ $("#comment").click(function(e){
 $("#cancelar").click(function(e){
   e.preventDefault();
   $("#texto").removeClass("activa");
+  $("#texto").val('');
   $("#c-send-comment").removeClass("c-enviar");
 })
 

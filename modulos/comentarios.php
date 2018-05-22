@@ -16,6 +16,9 @@
   </div>
 <div class="c-comentarios">
   <h2>Comentarios</h2>
+  <div class="loading">
+    <span  class='fas fa-spinner fa-pulse'></span>
+  </div>
 </div>
 
 
