@@ -1,9 +1,10 @@
 $(document).ready(function(){
   var id = getURLparamentro("id");
-  $.ajax({
+
+    $.ajax({
     url:"../../Controlador/ObtenerComentarios.php",
     data:{action:"obtener",id:id},
-    type:"GET"
+    type:"POST"
   })
   .done(function(data){
     if (data.length>0) {
@@ -12,6 +13,46 @@ $(document).ready(function(){
       $(".c-comentarios").append("<p>Sin comentarios</p>");
     }
   })
+$("#texto").keyup(function(){
+  var regex = /\S+/ ;
+  var  texto = $("#texto").val();
+
+  if (regex.exec(texto)==null) {
+    $("#comment").attr("disabled",true);
+  }
+  else{
+    $("#comment").attr("disabled",false);
+    }
+})
+$("#texto").click(function(){
+  $("#texto").addClass("activa");
+  $("#c-send-comment").addClass("c-enviar");
+})
+$("#comment").click(function(e){
+  e.preventDefault();
+  var  texto = $("#texto").val();
+  $.ajax({
+    url:"../../Controlador/ObtenerComentarios.php",
+    data:{action:"insertar",id:id,texto:texto},
+    type:"POST"
+  })
+  .done(function(data){
+
+      $("#texto").val('');
+      $(".c-comentario").remove();
+      CargarComentarios(data);
+
+
+  })
+})
+
+$("#cancelar").click(function(e){
+  e.preventDefault();
+  $("#texto").removeClass("activa");
+  $("#c-send-comment").removeClass("c-enviar");
+})
+
+
 })
 
 function CargarComentarios(data){

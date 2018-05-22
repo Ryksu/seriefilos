@@ -27,17 +27,10 @@ class Series extends NewCrud
     return $agregar;
   }
 
-  function getComentarios($id){
-    return $this->Leer("usuarios.Foto,comentarios.*","usuarios, comentarios"," WHERE comentarios.id_usuario = usuarios.Usuario and comentarios.id_serie = '$id'");
-
-  }
-
-
   function ObtenerSeries($inicio,$limite){
 
     return $this->Leer("serie.*,usuarios_series.id_Usuarios","serie","RIGHT JOIN usuarios_series  ON serie.id = usuarios_series.id_serie ORDER BY serie.Titulo  LIMIT $inicio,$limite");
 
   }
 }
-
 ?>

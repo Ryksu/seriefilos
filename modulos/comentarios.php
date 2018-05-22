@@ -1,14 +1,14 @@
 <?php if (isset($_SESSION['usuario'])&&!empty($_SESSION['usuario'])): ?>
   <div class="c-comentar">
     <div class="comentar">
-      <textarea name="texto"></textarea>
+      <textarea name="texto" id="texto" placeholder="escribe un comentario..."></textarea>
     </div>
-    <div hidden id="c-enviar">
-      <button type="reset" name="Deshacer">
+    <div id="c-send-comment" hidden>
+      <button type="button" name="cancelar" id="cancelar">
         <span class="fas fa-redo-alt"></span>
         Deshacer
       </button>
-      <button type="submit" name="Enviar" id="Enviar">
+      <button type="button" name="comment" id="comment" disabled>
         <span class="far fa-paper-plane"></span>
         Enviar
       </button>
