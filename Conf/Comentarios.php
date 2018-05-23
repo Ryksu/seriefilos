@@ -6,8 +6,9 @@
 class Comentarios extends NewCrud
 {
 
-  function getComentarios($id,$inicio,$limite){
-    return $this->Leer("usuarios.Foto,comentarios.*","usuarios,comentarios"," WHERE comentarios.id_usuario = usuarios.Usuario and comentarios.id_serie = '$id' ORDER BY tiempo DESC LIMIT $inicio,$limite");
+  function getComentarios($id,$LIMIT = Null){
+    return $this->Leer("usuarios.Foto,comentarios.*","usuarios,comentarios"," WHERE comentarios.id_usuario = usuarios.Usuario and comentarios.id_serie = $id ORDER BY tiempo DESC $LIMIT");
+
   }
 
   function insertarComentario($id,$usuario,$texto){
@@ -15,8 +16,7 @@ class Comentarios extends NewCrud
   }
 
   function comentarioFila($id){
-    $this->ContadorFila("id_serie","comentarios"," where id_serie = $id");
+    return $this->ContadorFila("id_serie","comentarios"," where id_serie = $id");
   }
 }
-
- ?>
+?>
