@@ -1,13 +1,5 @@
 $(document).ready(function(){
   var id = getURLparamentro("id");
-<<<<<<< HEAD
-
-=======
-<<<<<<< HEAD
-
-=======
->>>>>>> ab3e0b3f9bca0c53d4c1e0f1958dff10e5c482e3
->>>>>>> b1637c49d5f285df867ce1f3e820ee78ddb136c4
   $("#comment").attr("disabled",true);
 
   $(document).ajaxStart(function(){
