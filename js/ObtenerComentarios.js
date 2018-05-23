@@ -1,20 +1,19 @@
 $(document).ready(function(){
   var id = getURLparamentro("id");
+  $("#comment").attr("disabled",true);
+
   $(document).ajaxStart(function(){
-    // loading.show();
     $(".fa-pulse").attr("hidden",false);
   })
 
   $(document).ajaxStop(function(){
-    // loading.hide();
     $(".fa-pulse").attr("hidden",true);
-
   })
 
     $.ajax({
     url:"../../Controlador/ObtenerComentarios.php",
     data:{action:"obtener",id:id},
-    type:"POST"
+    type:"GET"
   })
   .done(function(data){
     if (data.length>0) {
@@ -23,6 +22,7 @@ $(document).ready(function(){
       $(".c-comentarios").append("<p>Sin comentarios</p>");
     }
   })
+
 $("#texto").keyup(function(){
   var regex = /\S+/ ;
   var  texto = $("#texto").val();
@@ -44,16 +44,26 @@ $("#comment").click(function(e){
   $.ajax({
     url:"../../Controlador/ObtenerComentarios.php",
     data:{action:"insertar",id:id,texto:texto},
-    type:"POST"
+    type:"GET"
   })
   .done(function(data){
-
-      $("#texto").val('');
-      $(".c-comentario").remove();
-
-      CargarComentarios(data);
-
-
+    $(".c-comentario").remove();
+    $("#texto").val('');
+    $("#comment").attr("disabled",true);
+    CargarComentarios(data);
+  })
+})
+$(".npage").on("click",function(){
+  $(".c-comentario").remove();
+  valor = $(this).attr("data");
+  $.ajax({
+    url:"../../Controlador/ObtenerComentarios.php",
+    data:{action:"obtener",id:id,pg:valor},
+    type:"GET"
+  })
+  .done(function(data){
+    $(".c-comentario").remove();
+    CargarComentarios(data);
   })
 })
 
@@ -63,6 +73,7 @@ $("#cancelar").click(function(e){
   $("#texto").val('');
   $("#c-send-comment").removeClass("c-enviar");
 })
+
 
 
 })

@@ -10,7 +10,7 @@ require_once '../../Controlador/ObtenerSerie.php';
      <link rel="stylesheet" href="../../estilo/css/estilo_catalogo.css">
      <link rel="stylesheet" href="../../estilo/css/estilo_series.css">
      <link rel="stylesheet" href="../../estilo/css/fontawesome.css">
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+     <script src="../../lib/jquery/jquery-3.3.1.min.js"></script>
      <script src="../../js/Categorias.js" ></script>
      <script src="../../js/caja_busqueda.js" ></script>
      <script src="../../js/Puntuacion.js" ></script>
