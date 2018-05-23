@@ -8,7 +8,7 @@
         <span class="fas fa-redo-alt"></span>
         Deshacer
       </button>
-      <button type="button" name="comment" id="comment" disabled>
+      <button type="button" name="comment" id="comment">
         <span class="far fa-paper-plane"></span>
         Enviar
       </button>
@@ -20,8 +20,7 @@
     <span  class='fas fa-spinner fa-pulse'></span>
   </div>
 </div>
+<?php  include 'paginacion.php'; ?>
 
-
-<?php  include_once 'paginacion.php'; ?>
 <script src="../../js/ObtenerComentarios.js"></script>
 <?php endif; ?>

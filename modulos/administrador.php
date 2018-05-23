@@ -40,10 +40,8 @@
       </tr>
     </table>
 <?php
-  include 'paginacion.php';
-
-        ?>
-        </div>
+  include 'paginacion.php';?>
+  </div>
 <script src="../../js/Administrador.js"></script>
 
 </div>
