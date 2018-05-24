@@ -10,9 +10,12 @@
   <link rel="icon" href="../img/favicon.png" type="image/x-png">
   <link rel="stylesheet" href="../../estilo/css/estilo_contacto.css">
   <link rel="stylesheet" href="../../estilo/css/estilo_agregar.css">
-
   <link rel="stylesheet" href="../../estilo/css/fontawesome.css">
+  <link rel="stylesheet" href="../../lib/simplemd/simplemde.min.css">
   <script src="../../lib/jquery/jquery-3.3.1.min.js"></script>
+  <script src="../../lib/simplemd/simplemde.min.js"></script>
+
+
   <script src="../../js/Categorias.js"></script>
 
   <script src="../../js/buscador.js"></script>
@@ -89,7 +92,7 @@
               <span class="fas fa-redo-alt"></span>
               Deshacer
             </button>
-            <button type="submit" name="Enviar" >
+            <button type="submit" name="Enviar" id="enviar">
               <span class="far fa-paper-plane"></span>
               Enviar
             </button>

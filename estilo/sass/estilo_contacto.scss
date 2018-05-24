@@ -1,4 +1,4 @@
-@import "master.sass";
+@import "master.scss";
 
 
 
@@ -1212,14 +1212,4 @@ footer{
     }
   }
 }
-}
-
-
-@keyframes Titulo {
-  from {
-    opacity: 0;
-  }
-  to{
-    opacity: 1;
-  }
 }

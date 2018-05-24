@@ -1,9 +1,7 @@
 $(document).ready(function(){
-  var id = getURLparamentro("id");
-  $("#sincomentar").attr("hidden",true);
-
-  $("#comment").attr("disabled",true);
-
+    var id = getURLparamentro("id");
+    $("#sincomentar").attr("hidden",true);
+    $("#comment").attr("disabled",true);
   $(document).ajaxStart(function(){
     $(".fa-pulse").attr("hidden",false);
   })
@@ -122,7 +120,7 @@ function CargarComentarios(data){
   }
 }
 
-
+/*obtiene el tiempo de la base de datos y la devuelve de tipo date */
 function formatoTiempo(timestap){
   var tiempo = timestap.split(/[- :]/);
 

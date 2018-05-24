@@ -1,4 +1,4 @@
-@import "master.sass";
+@import "master.scss";
 /* Movil */
 @media  screen  and (max-width:$web_mobile_medium) {
   div.container{
@@ -297,6 +297,8 @@
           color: $enlaces;
           &:hover{
             background: #ededed;
+            cursor: pointer;
+
           }
         }
 
@@ -649,6 +651,8 @@
         color: $enlaces;
         &:hover{
           background: #ededed;
+          cursor: pointer;
+
         }
       }
 
@@ -1015,6 +1019,8 @@ div.paginacion{
     color: $enlaces;
     &:hover{
       background: #ededed;
+      cursor: pointer;
+
     }
   }
 
@@ -1384,6 +1390,8 @@ div.paginacion{
     color: $enlaces;
     &:hover{
       background: #ededed;
+      cursor: pointer;
+
     }
   }
 
@@ -1440,25 +1448,4 @@ footer{
     }
   }
 }
-}
-
-@keyframes  toggle{
-  0%{
-
-  }
-  50%{
-
-  }
-  100%{
-
-  }
-}
-
-@keyframes Titulo {
-  from {
-    opacity: 0;
-  }
-  to{
-    opacity: 1;
-  }
 }

@@ -2,7 +2,8 @@ $(document).ready(function(){
   $("#Usuarios").click(function(){
     $("#c-Usuarios").toggleClass("c-Todo");
     $.ajax({
-      url:"../../Controlador/ObtenerUsuarios.php",
+      url:"../../Controlador/FuncionAdmin.php",
+      data:{action:"ObtenerUsuarios"},
       type:'POST'
     })
     .done(function(data){
@@ -12,12 +13,14 @@ $(document).ready(function(){
         var valor = $(this).val();
         $(this).closest('tr').remove();
         $.ajax({
-          url:"../../Controlador/BorrarUsuario.php",
-          data:{usuario:valor},
+          url:"../../Controlador/FuncionAdmin.php",
+          data:{action:"BorrarUsuario",usuario:valor},
           type:"POST"
         })
-        .done(function(e){
-          alert("Eliminado");
+        .done(function(data){
+          if (data) {
+            alert("Eliminado");
+          }
         })
       });
     })
@@ -25,7 +28,8 @@ $(document).ready(function(){
   $("#Series").click(function(){
     $("#c-series").toggleClass("c-Todo");
     $.ajax({
-      url:"../../Controlador/ObtenerSeries.php",
+      url:"../../Controlador/FuncionAdmin.php",
+      data:{action:"ObtenerSeries"},
       type:"POST"
     })
     .done(function(data){
@@ -35,8 +39,8 @@ $(document).ready(function(){
         var valor = $(this).val();
         $(this).closest('tr').remove();
         $.ajax({
-          url:"../../Controlador/BorrarSerie.php",
-          data:{serie:valor},
+          url:"../../Controlador/FuncionAdmin.php",
+          data:{action:"BorrarSerie",serie:valor},
           type:"POST"
         })
         .done(function(data){
@@ -49,8 +53,8 @@ $(document).ready(function(){
         valor = $(this).attr("data");
         console.log(valor);
         $.ajax({
-          url:"../../Controlador/ObtenerSeries.php",
-          data:{pg:valor},
+          url:"../../Controlador/FuncionAdmin.php",
+          data:{action:"ObtenerSeries",pg:valor},
           type:"POST"
         })
         .done(function(data){
@@ -60,8 +64,8 @@ $(document).ready(function(){
             var valor = $(this).val();
             $(this).closest('tr').remove();
             $.ajax({
-              url:"../../Controlador/BorrarSerie.php",
-              data:{serie:valor},
+              url:"../../Controlador/FuncionAdmin.php",
+              data:{action:"BorrarSerie",serie:valor},
               type:"POST"
             })
             .done(function(data){
@@ -72,8 +76,6 @@ $(document).ready(function(){
           })
         })
       })
-
-
     });
   });
 

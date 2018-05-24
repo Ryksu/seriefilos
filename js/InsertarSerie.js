@@ -1,7 +1,11 @@
 $(document).ready(function(){
-  $("#Agregar").submit(function(e){
+  var texto =  new SimpleMDE({
+    element:document.getElementById("Texto"),
+	   spellChecker: false,
+})
+  $("#enviar").click(function(e){
     e.preventDefault();
-    var form = new FormData(this);
+    var form = new FormData();
     $.ajax({
       url:"../../Controlador/InsertarSeries.php",
       data:form,

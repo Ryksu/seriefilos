@@ -9,6 +9,9 @@
     </div>
 
   <div  id="c-Usuarios" class="disabled">
+    <div class="loading">
+      <span  class='fas fa-spinner fa-pulse'></span>
+    </div>
     <table id="users-table">
       <tr>
         <th>Usuario</th>
@@ -22,6 +25,9 @@
   </div>
 
   <div id="c-series" class="disabled">
+    <div class="loading">
+      <span  class='fas fa-spinner fa-pulse'></span>
+    </div>
     <table id="serie-table">
       <tr>
         <th>ID</th>

@@ -1,7 +1,9 @@
 <?php
 session_start();
 require_once '../Conf/Series.php';
+require_once '../lib/parsedown-master/Parsedown.php';
 $Series = new Series();
+$parsedown = new Parsedown();
 $url = '';
 if (isset($_FILES['Poster'])&&!empty($_FILES['Poster'])) {
   if ($_FILES['Poster']['size']<=2000000) {
@@ -28,7 +30,10 @@ if (isset($_FILES['Poster'])&&!empty($_FILES['Poster'])) {
 }
 if (isset($_POST['Titulo'])&&!empty($_POST['Titulo'])) {
   $titulo = $_POST['Titulo'];
-  $texto = $_POST['Texto'];
+  $texto = Parsedown::instance()
+            ->setBreaksEnabled(true)
+            ->text($_POST['Texto']);
+
   $year = $_POST['Year'];
   $temporada = $_POST['Temporada'];
   $categoria = $_POST["Categoria"];
