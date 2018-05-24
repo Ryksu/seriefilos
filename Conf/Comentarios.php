@@ -12,11 +12,27 @@ class Comentarios extends NewCrud
   }
 
   function insertarComentario($id,$usuario,$texto){
-    return $this->Insertar("comentarios",array("id_serie","id_usuario","comentario"),array("'$id'","'$usuario'","'$texto'"));
+    $num = $this->autoIncrementar($id);
+     return $this->Insertar("comentarios",array("id_serie","id_usuario","id","comentario"),array("'$id'","'$usuario'","'$num'","'$texto'"));
+
   }
 
   function comentarioFila($id){
     return $this->ContadorFila("id_serie","comentarios"," where id_serie = $id");
   }
+
+  function autoIncrementar($id){
+    $num = $this->Leer("MAX(id) as MAX","comentarios"," WHERE id_serie ='$id'");
+    $num = json_decode($num,true);
+    if ($num[0]['MAX']!=NULL) {
+      $num = intval($num[0]['MAX']);
+      $num++;
+      }
+      else{
+        $num = 1;
+      }
+      return $num;
+  }
 }
+
 ?>

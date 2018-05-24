@@ -1,5 +1,7 @@
 $(document).ready(function(){
   var id = getURLparamentro("id");
+  $("#sincomentar").attr("hidden",true);
+
   $("#comment").attr("disabled",true);
 
   $(document).ajaxStart(function(){
@@ -19,7 +21,7 @@ $(document).ready(function(){
     if (data.length>0) {
       CargarComentarios(data);
     }else{
-      $(".c-comentarios").append("<p>Sin comentarios</p>");
+      $("#sincomentar").attr("hidden",false);
     }
   })
 
@@ -47,12 +49,14 @@ $("#comment").click(function(e){
     type:"GET"
   })
   .done(function(data){
+    $("#sincomentar").attr("hidden",true);
     $(".c-comentario").remove();
     $("#texto").val('');
     $("#comment").attr("disabled",true);
     CargarComentarios(data);
   })
 })
+
 $(".npage").on("click",function(){
   $(".c-comentario").remove();
   valor = $(this).attr("data");
@@ -97,11 +101,33 @@ function CargarComentarios(data){
 
       var texto = document.createElement("p");
       texto.append(data[valor]['comentario']);
-      c_texto.append(texto);
+
+      // var num = document.createElement("p");
+      // var enlace = document.createElement("a");
+      // $(enlace).attr("href","#"+data[valor]['id']);
+      // $(enlace).attr("id",data[valor]['id']);
+      // enlace.append("#"+data[valor]['id']);
+      // num.append(enlace);
+
+      var date = document.createElement("p");
+      var tiempo = formatoTiempo(data[valor]['tiempo']);
+      date.append(tiempo.toLocaleString());
+
+      c_texto.append(texto,date);
 
       comentario.append(c_usuario,c_texto);
       $(comentario).addClass("c-comentario");
       $(".c-comentarios").append(comentario);
      }
   }
+}
+
+
+function formatoTiempo(timestap){
+  var tiempo = timestap.split(/[- :]/);
+
+  var tiempoUTC = new Date(Date.UTC(tiempo[0], tiempo[1]-1,tiempo[2], tiempo[3], tiempo[4], tiempo[5]));
+
+  return tiempoUTC;
+
 }

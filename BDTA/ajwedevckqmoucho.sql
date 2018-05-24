@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 22-05-2018 a las 16:34:50
+-- Tiempo de generación: 24-05-2018 a las 15:08:09
 -- Versión del servidor: 10.1.29-MariaDB-6
 -- Versión de PHP: 7.2.5-0ubuntu0.18.04.1
 
@@ -30,18 +30,43 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `comentarios` (
   `id_serie` int(11) NOT NULL,
-  `id_usuario` varchar(8) CHARACTER SET utf8 NOT NULL,
-  `comentario` text CHARACTER SET utf8 NOT NULL,
+  `id_usuario` varchar(8) NOT NULL,
+  `id` int(11) NOT NULL,
+  `comentario` text NOT NULL,
   `tiempo` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `comentarios`
 --
 
-INSERT INTO `comentarios` (`id_serie`, `id_usuario`, `comentario`, `tiempo`) VALUES
-(5, 'admin', 'Genial!', '2018-05-22 16:16:21'),
-(5, 'admin', 'cddd', '2018-05-22 16:32:53');
+INSERT INTO `comentarios` (`id_serie`, `id_usuario`, `id`, `comentario`, `tiempo`) VALUES
+(1, 'admin', 1, 'vsfs', '2018-05-24 10:15:40'),
+(2, 'admin', 1, 'ffd', '2018-05-24 10:05:22'),
+(2, 'admin', 2, 'fsf', '2018-05-24 10:16:57'),
+(3, 'admin', 1, 'fsfs', '2018-05-24 10:14:14'),
+(4, 'admin', 1, 'gdgfd', '2018-05-24 12:18:01'),
+(5, 'admin', 1, 'sfssdf', '2018-05-24 10:01:44'),
+(5, 'admin', 2, 'vxvx', '2018-05-24 10:02:24'),
+(5, 'admin', 3, 'fafasd', '2018-05-24 11:38:03'),
+(5, 'admin', 4, 'aadsdasd', '2018-05-24 11:38:07'),
+(5, 'admin', 5, 'sdfsdfsd', '2018-05-24 11:38:10'),
+(5, 'admin', 6, 'fsfsd', '2018-05-24 11:38:28'),
+(5, 'admin', 7, 'fadsad', '2018-05-24 11:38:31'),
+(5, 'admin', 8, 'dasdsad', '2018-05-24 11:38:33'),
+(5, 'admin', 9, 'gsfsdf', '2018-05-24 11:38:50'),
+(5, 'admin', 10, 'sdfsdfsf', '2018-05-24 11:38:55'),
+(5, 'admin', 11, 'xvxcv', '2018-05-24 11:38:59'),
+(5, 'admin', 12, 'b', '2018-05-24 12:22:30'),
+(5, 'admin', 13, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', '2018-05-24 12:41:03'),
+(5, 'admin', 14, '    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', '2018-05-24 12:41:34'),
+(5, 'admin', 15, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n\n\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n\n\n\n\n\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', '2018-05-24 12:49:54'),
+(5, 'admin', 16, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n\n\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tem\npor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n\n\n\n\n\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', '2018-05-24 12:52:05'),
+(6, 'admin', 1, 'gsfsf', '2018-05-24 10:02:37'),
+(6, 'admin', 2, 'v', '2018-05-24 12:02:48'),
+(9, 'admin', 1, 'gssfs', '2018-05-24 10:15:59'),
+(12, 'admin', 1, 'fsfs', '2018-05-24 10:06:44'),
+(13, 'admin', 1, 'cz', '2018-05-24 10:06:22');
 
 -- --------------------------------------------------------
 
@@ -159,6 +184,7 @@ INSERT INTO `usuarios_series` (`id_Usuarios`, `id_serie`) VALUES
 -- Indices de la tabla `comentarios`
 --
 ALTER TABLE `comentarios`
+  ADD UNIQUE KEY `id_serie_UNIQUE` (`id_serie`,`id`) USING BTREE,
   ADD KEY `id_serie` (`id_serie`),
   ADD KEY `id_usuario` (`id_usuario`);
 

@@ -275,14 +275,23 @@ div.disabled{
           div.c-texto{
             display: flex;
             align-self: flex-start;
-            padding: .5em;
+            padding: .7em;
             width: 100%;
             flex-wrap: nowrap;
             font-family: $texto;
-            font-size: .9em;
+            font-size: .8em;
             border-radius: 1em 1em 1em 0;
             background: #ebedee;
             box-shadow: 2px 2px 2px aliceblue;
+            flex-direction: column;
+            p{
+              align-self: flex-start;
+            }
+            p:nth-child(2){
+              align-self: flex-end;
+              color: $hover;
+              font-size:.7em;
+            }
           }
         }
       }
@@ -543,16 +552,23 @@ div.disabled{
           }
           div.c-texto{
             display: flex;
+            flex-direction: column;
             align-self: flex-start;
-            padding: .5em;
+            padding: .7em;
             width: 100%;
             flex-wrap: nowrap;
             @include font-title($texto,.8em);
             border-radius: 1em 1em 1em 0;
             background: #ebedee;
             box-shadow: 2px 2px 2px aliceblue;
-
-
+          }
+          p{
+            align-self: flex-start;
+          }
+          p:nth-child(2){
+            font-size: .7em;
+            align-self: flex-end;
+            color: $hover;
           }
         }
       }
@@ -814,13 +830,22 @@ div.disabled{
           div.c-texto{
             display: flex;
             align-self: flex-start;
-            padding: .5em;
+            flex-direction: column;
+            padding: .7em;
             width: 100%;
             flex-wrap: nowrap;
             border-radius: 1em 1em 1em 0;
             @include font-title($texto,0.8em);
             background: #ebedee;
             box-shadow: 2px 2px 2px aliceblue;
+            p{
+              align-self: flex-start;
+            }
+            p:nth-child(2){
+              font-size: .7em;
+              align-self: flex-end;
+              color: $hover;
+            }
           }
         }
       }
@@ -1079,14 +1104,23 @@ div.disabled{
           }
           div.c-texto{
             display: flex;
+            flex-direction: column;
             align-self: flex-start;
-            padding: .5em;
+            padding: .7em;
             width: 100%;
             flex-wrap: nowrap;
             border-radius: 1em 1em 1em 0;
             @include font-title($texto,.8em);
             background: #ebedee;
             box-shadow: 2px 2px 2px aliceblue;
+            p{
+              align-self: flex-start;
+            }
+            p:nth-child(2){
+              font-size: .7em;
+              align-self: flex-end;
+              color: $hover;
+            }
 
 
           }
