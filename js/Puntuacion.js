@@ -2,7 +2,7 @@ $(document).ready(function(){
 var id = getURLparamentro("id");
 $.ajax({
   url:"../../Controlador/ObtenerPuntuacion.php",
-  data:{punto:"punto",id:id},
+  data:{action:"serie",thumb:"get",id:id},
   type:"GET"
 })
 
@@ -13,7 +13,7 @@ $.ajax({
   $("#thumbup").click(function(){
     $.ajax({
       url:"../../Controlador/ObtenerPuntuacion.php",
-      data:{up:"up",id:id},
+      data:{action:"serie",thumb:"up",id:id},
       type:"GET"
     })
     .done(function(data){
@@ -23,7 +23,7 @@ $.ajax({
   $("#thumbdown").click(function(){
     $.ajax({
       url:"../../Controlador/ObtenerPuntuacion.php",
-      data:{down:"down",id:id},
+      data:{action:"serie",thumb:"down",id:id},
       type:"GET"
     })
     .done(function(data){

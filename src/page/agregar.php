@@ -6,7 +6,7 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
-  <title>Seriefilos: <?php echo $titulo = (isset($_SESSION['editar'])&&!empty($_SESSION['editar'])) ? "Editar" : "Agregar" ; ?></title>
+  <title>Seriefilo:Agregar</title>
   <link rel="icon" href="../img/favicon.png" type="image/x-png">
   <link rel="stylesheet" href="../../estilo/css/estilo_contacto.css">
   <link rel="stylesheet" href="../../estilo/css/estilo_agregar.css">
@@ -37,7 +37,7 @@
             <?php if (isset($_SESSION['usuario'])&&!empty($_SESSION['usuario'])): ?>
               <a href="perfil.php"><?php echo $_SESSION['usuario'] ?></a>
               <div class="s-menu-contenido">
-             <a href="../../index.html#Registrate">Cerrar sesión</a>
+             <a href="logout.php">Cerrar sesión</a>
             <?php else: ?>
               <a href="../login.php">Iniciar sesión</a>
               <div class="s-menu-contenido">

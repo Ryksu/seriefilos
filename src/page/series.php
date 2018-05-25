@@ -135,9 +135,9 @@ require_once '../../Controlador/ObtenerSerie.php';
                    <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js"></script>
                  </div>
              </div>
-               <p>
+              
                <?php echo $texto ?>
-             </p>
+
              <?php if (isset($trailer)): ?>
                <div class="trailer">
                <?php echo $trailer ?>

@@ -30,10 +30,11 @@ if (isset($_FILES['Poster'])&&!empty($_FILES['Poster'])) {
 }
 if (isset($_POST['Titulo'])&&!empty($_POST['Titulo'])) {
   $titulo = $_POST['Titulo'];
-  $texto = Parsedown::instance()
-            ->setBreaksEnabled(true)
-            ->text($_POST['Texto']);
+  $sinopsis =$_POST['Texto'];
 
+  $texto = Parsedown::instance()
+          ->setMarkupEscaped(true)
+          ->text($sinopsis);
   $year = $_POST['Year'];
   $temporada = $_POST['Temporada'];
   $categoria = $_POST["Categoria"];
@@ -42,7 +43,7 @@ if (isset($_POST['Titulo'])&&!empty($_POST['Titulo'])) {
     $trailer = $_POST['Trailer'];
     $Series->AgregarSerie("../".$url,$titulo,$texto,$categoria,$year,$temporada,$estado,$_SESSION['usuario'],$trailer);
   }
-  $Series->AgregarSerie("../".$url,$titulo,$texto,$categoria,$year,$temporada,$estado,$_SESSION['usuario']);
+    var_dump($Series->AgregarSerie("../".$url,$titulo,$texto,$categoria,$year,$temporada,$estado,$_SESSION['usuario']));
 
 }
 

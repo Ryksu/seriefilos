@@ -7,11 +7,11 @@
 {
   public $punto;
   public $id;
-  function __construct($id)
+  function __construct($tabla,$id)
   {
-      $serie= $this->Leer("Puntuacion","serie","WHERE id ='$id'");
-      $serie = json_decode($serie,true);
-      $this->punto = $serie[0]['Puntuacion'];
+      $puntuacion= $this->Leer("Puntuacion",$tabla,"WHERE id ='$id'");
+      $puntuacion = json_decode($puntuacion,true);
+      $this->punto = $puntuacion[0]['Puntuacion'];
       $this->punto = intval($this->punto);
       $this->id = $id;
   }
