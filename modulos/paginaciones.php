@@ -1,3 +1,8 @@
+<?php
+$pagina_total = Series::$pagina_total;
+$pagina = Series::$pagina;
+
+ ?>
 <?php if ($pagina_total>1): ?>
   <div class="paginacion">
     <?php for ($i=1; $i <= $pagina_total ; $i++) {

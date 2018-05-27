@@ -5,6 +5,12 @@ $(document).ready(function(){
     $(".c-buscador").toggleClass("toggle");
 
 
-  })
+  });
+
+
+  $(".hamburger").click(function(){
+    $("span").toggleClass("fa-times");
+    $(".c-buscador").toggleClass("c-buscador_enable");
+  });
 
 })

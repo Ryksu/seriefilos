@@ -17,24 +17,18 @@ if ($_POST['action']=="BorrarUsuario") {
 }
 
 if($_POST['action']=="ObtenerSeries"){
-  $getseries= new Series();
-  $nfilas = $getseries->ContadorFila("id","serie");
-  if ($nfilas>0) {
-    $limite = 8;
-    $pagina = 1;
+    $getseries= new Series();
     if (isset($_POST['pg'])) {
-      $pagina = $_POST['pg'];
+      $series = $getseries->paginacion("*","serie",$_POST);
+
+    }else{
+      $series = $getseries->paginacion("*","serie");
+
     }
-    $inicio = ($pagina-1)*$limite;
-    $pagina_total = ceil($nfilas/$limite);
-
-    $series = $getseries->obtenerSeries($inicio,$limite);
-    header("Content-Type: application/json; charset=UTF-8");
-
-    echo $series;
-  }
-
+      header("Content-Type: application/json; charset=UTF-8");
+      echo $series;
 }
+
 
 if ($_POST['action']=="BorrarSerie") {
   $id = $_POST['serie']  ;

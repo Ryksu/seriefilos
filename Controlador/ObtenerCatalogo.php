@@ -1,22 +1,75 @@
 <?php
 require_once '../../Conf/Series.php';
 
-  // code...
-
 $getseries= new Series();
-$nfilas = $getseries->ContadorFila("id","serie");
-if ($nfilas>0) {
-  $limite = 8;
-  $pagina = 1;
-  if (isset($_GET['pg'])) {
-    $pagina = $_GET['pg'];
+  if (!isset($_GET['pg'])) {
+    $res = $getseries->paginacion('id','serie');
+    $res = json_decode($res,true);
+
   }
-  $inicio = ($pagina-1)*$limite;
-  $pagina_total = ceil($nfilas/$limite);
+  else {
+    $res = $getseries->paginacion('id','serie',$_GET);
+    $res = json_decode($res,true);
 
-  $series = $getseries->obtenerSeries($inicio,$limite);
-  // header("Content-Type: application/json; charset=UTF-8");
+  }
 
-   $res = json_decode($series,true);
-}
+  if (isset($_GET['buscador']) && !empty($_GET['buscador'])) {
+      $datos = $_GET['buscador'];
+    $res = $getseries->paginacionResultado("Titulo","serie",$datos);
+    $res = json_decode($res,true);
+
+    if ($res ==NULL) {
+      http_response_code(404);
+      header('location: ../error/404.php');
+    }
+  }
+  if (isset($_GET['año']) && !empty($_GET['año'])) {
+      $datos = $_GET['año'];
+    $res = $getseries->paginacionResultado("Year","serie",$datos);
+    $res = json_decode($res,true);
+
+    if ($res ==NULL) {
+      http_response_code(404);
+      header('location: ../error/404.php');
+    }
+  }
+  if (isset($_GET['temporada']) && !empty($_GET['temporada'])) {
+      $datos = $_GET['temporada'];
+
+    $res = $getseries->paginacionResultado("Temporada","serie",$datos);
+    $res = json_decode($res,true);
+
+    if ($res ==NULL) {
+      http_response_code(404);
+      header('location: ../error/404.php');
+    }
+  }
+
+  if (isset($_GET['Categoria']) && !empty($_GET['Categoria'])) {
+      $datos = $_GET['Categoria'];
+
+    $res = $getseries->paginacionResultado("Categoria","serie",$datos);
+    $res = json_decode($res,true);
+
+    if ($res ==NULL) {
+      http_response_code(404);
+      header('location: ../error/404.php');
+    }
+  }
+
+  if (isset($_GET['Estado']) && !empty($_GET['Estado'])) {
+      $datos = $_GET['Estado'];
+
+    $res = $getseries->paginacionResultado("Estado","serie",$datos);
+    $res = json_decode($res,true);
+
+    if ($res ==NULL) {
+      http_response_code(404);
+      header('location: ../error/404.php');
+    }
+  }
+
+
+
+
 ?>

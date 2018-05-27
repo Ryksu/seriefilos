@@ -9,10 +9,9 @@ require_once '../../Controlador/ObtenerSerie.php';
      <link rel="icon" href="../img/favicon.png" type="image/x-png">
      <link rel="stylesheet" href="../../estilo/css/estilo_catalogo.css">
      <link rel="stylesheet" href="../../estilo/css/estilo_series.css">
-     <link rel="stylesheet" href="../../estilo/css/fontawesome.css">
      <script src="../../lib/jquery/jquery-3.3.1.min.js"></script>
      <script src="../../js/Categorias.js" ></script>
-     <script src="../../js/caja_busqueda.js" ></script>
+     <script src="../../js/buscador.js" ></script>
      <script src="../../js/Puntuacion.js" ></script>
 
 
@@ -66,7 +65,7 @@ require_once '../../Controlador/ObtenerSerie.php';
            <nav class="c-navegacion">
              <ul>
                <li><span class="fas fa-angle-left"></span>
-                 <a href="catalogos.php">Catálogo</a>
+                 <a href="catalogos.php">volver a Catálogos</a>
                </li>
                <li>
                  <span class="fas fa-angle-left"></span>
@@ -135,7 +134,7 @@ require_once '../../Controlador/ObtenerSerie.php';
                    <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js"></script>
                  </div>
              </div>
-              
+
                <?php echo $texto ?>
 
              <?php if (isset($trailer)): ?>
@@ -147,42 +146,7 @@ require_once '../../Controlador/ObtenerSerie.php';
           <?php include_once '../../modulos/comentarios.php'; ?>
          </div>
          <div class="c-buscador">
-           <form class="form_search" method="get" action="catalogos.php">
-             <div class="b-buscador">
-               <button id="button_search" type="submit" class="m-buscador">     <span class="fa fa-search"></span>
-               </button>
-               <input type="search" id="buscador" name="buscador" value="" placeholder="Buscar...">
-             </div>
-             <div class="c-year">
-               <label for="año">Año</label>
-               <input type="number" name="año"  id="año" min="1900" max="2020" value="">
-             </div>
-             <div class="c-temporada">
-               <label for="temporada">Temporada</label>
-               <input type="number" name="temporada" id="temporada" value="">
-             </div>
-             <div class="c-categorias">
-               <label for="Categoria">Categorias</label>
-               <select class="categorias" name="Categoria" id="Categoria">
-                 <option value="" selected>Todos </option>
-                 </select>
-             </div>
-             <div class="c-estados">
-               <label for="Estado">Estado</label>
-               <select class="estados" name="Estado" id="Estado">
-               </select>
-             </div>
-             <div class="c-enviar">
-               <button type="reset" name="Deshacer">
-               <span class="fas fa-redo-alt"></span>
-               Deshacer
-             </button>
-               <button type="submit" name="Enviar">
-               <span class="far fa-paper-plane"></span>
-               Enviar
-             </button>
-           </div>
-           </form>
+           <?php include_once '../../modulos/buscador.php' ?>
          </div><!-- fin caja de busqueda-->
 
        </main>

@@ -1,8 +1,12 @@
 <?php
- session_start();
-$vacio = false;
-require_once '../../Controlador/ObtenerCatalogo.php';
-?>
+header($_SERVER['SERVER_PROTOCOL']." 404 Not Found");
+if (isset($_GET['buscador'])) {
+  header('location: /src/page/catalogos.php?'.$_SERVER['QUERY_STRING']);
+}
+
+
+
+ ?>
  <!DOCTYPE html>
  <html lang="es" dir="ltr">
    <head>
@@ -10,10 +14,11 @@ require_once '../../Controlador/ObtenerCatalogo.php';
      <meta charset="utf-8">
      <link rel="icon" href="../img/favicon.png" type="image/x-png">
      <link rel="stylesheet" href="../../estilo/css/estilo_catalogo.css">
+     <link rel="stylesheet" href="../../estilo/css/Error.css">
      <script src="../../lib/jquery/jquery-3.3.1.min.js"></script>
      <script src="../../js/Categorias.js"></script>
      <script src="../../js/buscador.js"></script>
-     <title>Seriefilos: Catálogo</title>
+     <title>Seriefilos: UPPS! </title>
    </head>
    <body>
      <div class="container">
@@ -25,18 +30,18 @@ require_once '../../Controlador/ObtenerCatalogo.php';
              </li>
              <!--t-logo-->
              <li><a href="../../index.php">Inicio</a></li>
-             <li><a href="catalogos.php#contenido">Catálogo</a></li>
+             <li><a href="../page/catalogos.php#contenido">Catálogo</a></li>
              <li><a href="contacto.php">Contactos</a></li>
              <li class="s-menu">
                <?php if (isset($_SESSION['usuario'])&&!empty($_SESSION['usuario'])): ?>
-                 <a href="perfil.php"><?php echo $_SESSION['usuario'] ?></a>
+                 <a href="../page/perfil.php"><?php echo $_SESSION['usuario'] ?></a>
                  <div class="s-menu-contenido">
-                <a href="agregar.php">Añadir serie</a>
-                <a href="logout.php">Cerrar sesión</a>
+                <a href="../page/agregar.php">Añadir serie</a>
+                <a href="../page/logout.php">Cerrar sesión</a>
                <?php else: ?>
                  <a href="../login.php">Iniciar sesión</a>
                  <div class="s-menu-contenido">
-                   <a href="signup.php#Registrate">Registrate</a>
+                   <a href="../page/signup.php#Registrate">Registrate</a>
                <?php endif; ?>
                </div>
              </li>
@@ -49,29 +54,17 @@ require_once '../../Controlador/ObtenerCatalogo.php';
          </nav><!-- menu -->
        </header>
        <main class="contenido" id="contenido">
-         <div class="c-catalogo">
+         <div class="consulta">
+           <h1>UPPS! :(</h1>
+           <span></span>
+           <p>No se encuentra o aún no ha sido añadida por favor contacte con nosotros: <a href="../page/contacto.php">Contacto</a></p>
+         </div>
 
-
-   <div class="catalogos" id="catalogo">
-     <?php foreach($res as $row):?>
-       <a href="series.php?id=<?php echo $row['id']?>">
-         <article class="serie">
-           <img src="<?php echo $row['Poster'];?>" alt="<?php echo $row['Titulo']?>">
-
-           <h1><?php echo $row['Titulo']?></h1>
-         </article>
-
-       </a>
-     <?php endforeach; ?>
-   </div><!--fin categologos -->
-
-</div>
          <div class="c-buscador">
            <?php include '../../modulos/buscador.php' ?>
          </div><!-- fin caja de busqueda-->
        </main>
-        <?php include_once '../../modulos/paginaciones.php'; ?>
-<footer>
+ <footer>
   <div class="redes_sociales">
     <ul>
       <li>
@@ -94,9 +87,9 @@ require_once '../../Controlador/ObtenerCatalogo.php';
       </li>
     </ul>
   </div>
-</footer>
-</div>
-<!-- fin container-->
+ </footer>
+ </div>
+ <!-- fin container-->
 
    </body>
  </html>

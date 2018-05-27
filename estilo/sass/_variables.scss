@@ -1,0 +1,24 @@
+@import "../fontawesome/scss/variables.scss";
+
+/* Variables  Globales*/
+/* colores por defectos */
+$back_default : #e33f35;
+$letra :  #fef9f0;
+$hover:  #2d232e;
+$error: red;
+$enlaces: #233fd9;
+/*Fuentes por defectos */
+$titulo: 'Patua One', cursive;
+$texto:  'Open Sans', sans-serif;
+
+/*Variables predefinida */
+$web_full : 1024px;
+$web_table: 600px;
+$web_mobile_medium: 480px;
+$web_mobile_low: 320px;
+
+/* mixmin de fuente */
+@mixin font-title($fonts,$size){
+  font-family: $fonts;
+  font-size: $size;
+}

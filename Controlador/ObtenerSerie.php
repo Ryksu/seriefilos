@@ -2,6 +2,9 @@
 session_start();
 require_once '../../Conf/Series.php';
 require_once '../../Conf/Comentarios.php';
+if (isset($_GET['buscador'])) {
+  header('location:catalogos.php?'.$_SERVER['QUERY_STRING']);
+}
 
 $conexion = new Series();
 $id = $_GET['id'];

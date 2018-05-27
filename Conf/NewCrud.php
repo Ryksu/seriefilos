@@ -24,6 +24,7 @@ class NewCrud extends Database
       $query = "INSERT INTO $tabla($nombre) VALUES ($datos)";
       $this->conectar();
       $sql= $this->conexion->prepare($query);
+
       return $sql->execute();
 
 
@@ -49,8 +50,10 @@ class NewCrud extends Database
     $n_fila -> execute();
     return  $n_fila ->rowCount();
   }
+
+  function ContarResultado($columna,$tablas,$patron){
+    return $this->ContadorFila($columna,$tablas,"WHERE $columna LIKE '%{$patron}%'");
+  }
 }
-
-
 
  ?>

@@ -1,4 +1,4 @@
-@import "master.scss";
+@import "_variables";
 @media screen and (max-width:$web_mobile_medium){
   main.contenido{
     display: flex;

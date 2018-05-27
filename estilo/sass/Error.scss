@@ -1,0 +1,131 @@
+@import 'variables';
+@media screen and (max-width:$web_mobile_medium){
+  main.contenido{
+    display: flex;
+    flex-direction: row;
+
+    div.consulta{
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      padding: 16px 10px;
+      // justify-content: center;
+      width: 100%;
+
+
+      h1{
+        text-align:  center;
+        font-size: 4em;
+        font-family: $titulo;
+      }
+      p{
+        text-align:  center;
+        font-size: 1em;
+        font-family: $texto;
+        a{
+          color: $enlaces;
+          font-weight: bold;
+          text-decoration: none;
+        }
+      }
+
+    }
+  }
+}
+
+@media screen and (min-width:481px) and (max-width:775px){
+  main.contenido{
+    display: flex;
+    flex-direction: row;
+
+    div.consulta{
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      padding: 16px 10px;
+      // justify-content: center;
+      width: 100%;
+
+
+      h1{
+        text-align:  center;
+        font-size: 5em;
+        font-family: $titulo;
+      }
+      p{
+        text-align:  center;
+        // font-size: 1em;
+        font-family: $texto;
+        a{
+          color: $enlaces;
+          font-weight: bold;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width:776px ) and (max-width:1024px) {
+  main.contenido{
+    display: flex;
+    flex-direction: row;
+
+    div.consulta{
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      padding: 16px 10px;
+      // justify-content: center;
+      width: 80%;
+
+      h1{
+        text-align:  center;
+        font-size: 8em;
+        font-family: $titulo;
+      }
+      p{
+        text-align:  center;
+        // font-size: 1.5em;
+        font-family: $texto;
+        a{
+          color: $enlaces;
+          font-weight: bold;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width:1025px) {
+  main.contenido{
+    display: flex;
+    flex-direction: row;
+
+    div.consulta{
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      padding: 16px 10px;
+      // justify-content: center;
+      width: 80%;
+
+      h1{
+        text-align:  center;
+        font-size: 10em;
+        font-family: $titulo;
+      }
+      p{
+        text-align:  center;
+        font-size: 1.5em;
+        font-family: $texto;
+        a{
+          color: $enlaces;
+          font-weight: bold;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

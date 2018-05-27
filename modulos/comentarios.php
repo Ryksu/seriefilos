@@ -24,4 +24,10 @@
 <?php  include 'paginacion.php'; ?>
 
 <script src="../../js/ObtenerComentarios.js"></script>
+<?php else: ?>
+  <div class="c-comentarios">
+    <h2>Registrate para comentar</h2>
+    <a href="signup.php">Registarse</a>
+
+  </div>
 <?php endif; ?>
