@@ -1,31 +1,29 @@
 $(document).ready(function(){
 
-  $("#password").click(function(){
-    $("#msg").html("<ul><li>8 o 15 caracteres</li><li>Al menos una minusculas y/o mayuscula, numeros y/o caracteres especiales</li></ul>");
+  $("#password").focus(function(){
+    $("#msg").html("<ul><li>4 o 16 caracteres</li> "+
+    "<li>Tiene Que llevar al menos una minuscula y mayuscula, un numero y un caracter especial(@!%*?%#.$_())</li> </ul>");
   })
 
 
   $("#usuario").keyup(function(){
     var getUsuario = $(this).val();
     $.ajax({
-      url:"../../Controlador/ComprobarUsuario.php",
-      data:{usuario:getUsuario},
+      url:"../../Controlador/FuncionUsuarios.php",
+      data:{action:"Comprobar",usuario:getUsuario},
       type:"POST"
     })
     .done(function(data){
-      // console.log("Entramos en Done");
       siExiste(data);
     })
-    .fail(function(){
-      // console.log("Algo ha fallado");
-    })
-  })
 
+  })
+/* Comprueba que los caracteres son corectos */
   $("#password").keyup(function(){
     ComprobarPass();
   })
 
-
+  /* Comprueba los caracteres del  input password */
   $("#repeat").keyup(function(){
     ComprobarRepeat();
   })
@@ -38,15 +36,16 @@ $(document).ready(function(){
     var email = $("#email").val();
 
     $.ajax({
-      url:"../../Controlador/CrearUsuario.php",
-      data:{usuario:usuario,password:password,repeat:repeat,email:email},
+      url:"../../Controlador/FuncionUsuarios.php",
+      data:{action:"Registar",usuario:usuario,password:password,repeat:repeat,email:email},
       type:"POST"
     })
     .done(function(data){
       if (data) {
         $("#msg").html("<p>Genial ya estas registrado</p>");
+        setTimeout(function(){location.replace("../login.php");},2000);
       }else{
-        $("#msg").html("<p>vuelve a repetir la contraseña</p>");
+        $("#msg").html("<p>Vuelve a repetir la contraseña</p>");
       }
 
     })
@@ -58,7 +57,7 @@ $(document).ready(function(){
 
 /*Comprobar si exite un usuario */
 function siExiste(data){
-  console.log("Comprobamos si esta vacio");
+  // console.log("Comprobamos si esta vacio");
 
   var expr = /[a-zA-z-0-9]{4,8}/g;
   var inputUsuario = document.getElementById("usuario");
@@ -91,13 +90,13 @@ function ComprobarPass(){
   al menos un caracter especial
   no se acepta espacio
   */
-  var expr = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&#.$($)$-$_])[A-Za-z\d$@$!%*?&#.$($)$-$_]{8,15}$/;
+  var expr = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&#.$($)$-$_])[A-Za-z\d$@$!%*?&#.$($)$-$_]{4,16}$/;
 
   var inputPass = document.getElementById("password");
 
   /*comprueba la expresion regular*/
   if (expr.exec(inputPass.value)) {
-    console.log("comprueba la expresion");
+    // console.log("comprueba la expresion");
     inputPass.style.border ="2px solid green";
   }
   else{
@@ -118,7 +117,7 @@ function ComprobarRepeat(){
   al menos un caracter especial
   no se acepta espacio
   */
-  var expr = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&#.$($)$-$_])[A-Za-z\d$@$!%*?&#.$($)$-$_]{8,15}$/;
+  var expr = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&#.$($)$-$_])[A-Za-z\d$@$!%*?&#.$($)$-$_]{4,16}$/;
 
   if (expr.exec(inputRepeat.value)) {
     if (inputPass.value === inputRepeat.value) {

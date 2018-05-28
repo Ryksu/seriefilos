@@ -17,12 +17,12 @@
   }
 
   function thumbUp(){
-    $this->punto = $this->punto + 10;
+    $this->punto = $this->punto + 1;
      return $this->Actulizar("serie","Puntuacion ='$this->punto'","id = '$this->id'" );
   }
 
   function thumbDown(){
-    $this->punto = $this->punto - 10;
+    $this->punto = $this->punto - 1;
       return $this->Actulizar("serie","Puntuacion ='$this->punto'","id = '$this->id'" );
   }
 
