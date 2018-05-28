@@ -67,6 +67,7 @@
               <span class="far fa-paper-plane"></span>
               Registarse
             </button>
+
           </div>
         </form>
       </div>

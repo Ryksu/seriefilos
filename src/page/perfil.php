@@ -49,7 +49,7 @@ require_once '../../Controlador/ObtenerUsuario.php';
     <!-- cabecera-->
     <main class="contenido" id="contenido">
       <div class="formulario">
-        <form class="perfil" id="perfil" method="post">
+        <form class="perfil" id="perfil" method="post" enctype="multipart/form-data" >
           <fieldset>
             <legend>Datos del usuario</legend>
             <div class="c-foto">
