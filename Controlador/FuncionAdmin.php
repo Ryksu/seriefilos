@@ -23,7 +23,6 @@ if($_POST['action']=="ObtenerSeries"){
 
     }else{
       $series = $getseries->paginacion("*","serie");
-
     }
       header("Content-Type: application/json; charset=UTF-8");
       echo $series;

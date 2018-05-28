@@ -1,12 +1,17 @@
 <?php
 session_start();
 require_once '../../Conf/Usuarios.php';
-$obtener = new Usuarios();
-  $nfilas = $obtener->ContadorFila('id','serie');
-  $limite = 8;
-  $pagina_total = ceil($nfilas/$limite);
+require_once '../../Conf/Series.php';
 
-$resultado = $obtener->obtenerUsusario($_SESSION['usuario']);
+$Usuarios = new Usuarios();
+
+$Series = new Series();
+$res = $Series->paginacion("id","serie");
+
+$pagina_total = Series::$pagina_total;
+$pagina = Series::$pagina;
+
+$resultado = $Usuarios->obtenerUsusario($_SESSION['usuario']);
  $resultado = json_decode($resultado,true);
 
 

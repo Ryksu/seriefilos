@@ -73,7 +73,6 @@
               <input type="number" name="Year" id="Year" value="" min="1900" max="2020" maxlength="4" required>
               <label for="Temporada">Temporada</label>
               <input type="number" name="Temporada" id="Temporada" value="" required>
-
             </div>
             <label for="Categoria">Categoria</label>
             <select  required name="Categoria" id="Categoria" >
@@ -83,10 +82,13 @@
             <select required name="Estado" id="Estado" >
               <option value="">Seleccione un Estado de emisión</option>
             </select>
+          <label for="Trailer">Insertar trailer</label>
+          <input type="text" name="Trailer" value="" placeholder="enlace de Youtube">
           <label for="Texto">Sinopsis</label>
             <textarea name="Texto" id="Texto" required></textarea>
           </div>
           </fieldset>
+
           <div class="c-enviar">
             <button type="reset" name="Deshacer">
               <span class="fas fa-redo-alt"></span>

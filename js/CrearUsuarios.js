@@ -37,7 +37,7 @@ $(document).ready(function(){
 
     $.ajax({
       url:"../../Controlador/FuncionUsuarios.php",
-      data:{action:"Registar",usuario:usuario,password:password,repeat:repeat,email:email},
+      data:{action:"Registrar",usuario:usuario,password:password,repeat:repeat,email:email},
       type:"POST"
     })
     .done(function(data){

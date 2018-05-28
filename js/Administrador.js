@@ -85,6 +85,7 @@ $(document).ready(function(){
 
 
 })
+/* Coge los usuarios de la base de datos luego los transforma */
 
 function CargarUsuarios(data){
   $("#users-table").find("tr:not(:nth-child(1))").remove();
@@ -129,6 +130,8 @@ function CargarUsuarios(data){
     $('#users-table').append(tr);
   }
 }
+
+/* Carga de la serie obtenida de la bdta, los datos en formato del DOM */
 
 function CargarSeries(data){
   $("#serie-table").find("tr:not(:nth-child(1))").remove();
@@ -185,7 +188,11 @@ function CargarSeries(data){
       idusuario.append(data[valor]['id_Usuarios']);
 
       var puntuacion = document.createElement('td');
-      puntuacion.append(data[valor]['Puntuacion']);
+      if (data[valor]['Puntuacion']==null) {
+        puntuacion.append("0");
+      }else{
+        puntuacion.append(data[valor]['Puntuacion']);
+      }
 
       var eliminar = document.createElement("td");
       $(eliminar).addClass('delete');

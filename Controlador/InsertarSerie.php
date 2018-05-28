@@ -39,12 +39,22 @@ if (isset($_POST['Titulo'])&&!empty($_POST['Titulo'])) {
   $temporada = $_POST['Temporada'];
   $categoria = $_POST["Categoria"];
   $estado = $_POST['Estado'];
-  if (!isset($_POST['Trailer'])) {
-    $trailer=NULL;
-  }else{
-    $trailer=$_POST['Trailer'];
+  if (isset($_POST['Trailer'])&&!empty($_POST['Trailer'])) {
+    if (strlen($_POST['Trailer'])==43) {
+      $video = explode("=",$_POST['Trailer']);
+      $iframe = '<iframe width="560" height="315" src="https://www.youtube.com/embed/'.$video[1].'" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
+      $trailer = $iframe;
+        echo $Series->AgregarSerie("../".$url,$titulo,$texto,$categoria,$year,$temporada,$estado,$_SESSION['usuario'],"$trailer");
+    }
+     else{
+          echo 2;
+        }
   }
-    echo $Series->AgregarSerie("../".$url,$titulo,$texto,$categoria,$year,$temporada,$estado,$_SESSION['usuario'],"$trailer");
+  else{
+  echo $Series->AgregarSerie("../".$url,$titulo,$texto,$categoria,$year,$temporada,$estado,$_SESSION['usuario']);
+
+  }
+
 
 }
 
