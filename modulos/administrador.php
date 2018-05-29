@@ -45,8 +45,10 @@
         <th>Editar</th>
       </tr>
     </table>
-<?php
-  include 'paginacion.php';?>
+<?php //include 'paginacion.php';?>
+<div class="paginacion paginacionSeries">
+
+</div>
   </div>
 <script src="../../js/Administrador.js"></script>
 

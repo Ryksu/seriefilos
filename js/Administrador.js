@@ -27,13 +27,24 @@ $(document).ready(function(){
   });
   $("#Series").click(function(){
     $("#c-series").toggleClass("c-Todo");
+
     $.ajax({
       url:"../../Controlador/FuncionAdmin.php",
       data:{action:"ObtenerSeries"},
       type:"POST"
     })
     .done(function(data){
+
+
       CargarSeries(data);
+
+      var paginaTotal = data['paginaTotal'];
+      var pagina = data['pagina'];
+
+        PaginacionJs(paginaTotal,pagina);
+
+
+
       $(".eliminarSeries").click(function(e){
         e.preventDefault();
         var valor = $(this).val();
@@ -135,6 +146,10 @@ function CargarUsuarios(data){
 
 function CargarSeries(data){
   $("#serie-table").find("tr:not(:nth-child(1))").remove();
+  /* Eliminamos los datos que no necesitamos */
+  delete data['pagina'];
+  delete data['paginaTotal'];
+
   for (var valor in data) {
 
       var id = document.createElement('td');
@@ -206,7 +221,24 @@ function CargarSeries(data){
       tr.append(id,titulo,texto,categorias,year,temporada,estado,trailer,poster,idusuario,puntuacion,eliminar,editar);
 
     $("#serie-table").append(tr);
+  }
+}
 
+function PaginacionJs(paginaTotal){
+  var paginacion = $(".paginacionSeries");
+  paginacion.empty();
+
+  for (var i = 0; i < paginaTotal; i++) {
+    if (pagina==i) {
+    }
+    else{
+      var enlace = document.createElement("a");
+      $(enlace).addClass("npage");
+      $(enlace).attr("data",i+1);
+      enlace.append(i+1);
+      paginacion.append(enlace);
+
+    }
   }
 
 }

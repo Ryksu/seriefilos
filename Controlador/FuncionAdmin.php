@@ -20,9 +20,18 @@ if($_POST['action']=="ObtenerSeries"){
     $getseries= new Series();
     if (isset($_POST['pg'])) {
       $series = $getseries->paginacion("*","serie",$_POST);
+      $series = json_decode($series,true);
+      $series['paginaTotal'] = Series::$pagina_total;
+      $series['pagina'] = Series::$pagina;
+      $series = json_encode($series);
 
     }else{
       $series = $getseries->paginacion("*","serie");
+      $series = json_decode($series,true);
+      $series['paginaTotal'] = Series::$pagina_total;
+      $series['pagina'] = Series::$pagina;
+      $series = json_encode($series);
+
     }
       header("Content-Type: application/json; charset=UTF-8");
       echo $series;
