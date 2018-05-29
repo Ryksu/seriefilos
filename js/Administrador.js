@@ -35,11 +35,14 @@ $(document).ready(function(){
     })
     .done(function(data){
 
+      var paginaTotal = data['paginaTotal'];
+      var pagina = data['pagina'];
+      console.log(data['paginaTotal']);
+      console.log(data['pagina']);
 
       CargarSeries(data);
 
-      var paginaTotal = data['paginaTotal'];
-      var pagina = data['pagina'];
+
 
         PaginacionJs(paginaTotal,pagina);
 
@@ -224,12 +227,15 @@ function CargarSeries(data){
   }
 }
 
-function PaginacionJs(paginaTotal){
+function PaginacionJs(paginaTotal,pagina){
   var paginacion = $(".paginacionSeries");
   paginacion.empty();
 
   for (var i = 0; i < paginaTotal; i++) {
     if (pagina==i) {
+      var seleccionado = document.createElement("p");
+      seleccionado.append(i+1);
+      paginacion.append(seleccionado);
     }
     else{
       var enlace = document.createElement("a");
