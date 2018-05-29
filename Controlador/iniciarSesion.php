@@ -2,10 +2,15 @@
 session_start();
 require_once '../Conf/Usuarios.php';
 $iniciar = new Usuarios();
-$resultado = $iniciar->iniciarUsuarios($_POST['usuario'],$_POST['password']);
+$password = $_POST['password'];
+$usuario = $_POST['usuario'];
+
+
+$resultado = $iniciar->iniciarUsuario($usuario,$password);
 if ($resultado) {
   $_SESSION['usuario'] = $_POST['usuario'];
 }
+
 if (isset($_POST['recodar'])) {
   setcookie('usuario_cookie',$_POST['usuario'],time()+60*60*3600,"/",".ajwebdev.com");
 }

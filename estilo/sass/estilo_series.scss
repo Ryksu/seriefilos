@@ -39,6 +39,9 @@
               text-decoration: none;
               color: $enlaces;
             }
+            a:hover{
+              text-decoration: underline;
+            }
           }
         }
       }
@@ -220,7 +223,15 @@
         }
         p{
           align-self: center;
-          @include font-title($texto,1.2em);
+          @include font-title($texto,1em);
+          a{
+            text-decoration: none;
+            color: $enlaces;
+            font-weight: bold;
+          }
+          a:hover{
+            text-decoration: underline;
+          }
         }
         div.c-comentario{
           width: 100%;
@@ -310,6 +321,9 @@
               text-decoration: none;
               color: $enlaces;
             }
+            a:hover{
+              text-decoration: underline;
+            }
           }
         }
       }
@@ -330,7 +344,7 @@
         h1{
           text-align: center;
           font-family: $titulo;
-          font-size: 1.7em;
+          font-size: 2em;
         }
         p{
           text-align: left;
@@ -491,6 +505,14 @@
         p{
           align-self: center;
           @include font-title($texto,1.2em);
+          a{
+            text-decoration: none;
+            color: $enlaces;
+            font-weight: bold;
+          }
+          a:hover{
+            text-decoration: underline;
+          }
         }
         div.loading{
           align-self: center;
@@ -589,6 +611,9 @@
               text-decoration: none;
               color: $enlaces;
             }
+            a:hover{
+              text-decoration: underline;
+            }
           }
         }
       }
@@ -609,7 +634,7 @@
         h1{
           text-align: center;
           font-family: $titulo;
-          font-size: 1.8em;
+          font-size: 2.5em;
         }
         h2{
           font-family: $titulo;
@@ -768,6 +793,14 @@
         p{
           align-self: center;
           @include font-title($texto,1.2em);
+          a{
+            text-decoration: none;
+            color: $enlaces;
+            font-weight: bold;
+          }
+          a:hover{
+            text-decoration: underline;
+          }
         }
         div.loading{
           align-self: center;
@@ -862,6 +895,9 @@
               text-decoration: none;
               color: $enlaces;
             }
+            a:hover{
+              text-decoration: underline;
+            }
           }
         }
       }
@@ -889,6 +925,7 @@
         h1{
           text-align: center;
           font-family: $titulo;
+          font-size: 3em;
         }
         p{
           text-align: left;
@@ -1043,6 +1080,14 @@
         p{
           align-self: center;
           @include font-title($texto,1.2em);
+          a{
+            text-decoration: none;
+            color: $enlaces;
+            font-weight: bold;
+          }
+          a:hover{
+            text-decoration: underline;
+          }
         }
         div.loading{
           align-self: center;

@@ -37,13 +37,9 @@ $(document).ready(function(){
 
       var paginaTotal = data['paginaTotal'];
       var pagina = data['pagina'];
-      console.log(data['paginaTotal']);
-      console.log(data['pagina']);
+
 
       CargarSeries(data);
-
-
-
         PaginacionJs(paginaTotal,pagina);
 
 
@@ -65,7 +61,6 @@ $(document).ready(function(){
       })
       $(".npage").on("click",function(){
         valor = $(this).attr("data");
-        console.log(valor);
         $.ajax({
           url:"../../Controlador/FuncionAdmin.php",
           data:{action:"ObtenerSeries",pg:valor},
@@ -73,6 +68,7 @@ $(document).ready(function(){
         })
         .done(function(data){
           CargarSeries(data);
+
           $(".eliminarSeries").click(function(e){
             e.preventDefault();
             var valor = $(this).val();
@@ -231,20 +227,14 @@ function PaginacionJs(paginaTotal,pagina){
   var paginacion = $(".paginacionSeries");
   paginacion.empty();
 
-  for (var i = 0; i < paginaTotal; i++) {
-    if (pagina==i) {
-      var seleccionado = document.createElement("p");
-      seleccionado.append(i+1);
-      paginacion.append(seleccionado);
-    }
-    else{
+  for (var i = 1; i <= paginaTotal; i++) {
+
       var enlace = document.createElement("a");
       $(enlace).addClass("npage");
-      $(enlace).attr("data",i+1);
-      enlace.append(i+1);
+      $(enlace).attr("data",i);
+      enlace.append(i);
       paginacion.append(enlace);
 
-    }
-  }
 
+  }
 }

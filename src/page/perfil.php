@@ -14,7 +14,6 @@ require_once '../../Controlador/ObtenerUsuario.php';
   <link rel="icon" href="../img/favicon.png" type="image/x-png">
   <link rel="stylesheet" href="../../estilo/css/estilo_contacto.css">
   <link rel="stylesheet" href="../../estilo/css/estilo_perfil.css">
-  <link rel="stylesheet" href="../../estilo/css/fontawesome.css">
   <script src="../../lib/jquery/jquery-3.3.1.min.js"></script>
   <script src="../../js/buscador.js"></script>
 
@@ -63,6 +62,14 @@ require_once '../../Controlador/ObtenerUsuario.php';
               <input type="text" name="usuario" id="usuario" value="<?php echo $resultado[0]['usuario']?>" disabled>
               <label for="email">Email</label>
               <input type="email" name="email" id="email" value="<?php echo $resultado[0]['email'] ?>" disabled>
+              <div>
+                <div class="password" hidden>
+                  <label for="password">Nueva contraseña</label>
+                  <input type="password" name="password" value="" id=password pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&#.$($)$-$_])[A-Za-z\d$@$!%*?&#.$($)$-$_]{4,16}$">
+
+                  <label for="repeat">Repetir la nueva contraseña</label>
+                  <input type="password" name="repeat" value="" id="repeat" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&#.$($)$-$_])[A-Za-z\d$@$!%*?&#.$($)$-$_]{4,16}$">
+                </div>
             </fieldset>
           <fieldset>
             <legend>Datos personales</legend>

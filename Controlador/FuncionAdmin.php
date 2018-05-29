@@ -5,7 +5,7 @@ require_once '../Conf/Series.php';
 
 if ($_POST['action']=="ObtenerUsuarios") {
   $obtener = new Usuarios();
-  $usuarios= $obtener->obtenerUsusarios();
+  $usuarios= $obtener->ObtenerUsuarios();
   header("Content-Type: application/json; charset=UTF-8");
   echo $usuarios;
 }

@@ -45,6 +45,9 @@
           @include font-title($titulo,2em);
 
           }
+          input{
+            width: 100%;
+          }
           input[type="text"],input[type="password"],input[type='email'],input[type='date']{
             border: 1px solid #c0c5c6;
             padding: 6px 8px;
@@ -64,6 +67,7 @@
             width: 100%
           }
         }
+
         div.c-editar{
           display: inline-flex;
           justify-content:space-around;

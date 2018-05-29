@@ -35,6 +35,16 @@ if (isset($_POST['email'])&&!empty($_POST['email'])) {
   $email =$_POST['email'];
   $Usuarios->Actulizar("usuarios","Email = '$email'","usuario = '$usuario'");
 }
+if (isset($_POST['password'])&&!empty($_POST['password'])&&isset($_POST['repeat'])&&!empty($_POST['repeat'])) {
+
+  $password =$_POST['password'];
+  $repeat = $_POST['repeat'];
+  if ($password==$repeat) {
+    $pass_hash = password_hash($password,PASSWORD_BCRYPT);
+    $Usuarios->Actulizar("usuarios","Password = '$pass_hash'","usuario = '$usuario'");
+  }
+}
+
 
 if (isset($_POST['nombre'])&&!empty($_POST['nombre'])) {
   $nombre =$_POST['nombre'];

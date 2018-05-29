@@ -10,7 +10,6 @@
   <link rel="icon" href="../img/favicon.png" type="image/x-png">
   <link rel="stylesheet" href="../../estilo/css/estilo_contacto.css">
   <link rel="stylesheet" href="../../estilo/css/estilo_signup.css">
-  <link rel="stylesheet" href="../../estilo/css/fontawesome.css">
   <script src="../../lib/jquery/jquery-3.3.1.min.js"></script>
   <script src="../../js/buscador.js"></script>
 
@@ -47,12 +46,12 @@
       <div class="c-registrar">
         <form id="Registrate" class="registro" method="post">
           <fieldset>
-            <legend>¡Registrate!</legend>
+            <legend>¿Has olvidado la contraseña?</legend>
             <label for="usuario">Usuario</label>
             <input type="text" name="usuario" value="" id="usuario" pattern="[a-zA-z-0-9]{4,8}" required>
-            <label for="password">Contraseña</label>
+            <label for="password">Nueva contraseña</label>
             <input type="password" name="password" value="" id=password pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&#.$($)$-$_])[A-Za-z\d$@$!%*?&#.$($)$-$_]{8,15}$" required>
-            <label for="repeat">Repetir Contraseña</label>
+            <label for="repeat">Repetir la nueva Contraseña</label>
             <input type="password" name="repeat" value="" id="repeat" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&#.$($)$-$_])[A-Za-z\d$@$!%*?&#.$($)$-$_]{8,15}$" required>
             <label for="email">Email</label>
             <input type="email" name="email" value="" id="email" required>
