@@ -51,11 +51,22 @@
             width: 100%
           }
         }
-        div.c-recordar{
-          display: inline-flex;
-          flex-direction: row;
-          font-size: .8em;
-          margin-bottom: 10px;
+        div.c-opciones{
+          display: flex;
+          justify-content: space-between;
+
+          div.c-recordar{
+            display: inline-flex;
+            flex-direction: row;
+            font-size: .8em;
+            margin-bottom: 10px;
+          }
+          div.c-olvidado{
+            font-size: .8em;
+            a{
+              text-decoration: none;
+            }
+          }
         }
         div.c-enviar{
           display: inline-flex;
@@ -149,11 +160,22 @@
             width: 100%
           }
         }
-        div.c-recordar{
-          display: inline-flex;
-          flex-direction: row;
-          font-size: .8em;
-          margin-bottom: 10px;
+        div.c-opciones{
+          display: flex;
+          justify-content: space-between;
+
+          div.c-recordar{
+            display: inline-flex;
+            flex-direction: row;
+            font-size: .8em;
+            margin-bottom: 10px;
+          }
+          div.c-olvidado{
+            font-size: .8em;
+            a{
+              text-decoration: none;
+            }
+          }
         }
         div.c-enviar{
           display: inline-flex;
@@ -250,11 +272,22 @@
             width: 100%
           }
         }
-        div.c-recordar{
-          display: inline-flex;
-          flex-direction: row;
-          font-size: .8em;
-          margin-bottom: 10px;
+        div.c-opciones{
+          display: flex;
+          justify-content: space-between;
+
+          div.c-recordar{
+            display: inline-flex;
+            flex-direction: row;
+            font-size: .8em;
+            margin-bottom: 10px;
+          }
+          div.c-olvidado{
+            font-size: .8em;
+            a{
+              text-decoration: none;
+            }
+          }
         }
         div.c-enviar{
           display: inline-flex;
@@ -351,11 +384,22 @@
             width: 100%
           }
         }
-        div.c-recordar{
-          display: inline-flex;
-          flex-direction: row;
-          font-size: .8em;
-          margin-bottom: 10px;
+        div.c-opciones{
+          display: flex;
+          justify-content: space-between;
+
+          div.c-recordar{
+            display: inline-flex;
+            flex-direction: row;
+            font-size: .8em;
+            margin-bottom: 10px;
+          }
+          div.c-olvidado{
+            font-size: .8em;
+            a{
+              text-decoration: none;
+            }
+          }
         }
         div.c-enviar{
           display: inline-flex;

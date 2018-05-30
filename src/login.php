@@ -55,10 +55,15 @@
             <label for="password">Contraseña</label>
             <input type="password" name="password" id="password" value="" required>
           </fieldset>
+        <div class="c-opciones">
           <div class="c-recordar">
             <input type="checkbox" id="recodar" name="recodar" value="1">
             <label for="recodar">Recodar sesión</label>
           </div>
+          <div class="c-olvidado">
+            <a href="page/reset.php">¿Has olvidado la contraseña?</a>
+          </div>
+        </div>
             <div id="msg"></div>
           <div class="c-enviar">
             <button type="reset" name="Deshacer">
