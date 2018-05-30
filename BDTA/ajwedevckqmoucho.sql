@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 30-05-2018 a las 23:28:04
+-- Tiempo de generación: 30-05-2018 a las 23:38:25
 -- Versión del servidor: 10.1.29-MariaDB-6
 -- Versión de PHP: 7.2.5-0ubuntu0.18.04.1
 
@@ -78,8 +78,7 @@ INSERT INTO `serie` (`id`, `Poster`, `Titulo`, `Texto`, `Categoria`, `Year`, `Te
 (21, '../../img/poster/Modern_Family_S8_Poster-2.jpg', 'Modern Family', '<p>Aclamada serie -es la sitcom más premiada en los últimos años- que narra el día a día de una gran familias compuesta por Jay Pritchett (Ed O’Neill) y su joven mujer Gloria Delgado (Sofia Vergara), madre de Manny (Rico Rodriguez), y al mismo tiempo muestra la vida de las dos familias compuestas por sus hijos ya adultos: el abogado gay Mitchell (Jesse Tyler Ferguson), casado con Cameron Tucker (Eric Stonestreet) y padres adoptivos de la pequeña Lily, y su hija Claire (Julie Bowen), casada con Phil Dunphy (Ty Burrell) y que son padres de 3 hijos, la pija Haley (Sarah Hyland), la estudiosa Alex (Ariel Winter) y el simple Luke (Nolan Gould)</p>', 'Comedia', 2009, 9, 3, 0, ''),
 (29, '../../img/poster/StrangerThings.jpg', 'Stranger Things', '<p>Primera temporada: 8 episodios. Homenaje a los clásicos misterios sobrenaturales de los años 80, \"Stranger Things\" es la historia de un niño que desaparece en el pequeño pueblo de Hawkins, Indiana, sin dejar rastro en 1983. En su búsqueda desesperada, tanto sus amigos y familiares como el sheriff local se ven envueltos en un enigma extraordinario: experimentos ultrasecretos, fuerzas paranormales terroríficas y una niña muy, muy rara... </p>', 'Sobrenaturales', 2016, 2, 3, 20, ''),
 (30, '../../img/poster/Doctorwho.jpg', 'Doctor who ', '<p>Continuación de la mítica y longeva serie británica que empezó en 1963 y duró hasta 1989. El Doctor es un aventurero que viaja por el tiempo y el espacio visitando desde fantasmas del pasado hasta alienígenas del futuro, desde el día que la Tierra murió en una bola de fuego hsta el fin del universo</p>', 'Ciencia ficción', 2005, 11, 3, 20, ''),
-(32, '../../img/poster/Por_trece_razones.jpg', 'Por trece razones', '<p>El adolescente Clay Jensen (Dylan Minnette) vuelve un día a casa después del colegio y encuentra una misteriosa caja con su nombre. Dentro descubre una cinta grabada por Hannah Baker (Katherine Langford), una compañera de clase por la que sentía algo especial y que se suicidó tan solo dos semanas atrás. En la cinta, Hannah cuenta que hay trece razones por las que ha decidido quitarse la vida. ¿Será Clay una de ellas? Si lo escucha, tendrá oportunidad de conocer cada motivo de su lista.</p>', 'Drama', 2017, 1, 3, 0, ''),
-(33, '../../img/poster/Oki.jpg', 'Oki', '<p>Así es</p>', 'Crimenes', 1995, 9, 1, 361, '');
+(32, '../../img/poster/Por_trece_razones.jpg', 'Por trece razones', '<p>El adolescente Clay Jensen (Dylan Minnette) vuelve un día a casa después del colegio y encuentra una misteriosa caja con su nombre. Dentro descubre una cinta grabada por Hannah Baker (Katherine Langford), una compañera de clase por la que sentía algo especial y que se suicidó tan solo dos semanas atrás. En la cinta, Hannah cuenta que hay trece razones por las que ha decidido quitarse la vida. ¿Será Clay una de ellas? Si lo escucha, tendrá oportunidad de conocer cada motivo de su lista.</p>', 'Drama', 2017, 1, 3, 0, '');
 
 -- --------------------------------------------------------
 
@@ -142,8 +141,7 @@ INSERT INTO `usuarios_series` (`id_Usuarios`, `id_serie`) VALUES
 ('Admin', 29),
 ('Admin', 30),
 ('Admin', 32),
-('Admin', 1),
-('Deiwor', 33);
+('Admin', 1);
 
 --
 -- Índices para tablas volcadas
