@@ -47,10 +47,8 @@
         <form id="Registrate" class="registro" method="post">
           <fieldset>
             <legend>¿Has olvidado y contraseña?</legend>
-            <label for="password">Nueva contraseña</label>
-            <input type="password" name="password" value="" id=password pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&#.$($)$-$_])[A-Za-z\d$@$!%*?&#.$($)$-$_]{8,15}$" required>
-            <label for="repeat">Repetir la nueva Contraseña</label>
-            <input type="password" name="repeat" value="" id="repeat" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&#.$($)$-$_])[A-Za-z\d$@$!%*?&#.$($)$-$_]{8,15}$" required>
+            <label for="email">Email</label>
+            <input type="email" name="email" value="" id="email" required>
           </fieldset>
           <div id="msg" class="msg"></div>
           <div class="c-enviar">
@@ -60,13 +58,14 @@
             </button>
             <button type="submit" name="singup" id="singup">
               <span class="far fa-paper-plane"></span>
-              Cambiar
+              Enviar
             </button>
 
           </div>
         </form>
       </div>
     </main>
+    
     <footer>
       <div class="redes_sociales">
         <ul>

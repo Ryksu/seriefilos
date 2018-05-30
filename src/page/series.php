@@ -82,19 +82,19 @@ require_once '../../Controlador/ObtenerSerie.php';
              <img src="<?php echo $poster ?>" alt="<?php echo $titulo ?> ">
                <div class="info">
                  <?php switch ($estado) {
-                   case 0:
+                   case 1:
                    echo "<p>
                         <span>Estado:</span>
                         En emisión
                         </p>";
                      break;
-                     case 1:
+                     case 2:
                      echo "<p>
                         <span>Estado:</span>
                         Terminado
                       </p>";
                        break;
-                       case 2:
+                       case 3:
                        echo "<p>
                             <span>Estado:</span>
                             Esperando nueva temporada
