@@ -257,37 +257,47 @@
 
       }
     }
-      div.paginacion{
-        display: flex;
-        justify-content: center;
-        padding: 14px 16px;
-        p{
-          padding: 14px 14px;
-          margin: 0;
-          display: block;
-          font-size: 1.2em;
-          font-family: $texto;
-          color: $letra;
-          background: $hover;
-          border-radius: 4px 4px 4px 4px;
-        }
-        a{
-          padding: 14px 14px;
-          display: block;
-          text-decoration: none;
-          font-size: 1.2em;
-          font-family: $texto;
-          background: #e4e4e4;
-          border:1px solid  #d8ded9;
-          color: $enlaces;
-          &:hover{
-            background: #ededed;
-            cursor: pointer;
-
-          }
-        }
-
+div.paginacion{
+  display: flex;
+  justify-content: center;
+  padding: 14px 16px;
+  a{
+    padding: 14px 14px;
+    display: block;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-family: $texto;
+    background: #e4e4e4;
+    color: $enlaces;
+    &:hover:not(.activo){
+      background: #ededed;
+      cursor: pointer;
+    }
+    &:first-child{
+      border-radius:4px 0px 0px 4px;
+    }
+    &:last-child{
+      border-radius: 0px 4px 4px 0px;
+    }
+  }
+    a.activo{
+      padding: 14px 14px;
+      margin: 0;
+      display: block;
+      font-size: 1.2em;
+      font-family: $texto;
+      color: $letra;
+      background: $enlaces;
+      // border: 1px solid $hover;
+      pointer-events: none;
+      &:first-child{
+        border-radius:4px 0px 0px 4px;
       }
+      &:last-child{
+        border-radius: 0px 4px 4px 0px;
+      }
+    }
+  }
 
 
       footer{
@@ -596,37 +606,48 @@
 
       }
     }
-    div.paginacion{
-      display: flex;
-      justify-content: center;
-      padding: 14px 16px;
-      p{
-        padding: 14px 14px;
-        margin: 0;
-        display: block;
-        font-size: 1.2em;
-        font-family: $texto;
-        color: $letra;
-        background: $hover;
-        border-radius: 4px 4px 4px 4px;
-      }
-      a{
-        padding: 14px 14px;
-        display: block;
-        text-decoration: none;
-        font-size: 1.2em;
-        font-family: $texto;
-        background: #e4e4e4;
-        border:1px solid  #d8ded9;
-        color: $enlaces;
-        &:hover{
-          background: #ededed;
-          cursor: pointer;
-
-        }
-      }
-
+div.paginacion{
+  display: flex;
+  justify-content: center;
+  padding: 14px 16px;
+  a{
+    padding: 14px 14px;
+    display: block;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-family: $texto;
+    background: #e4e4e4;
+    color: $enlaces;
+    &:hover:not(.activo){
+      background: #ededed;
+      cursor: pointer;
     }
+    &:first-child{
+      border-radius:4px 0px 0px 4px;
+    }
+    &:last-child{
+      border-radius: 0px 4px 4px 0px;
+    }
+  }
+    a.activo{
+      padding: 14px 14px;
+      margin: 0;
+      display: block;
+      font-size: 1.2em;
+      font-family: $texto;
+      color: $letra;
+      background: $enlaces;
+      // border: 1px solid $hover;
+      pointer-events: none;
+      &:first-child{
+        border-radius:4px 0px 0px 4px;
+      }
+      &:last-child{
+        border-radius: 0px 4px 4px 0px;
+      }
+    }
+  }
+
     footer{
       display: flex;
       flex-direction: column;
@@ -954,16 +975,6 @@ div.paginacion{
   display: flex;
   justify-content: center;
   padding: 14px 16px;
-  p{
-    padding: 14px 14px;
-    margin: 0;
-    display: block;
-    font-size: 1.2em;
-    font-family: $texto;
-    color: $letra;
-    background: $hover;
-    border-radius: 4px 4px 4px 4px;
-  }
   a{
     padding: 14px 14px;
     display: block;
@@ -971,16 +982,37 @@ div.paginacion{
     font-size: 1.2em;
     font-family: $texto;
     background: #e4e4e4;
-    border:1px solid  #d8ded9;
     color: $enlaces;
-    &:hover{
+    &:hover:not(.activo){
       background: #ededed;
       cursor: pointer;
-
+    }
+    &:first-child{
+      border-radius:4px 0px 0px 4px;
+    }
+    &:last-child{
+      border-radius: 0px 4px 4px 0px;
+    }
+  }
+    a.activo{
+      padding: 14px 14px;
+      margin: 0;
+      display: block;
+      font-size: 1.2em;
+      font-family: $texto;
+      color: $letra;
+      background: $enlaces;
+      // border: 1px solid $hover;
+      pointer-events: none;
+      &:first-child{
+        border-radius:4px 0px 0px 4px;
+      }
+      &:last-child{
+        border-radius: 0px 4px 4px 0px;
+      }
     }
   }
 
-}
 footer{
   display: flex;
   flex-direction: column;
@@ -1298,22 +1330,12 @@ main.contenido{
         }
       }
     }
-}
+  }
 }
 div.paginacion{
   display: flex;
   justify-content: center;
   padding: 14px 16px;
-  p{
-    padding: 14px 14px;
-    margin: 0;
-    display: block;
-    font-size: 1.2em;
-    font-family: $texto;
-    color: $letra;
-    background: $hover;
-    border-radius: 4px 4px 4px 4px;
-  }
   a{
     padding: 14px 14px;
     display: block;
@@ -1321,16 +1343,36 @@ div.paginacion{
     font-size: 1.2em;
     font-family: $texto;
     background: #e4e4e4;
-    border:1px solid  #d8ded9;
     color: $enlaces;
-    &:hover{
+    &:hover:not(.activo){
       background: #ededed;
       cursor: pointer;
-
+    }
+    &:first-child{
+      border-radius:4px 0px 0px 4px;
+    }
+    &:last-child{
+      border-radius: 0px 4px 4px 0px;
     }
   }
-
-}
+    a.activo{
+      padding: 14px 14px;
+      margin: 0;
+      display: block;
+      font-size: 1.2em;
+      font-family: $texto;
+      color: $letra;
+      background: $enlaces;
+      // border: 1px solid $hover;
+      pointer-events: none;
+      &:first-child{
+        border-radius:4px 0px 0px 4px;
+      }
+      &:last-child{
+        border-radius: 0px 4px 4px 0px;
+      }
+    }
+  }
 
 footer{
   display: flex;

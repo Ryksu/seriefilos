@@ -9,7 +9,7 @@
   <link rel="icon" href="../img/favicon.png" type="image/x-png">
   <link rel="stylesheet" href="../../estilo/css/estilo_contacto.css">
   <script src="../../lib/jquery/jquery-3.3.1.min.js"></script>
-  <script src="../../js/Categorias.js"></script>
+  <script src="../../js/ListaDatos.js"></script>
   <script src="../../js/buscador.js"></script>
 </head>
 

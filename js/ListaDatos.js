@@ -14,7 +14,7 @@ function Estados(){
   var option;
   var estados = ["En Emision","Terminado","Esperando nueva temporada"];
   for (var i = 0; i < estados.length; i++) {
-   option = new Option(estados[i],i);
+   option = new Option(estados[i],i+1);
    estado.add(option);
   }
 }

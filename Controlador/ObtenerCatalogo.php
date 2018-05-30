@@ -62,7 +62,6 @@ $getseries= new Series();
 
     $res = $getseries->paginacionResultado("Estado","serie",$datos);
     $res = json_decode($res,true);
-
     if ($res ==NULL) {
       http_response_code(404);
       header('location: ../error/404.php');

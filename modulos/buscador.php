@@ -24,6 +24,8 @@
    <div class="c-estados">
      <label for="Estado">Estado</label>
      <select class="estados" name="Estado" id="Estado">
+       <option value="">Todos</option>
+
      </select>
    </div>
      <div class="c-enviar">

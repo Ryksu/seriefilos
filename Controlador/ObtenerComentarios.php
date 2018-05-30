@@ -2,51 +2,50 @@
 session_start();
 require_once '../Conf/Comentarios.php';
 $comentarios = new Comentarios();
-
-$nfilas = $comentarios->comentarioFila($_GET['id']);
-if ($nfilas>0) {
-  $limite = 5;
-  $pagina = 1;
+$id = $_GET['id'];
+if ($_GET['action']=="obtener") {
   if (isset($_GET['pg'])) {
-    $pagina = $_GET['pg'];
+    $resultado = $comentarios->paginacion($id,$_GET);
+    $resultado = json_decode($resultado,true);
+    $resultado['paginaTotal'] = Comentarios::$pagina_total;
+    $resultado['pagina'] = Comentarios::$pagina;
+    $resultado = json_encode($resultado);
   }
-$inicio = ($pagina-1)*$limite;
-$pagina_total = ceil($nfilas/$limite);
-$LIMIT = " LIMIT $inicio,$limite";
+  else{
+    $resultado = $comentarios->paginacion($id);
+    $resultado = json_decode($resultado,true);
+    $resultado['paginaTotal'] = Comentarios::$pagina_total;
+    $resultado['pagina'] = Comentarios::$pagina;
+    $resultado = json_encode($resultado);
 
-  if ($_GET['action']=="obtener") {
-    $resultado = $comentarios->getComentarios($_GET['id'],$LIMIT);
-    header("Content-Type: application/json; charset=UTF-8");
-    sleep(2);
-    echo $resultado;
-  }
 
-  if ($_GET['action']=="insertar") {
-    $comentarios->insertarComentario($_GET['id'],$_SESSION['usuario'],$_GET['texto']);
-    $resultado = $comentarios->getComentarios($_GET['id'],$LIMIT);
-    header("Content-Type: application/json; charset=UTF-8");
-    sleep(1);
-    echo $resultado;
+
   }
+  header("Content-Type: application/json; charset=UTF-8");
+  sleep(2);
+  echo $resultado;
 }
-else {
-
-  if ($_GET['action']=="obtener") {
-
-    $resultado = $comentarios->getComentarios($_GET['id']);
-    header("Content-Type: application/json; charset=UTF-8");
-    sleep(1);
-    echo $resultado;
-  }
-
 if ($_GET['action']=="insertar") {
-    $comentarios->insertarComentario($_GET['id'],$_SESSION['usuario'],$_GET['texto']);
-    $resultado = $comentarios->getComentarios($_GET['id']);
+  $texto = $_GET['texto'];
+  $usuario = $_SESSION['usuario'];
+    $comentarios->insertarComentario($id,$usuario,$texto);
+    if (isset($_GET['pg'])) {
+      $resultado = $comentarios->paginacion($id,$_GET);
+      $resultado = json_decode($resultado,true);
+      $resultado['paginaTotal'] = Comentarios::$pagina_total;
+      $resultado['pagina'] = Comentarios::$pagina;
+      $resultado = json_encode($resultado);
+    }
+    else{
+      $resultado = $comentarios->paginacion($id);
+      $resultado = json_decode($resultado,true);
+      $resultado['paginaTotal'] = Comentarios::$pagina_total;
+      $resultado['pagina'] = Comentarios::$pagina;
+      $resultado = json_encode($resultado);
+
+    }
     header("Content-Type: application/json; charset=UTF-8");
     sleep(1);
     echo $resultado;
-  }
 }
-
-
 ?>

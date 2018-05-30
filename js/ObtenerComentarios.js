@@ -1,5 +1,6 @@
 $(document).ready(function(){
     var id = getURLparamentro("id");
+    var paginacionComentarios = $(".paginacionComentarios");
     $("#sincomentar").attr("hidden",true);
     $("#comment").attr("disabled",true);
   $(document).ajaxStart(function(){
@@ -16,11 +17,37 @@ $(document).ready(function(){
     type:"GET"
   })
   .done(function(data){
-    if (data.length>0) {
+    var paginaTotal = data['paginaTotal'];
+    var pagina = data['pagina'];
+    delete data['paginaTotal'];
+    delete data['pagina'];
+    if (Object.keys(data).length>0) {
       CargarComentarios(data);
+      PaginacionJs(paginacionComentarios, paginaTotal);
+
     }else{
       $("#sincomentar").attr("hidden",false);
     }
+
+    $(".npage").on("click",function(){
+      $(".c-comentario").remove();
+      valor = $(this).attr("data");
+      $.ajax({
+        url:"../../Controlador/ObtenerComentarios.php",
+        data:{action:"obtener",id:id,pg:valor},
+        type:"GET"
+      })
+      .done(function(data){
+        $(".c-comentario").remove();
+        paginaTotal = data['paginaTotal'];
+        pagina = data['pagina'];
+        if (valor === pagina) {
+          $(".npage").removeClass("activo");
+          $(".npage[data="+valor+"]").addClass("activo");
+        }
+        CargarComentarios(data);
+      })
+    })
   })
 
 $("#texto").keyup(function(){
@@ -51,23 +78,36 @@ $("#comment").click(function(e){
     $(".c-comentario").remove();
     $("#texto").val('');
     $("#comment").attr("disabled",true);
+
+    paginaTotal = data['paginaTotal'];
+    pagina = data['pagina'];
+
     CargarComentarios(data);
+    PaginacionJs(paginacionComentarios, paginaTotal);
+
+    $(".npage").on("click",function(){
+      $(".c-comentario").remove();
+      valor = $(this).attr("data");
+      $.ajax({
+        url:"../../Controlador/ObtenerComentarios.php",
+        data:{action:"obtener",id:id,pg:valor},
+        type:"GET"
+      })
+      .done(function(data){
+        $(".c-comentario").remove();
+        paginaTotal = data['paginaTotal'];
+        pagina = data['pagina'];
+        if (valor === pagina) {
+          $(".npage").removeClass("activo");
+          $(".npage[data="+valor+"]").addClass("activo");
+        }
+        CargarComentarios(data);
+      })
+    })
   })
 })
 
-$(".npage").on("click",function(){
-  $(".c-comentario").remove();
-  valor = $(this).attr("data");
-  $.ajax({
-    url:"../../Controlador/ObtenerComentarios.php",
-    data:{action:"obtener",id:id,pg:valor},
-    type:"GET"
-  })
-  .done(function(data){
-    $(".c-comentario").remove();
-    CargarComentarios(data);
-  })
-})
+
 
 $("#cancelar").click(function(e){
   e.preventDefault();
@@ -81,6 +121,8 @@ $("#cancelar").click(function(e){
 })
 
 function CargarComentarios(data){
+  delete data['pagina'];
+  delete data['paginaTotal'];
   for (var valor in data) {
     if (data.hasOwnProperty(valor)) {
       var comentario = document.createElement("div");
@@ -127,5 +169,20 @@ function formatoTiempo(timestap){
   var tiempoUTC = new Date(Date.UTC(tiempo[0], tiempo[1]-1,tiempo[2], tiempo[3], tiempo[4], tiempo[5]));
 
   return tiempoUTC;
+}
 
+
+function PaginacionJs(divPaginacion,paginaTotal){
+  var paginacion = divPaginacion;
+  paginacion.empty();
+  if (paginaTotal>1) {
+    for (var i = 1; i <= paginaTotal; i++) {
+      var enlace = document.createElement("a");
+      $(enlace).addClass("npage");
+      $(enlace).attr("data",i);
+      enlace.append(i);
+      paginacion.append(enlace);
+    }
+
+  }
 }

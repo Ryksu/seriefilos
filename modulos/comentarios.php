@@ -21,8 +21,9 @@
     <span  class='fas fa-spinner fa-pulse'></span>
   </div>
 </div>
-<?php  include 'paginacion.php'; ?>
+<div class="paginacion paginacionComentarios">
 
+</div>
 <script src="../../js/ObtenerComentarios.js"></script>
 <?php else: ?>
   <div class="c-comentarios">

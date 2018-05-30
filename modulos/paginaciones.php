@@ -7,7 +7,7 @@ $pagina = Series::$pagina;
   <div class="paginacion">
     <?php for ($i=1; $i <= $pagina_total ; $i++) {
       if ($pagina==$i) {
-        echo "<p>$i</p>";
+        echo "<a href='#' class='activo'>$i</a>";
       }
       elseif (isset($_GET['buscador'])) {
 

@@ -52,13 +52,13 @@ class Series extends NewCrud
     return $this->Leer("serie.*,usuarios_series.id_Usuarios","serie","RiGHT JOIN usuarios_series ON serie.id = usuarios_series.id_serie WHERE serie.$columna LIKE '%{$patron}%' ORDER BY serie.Titulo LIMIT $inicio,$limite");
   }
 
-  function paginacion($columna,$tablas,array $get = NULL){
+  function paginacion($columna,$tablas,array $request = NULL){
       $nfilas = $this->ContadorFila($columna,$tablas);
       if ($nfilas>0) {
         $limite = 8;
         // $pagina = 1;
-        if (isset($get['pg'])) {
-          Series::$pagina = $get['pg'];
+        if (isset($request['pg'])) {
+          Series::$pagina = $request['pg'];
       }
       $inicio = (Series::$pagina-1)*$limite;
       Series::$pagina_total = ceil($nfilas/$limite);
@@ -67,12 +67,12 @@ class Series extends NewCrud
     }
   }
 
-  function paginacionResultado($columna,$tablas,$patron,array $get = NULL){
+  function paginacionResultado($columna,$tablas,$patron,array $request = NULL){
     $nfilas = $this->ContarResultado($columna,$tablas,$patron);
     if ($nfilas>0) {
       $limite = 8;
-      if (isset($get['pg'])) {
-        Series::$pagina = $get['pg'];
+      if (isset($request['pg'])) {
+        Series::$pagina = $request['pg'];
       }
       $inicio = (Series::$pagina-1)*$limite;
       Series::$pagina_total = ceil($nfilas/$limite);

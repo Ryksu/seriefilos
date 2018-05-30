@@ -16,7 +16,7 @@
   <script src="../../lib/simplemd/simplemde.min.js"></script>
 
 
-  <script src="../../js/Categorias.js"></script>
+  <script src="../../js/ListaDatos.js"></script>
 
   <script src="../../js/buscador.js"></script>
 </head>

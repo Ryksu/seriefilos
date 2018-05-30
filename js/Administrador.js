@@ -2,7 +2,7 @@ $(document).ready(function(){
   $("#Usuarios").click(function(){
     $("#c-Usuarios").toggleClass("c-Todo");
     $.ajax({
-      url:"../../Controlador/FuncionAdmin.php",
+      url:"../../Controlador/ControladorAdmin.php",
       data:{action:"ObtenerUsuarios"},
       type:'POST'
     })
@@ -13,7 +13,7 @@ $(document).ready(function(){
         var valor = $(this).val();
         $(this).closest('tr').remove();
         $.ajax({
-          url:"../../Controlador/FuncionAdmin.php",
+          url:"../../Controlador/ControladorAdmin.php",
           data:{action:"BorrarUsuario",usuario:valor},
           type:"POST"
         })
@@ -29,7 +29,7 @@ $(document).ready(function(){
     $("#c-series").toggleClass("c-Todo");
 
     $.ajax({
-      url:"../../Controlador/FuncionAdmin.php",
+      url:"../../Controlador/ControladorAdmin.php",
       data:{action:"ObtenerSeries"},
       type:"POST"
     })
@@ -40,7 +40,8 @@ $(document).ready(function(){
 
 
       CargarSeries(data);
-        PaginacionJs(paginaTotal,pagina);
+      paginacionSeries = $(".paginacionSeries");
+        PaginacionJs(paginacionSeries,paginaTotal);
 
 
 
@@ -49,7 +50,7 @@ $(document).ready(function(){
         var valor = $(this).val();
         $(this).closest('tr').remove();
         $.ajax({
-          url:"../../Controlador/FuncionAdmin.php",
+          url:"../../Controlador/ControladorAdmin.php",
           data:{action:"BorrarSerie",serie:valor},
           type:"POST"
         })
@@ -59,14 +60,21 @@ $(document).ready(function(){
           }
         })
       })
-      $(".npage").on("click",function(){
+      $(".npage").on("click",function(ev){
+        ev.preventDefault();
         valor = $(this).attr("data");
         $.ajax({
-          url:"../../Controlador/FuncionAdmin.php",
+          url:"../../Controlador/ControladorAdmin.php",
           data:{action:"ObtenerSeries",pg:valor},
           type:"POST"
         })
         .done(function(data){
+          pagina = data['pagina'];
+          if (valor === pagina) {
+            $(".npage").removeClass("activo");
+            $(".npage[data="+valor+"]").addClass("activo");
+          }
+
           CargarSeries(data);
 
           $(".eliminarSeries").click(function(e){
@@ -74,7 +82,7 @@ $(document).ready(function(){
             var valor = $(this).val();
             $(this).closest('tr').remove();
             $.ajax({
-              url:"../../Controlador/FuncionAdmin.php",
+              url:"../../Controlador/ControladorAdmin.php",
               data:{action:"BorrarSerie",serie:valor},
               type:"POST"
             })
@@ -88,6 +96,7 @@ $(document).ready(function(){
       })
     });
   });
+
 
 
 
@@ -173,13 +182,13 @@ function CargarSeries(data){
 
       var estado = document.createElement('td');
       switch (data[valor]['Estado']) {
-        case '0':
+        case '1':
             estado.append('En emisión');
           break;
-        case '1':
+        case '2':
           estado.append('Terminado');
           break;
-        case '2':
+        case '3':
           estado.append('Esperando nueva temporada');
           break;
 
@@ -223,18 +232,16 @@ function CargarSeries(data){
   }
 }
 
-function PaginacionJs(paginaTotal,pagina){
-  var paginacion = $(".paginacionSeries");
+/* Funcion permite introducir el numero de pagina totales en un div ya creado*/
+function PaginacionJs(divPaginacion,paginaTotal){
+  var paginacion = divPaginacion;
   paginacion.empty();
 
   for (var i = 1; i <= paginaTotal; i++) {
-
       var enlace = document.createElement("a");
       $(enlace).addClass("npage");
       $(enlace).attr("data",i);
       enlace.append(i);
       paginacion.append(enlace);
-
-
   }
 }
