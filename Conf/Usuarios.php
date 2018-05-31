@@ -16,13 +16,13 @@ class Usuarios extends NewCrud
   /* Comprueba primero si el usuario se encuentra en la bdta si lo encuentra verifica el hash de la contraseña dada dara true si es correcto, false si es incorrecto */
   function iniciarUsuario($usuario,$password){
     $iniciar = false;
-  $condicion = " WHERE usuario = '$usuario'";
+    $condicion = " WHERE usuario = '$usuario' and email_verificado = 1";
    $resultado = $this->Leer("usuario,password","usuarios",$condicion);
    $resultado = json_decode($resultado,true);
- if (!empty($resultado)) {
-   if (password_verify($password,$resultado[0]['password'])) {
-     $iniciar = true;
-   }
+  if (!empty($resultado)) {
+     if (password_verify($password,$resultado[0]['password'])) {
+       $iniciar = true;
+     }
    }
    return $iniciar;
   }
@@ -33,7 +33,7 @@ class Usuarios extends NewCrud
     return $resultado;
   }
   function ObtenerUsuarios(){
-    return $this->Leer("foto,usuario,email,nombre,apellidos,cumple,rol","usuarios","WHERE usuario != 'Admin'");
+    return $this->Leer("foto,usuario,email,nombre,apellidos,cumple,rol,email_verificado","usuarios","WHERE usuario != 'Admin'");
   }
 
   function borrarUsuario($usuario)
@@ -47,6 +47,9 @@ class Usuarios extends NewCrud
 
   }
 
+  function Verificar($usuario){
+    return $this->Actulizar("usuarios","email_verificado = 1","usuario = '$usuario'");
+  }
 }
 
  ?>

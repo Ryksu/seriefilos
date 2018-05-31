@@ -11,9 +11,7 @@
   <link rel="stylesheet" href="../../estilo/css/estilo_contacto.css">
   <link rel="stylesheet" href="../../estilo/css/estilo_agregar.css">
   <link rel="stylesheet" href="../../estilo/css/fontawesome.css">
-  <link rel="stylesheet" href="../../lib/simplemd/simplemde.min.css">
   <script src="../../lib/jquery/jquery-3.3.1.min.js"></script>
-  <script src="../../lib/simplemd/simplemde.min.js"></script>
 
 
   <script src="../../js/ListaDatos.js"></script>

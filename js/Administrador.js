@@ -140,12 +140,20 @@ function CargarUsuarios(data){
       cumple.append(data[valor]['cumple']);
     }
 
+    var emailVerficado = document.createElement('td');
+    if (data[valor]['email_verificado']==1) {
+      emailVerficado.append("verificado");
+    }else{
+      emailVerficado.append("sin verificar");
+    }
+
+
     var eliminar = document.createElement("td");
 
     $(eliminar).addClass('delete');
     $(eliminar).html("<button type='button'  class='eliminarUsuarios' value='"+data[valor]['usuario']+"' name='eliminar'> <span class='fas fa-trash-alt'></span></button>");
     var tr = document.createElement('tr');
-    tr.append(usuario,email,nombre,apellidos,cumple,eliminar);
+    tr.append(usuario,email,nombre,apellidos,cumple,emailVerficado,eliminar);
     $('#users-table').append(tr);
   }
 }
@@ -216,6 +224,7 @@ function CargarSeries(data){
       }else{
         puntuacion.append(data[valor]['Puntuacion']);
       }
+
 
       var eliminar = document.createElement("td");
       $(eliminar).addClass('delete');

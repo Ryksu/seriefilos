@@ -16,17 +16,17 @@ $(document).ready(function(){
     })
     .done(function(data){
       ComprobarUsuario(data);
-      $("#usuario").focus(function(){
-        var getUsuario = $(this).val();
-        $.ajax({
-          url:"../../Controlador/ControladorUsuarios.php",
-          data:{action:"ComprobarUsuario",usuario:getUsuario},
-          type:"POST"
-        })
-        .done(function(data){
-          ComprobarUsuario(data);
-        })
-      })
+    })
+  })
+  $("#usuario").focus(function(){
+    var getUsuario = $(this).val();
+    $.ajax({
+      url:"../../Controlador/ControladorUsuarios.php",
+      data:{action:"ComprobarUsuario",usuario:getUsuario},
+      type:"POST"
+    })
+    .done(function(data){
+      ComprobarUsuario(data);
     })
   })
 
@@ -57,26 +57,25 @@ $(document).ready(function(){
     })
     .done(function(data){
       ComprobarEmail(data);
-      $("#email").focus(function(){
-        expr=   /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-        var email;
-        var getemail = document.getElementById("email");
-        if (expr.exec(getemail.value)!=null) {
-         email = getemail.value;
-        }else{
-          getemail.style.border = "2px solid red";
-          document.getElementById("singup").disabled= true;
-        }
-        $.ajax({
-          url:"../../Controlador/ControladorUsuarios.php",
-          data:{action:"ComprobarEmail",email:email},
-          type:"POST"
-        })
-        .done(function(data){
-          ComprobarEmail(data);
-
-        })
-      })
+    })
+  })
+  $("#email").focus(function(){
+    expr=   /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    var email;
+    var getemail = document.getElementById("email");
+    if (expr.exec(getemail.value)!=null) {
+     email = getemail.value;
+    }else{
+      getemail.style.border = "2px solid red";
+      document.getElementById("singup").disabled= true;
+    }
+    $.ajax({
+      url:"../../Controlador/ControladorUsuarios.php",
+      data:{action:"ComprobarEmail",email:email},
+      type:"POST"
+    })
+    .done(function(data){
+      ComprobarEmail(data);
 
     })
   })
@@ -96,7 +95,7 @@ $(document).ready(function(){
     })
     .done(function(data){
       if (data) {
-        $("#msg").html("<p>Genial ya estas registrado</p>");
+        $("#msg").html("<p>Genial ya estas registrado verifique su Email</p>");
         setTimeout(function(){location.replace("../login.php");},2000);
       }else{
         $("#msg").html("<p>Vuelve a repetir la contraseña</p>");
@@ -200,6 +199,7 @@ function ComprobarEmail(data){
     if(expr.exec(inputEmail.value)!=null){
       document.getElementById("singup").disabled = false;
       inputEmail.style.border = "2px solid green";
+      $("#msg").empty();
     }
     else {
       inputEmail.style.border = "2px solid red";
