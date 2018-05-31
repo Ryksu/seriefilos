@@ -163,28 +163,28 @@ function ComprobarPass(){
 }
 
 function ComprobarRepeat(){
-    var inputPass = document.getElementById("password");
-    var inputRepeat = document.getElementById("repeat");
-    /*
-    min: 8 caracter
-    max: 15 caracter
-    al menos una mayuscula
-    al menos una minuscula
-    al menos un numero
-    al menos un caracter especial
-    no se acepta espacio
-    */
-    var expr = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&#.$($)$-$_])[A-Za-z\d$@$!%*?&#.$($)$-$_]{4,16}$/;
+      var inputPass = document.getElementById("password");
+      var inputRepeat = document.getElementById("repeat");
+      /*
+      min: 8 caracter
+      max: 15 caracter
+      al menos una mayuscula
+      al menos una minuscula
+      al menos un numero
+      al menos un caracter especial
+      no se acepta espacio
+      */
+      var expr = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&#.$($)$-$_])[A-Za-z\d$@$!%*?&#.$($)$-$_]{4,16}$/;
 
-    if (expr.exec(inputRepeat.value)) {
-      if (inputPass.value === inputRepeat.value) {
-        inputRepeat.style.border = "2px solid green";
+      if (expr.exec(inputRepeat.value)) {
+        if (inputPass.value === inputRepeat.value) {
+          inputRepeat.style.border = "2px solid green";
 
+      }
     }
-  }
-  else{
-    inputRepeat.style.border = "2px solid red";
-  }
+    else{
+      inputRepeat.style.border = "2px solid red";
+    }
 }
 
 function ComprobarEmail(data){
