@@ -8,33 +8,55 @@ $(document).ready(function(){
       type:"POST"
     })
     .done(function(data){
-      if (data.length>0) {
-        CargarDatos(data);
-        $("#password").keyup(function(){
-          ComprobarPass();
-        })
-        $("#password").focus(function(){
-          ComprobarPass();
-        });
-        $("#repeat").keyup(function(){
-          ComprobarRepeat();
-        })
-        $("#repeat").focus(function(){
-          ComprobarRepeat();
-        });
-
+      if (data) {
+        CargarVerificar();
         $("#reset").submit(function(ev){
           ev.preventDefault();
-          var usuario = $("#usuario").val();
-          var password = $("#password").val();
-          var repeat = $("#repeat").val();
+          var codigo = $("#codigo").val();
           $.ajax({
-            url:"../Controlador/RecuperarCuenta.php",
-            data:{action:"cambiar",usuario:usuario,password:password,repeat:repeat},
+            url:'../../Controlador/RecuperarCuenta.php',
+            data:{action:"verificar",codigo:codigo,email:email},
             type:"POST"
           })
           .done(function(data){
-
+            // if (data.length>0) {
+            //     CargarDatos(data);
+            //     $("#password").keyup(function(){
+            //       ComprobarPass();
+            //     })
+            //     $("#password").focus(function(){
+            //       ComprobarPass();
+            //     });
+            //     $("#repeat").keyup(function(){
+            //       ComprobarRepeat();
+            //     })
+            //     $("#repeat").focus(function(){
+            //       ComprobarRepeat();
+            //
+            //   });
+            //
+            //   $("#reset").submit(function(ev){
+            //     ev.preventDefault();
+            //     var usuario = $("#usuario").val();
+            //     var password = $("#password").val();
+            //     var repeat = $("#repeat").val();
+            //     $.ajax({
+            //       url:"../../Controlador/RecuperarCuenta.php",
+            //       data:{action:"cambiar",usuario:usuario,password:password,repeat:repeat},
+            //       type:"POST"
+            //     })
+            //     .done(function(data){
+            //       if (data) {
+            //         alert("contraseña cambiada");
+            //         location.replace("../login.php");
+            //       }
+            //       else{
+            //         alert("hubo un error con la base de datos");
+            //       }
+            //     })
+            //
+            //   })
+            // }
           })
 
         })
@@ -42,14 +64,34 @@ $(document).ready(function(){
       else {
         alert("El Email no se encuentra en la base de datos");
       }
-    })
+    });
   })
+
 })
+
+function CargarVerificar(){
+    $("#reset").find("label,input").remove();
+    var fieldset = $('fieldset');
+    var lToken = document.createElement("label");
+    $(lToken).attr("for","codigo");
+    lToken.append("Codigo");
+    var iToken = document.createElement("input");
+    $(iToken).attr("type","text");
+    $(iToken).attr("name","codigo");
+    $(iToken).attr("id","codigo");
+    $(iToken).attr("value","");
+    $(iToken).prop("required",true);
+    fieldset.append(lToken,iToken);
+    $("#reset").prepend(fieldset);
+
+
+
+
+}
 
 function CargarDatos(data){
     $("#reset").find("label,input,img").remove();
     var fieldset = $("fieldset");
-    var expr ="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&#.$($)$-$_])[A-Za-z\d$@$!%*?&#.$($)$-$_]{4,16}$";
 
     for (var valor in data) {
     if (data.hasOwnProperty(valor)) {
@@ -96,7 +138,7 @@ function CargarDatos(data){
       $(iPass).attr("name","password");
       $(iPass).attr("value","");
       $(iPass).attr("id","password");
-      $(iPass).attr("pattern","^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&#.$($)$-$_])[A-Za-z\d$@$!%*?&#.$($)$-$_]{4,16}$");
+      $(iPass).prop("required",true);
 
       var lRepeat = document.createElement("label");
       $(lRepeat).attr("for","repeat");
@@ -106,7 +148,7 @@ function CargarDatos(data){
       $(iRepeat).attr("name","repeat");
       $(iRepeat).attr("value","");
       $(iRepeat).attr("id","repeat");
-      $(iRepeat).attr("pattern","^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&#.$($)$-$_])[A-Za-z\d$@$!%*?&#.$($)$-$_]{4,16}$");
+      $(iRepeat).prop("required",true);
 
       cPass.append(lPass,iPass,lRepeat,iRepeat);
 
