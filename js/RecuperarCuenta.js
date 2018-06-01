@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  $("#reset").submit(function(ev){
+  $(".recuperar").submit(function(ev){
     ev.preventDefault();
     var email = $("#email").val();
     $.ajax({
@@ -8,61 +8,63 @@ $(document).ready(function(){
       type:"POST"
     })
     .done(function(data){
-      if (data) {
+      if (data[0]) {
         CargarVerificar();
-        $("#reset").submit(function(ev){
+        $(".recuperar").submit(function(ev){
           ev.preventDefault();
           var codigo = $("#codigo").val();
+          var valor  = data[1];
           $.ajax({
             url:'../../Controlador/RecuperarCuenta.php',
-            data:{action:"verificar",codigo:codigo,email:email},
+            data:{action:"verificar",codigo:codigo,email:email,valor:valor},
             type:"POST"
           })
           .done(function(data){
-            // if (data.length>0) {
-            //     CargarDatos(data);
-            //     $("#password").keyup(function(){
-            //       ComprobarPass();
-            //     })
-            //     $("#password").focus(function(){
-            //       ComprobarPass();
-            //     });
-            //     $("#repeat").keyup(function(){
-            //       ComprobarRepeat();
-            //     })
-            //     $("#repeat").focus(function(){
-            //       ComprobarRepeat();
-            //
-            //   });
-            //
-            //   $("#reset").submit(function(ev){
-            //     ev.preventDefault();
-            //     var usuario = $("#usuario").val();
-            //     var password = $("#password").val();
-            //     var repeat = $("#repeat").val();
-            //     $.ajax({
-            //       url:"../../Controlador/RecuperarCuenta.php",
-            //       data:{action:"cambiar",usuario:usuario,password:password,repeat:repeat},
-            //       type:"POST"
-            //     })
-            //     .done(function(data){
-            //       if (data) {
-            //         alert("contraseña cambiada");
-            //         location.replace("../login.php");
-            //       }
-            //       else{
-            //         alert("hubo un error con la base de datos");
-            //       }
-            //     })
-            //
-            //   })
-            // }
+
+            if (data.length>0) {
+                CargarDatos(data);
+                $("#password").keyup(function(){
+                  ComprobarPass();
+                })
+                $("#password").focus(function(){
+                  ComprobarPass();
+                });
+                $("#repeat").keyup(function(){
+                  ComprobarRepeat();
+                })
+                $("#repeat").focus(function(){
+                  ComprobarRepeat();
+
+              });
+
+              $("#reset").submit(function(ev){
+                ev.preventDefault();
+                var usuario = $("#usuario").val();
+                var password = $("#password").val();
+                var repeat = $("#repeat").val();
+                $.ajax({
+                  url:"../../Controlador/RecuperarCuenta.php",
+                  data:{action:"cambiar",usuario:usuario,password:password,repeat:repeat},
+                  type:"POST"
+                })
+                .done(function(data){
+                  if (data) {
+                    alert("contraseña cambiada");
+                    location.replace("../login.php");
+                  }
+                  else{
+                    alert("hubo un error con la base de datos");
+                  }
+                })
+
+              })
+            }
           })
 
         })
       }
-      else {
-        alert("El Email no se encuentra en la base de datos");
+      else{
+        alert("Este email no se encuentra en la base de datos");
       }
     });
   })

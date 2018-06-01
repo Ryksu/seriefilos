@@ -51,11 +51,24 @@
             width: 100%
           }
         }
-        div.c-recordar{
-          display: inline-flex;
-          flex-direction: row;
+        div.msg{
+          display: flex;
+          align-self: center;
+          margin-bottom: 1em;
           font-size: .8em;
-          margin-bottom: 10px;
+          padding: 0 1em;
+          width: 100%;
+
+          p{
+
+            a{
+              color:$enlaces;
+              text-decoration: none;
+              &:hover{
+                text-decoration: underline;
+              }
+            }
+          }
         }
         div.c-enviar{
           display: inline-flex;
@@ -149,11 +162,24 @@
             width: 100%
           }
         }
-        div.c-recordar{
-          display: inline-flex;
-          flex-direction: row;
+        div.msg{
+          display: flex;
+          align-self: center;
+          margin-bottom: 1em;
           font-size: .8em;
-          margin-bottom: 10px;
+          padding: 0 1em;
+          width: 100%;
+
+          p{
+
+            a{
+              color:$enlaces;
+              text-decoration: none;
+              &:hover{
+                text-decoration: underline;
+              }
+            }
+          }
         }
         div.c-enviar{
           display: inline-flex;
@@ -250,11 +276,24 @@
             width: 100%
           }
         }
-        div.c-recordar{
-          display: inline-flex;
-          flex-direction: row;
+        div.msg{
+          display: flex;
+          align-self: center;
+          margin-bottom: 1em;
           font-size: .8em;
-          margin-bottom: 10px;
+          padding: 0 1em;
+          width: 100%;
+
+          p{
+
+            a{
+              color:$enlaces;
+              text-decoration: none;
+              &:hover{
+                text-decoration: underline;
+              }
+            }
+          }
         }
         div.c-enviar{
           display: inline-flex;
@@ -351,11 +390,23 @@
             width: 100%
           }
         }
-        div.c-recordar{
-          display: inline-flex;
-          flex-direction: row;
+        div.msg{
+          display: flex;
+          align-self: center;
+          margin-bottom: 1em;
           font-size: .8em;
-          margin-bottom: 10px;
+          padding: 0 1em;
+          width: 100%;
+          p{
+
+            a{
+              color:$enlaces;
+              text-decoration: none;
+              &:hover{
+                text-decoration: underline;
+              }
+            }
+          }
         }
         div.c-enviar{
           display: inline-flex;

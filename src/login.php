@@ -64,7 +64,7 @@
             <a href="page/reset.php">¿Has olvidado la contraseña?</a>
           </div>
         </div>
-            <div id="msg"></div>
+            <div id="msg" class="msg"></div>
           <div class="c-enviar">
             <button type="reset" name="Deshacer">
               <span class="fas fa-redo-alt"></span>

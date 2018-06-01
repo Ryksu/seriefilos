@@ -7,7 +7,6 @@ class Usuarios extends NewCrud
 {
   public $usuario;
   static $NumToken = 0;
-
 /* pasamos los datos importante del usuario y registramos en la base de datos */
   function CrearUsuario($usuario,$password,$email)
   {
@@ -53,15 +52,15 @@ class Usuarios extends NewCrud
   }
 
 
-  function getToken(){
+  static function  getToken(){
     $num = random_int(1000,9999);
-    self::$NumToken = $num;
+    static::$NumToken = $num;
     return $num;
   }
 
-  function verificarToken($token){
+  static function verificarToken($token,$hash){
     $resultado = false;
-    if (self::$NumToken == $token) {
+    if (password_verify($token,$hash)) {
       $resultado = true;
     }
     return $resultado;

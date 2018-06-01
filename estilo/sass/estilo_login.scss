@@ -64,7 +64,29 @@
           div.c-olvidado{
             font-size: .8em;
             a{
+              color: $enlaces;
               text-decoration: none;
+              a:hover{
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+        div.msg{
+          display: flex;
+          align-self: center;
+          margin-bottom: 1em;
+          font-size: .8em;
+          padding: 0 1em;
+          width: 100%;
+          p{
+
+            a{
+              color:$enlaces;
+              text-decoration: none;
+              &:hover{
+                text-decoration: underline;
+              }
             }
           }
         }
@@ -173,7 +195,29 @@
           div.c-olvidado{
             font-size: .8em;
             a{
+              color: $enlaces;
               text-decoration: none;
+              &:hover{
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+        div.msg{
+          display: flex;
+          align-self: center;
+          margin-bottom: 1em;
+          font-size: .8em;
+          padding: 0 1em;
+          width: 100%;
+          p{
+
+            a{
+              color:$enlaces;
+              text-decoration: none;
+              &:hover{
+                text-decoration: underline;
+              }
             }
           }
         }
@@ -285,7 +329,29 @@
           div.c-olvidado{
             font-size: .8em;
             a{
+              color: $enlaces;
               text-decoration: none;
+              &:hover{
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+        div.msg{
+          display: flex;
+          align-self: center;
+          margin-bottom: 1em;
+          font-size: .8em;
+          padding: 0 1em;
+          width: 100%;
+          p{
+
+            a{
+              color:$enlaces;
+              text-decoration: none;
+              &:hover{
+                text-decoration: underline;
+              }
             }
           }
         }
@@ -397,7 +463,29 @@
           div.c-olvidado{
             font-size: .8em;
             a{
+              color: $enlaces;
               text-decoration: none;
+              &:hover{
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+        div.msg{
+          display: flex;
+          align-self: center;
+          margin-bottom: 1em;
+          font-size: .8em;
+          padding: 0 1em;
+          width: 100%;
+          p{
+
+            a{
+              color:$enlaces;
+              text-decoration: none;
+              &:hover{
+                text-decoration: underline;
+              }
             }
           }
         }

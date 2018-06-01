@@ -57,7 +57,7 @@ if (isset($_GET['buscador'])) {
          <div class="consulta">
            <h1>UPPS! :(</h1>
            <span></span>
-           <p>No se encuentra o aún no ha sido añadida por favor contacte con nosotros: <a href="../page/contacto.php">Contacto</a></p>
+           <p>No se encuentra o aún no ha sido añadida por favor contacte con nosotros: <a href="../src/page/contacto.php">Contacto</a></p>
          </div>
 
          <div class="c-buscador">

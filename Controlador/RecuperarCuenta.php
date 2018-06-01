@@ -1,17 +1,21 @@
 <?php
 require '../Conf/Usuarios.php';
 $Usuarios = new Usuarios();
+
 if ($_POST['action'] === "comprobar") {
-  $comprobar = false;
+  $comprobar = [];
+  $comprobar[0] = false;
   if (isset($_POST['email'])&&!empty($_POST['email'])) {
     $email = $_POST['email'];
     $resultado = $Usuarios->Leer("email","usuarios"," WHERE email = '$email'");
     $res = json_decode($resultado,true);
-    if ($res>0) {
-      $comprobar = true;
+    if (count($res)>0) {
+      $token =  Usuarios::getToken();
+      $codigo = password_hash(Usuarios::$NumToken,PASSWORD_DEFAULT);
+      $comprobar[0] = true;
+      $comprobar[] = $codigo;
     }
     if(!empty($res[0]['email'])){
-        $token = $Usuarios->getToken();
         $to = $res[0]['email'];
         $subject = "Recuperar cuenta";
         $mensaje = '
@@ -31,24 +35,21 @@ if ($_POST['action'] === "comprobar") {
         mail($to,$subject,$mensaje,$headers);
     }
   }
+
   $comprobar = json_encode($comprobar);
   header("Content-Type: application/json; charset=UTF-8");
   echo $comprobar;
 }
-
 if ($_POST['action'] == "verificar") {
   if (isset($_POST['codigo'])&&!empty($_POST['codigo'])) {
     $codigo = $_POST['codigo'];
-    var_dump($codigo);
-    var_dump($Usuarios->getToken());
-    var_dump(Usuarios::$NumToken);
-    $comprobar = $Usuarios->verificarToken($codigo);
-    var_dump($comprobar);
+    $hash = $_POST['valor'];
+    $email = $_POST['email'];
+    $comprobar = Usuarios::verificarToken($codigo,$hash);
     if ($comprobar) {
-      $resultado = $Usuarios->Leer("email","usuarios"," WHERE email = '$email'");
+      $resultado = $Usuarios->Leer("foto,usuario,email","usuarios"," WHERE email = '$email'");
       header("Content-Type: application/json; charset=UTF-8");
       echo $resultado;
-
     }
   }
 }

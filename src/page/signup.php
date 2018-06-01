@@ -48,7 +48,7 @@
           <fieldset>
             <legend>¡Registrate!</legend>
             <label for="usuario">Usuario</label>
-            <input type="text" name="usuario" value="" id="usuario" pattern="[a-zA-z-0-9]{4,8}" required>
+            <input type="text" name="usuario" value="" id="usuario" pattern="[a-zA-z-0-9]\S{4,8}" required>
             <label for="password">Contraseña</label>
             <input type="password" name="password" value="" id=password pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&#.$($)$-$_])[A-Za-z\d$@$!%*?&#.$($)$-$_]{4,16}$" required>
             <label for="repeat">Repetir Contraseña</label>

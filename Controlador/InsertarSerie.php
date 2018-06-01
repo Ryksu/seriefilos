@@ -36,11 +36,14 @@ if (isset($_FILES['Poster'])&&!empty($_FILES['Poster'])) {
 
 if (isset($_POST['Titulo'])&&!empty($_POST['Titulo'])) {
   if ($comprobarURL!=1) {
+    var_dump("Entro");
     echo $comprobarURL."0";
   }
   else {
     $titulo = $_POST['Titulo'];
     $sinopsis =$_POST['Texto'];
+
+    $sinopsis = str_replace("'","\"",$sinopsis);
     $texto = Parsedown::instance()
             ->setMarkupEscaped(true)
             ->text($sinopsis);
