@@ -18,7 +18,8 @@
         <th>Email</th>
         <th>Nombre</th>
         <th>Apellidos</th>
-        <th>Cumpleaño</th>
+        <th>Cumpleaños</th>
+        <th>Email verificado</th>
         <th>Borrar</th>
       </tr>
     </table>

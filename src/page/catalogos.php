@@ -26,7 +26,7 @@ require_once '../../Controlador/ObtenerCatalogo.php';
              <!--t-logo-->
              <li><a href="../../index.php">Inicio</a></li>
              <li><a href="catalogos.php#contenido">Catálogo</a></li>
-             <li><a href="contacto.php">Contactos</a></li>
+             <li><a href="contacto.php">Contacto</a></li>
              <li class="s-menu">
                <?php if (isset($_SESSION['usuario'])&&!empty($_SESSION['usuario'])): ?>
                  <a href="perfil.php"><?php echo $_SESSION['usuario'] ?></a>

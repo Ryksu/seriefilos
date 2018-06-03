@@ -26,7 +26,7 @@
           <!--t-logo-->
           <li><a href="../index.php">inicio</a></li>
           <li><a href="page/catalogos.php">Catálogo</a></li>
-          <li><a href="page/contacto.php">Contactos</a></li>
+          <li><a href="page/contacto.php">Contacto</a></li>
           <li><a href="page/signup.php">Registrate</a></li>
         </ul>
         <div class="c-buscador">
@@ -64,7 +64,7 @@
             <a href="page/reset.php">¿Has olvidado la contraseña?</a>
           </div>
         </div>
-            <div id="msg"></div>
+            <div id="msg" class="msg"></div>
           <div class="c-enviar">
             <button type="reset" name="Deshacer">
               <span class="fas fa-redo-alt"></span>

@@ -9,9 +9,11 @@
   <title>Seriefilos: Iniciar sesión</title>
   <link rel="icon" href="../img/favicon.png" type="image/x-png">
   <link rel="stylesheet" href="../../estilo/css/estilo_contacto.css">
-  <link rel="stylesheet" href="../../estilo/css/estilo_signup.css">
+  <link rel="stylesheet" href="../../estilo/css/estilo_recuperar.css">
+
   <script src="../../lib/jquery/jquery-3.3.1.min.js"></script>
   <script src="../../js/buscador.js"></script>
+  <script src="../../js/RecuperarCuenta.js"></script>
 
 </head>
 
@@ -26,7 +28,7 @@
           <!--t-logo-->
           <li><a href="../../index.php">Inicio</a></li>
           <li><a href="catalogos.php">Catálogo</a></li>
-          <li><a href="contacto.php">Contactos</a></li>
+          <li><a href="contacto.php">Contacto</a></li>
           <li><a href="../login.php">Iniciar sesión</a></li>
 
         </ul>
@@ -43,10 +45,10 @@
     </header>
     <!-- cabecera-->
     <main class="contenido" id="contenido">
-      <div class="c-registrar">
-        <form id="Registrate" class="registro" method="post">
+      <div class="formulario">
+        <form id="reset" class="recuperar" method="post">
           <fieldset>
-            <legend>¿Has olvidado y contraseña?</legend>
+            <legend>¿Has olvidado la contraseña?</legend>
             <label for="email">Email</label>
             <input type="email" name="email" value="" id="email" required>
           </fieldset>
@@ -56,7 +58,7 @@
               <span class="fas fa-redo-alt"></span>
               Deshacer
             </button>
-            <button type="submit" name="singup" id="singup">
+            <button type="submit" name="singup" id="enviar">
               <span class="far fa-paper-plane"></span>
               Enviar
             </button>
@@ -65,7 +67,7 @@
         </form>
       </div>
     </main>
-    
+
     <footer>
       <div class="redes_sociales">
         <ul>

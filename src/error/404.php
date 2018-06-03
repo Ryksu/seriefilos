@@ -31,7 +31,7 @@ if (isset($_GET['buscador'])) {
              <!--t-logo-->
              <li><a href="../../index.php">Inicio</a></li>
              <li><a href="../page/catalogos.php#contenido">Catálogo</a></li>
-             <li><a href="contacto.php">Contactos</a></li>
+             <li><a href="contacto.php">contacto</a></li>
              <li class="s-menu">
                <?php if (isset($_SESSION['usuario'])&&!empty($_SESSION['usuario'])): ?>
                  <a href="../page/perfil.php"><?php echo $_SESSION['usuario'] ?></a>
@@ -57,7 +57,7 @@ if (isset($_GET['buscador'])) {
          <div class="consulta">
            <h1>UPPS! :(</h1>
            <span></span>
-           <p>No se encuentra o aún no ha sido añadida por favor contacte con nosotros: <a href="../page/contacto.php">Contacto</a></p>
+           <p>No se encuentra o aún no ha sido añadida por favor contacte con nosotros: <a href="../src/page/contacto.php">Contacto</a></p>
          </div>
 
          <div class="c-buscador">

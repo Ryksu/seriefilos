@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once '../Conf/Usuarios.php';
-$usuario = $_SESSION['usuario'];
+$usuario = (isset($_POST['usuario'])&&!empty($_POST['usuario'])) ? $_POST['usuario'] : $_SESSION['usuario'] ;;
 $Usuarios = new Usuarios();
 
 if (isset($_FILES['foto'])&&!empty($_FILES['foto'])) {

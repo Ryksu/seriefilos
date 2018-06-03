@@ -25,6 +25,7 @@ class Series extends NewCrud
     else {
       $Anho = NULL;
     }
+
     $serie = $this->Insertar("serie",array("Poster","Titulo","Texto","Categoria","Year","Temporada","Estado","Trailer"),array("'$poster'","'$titulo'","'$texto'","'$categoria'","'$Anho'","'$temporada'","'$estado'","'$trailer'"));
      $ultimoID = $this->conexion->lastInsertId();
 

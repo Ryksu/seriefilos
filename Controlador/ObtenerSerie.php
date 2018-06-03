@@ -20,22 +20,6 @@ $row = json_decode($resultado,true);
   $trailer = $row[0]['Trailer'];
   $posteado = $row[0]['id_Usuarios'];
 
-$comentarios = new Comentarios();
-$nfilas = $comentarios->comentarioFila($_GET['id']);
-if ($nfilas>0) {
-  $limite = 5;
-  $pagina = 1;
-  if (isset($_GET['pg'])) {
-    $pagina = $_GET['pg'];
-  }
-
-$inicio = ($pagina-1)*$limite;
-$pagina_total = ceil($nfilas/$limite);
-}
-else {
-  $pagina_total = 0;
-}
-
 $url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
  ?>

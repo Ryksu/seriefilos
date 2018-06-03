@@ -30,7 +30,7 @@ require_once '../../Controlador/ObtenerUsuario.php';
           <!--t-logo-->
           <li><a href="../../index.php">Inicio</a></li>
           <li><a href="catalogos.php">Catálogo</a></li>
-          <li><a href="contacto.php">Contactos</a></li>
+          <li><a href="contacto.php">Contacto</a></li>
 
           <li class=""><a href="logout.php">Cerrar sesión</a></li>
         </ul>
@@ -77,7 +77,7 @@ require_once '../../Controlador/ObtenerUsuario.php';
             <input type="text" name="nombre" id="nombre" value="<?php echo $resultado[0]['nombre'] ?>" disabled>
             <label for="apellidos">Apellidos</label>
             <input type="text" name="apellidos" id="apellidos" value="<?php echo $resultado[0]['apellidos']; ?>" disabled>
-            <label for="cumple">Cumpleaño</label>
+            <label for="cumple">Cumpleaños</label>
             <input type="date" name="cumple" id="cumple" value="<?php echo $resultado[0]['cumple']; ?>" disabled>
           </fieldset>
           <div class="c-editar" id="c-editar">

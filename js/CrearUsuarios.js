@@ -1,11 +1,5 @@
 $(document).ready(function(){
 
-  $("#password").focus(function(){
-    $("#msg").html("<ul><li>4 o 16 caracteres</li> "+
-    "<li>Tiene Que llevar al menos una minuscula y mayuscula, un numero y un caracter especial(@!%*?%#.$_())</li> </ul>");
-  })
-
-
   $("#usuario").keyup(function(){
 
     var getUsuario = $(this).val();
@@ -16,20 +10,27 @@ $(document).ready(function(){
     })
     .done(function(data){
       ComprobarUsuario(data);
-      $("#usuario").focus(function(){
-        var getUsuario = $(this).val();
-        $.ajax({
-          url:"../../Controlador/ControladorUsuarios.php",
-          data:{action:"ComprobarUsuario",usuario:getUsuario},
-          type:"POST"
-        })
-        .done(function(data){
-          ComprobarUsuario(data);
-        })
-      })
+    })
+  })
+  $("#usuario").focus(function(){
+    var getUsuario = $(this).val();
+    $.ajax({
+      url:"../../Controlador/ControladorUsuarios.php",
+      data:{action:"ComprobarUsuario",usuario:getUsuario},
+      type:"POST"
+    })
+    .done(function(data){
+      ComprobarUsuario(data);
     })
   })
 
+$("#password").focus(function(){
+  ComprobarPass();
+
+})
+$("#repeat").focus(function(){
+  ComprobarRepeat();
+});
 /* Comprueba que los caracteres son correctos */
   $("#password").keyup(function(){
     ComprobarPass();
@@ -39,6 +40,7 @@ $(document).ready(function(){
   $("#repeat").keyup(function(){
     ComprobarRepeat();
   });
+
 
   $("#email").keyup(function(){
     expr=   /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
@@ -57,26 +59,25 @@ $(document).ready(function(){
     })
     .done(function(data){
       ComprobarEmail(data);
-      $("#email").focus(function(){
-        expr=   /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-        var email;
-        var getemail = document.getElementById("email");
-        if (expr.exec(getemail.value)!=null) {
-         email = getemail.value;
-        }else{
-          getemail.style.border = "2px solid red";
-          document.getElementById("singup").disabled= true;
-        }
-        $.ajax({
-          url:"../../Controlador/ControladorUsuarios.php",
-          data:{action:"ComprobarEmail",email:email},
-          type:"POST"
-        })
-        .done(function(data){
-          ComprobarEmail(data);
-
-        })
-      })
+    })
+  })
+  $("#email").focus(function(){
+    expr=   /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    var email;
+    var getemail = document.getElementById("email");
+    if (expr.exec(getemail.value)!=null) {
+     email = getemail.value;
+    }else{
+      getemail.style.border = "2px solid red";
+      document.getElementById("singup").disabled= true;
+    }
+    $.ajax({
+      url:"../../Controlador/ControladorUsuarios.php",
+      data:{action:"ComprobarEmail",email:email},
+      type:"POST"
+    })
+    .done(function(data){
+      ComprobarEmail(data);
 
     })
   })
@@ -96,7 +97,7 @@ $(document).ready(function(){
     })
     .done(function(data){
       if (data) {
-        $("#msg").html("<p>Genial ya estas registrado</p>");
+        $("#msg").html("<p>Genial ya estas registrado verifique su Email</p>");
         setTimeout(function(){location.replace("../login.php");},2000);
       }else{
         $("#msg").html("<p>Vuelve a repetir la contraseña</p>");
@@ -113,7 +114,7 @@ $(document).ready(function(){
 function ComprobarUsuario(data){
   // console.log("Comprobamos si esta vacio");
 
-  var expr = /[a-zA-z-0-9]{4,8}/g;
+  var expr = /[a-zA-z-0-9]\S{4,8}/;
   var inputUsuario = document.getElementById("usuario");
   if (inputUsuario.value<0) {
     inputUsuario.style.border = "2px solid red";
@@ -121,19 +122,31 @@ function ComprobarUsuario(data){
   }
   if (data.length==0)
   {
+
     if(expr.exec(inputUsuario.value)!=null){
-      inputUsuario.style.border = "2px solid green";
-      document.getElementById("singup").disabled = false;
+      if (inputUsuario.value.length<=8) {
+        document.getElementById("singup").disabled = false;
+        inputUsuario.style.border = "2px solid green";
+        $("#msg").empty();
+
+      }else{
+          inputUsuario.style.border = "2px solid red";
+          document.getElementById("singup").disabled= true;
+          $("#msg").html("<p>La cuenta no es valida</p>");
+
     }
+  }
     else {
       inputUsuario.style.border = "2px solid red";
       document.getElementById("singup").disabled= true;
+      $("#msg").html("<p>La cuenta no es valida</p>");
+
     }
   }
   else{
-    console.log("Ya existe");
     inputUsuario.style.border = "2px solid red";
     document.getElementById("singup").disabled= true;
+    $("#msg").html("<p>Esta cuenta ya existe puedes recuperar tu cuenta en: <a href='reset.php'>¿Has olvidado la contraseña?</a></p>");
 
   }
 }
@@ -151,41 +164,52 @@ function ComprobarPass(){
   var expr = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&#.$($)$-$_])[A-Za-z\d$@$!%*?&#.$($)$-$_]{4,16}$/;
 
   var inputPass = document.getElementById("password");
+  $("#msg").html("<ul><li>4 o 16 caracteres</li> "+
+  "<li>Tiene Que llevar al menos una minuscula y mayuscula, un numero y un caracter especial(@!%*?%#.$_())</li> </ul>");
 
   /*comprueba la expresion regular*/
   if (expr.exec(inputPass.value)) {
     // console.log("comprueba la expresion");
     inputPass.style.border ="2px solid green";
+    $("#msg").empty();
+
   }
   else{
-    console.log("no acepta la expresion");
     inputPass.style.border ="2px solid red";
+    // $("#msg").html("<p>No acepta la expresión</p>");
   }
 }
 
 function ComprobarRepeat(){
-    var inputPass = document.getElementById("password");
-    var inputRepeat = document.getElementById("repeat");
-    /*
-    min: 8 caracter
-    max: 15 caracter
-    al menos una mayuscula
-    al menos una minuscula
-    al menos un numero
-    al menos un caracter especial
-    no se acepta espacio
-    */
-    var expr = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&#.$($)$-$_])[A-Za-z\d$@$!%*?&#.$($)$-$_]{4,16}$/;
+      var inputPass = document.getElementById("password");
+      var inputRepeat = document.getElementById("repeat");
+      /*
+      min: 8 caracter
+      max: 15 caracter
+      al menos una mayuscula
+      al menos una minuscula
+      al menos un numero
+      al menos un caracter especial
+      no se acepta espacio
+      */
+      var expr = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&#.$($)$-$_])[A-Za-z\d$@$!%*?&#.$($)$-$_]{4,16}$/;
 
-    if (expr.exec(inputRepeat.value)) {
-      if (inputPass.value === inputRepeat.value) {
-        inputRepeat.style.border = "2px solid green";
+      if (expr.exec(inputRepeat.value)) {
+        if (inputPass.value === inputRepeat.value) {
+          inputRepeat.style.border = "2px solid green";
+          $("#msg").empty();
+
+      }else{
+
+        $("#msg").html("<p> No son iguales </p>");
+      }
+    }
+    else{
+      inputRepeat.style.border = "2px solid red";
+      // $("#msg").html("<p>No acepta la expresión</p>");
+
 
     }
-  }
-  else{
-    inputRepeat.style.border = "2px solid red";
-  }
 }
 
 function ComprobarEmail(data){
@@ -200,6 +224,7 @@ function ComprobarEmail(data){
     if(expr.exec(inputEmail.value)!=null){
       document.getElementById("singup").disabled = false;
       inputEmail.style.border = "2px solid green";
+      $("#msg").empty();
     }
     else {
       inputEmail.style.border = "2px solid red";
@@ -213,7 +238,7 @@ function ComprobarEmail(data){
     for (var valor in data) {
       if (data.hasOwnProperty(valor)) {
         if (data[valor]['Email'] === inputEmail.value) {
-          $("#msg").html("<p>Este email ya existe <br> puedes recuperar tu cuenta <a href='password.php'>¿Has olvidado la contraseña?</a></p>");
+          $("#msg").html("<p>Esta email ya existe puedes recuperar tu cuenta en: <a href='reset.php'>¿Has olvidado la contraseña?</a></p>");
         }
       }
     }

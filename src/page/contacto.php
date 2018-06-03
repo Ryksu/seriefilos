@@ -5,7 +5,7 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
-  <title>Seriefilos: Contactos</title>
+  <title>Seriefilos: Contacto</title>
   <link rel="icon" href="../img/favicon.png" type="image/x-png">
   <link rel="stylesheet" href="../../estilo/css/estilo_contacto.css">
   <script src="../../lib/jquery/jquery-3.3.1.min.js"></script>
@@ -24,7 +24,7 @@
           </li>
           <li><a href="../../index.php">Inicio</a></li>
           <li><a href="catalogos.php">Catálogo</a></li>
-          <li><a href="#contenido">Contactos</a></li>
+          <li><a href="#contenido">Contacto</a></li>
           <li class="s-menu">
             <?php if (isset($_SESSION['usuario'])&&!empty($_SESSION['usuario'])): ?>
               <a href="perfil.php"><?php echo $_SESSION['usuario'] ?></a>
@@ -52,7 +52,7 @@
     <!-- cabecera-->
     <main class="contenido" id="contenido">
       <div class="formulario">
-        <form class="Contactos" id="Contactos" action="../php/formulario.php" method="post" enctype="multipart/form-data">
+        <form class="contacto" id="contacto" action="../php/formulario.php" method="post" enctype="multipart/form-data">
           <fieldset>
             <legend>Contacto</legend>
             <label for="nombre">Nombre de usuario</label>

@@ -42,6 +42,7 @@ $(document).ready(function(){
       CargarSeries(data);
       paginacionSeries = $(".paginacionSeries");
         PaginacionJs(paginacionSeries,paginaTotal);
+        $(".npage[data="+pagina+"]").addClass("activo");
 
 
 
@@ -59,6 +60,11 @@ $(document).ready(function(){
             alert("Borrado");
           }
         })
+      })
+      $(".editarSeries").click(function(e){
+        e.preventDefault();
+        var valor = $(this).val();
+        location.href ="editar.php?id="+valor;
       })
       $(".npage").on("click",function(ev){
         ev.preventDefault();
@@ -86,11 +92,17 @@ $(document).ready(function(){
               data:{action:"BorrarSerie",serie:valor},
               type:"POST"
             })
+
             .done(function(data){
               if (data) {
                 alert("Borrado");
               }
             })
+          })
+          $(".editarSeries").click(function(e){
+            e.preventDefault();
+            var valor = $(this).val();
+            location.href ="editar.php?id="+valor;
           })
         })
       })
@@ -140,12 +152,20 @@ function CargarUsuarios(data){
       cumple.append(data[valor]['cumple']);
     }
 
+    var emailVerficado = document.createElement('td');
+    if (data[valor]['email_verificado']==1) {
+      emailVerficado.append("verificado");
+    }else{
+      emailVerficado.append("sin verificar");
+    }
+
+
     var eliminar = document.createElement("td");
 
     $(eliminar).addClass('delete');
     $(eliminar).html("<button type='button'  class='eliminarUsuarios' value='"+data[valor]['usuario']+"' name='eliminar'> <span class='fas fa-trash-alt'></span></button>");
     var tr = document.createElement('tr');
-    tr.append(usuario,email,nombre,apellidos,cumple,eliminar);
+    tr.append(usuario,email,nombre,apellidos,cumple,emailVerficado,eliminar);
     $('#users-table').append(tr);
   }
 }
@@ -216,6 +236,7 @@ function CargarSeries(data){
       }else{
         puntuacion.append(data[valor]['Puntuacion']);
       }
+
 
       var eliminar = document.createElement("td");
       $(eliminar).addClass('delete');

@@ -10,7 +10,6 @@
   <link rel="icon" href="../img/favicon.png" type="image/x-png">
   <link rel="stylesheet" href="../../estilo/css/estilo_contacto.css">
   <link rel="stylesheet" href="../../estilo/css/estilo_signup.css">
-  <link rel="stylesheet" href="../../estilo/css/fontawesome.css">
   <script src="../../lib/jquery/jquery-3.3.1.min.js"></script>
   <script src="../../js/buscador.js"></script>
 
@@ -27,7 +26,7 @@
           <!--t-logo-->
           <li><a href="../../index.php">Inicio</a></li>
           <li><a href="catalogos.php">Catálogo</a></li>
-          <li><a href="contacto.php">Contactos</a></li>
+          <li><a href="contacto.php">Contacto</a></li>
           <li><a href="../login.php">Iniciar sesión</a></li>
 
         </ul>
@@ -49,7 +48,7 @@
           <fieldset>
             <legend>¡Registrate!</legend>
             <label for="usuario">Usuario</label>
-            <input type="text" name="usuario" value="" id="usuario" pattern="[a-zA-z-0-9]{4,8}" required>
+            <input type="text" name="usuario" value="" id="usuario" pattern="[a-zA-z-0-9]\S{4,8}" required>
             <label for="password">Contraseña</label>
             <input type="password" name="password" value="" id=password pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&#.$($)$-$_])[A-Za-z\d$@$!%*?&#.$($)$-$_]{4,16}$" required>
             <label for="repeat">Repetir Contraseña</label>

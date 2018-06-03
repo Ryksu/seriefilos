@@ -1,0 +1,1139 @@
+@import "variables";
+@media screen and (max-width:$web_mobile_medium){
+  main.contenido{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 16px 10px;
+
+    h1{
+      text-align: center;
+      font-family: $titulo;
+    }
+    div.formulario{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      form.recuperar{
+        display: flex;
+        flex-direction: column;
+        @include font-title($texto,.9em);
+      div.c-foto{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        img{
+          height: 200px;
+          width: 200px;
+          align-self: center;
+          border-radius: 50%;
+
+        }
+      }
+
+        fieldset{
+          width: 100%;
+          align-self: center;
+          display: flex;
+          flex-direction: column;
+          border: none;
+          margin-bottom: 10px;
+          border-radius: 8px 8px 8px 8px;
+
+          legend{
+          @include font-title($titulo,2em);
+
+          }
+          input{
+            width: 100%;
+          }
+          input[type="text"],input[type="password"],input[type='email'],input[type='date']{
+            border: 1px solid #c0c5c6;
+            padding: 6px 8px;
+            border-radius: 8px 8px 8px 8px;
+            width: 100%;
+            margin-bottom: 10px;
+          }
+
+          /* chrome y opera */
+          input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{
+            -webkit-appearance:none;
+            margin: 0;
+          }
+          select{
+            border: 1px solid #c0c5c6;
+            padding: 6px 8px;
+            width: 100%
+          }
+        }
+
+        div.c-editar{
+          display: inline-flex;
+          justify-content:space-around;
+          button{
+            border: 1px solid #d8ded9;
+            padding: 8px 6px;
+            background: #e4e4e4;
+            border-radius: 4px 4px 4px 4px;
+
+            span::before{
+              content: fa-content($fa-var-edit);
+            }
+            &:hover{
+              cursor: pointer;
+              background: #ededed;
+            }
+          }
+        }
+        div.c-enviar{
+          display: inline-flex;
+          justify-content: space-around;
+
+          button[type=reset]{
+            border: 1px solid #d8ded9;
+            padding: 8px 6px;
+            background: #e4e4e4;
+            border-radius: 4px 4px 4px 4px;
+
+            span::before{
+              content: fa-content($fa-var-redo-alt);
+            }
+            &:hover{
+              cursor: pointer;
+              background: #ededed;
+            }
+          }
+          button[type=submit]{
+            border: 1px solid #d8ded9;
+            padding: 8px 6px;
+            background: #e4e4e4;
+            border-radius: 4px 4px 4px 4px;
+
+            span::before{
+              content: fa-content($fa-var-paper-plane);
+            }
+            &:hover{
+              cursor: pointer;
+              background: #ededed;
+            }
+          }
+        }
+      }
+
+    }
+    div.c-panel{
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      h2{
+        @include font-title($titulo,2em);
+        align-self: center;
+        margin-top: 3em;
+      }
+      div.c-mostrar{
+        display: flex;
+        justify-content: center;
+      }
+      button.Usuarios{
+        border: 1px solid #d8ded9;
+        padding: 8px 16px;
+        background: #e4e4e4;
+        border-radius: 4px 4px 4px 4px;
+        margin-right: .8em;
+
+        span::before{
+          content: fa-content($fa-var-users);
+        }
+        &:hover{
+          cursor: pointer;
+          background: #ededed;
+        }
+      }
+      button.Series{
+        border: 1px solid #d8ded9;
+        padding: 8px 16px;
+        background: #e4e4e4;
+        border-radius: 4px 4px 4px 4px;
+
+        span::before{
+          content: fa-content($fa-var-film);
+        }
+        &:hover{
+          cursor: pointer;
+          background: #ededed;
+        }
+      }
+
+    div.disabled{
+      display: none;
+    }
+    div.c-Todo{
+      margin-top: 1em;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      overflow: hidden;
+      @include font-title($texto,.8em);
+      table{
+        width: 100%;
+        border-collapse: collapse;
+        padding: 10px;
+        display: flex;
+        th{
+          background:$back_default;
+          color:$letra;
+          @include font-title($titulo,1.2em);
+          border-collapse: collapse;
+          padding: 10px;
+        }
+        td{
+          text-align: center;
+          border-collapse:collapse;
+          padding: 5px;
+        }
+        tr:nth-child(2n+1){
+          background: #e3e3e3;
+        }
+        tr:nth-child(2n+0){
+          background: #ededed;
+
+        }
+        td.delete{
+          background-color: none;
+          button{
+            border: 1px solid #d8ded9;
+            padding: 8px 16px;
+            background: #e4e4e4;
+            border-radius: 4px 4px 4px 4px;
+
+            span::before{
+              content: fa-content($fa-var-trash-alt);
+            }
+            &:hover{
+              cursor: pointer;
+              background: #ededed;
+            }
+          }
+
+        }
+        td.edit{
+          background-color: none;
+          button{
+            border: 1px solid #d8ded9;
+            padding: 8px 16px;
+            background: #e4e4e4;
+            border-radius: 4px 4px 4px 4px;
+
+            span::before{
+              content: fa-content($fa-var-edit);
+            }
+            &:hover{
+              cursor: pointer;
+              background: #ededed;
+            }
+          }
+
+        }
+      }
+      div.paginacion{
+        display: flex;
+        justify-content: center;
+        padding: 14px 16px;
+        a{
+          padding: 14px 14px;
+          display: block;
+          text-decoration: none;
+          font-size: 1.2em;
+          font-family: $texto;
+          background: #e4e4e4;
+          color: $enlaces;
+          &:hover:not(.activo){
+            background: #ededed;
+            cursor: pointer;
+          }
+          &:first-child{
+            border-radius:4px 0px 0px 4px;
+          }
+          &:last-child{
+            border-radius: 0px 4px 4px 0px;
+          }
+        }
+          a.activo{
+            padding: 14px 14px;
+            margin: 0;
+            display: block;
+            font-size: 1.2em;
+            font-family: $texto;
+            color: $letra;
+            background: $enlaces;
+            // border: 1px solid $hover;
+            pointer-events: none;
+            &:first-child{
+              border-radius:4px 0px 0px 4px;
+            }
+            &:last-child{
+              border-radius: 0px 4px 4px 0px;
+            }
+          }
+        }
+    }
+  }
+}
+}
+
+/* media movil medium */
+@media screen and (min-width:481px) and (max-width:600px){
+  main.contenido{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 16px 10px;
+
+    h1{
+      text-align: center;
+      font-family: $titulo;
+    }
+    div.formulario{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      form.recuperar{
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        width: 70%;
+        div.c-foto{
+          display: flex;
+          flex-direction: column;
+
+          img{
+            height: 200px;
+            width: 200px;
+            align-self: center;
+            border-radius: 50%;
+            border:1px solid #c0c5c6;
+          }
+
+        }
+        @include font-title($texto,.9em);
+        fieldset{
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          border: none;
+          margin-bottom: 10px;
+          border-radius: 8px 8px 8px 8px;
+
+          legend{
+          @include font-title($titulo,2em);
+
+          }
+          input{
+            border: 1px solid #c0c5c6;
+            padding: 6px 8px;
+            border-radius: 8px 8px 8px 8px;
+            width: 100%;
+            margin-bottom: 10px;
+          }
+
+          /* chrome y opera */
+          input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{
+            -webkit-appearance:none;
+            margin: 0;
+          }
+          select{
+            border: 1px solid #c0c5c6;
+            padding: 6px 8px;
+            width: 100%
+          }
+        }
+        div.c-editar{
+          display: inline-flex;
+          justify-content:space-around;
+          button{
+            border: 1px solid #d8ded9;
+            padding: 8px 6px;
+            background: #e4e4e4;
+            border-radius: 4px 4px 4px 4px;
+
+            span::before{
+              content: fa-content($fa-var-edit);
+            }
+            &:hover{
+              cursor: pointer;
+              background: #ededed;
+            }
+          }
+        }
+        div.c-enviar{
+          display: inline-flex;
+          justify-content: space-around;
+
+          button[type=reset]{
+            border: 1px solid #d8ded9;
+            padding: 8px 6px;
+            background: #e4e4e4;
+            border-radius: 4px 4px 4px 4px;
+
+            span::before{
+              content: fa-content($fa-var-redo-alt);
+            }
+            &:hover{
+              cursor: pointer;
+              background: #ededed;
+            }
+          }
+          button[type=submit]{
+            border: 1px solid #d8ded9;
+            padding: 8px 6px;
+            background: #e4e4e4;
+            border-radius: 4px 4px 4px 4px;
+
+            span::before{
+              content: fa-content($fa-var-paper-plane);
+            }
+            &:hover{
+              cursor: pointer;
+              background: #ededed;
+            }
+          }
+        }
+      }
+    }
+
+
+    div.c-panel{
+      h2{
+        align-self: center;
+        @include font-title($titulo,2em);
+      }
+      display: flex;
+      flex-direction: column;
+      align-self: center;
+      margin-top: 3em;
+      div.c-mostrar{
+        display: flex;
+        justify-content: center;
+      }
+      button.Usuarios{
+        border: 1px solid #d8ded9;
+        padding: 8px 16px;
+        background: #e4e4e4;
+        border-radius: 4px 4px 4px 4px;
+        margin-right: 1em;
+
+        span::before{
+          content: fa-content($fa-var-users);
+        }
+        &:hover{
+          cursor: pointer;
+          background: #ededed;
+        }
+      }
+      button.Series{
+        border: 1px solid #d8ded9;
+        padding: 8px 16px;
+        background: #e4e4e4;
+        border-radius: 4px 4px 4px 4px;
+
+        span::before{
+          content: fa-content($fa-var-film);
+        }
+        &:hover{
+          cursor: pointer;
+          background: #ededed;
+        }
+      }
+    div.disabled{
+      display: none;
+    }
+    div.c-Todo{
+      margin-top: 1em;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      align-self: center;
+      @include font-title($texto,.8em);
+      table{
+        width: 100%;
+        border-collapse: collapse;
+        padding: 10px;
+        display: flex;
+        th{
+          background:$back_default;
+          color:$letra;
+          @include font-title($titulo,1.2em);
+          border-collapse: collapse;
+          padding: 10px;
+        }
+        td{
+          text-align: center;
+          border-collapse:collapse;
+          padding: 5px;
+        }
+        tr:nth-child(2n+1){
+          background: #e3e3e3;
+        }
+        tr:nth-child(2n+0){
+          background: #ededed;
+
+        }
+        td.delete{
+          background-color: none;
+          button{
+            border: 1px solid #d8ded9;
+            padding: 8px 16px;
+            background: #e4e4e4;
+            border-radius: 4px 4px 4px 4px;
+
+            span::before{
+              content: fa-content($fa-var-trash-alt);
+            }
+            &:hover{
+              cursor: pointer;
+              background: #ededed;
+            }
+          }
+
+        }
+        td.edit{
+          background-color: none;
+          button{
+            border: 1px solid #d8ded9;
+            padding: 8px 16px;
+            background: #e4e4e4;
+            border-radius: 4px 4px 4px 4px;
+
+            span::before{
+              content: fa-content($fa-var-edit);
+            }
+            &:hover{
+              cursor: pointer;
+              background: #ededed;
+            }
+          }
+
+        }
+      }
+    }
+    div.paginacion{
+      display: flex;
+      justify-content: center;
+      padding: 14px 16px;
+      a{
+        padding: 14px 14px;
+        display: block;
+        text-decoration: none;
+        font-size: 1.2em;
+        font-family: $texto;
+        background: #e4e4e4;
+        color: $enlaces;
+        &:hover:not(.activo){
+          background: #ededed;
+          cursor: pointer;
+        }
+        &:first-child{
+          border-radius:4px 0px 0px 4px;
+        }
+        &:last-child{
+          border-radius: 0px 4px 4px 0px;
+        }
+      }
+        a.activo{
+          padding: 14px 14px;
+          margin: 0;
+          display: block;
+          font-size: 1.2em;
+          font-family: $texto;
+          color: $letra;
+          background: $enlaces;
+          // border: 1px solid $hover;
+          pointer-events: none;
+          &:first-child{
+            border-radius:4px 0px 0px 4px;
+          }
+          &:last-child{
+            border-radius: 0px 4px 4px 0px;
+          }
+        }
+      }
+  }
+
+  }
+}
+
+
+/* media table_web */
+
+@media screen and (min-width:$web_table) and (max-width:$web_full) {
+  main.contenido{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 16px 10px;
+
+    h1{
+      text-align: center;
+      font-family: $titulo;
+    }
+    div.formulario{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      form.recuperar{
+        display: flex;
+        flex-direction: column;
+        @include font-title($texto,.9em);
+        align-self: center;
+        width: 50%;
+        div.c-foto{
+          display: flex;
+          flex-direction: column;
+
+          img{
+            height: 200px;
+            width: 200px;
+            align-self: center;
+            border-radius: 50%;
+            border:1px solid #c0c5c6;
+          }
+
+        }
+        fieldset{
+          width: 100%;
+          align-self: center;
+          display: flex;
+          flex-direction: column;
+          border: none;
+          margin-bottom: 10px;
+          border-radius: 8px 8px 8px 8px;
+
+          legend{
+          @include font-title($titulo,2em);
+
+          }
+          input{
+            border: 1px solid #c0c5c6;
+            padding: 6px 8px;
+            border-radius: 8px 8px 8px 8px;
+            width: 100%;
+            margin-bottom: 10px;
+          }
+
+          /* chrome y opera */
+          input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{
+            -webkit-appearance:none;
+            margin: 0;
+          }
+          select{
+            border: 1px solid #c0c5c6;
+            padding: 6px 8px;
+            width: 100%
+          }
+        }
+        div.c-recordar{
+          display: inline-flex;
+          flex-direction: row;
+          font-size: .8em;
+          margin-bottom: 10px;
+        }
+        div.c-editar{
+          display: inline-flex;
+          justify-content:space-around;
+          button{
+            border: 1px solid #d8ded9;
+            padding: 8px 6px;
+            background: #e4e4e4;
+            border-radius: 4px 4px 4px 4px;
+
+            span::before{
+              content: fa-content($fa-var-edit);
+            }
+            &:hover{
+              cursor: pointer;
+              background: #ededed;
+            }
+          }
+        }
+
+        div.c-enviar{
+          display: inline-flex;
+          justify-content: space-around;
+
+          button[type=reset]{
+            border: 1px solid #d8ded9;
+            padding: 8px 6px;
+            background: #e4e4e4;
+            border-radius: 4px 4px 4px 4px;
+
+            span::before{
+              content: fa-content($fa-var-redo-alt);
+            }
+            &:hover{
+              cursor: pointer;
+              background: #ededed;
+            }
+          }
+          button[type=submit]{
+            border: 1px solid #d8ded9;
+            padding: 8px 6px;
+            background: #e4e4e4;
+            border-radius: 4px 4px 4px 4px;
+
+            span::before{
+              content: fa-content($fa-var-paper-plane);
+            }
+            &:hover{
+              cursor: pointer;
+              background: #ededed;
+            }
+          }
+        }
+      }
+
+    }
+    div.c-panel{
+      display: flex;
+      flex-direction: column;
+
+      h2{
+        @include font-title($titulo,2em);
+        align-self: center;
+        margin-top: 3em;
+      }
+      div.c-mostrar{
+        display: flex;
+        justify-content: center;
+      }
+      button.Usuarios{
+        border: 1px solid #d8ded9;
+        padding: 8px 16px;
+        background: #e4e4e4;
+        border-radius: 4px 4px 4px 4px;
+        margin-right: 1em;
+
+        span::before{
+          content: fa-content($fa-var-users);
+        }
+        &:hover{
+          cursor: pointer;
+          background: #ededed;
+        }
+      }
+      button.Series{
+        border: 1px solid #d8ded9;
+        padding: 8px 16px;
+        background: #e4e4e4;
+        border-radius: 4px 4px 4px 4px;
+
+        span::before{
+          content: fa-content($fa-var-film);
+        }
+        &:hover{
+          cursor: pointer;
+          background: #ededed;
+        }
+      }
+    div.disabled{
+      display: none;
+    }
+    div.c-Todo{
+      margin-top: 1em;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      align-self: center;
+      @include font-title($texto,.8em);
+      table{
+        border-collapse: collapse;
+
+        th{
+          background:$back_default;
+          color:$letra;
+          @include font-title($titulo,1.2em);
+          border-collapse: collapse;
+          padding: 10px;
+        }
+        td{
+          text-align: center;
+          border-collapse:collapse;
+          padding: 5px;
+        }
+        tr:nth-child(2n+1){
+          background: #e3e3e3;
+        }
+        tr:nth-child(2n+0){
+          background: #ededed;
+
+        }
+        td.delete{
+          background-color: none;
+          button{
+            border: 1px solid #d8ded9;
+            padding: 8px 16px;
+            background: #e4e4e4;
+            border-radius: 4px 4px 4px 4px;
+
+            span::before{
+              content: fa-content($fa-var-trash-alt);
+            }
+            &:hover{
+              cursor: pointer;
+              background: #ededed;
+            }
+          }
+
+        }
+        td.edit{
+          background-color: none;
+          button{
+            border: 1px solid #d8ded9;
+            padding: 8px 16px;
+            background: #e4e4e4;
+            border-radius: 4px 4px 4px 4px;
+
+            span::before{
+              content: fa-content($fa-var-edit);
+            }
+            &:hover{
+              cursor: pointer;
+              background: #ededed;
+            }
+          }
+
+        }
+      }
+    }
+
+    div.paginacion{
+      display: flex;
+      justify-content: center;
+      padding: 14px 16px;
+      a{
+        padding: 14px 14px;
+        display: block;
+        text-decoration: none;
+        font-size: 1.2em;
+        font-family: $texto;
+        background: #e4e4e4;
+        color: $enlaces;
+        &:hover:not(.activo){
+          background: #ededed;
+          cursor: pointer;
+        }
+        &:first-child{
+          border-radius:4px 0px 0px 4px;
+        }
+        &:last-child{
+          border-radius: 0px 4px 4px 0px;
+        }
+      }
+        a.activo{
+          padding: 14px 14px;
+          margin: 0;
+          display: block;
+          font-size: 1.2em;
+          font-family: $texto;
+          color: $letra;
+          background: $enlaces;
+          // border: 1px solid $hover;
+            pointer-events: none;
+          &:first-child{
+            border-radius:4px 0px 0px 4px;
+          }
+          &:last-child{
+            border-radius: 0px 4px 4px 0px;
+          }
+        }
+      }
+
+  }
+
+  }
+}
+
+
+/* Media full web */
+@media screen and (min-width:$web_full){
+  main.contenido{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 16px 10px;
+
+    h1{
+      text-align: center;
+      font-family: $titulo;
+    }
+    div.formulario{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-self: center;
+      width: 25%;
+
+      form.recuperar{
+        display: flex;
+        flex-direction: column;
+        @include font-title($texto,.9em);
+        width: 100%;
+        div.c-foto{
+          display: flex;
+          flex-direction: column;
+
+          img{
+            height: 200px;
+            width: 200px;
+            align-self: center;
+            border-radius: 50%;
+            border:1px solid #c0c5c6;
+          }
+
+        }
+        fieldset{
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          border: none;
+          margin-bottom: 10px;
+          border-radius: 8px 8px 8px 8px;
+
+          legend{
+          @include font-title($titulo,2em);
+
+          }
+          input{
+            border: 1px solid #c0c5c6;
+            padding: 6px 8px;
+            border-radius: 8px 8px 8px 8px;
+            width: 100%;
+            margin-bottom: 10px;
+          }
+
+          /* chrome y opera */
+          input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{
+            -webkit-appearance:none;
+            margin: 0;
+          }
+          select{
+            border: 1px solid #c0c5c6;
+            padding: 6px 8px;
+            width: 100%
+          }
+        }
+        div.c-editar{
+          display: inline-flex;
+          justify-content:space-around;
+          button{
+            border: 1px solid #d8ded9;
+            padding: 8px 6px;
+            background: #e4e4e4;
+            border-radius: 4px 4px 4px 4px;
+
+            span::before{
+              content: fa-content($fa-var-edit);
+            }
+            &:hover{
+              cursor: pointer;
+              background: #ededed;
+            }
+          }
+        }
+        div.c-enviar{
+          display: inline-flex;
+          justify-content: space-around;
+
+          button[type=reset]{
+            border: 1px solid #d8ded9;
+            padding: 8px 6px;
+            background: #e4e4e4;
+            border-radius: 4px 4px 4px 4px;
+
+            span::before{
+              content: fa-content($fa-var-redo-alt);
+            }
+            &:hover{
+              cursor: pointer;
+              background: #ededed;
+            }
+          }
+          button[type=submit]{
+            border: 1px solid #d8ded9;
+            padding: 8px 6px;
+            background: #e4e4e4;
+            border-radius: 4px 4px 4px 4px;
+
+            span::before{
+              content: fa-content($fa-var-paper-plane);
+            }
+            &:hover{
+              cursor: pointer;
+              background: #ededed;
+            }
+          }
+        }
+      }
+
+    }
+    div.c-panel{
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      div.c-mostrar{
+        display: flex;
+        justify-content:center;
+      }
+      h2{
+        @include font-title($titulo,2em);
+        align-self: center;
+        margin-top: 3em;
+      }
+
+
+      button.Usuarios{
+        border: 1px solid #d8ded9;
+        padding: 8px 16px;
+        background: #e4e4e4;
+        border-radius: 4px 4px 4px 4px;
+        margin-right: 1em;
+
+
+        span::before{
+          content: fa-content($fa-var-users);
+        }
+        &:hover{
+          cursor: pointer;
+          background: #ededed;
+        }
+      }
+      button.Series{
+        border: 1px solid #d8ded9;
+        padding: 8px 16px;
+        background: #e4e4e4;
+        border-radius: 4px 4px 4px 4px;
+
+        span::before{
+          content: fa-content($fa-var-film);
+        }
+        &:hover{
+          cursor: pointer;
+          background: #ededed;
+        }
+      }
+
+    div.disabled{
+      display: none;
+    }
+    div.c-Todo{
+      margin-top: 1em;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      align-self: center;
+      @include font-title($texto,.8em);
+      table{
+        border-collapse: collapse;
+
+        th{
+          background:$back_default;
+          color:$letra;
+          @include font-title($titulo,1.2em);
+          padding: 10px;
+        }
+        td{
+          text-align: center;
+          border-collapse:collapse;
+          padding: 5px;
+        }
+        tr:nth-child(2n+1){
+          background: #e3e3e3;
+        }
+        tr:nth-child(2n+0){
+          background: #ededed;
+
+        }
+        td.delete{
+          background-color: none;
+          button{
+            border: 1px solid #d8ded9;
+            padding: 8px 16px;
+            background: #e4e4e4;
+            border-radius: 4px 4px 4px 4px;
+
+            span::before{
+              content: fa-content($fa-var-trash-alt);
+            }
+            &:hover{
+              cursor: pointer;
+              background: #ededed;
+            }
+          }
+
+        }
+        td.edit{
+          background-color: none;
+          button{
+            border: 1px solid #d8ded9;
+            padding: 8px 16px;
+            background: #e4e4e4;
+            border-radius: 4px 4px 4px 4px;
+
+            span::before{
+              content: fa-content($fa-var-edit);
+            }
+            &:hover{
+              cursor: pointer;
+              background: #ededed;
+            }
+          }
+
+        }
+
+      }
+      div.paginacion{
+        display: flex;
+        justify-content: center;
+        padding: 14px 16px;
+        a{
+          padding: 14px 14px;
+          display: block;
+          text-decoration: none;
+          font-size: 1.2em;
+          font-family: $texto;
+          background: #e4e4e4;
+          color: $enlaces;
+          &:hover:not(.activo){
+            background: #ededed;
+            cursor: pointer;
+          }
+          &:first-child{
+            border-radius:4px 0px 0px 4px;
+          }
+          &:last-child{
+            border-radius: 0px 4px 4px 0px;
+          }
+        }
+          a.activo{
+            padding: 14px 14px;
+            margin: 0;
+            display: block;
+            font-size: 1.2em;
+            font-family: $texto;
+            color: $letra;
+            background: $enlaces;
+            // border: 1px solid $hover;
+              pointer-events: none;
+            &:first-child{
+              border-radius:4px 0px 0px 4px;
+            }
+            &:last-child{
+              border-radius: 0px 4px 4px 0px;
+            }
+          }
+        }
+    }
+  }
+}
+}
