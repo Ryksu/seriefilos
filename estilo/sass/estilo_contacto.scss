@@ -134,7 +134,7 @@
       flex-direction: column;
       justify-content: center;
 
-      form.Contactos{
+      form.contacto{
         display: flex;
         flex-direction: column;
         @include font-title($texto,1em);
@@ -439,7 +439,7 @@
       flex-direction: column;
       justify-content: center;
 
-      form.Contactos{
+      form.contacto{
         display: flex;
         flex-direction: column;
         @include font-title($texto,1em);
@@ -728,7 +728,7 @@ main.contenido{
   div.formulario{
     display: flex;
     flex-direction: column;
-    form.Contactos{
+    form.contacto{
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -1038,7 +1038,7 @@ main.contenido{
     flex-direction: column;
     justify-content: center;
 
-    form.Contactos{
+    form.contacto{
       display: flex;
       flex-direction: column;
       @include font-title($texto,1em);

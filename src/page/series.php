@@ -38,7 +38,7 @@ require_once '../../Controlador/ObtenerSerie.php';
              <!--t-logo-->
              <li> <a href="../../index.php#t-logo">Inicio</a></li>
              <li><a href="catalogos.php">Catálogo</a></li>
-             <li><a href="contacto.php">Contactos</a></li>
+             <li><a href="contacto.php">Contacto</a></li>
              <li class="s-menu">
                <?php if (isset($_SESSION['usuario'])&&!empty($_SESSION['usuario'])): ?>
                  <a href="perfil.php"><?php echo $_SESSION['usuario'] ?></a>

@@ -40,7 +40,7 @@ if (isset($_POST['Titulo'])&&!empty($_POST['Titulo'])) {
     echo $comprobarURL."0";
   }
   else {
-    $titulo = $_POST['Titulo'];
+    $titulo = ucfirst($_POST['Titulo']);
     $sinopsis =$_POST['Texto'];
 
     $sinopsis = str_replace("'","\"",$sinopsis);

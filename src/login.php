@@ -26,7 +26,7 @@
           <!--t-logo-->
           <li><a href="../index.php">inicio</a></li>
           <li><a href="page/catalogos.php">Catálogo</a></li>
-          <li><a href="page/contacto.php">Contactos</a></li>
+          <li><a href="page/contacto.php">Contacto</a></li>
           <li><a href="page/signup.php">Registrate</a></li>
         </ul>
         <div class="c-buscador">

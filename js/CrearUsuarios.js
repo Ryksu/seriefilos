@@ -176,7 +176,7 @@ function ComprobarPass(){
   }
   else{
     inputPass.style.border ="2px solid red";
-    $("#msg").html("<p>No acepta la expresión</p>");
+    // $("#msg").html("<p>No acepta la expresión</p>");
   }
 }
 
@@ -206,7 +206,7 @@ function ComprobarRepeat(){
     }
     else{
       inputRepeat.style.border = "2px solid red";
-      $("#msg").html("<p>No acepta la expresión</p>");
+      // $("#msg").html("<p>No acepta la expresión</p>");
 
 
     }

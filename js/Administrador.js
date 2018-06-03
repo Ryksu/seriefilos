@@ -42,6 +42,7 @@ $(document).ready(function(){
       CargarSeries(data);
       paginacionSeries = $(".paginacionSeries");
         PaginacionJs(paginacionSeries,paginaTotal);
+        $(".npage[data="+pagina+"]").addClass("activo");
 
 
 
@@ -59,6 +60,11 @@ $(document).ready(function(){
             alert("Borrado");
           }
         })
+      })
+      $(".editarSeries").click(function(e){
+        e.preventDefault();
+        var valor = $(this).val();
+        location.href ="editar.php?id="+valor;
       })
       $(".npage").on("click",function(ev){
         ev.preventDefault();
@@ -86,11 +92,17 @@ $(document).ready(function(){
               data:{action:"BorrarSerie",serie:valor},
               type:"POST"
             })
+
             .done(function(data){
               if (data) {
                 alert("Borrado");
               }
             })
+          })
+          $(".editarSeries").click(function(e){
+            e.preventDefault();
+            var valor = $(this).val();
+            location.href ="editar.php?id="+valor;
           })
         })
       })

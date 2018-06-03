@@ -1,4 +1,10 @@
-<?php session_start() ?>
+<?php
+require_once '../../Controlador/ObtenerSerie.php';
+if (isset($_SESSION['usuario'])&&!empty($_SESSION['usuario'])&&$_SESSION['usuario']!='admin') {
+  header('location: ../login.php');
+
+}
+?>
 
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
@@ -6,16 +12,14 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
-  <title>Seriefilo:Agregar</title>
+  <title>Seriefilo:Editar</title>
   <link rel="icon" href="../img/favicon.png" type="image/x-png">
   <link rel="stylesheet" href="../../estilo/css/estilo_contacto.css">
-  <link rel="stylesheet" href="../../estilo/css/estilo_agregar.css">
+  <link rel="stylesheet" href="../../estilo/css/estilo_editar.css">
   <script src="../../lib/jquery/jquery-3.3.1.min.js"></script>
-
-
   <script src="../../js/ListaDatos.js"></script>
-
   <script src="../../js/buscador.js"></script>
+  <script src="../../js/editarSerie.js"></script>
 </head>
 
 <body>
@@ -57,36 +61,61 @@
     <!-- cabecera-->
     <main class="contenido" id="contenido">
       <div class="formulario">
-        <form class="Agregar" id="Agregar" method="post">
+        <form class="Editar" id="Editar" method="post" enctype="multipart/form-data">
           <fieldset>
-            <legend>Agregar Serie</legend>
+            <legend>Editar serie: <?php  echo $titulo ?></legend>
           <div id="serie" class="serie">
+            <div class="poster">
+            <img src="<?php echo $poster ?>" alt="<?php echo $titulo ?>">
+          </div>
             <label for="Poster">Poster</label>
-            <input type="file" name="Poster" id="Poster" value="" accept="image/x-png,image/jpeg" required>
+            <input type="file" name="Poster" id="Poster" value="" accept="image/x-png,image/jpeg" >
             <label for="Titulo">Titulo</label >
-            <input type="text" name="Titulo" id="Titulo" value="" required>
+            <input type="text" name="Titulo" id="Titulo" value="<?php echo $titulo ?>" >
             <div class="year_temporada">
               <label for="Year">Año</label>
-              <input type="number" name="Year" id="Year" value="" min="1900" max="2020" maxlength="4" required>
+              <input type="number" name="Year" id="Year" value="<?php echo $year ?>" min="1900" max="2020" maxlength="4" >
               <label for="Temporada">Temporada</label>
-              <input type="number" name="Temporada" id="Temporada" value="" required>
+              <input type="number" name="Temporada" id="Temporada" value="<?php echo $temporada ?>" >
             </div>
             <label for="Categoria">Categoria</label>
-            <select  required name="Categoria" id="Categoria" >
+            <select   name="Categoria" id="Categoria" >
               <option value="">Seleccione una Categoria</option>
+              <option value="<?php echo $categoria ?>" selected><?php echo $categoria ?></option>
             </select>
           <label for="Estado">Estado</label>
-            <select required name="Estado" id="Estado" >
+            <select  name="Estado" id="Estado" >
               <option value="">Seleccione un Estado de emisión</option>
+              <option value="<?php echo $estado ?>" selected><?php
+              switch($estado){
+                case 1:
+                echo 'En emisión';
+                break;
+                case 2:
+                echo 'Terminado';
+                break;
+                case 3:
+                echo 'Esperando nueva temporada';
+                break;
+              }
+              $estado ?></option>
+
             </select>
+          <?php if (isset($trailer)&&!empty($trailer)): ?>
+            <div class="trailer">
+              <?php echo $trailer ?>
+            </div>
+          <?php endif; ?>
           <label for="Trailer">Insertar trailer</label>
           <input type="text" name="Trailer" value="" placeholder="enlace de Youtube">
           <label for="Texto">Sinopsis</label>
-            <textarea name="Texto" id="Texto" required></textarea>
+            <textarea name="Texto" id="Texto"><?php echo strip_tags($texto);?></textarea>
           </div>
           </fieldset>
 
           <div class="c-enviar">
+            <button type="button" name="volver" id="volver"> <span class="fas fa-angle-left"></span> Volver</button>
+
             <button type="reset" name="Deshacer">
               <span class="fas fa-redo-alt"></span>
               Deshacer
@@ -98,7 +127,6 @@
           </div>
         </form>
       </div>
-      <script src="../../js/InsertarSerie.js"></script>
     </main>
     <footer>
       <div class="redes_sociales">

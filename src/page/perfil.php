@@ -30,7 +30,7 @@ require_once '../../Controlador/ObtenerUsuario.php';
           <!--t-logo-->
           <li><a href="../../index.php">Inicio</a></li>
           <li><a href="catalogos.php">Catálogo</a></li>
-          <li><a href="contacto.php">Contactos</a></li>
+          <li><a href="contacto.php">Contacto</a></li>
 
           <li class=""><a href="logout.php">Cerrar sesión</a></li>
         </ul>
