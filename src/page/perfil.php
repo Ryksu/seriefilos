@@ -30,8 +30,6 @@ require_once '../../Controlador/ObtenerUsuario.php';
           <!--t-logo-->
           <li><a href="../../index.php">Inicio</a></li>
           <li><a href="catalogos.php">Catálogo</a></li>
-          <li><a href="contacto.php">Contacto</a></li>
-
           <li class=""><a href="logout.php">Cerrar sesión</a></li>
         </ul>
         <div class="c-buscador">
@@ -125,6 +123,10 @@ require_once '../../Controlador/ObtenerUsuario.php';
         instagram
       </a>
           </li>
+          <li><a href="contacto.php">
+            <span class="fas fa-info"></span>
+            nfo
+          </a></li>
         </ul>
       </div>
     </footer>

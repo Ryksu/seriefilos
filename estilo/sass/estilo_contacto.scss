@@ -151,28 +151,7 @@
           @include font-title($titulo,1.4em);
           align-self: center;
         }
-          div.disable{
-            display: none;
-          }
-          div.serie{
-            margin-top: 1em;
-            display: flex;
-            flex-direction: column;
-            div.year_temporada{
-              display: flex;
-              flex-direction: row;
-              justify-content: space-between;
-              padding: 10px 16px;
-              label{
-                align-self: center;
-              }
-              input{
-                width: 20%;
-              }
 
-            }
-
-          }
           div.consulta{
             display: flex;
             flex-direction: column;
@@ -180,24 +159,21 @@
 
           }
           textarea{
-            max-width: 100%;
-            height: 200px;
+            width: 100%;
+            height: 300px;
             font-family: $texto;
-            font-size: 1em;
+            font-size: .9em;
             border-radius: 8px 8px 8px 8px;
             border: 1px solid #c0c5c6;
             resize: none;
             padding: 1em;
-
-
-
-
           }
           input[type="text"],input[type="email"]{
             border: 1px solid #c0c5c6;
             padding: 6px 8px;
             border-radius: 8px 8px 8px 8px;
-            width: 100%
+            width: 100%;
+            margin-bottom: 1em;
           }
           input[type=number]{
             border: 1px solid #c0c5c6;
@@ -273,6 +249,7 @@
         overflow: hidden;
         li{
           float: left;
+          font-size: .85em;
           a{
             display: block;
             text-decoration: none;
@@ -299,7 +276,13 @@
               content: fa-content($fa-var-instagram);
               color: #D90055;
               font-size: 1.5em;
-
+            }
+            span.fa-info::before{
+              content: fa-content($fa-var-info);
+              font-size: 1.5em;
+              &:hover{
+                color:$letra;
+              }
             }
           }
         }
@@ -451,7 +434,7 @@
           flex-direction: column;
           border: none;
           margin-bottom: 10px;
-          width: 100%;
+          width: 70%;
           legend{
             @include font-title($titulo,1.4em);
             align-self: center;
@@ -459,33 +442,15 @@
           div.disable{
             display: none;
           }
-          div.serie{
-            margin-top: 1em;
-            display: flex;
-            flex-direction: column;
-            div.year_temporada{
-              display: flex;
-              flex-direction: row;
-              justify-content: space-between;
-              padding: 10px 16px;
-              label{
-                align-self: center;
-              }
-              input{
-                width: 20%;
-              }
 
-            }
-
-          }
           div.consulta{
             display: flex;
             flex-direction: column;
             padding: 10px 16px;
           }
           textarea{
-            max-width: 100%;
-            height: 200px;
+            width: 100%;
+            height: 300px;
             font-family: $texto;
             font-size: 1em;
             border-radius: 8px 8px 8px 8px;
@@ -500,7 +465,9 @@
             border: 1px solid #c0c5c6;
             padding: 6px 8px;
             border-radius: 8px 8px 8px 8px;
-            width: 100%
+            width: 100%;
+            margin-bottom: 1em;
+
           }
           input[type=number]{
             border: 1px solid #c0c5c6;
@@ -514,11 +481,7 @@
               color: $letra
             }
           }
-          /* chrome y opera */
-          input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{
-            -webkit-appearance:none;
-            margin: 0;
-          }
+
           select{
             border: 1px solid #c0c5c6;
             padding: 6px 8px;
@@ -602,7 +565,13 @@
               content: fa-content($fa-var-instagram);
               color: #D90055;
               font-size: 1.5em;
-
+            }
+            span.fa-info::before{
+              content: fa-content($fa-var-info);
+              font-size: 1.5em;
+              &:hover{
+                color:$letra;
+              }
             }
           }
         }
@@ -733,10 +702,10 @@ main.contenido{
       flex-direction: column;
       justify-content: center;
       @include font-title($texto,1em);
-      width: 100%;
+      width: 70%;
       align-self: center;
       fieldset{
-        width: 100%;
+        width: 70%;
         align-self: center;
         display: flex;
         flex-direction: column;
@@ -746,51 +715,28 @@ main.contenido{
           @include font-title($titulo,1.4em);
           align-self: center;
         }
-        div.disable{
-          display: none;
-        }
-        div.serie{
-          margin-top: 1em;
-          display: flex;
-          flex-direction: column;
-          div.year_temporada{
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            padding: 10px 16px;
-            label{
-              align-self: center;
-            }
-            input{
-              width: 20%;
-            }
-          }
-
-        }
         div.consulta{
           display: flex;
           flex-direction: column;
           padding: 10px 16px;
         }
         textarea{
-          max-width: 100%;
-          height: 200px;
+          width: 100%;
+          height: 300px;
           font-family: $texto;
           font-size: 1em;
           border-radius: 8px 8px 8px 8px;
           border: 1px solid #c0c5c6;
           resize: none;
           padding: 1em;
-
-
-
-        }
+      }
 
         input[type="text"],input[type="email"]{
           border: 1px solid #c0c5c6;
           padding: 6px 8px;
           border-radius: 8px 8px 8px 8px;
-          width: 100%
+          width: 100%;
+          margin-bottom: 1em;
         }
         input[type=number]{
           border: 1px solid #c0c5c6;
@@ -892,7 +838,13 @@ footer{
             content: fa-content($fa-var-instagram);
             color: #D90055;
             font-size: 1.5em;
-
+          }
+          span.fa-info::before{
+            content: fa-content($fa-var-info);
+            font-size: 1.5em;
+            &:hover{
+              color:$letra;
+            }
           }
         }
       }
@@ -951,7 +903,7 @@ footer{
             z-index: 1;
             position: absolute;
             top: 50px;
-            left: 420px;
+            left: 320px;
             background: $back_default;
             box-shadow: 5px 5px 10px #7e7e7e
           }
@@ -1052,7 +1004,7 @@ main.contenido{
         margin-bottom: 10px;
         width: 50%;
         legend{
-          @include font-title($titulo,1.4em);
+          @include font-title($titulo,2em);
           align-self: center;
         }
         div.disable{
@@ -1082,8 +1034,8 @@ main.contenido{
           padding: 10px 16px;
         }
         textarea{
-          max-width: 100%;
-          height: 200px;
+          width: 100%;
+          height: 300px;
           font-family: $texto;
           font-size: 1em;
           border-radius: 8px 8px 8px 8px;
@@ -1095,7 +1047,8 @@ main.contenido{
           border: 1px solid #c0c5c6;
           padding: 6px 8px;
           border-radius: 8px 8px 8px 8px;
-          width: 100%
+          width: 100%;
+          margin-bottom: 1em;
         }
         input[type=number]{
           border: 1px solid #c0c5c6;
@@ -1201,6 +1154,14 @@ footer{
             font-size: 1.5em;
 
           }
+          span.fa-info::before{
+            content: fa-content($fa-var-info);
+            font-size: 1.5em;
+            &:hover{
+              color:$letra;
+            }
+          }
+
         }
       }
     }

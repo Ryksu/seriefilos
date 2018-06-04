@@ -237,6 +237,7 @@ div.logo{
         overflow: hidden;
         li{
           float: left;
+          font-size: .85em;
           a{
             display: block;
             text-decoration: none;
@@ -263,8 +264,15 @@ div.logo{
               content: fa-content($fa-var-instagram);
               color: #D90055;
               font-size: 1.5em;
-
             }
+            span.fa-info::before{
+              content: fa-content($fa-var-info);
+              font-size: 1.5em;
+              &:hover{
+                color:$letra;
+              }
+            }
+
           }
         }
       }
@@ -527,8 +535,15 @@ div.logo{
               content: fa-content($fa-var-instagram);
               color: #D90055;
               font-size: 1.5em;
-
             }
+            span.fa-info::before{
+              content: fa-content($fa-var-info);
+              font-size: 1.5em;
+              &:hover{
+                color:$letra;
+              }
+            }
+
           }
         }
       }
@@ -781,6 +796,13 @@ footer{
             font-size: 1.5em;
 
           }
+          span.fa-info::before{
+            content: fa-content($fa-var-info);
+            font-size: 1.5em;
+            &:hover{
+              color:$letra;
+            }
+          }
         }
       }
     }
@@ -839,7 +861,7 @@ footer{
             z-index: 1;
             position: absolute;
             top: 50px;
-            left: 320px;
+            left: 220px;
             background: $back_default;
             box-shadow: 5px 5px 10px #7e7e7e
           }
@@ -1052,6 +1074,13 @@ footer{
             color: #D90055;
             font-size: 1.5em;
 
+          }
+          span.fa-info::before{
+            content: fa-content($fa-var-info);
+            font-size: 1.5em;
+            &:hover{
+              color:$letra;
+            }
           }
         }
       }

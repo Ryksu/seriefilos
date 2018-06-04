@@ -315,14 +315,13 @@ div.paginacion{
             overflow: hidden;
             li{
               float: left;
+              font-size: .85em;
               a{
                 display: block;
                 text-decoration: none;
                 padding: 8px 6px;
                 font-family: $texto;
                 color: $back_default;
-                font-size: 1em;
-
                 &:hover{
                   background: $hover;
                   color: $letra;
@@ -345,6 +344,13 @@ div.paginacion{
                   color: #D90055;
                   font-size: 1.5em
 
+                }
+                span.fa-info::before{
+                  content: fa-content($fa-var-info);
+                  font-size: 1.5em;
+                  &:hover{
+                    color:$letra;
+                  }
                 }
               }
             }
@@ -693,6 +699,13 @@ div.paginacion{
                 color: #D90055;
                 font-size: 1.5em
 
+              }
+              span.fa-info::before{
+                content: fa-content($fa-var-info);
+                font-size: 1.5em;
+                &:hover{
+                  color:$letra;
+                }
               }
             }
           }
@@ -1059,6 +1072,13 @@ footer{
             font-size: 1.5em
 
           }
+          span.fa-info::before{
+            content: fa-content($fa-var-info);
+            font-size: 1.5em;
+            &:hover{
+              color:$letra;
+            }
+          }
         }
       }
     }
@@ -1117,7 +1137,7 @@ footer{
               z-index: 1;
               position: absolute;
               top: 50px;
-              left: 420px;
+              left: 320px;
               background: $back_default;
               box-shadow: 5px 5px 10px #7e7e7e
             }
@@ -1419,6 +1439,13 @@ footer{
             color: #D90055;
             font-size: 1.5em
 
+          }
+          span.fa-info::before{
+            content: fa-content($fa-var-info);
+            font-size: 1.5em;
+            &:hover{
+              color:$letra;
+            }
           }
         }
       }

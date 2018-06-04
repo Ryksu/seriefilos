@@ -26,7 +26,6 @@
           <!--t-logo-->
           <li><a href="../../index.php">Inicio</a></li>
           <li><a href="catalogos.php">Catálogo</a></li>
-          <li><a href="contacto.php">Contacto</a></li>
           <li><a href="../login.php">Iniciar sesión</a></li>
 
         </ul>
@@ -92,6 +91,10 @@
         instagram
       </a>
           </li>
+          <li><a href="src/page/contacto.php">
+            <span class="fas fa-info"></span>
+            nfo
+          </a></li>
         </ul>
       </div>
     </footer>

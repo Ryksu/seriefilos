@@ -17,7 +17,10 @@ $(document).ready(function(){
       if(data==="111111"){
         alert("Serie Actulizada");
         location.replace("perfil.php");
-      };
+      }
+      if(data==="111112"){
+        alert("Hubo un error al insertar el video");
+      }
 
     })
   });

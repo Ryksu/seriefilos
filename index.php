@@ -20,7 +20,6 @@
         <ul>
           <li class="t-logo">Inicio</li>
           <li><a href="src/page/catalogos.php">Catálogo</a></li>
-          <li><a href="src/page/contacto.php">Contacto</a></li>
           <li class="s-menu">
             <?php if (isset($_SESSION['usuario'])&&!empty($_SESSION['usuario'])): ?>
               <a href="src/page/perfil.php"><?php echo $_SESSION['usuario']; ?></a>
@@ -194,6 +193,11 @@
         instagram
       </a>
           </li>
+          <li><a href="src/page/contacto.php">
+            <span class="fas fa-info"></span>
+            nfo
+          </a></li>
+
         </ul>
       </div>
     </footer>

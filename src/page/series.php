@@ -38,7 +38,6 @@ require_once '../../Controlador/ObtenerSerie.php';
              <!--t-logo-->
              <li> <a href="../../index.php#t-logo">Inicio</a></li>
              <li><a href="catalogos.php">Catálogo</a></li>
-             <li><a href="contacto.php">Contacto</a></li>
              <li class="s-menu">
                <?php if (isset($_SESSION['usuario'])&&!empty($_SESSION['usuario'])): ?>
                  <a href="perfil.php"><?php echo $_SESSION['usuario'] ?></a>
@@ -69,7 +68,8 @@ require_once '../../Controlador/ObtenerSerie.php';
                </li>
                <li>
                  <span class="fas fa-angle-left"></span>
-                 <?php echo $categoria ?>
+                 <a href="catalogos.php?buscador=&año=&temporada=&Categoria=<?php echo $categoria ?>&Estado=&Enviar="><?php echo $categoria ?></a>
+
                </li>
                <li>
                  <span class="fas fa-angel-left"></span>
@@ -171,6 +171,10 @@ require_once '../../Controlador/ObtenerSerie.php';
     instagram
   </a>
       </li>
+      <li><a href="contacto.php">
+        <span class="fas fa-info"></span>
+        nfo
+      </a></li>
     </ul>
   </div>
 </footer>

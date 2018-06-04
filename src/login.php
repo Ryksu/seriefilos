@@ -26,11 +26,10 @@
           <!--t-logo-->
           <li><a href="../index.php">inicio</a></li>
           <li><a href="page/catalogos.php">Catálogo</a></li>
-          <li><a href="page/contacto.php">Contacto</a></li>
           <li><a href="page/signup.php">Registrate</a></li>
         </ul>
         <div class="c-buscador">
-          <form class="b-buscador" id="form_search" method="get" action="catalogos.php">
+          <form class="b-buscador" id="form_search" method="get" action="page/catalogos.php">
             <button id="button_search" type="button" class="m-buscador">
         <span class="fa fa-search"></span>
       </button>
@@ -100,6 +99,10 @@
         instagram
       </a>
           </li>
+          <li><a href="page/contacto.php">
+            <span class="fas fa-info"></span>
+            nfo
+          </a></li>
         </ul>
       </div>
     </footer>

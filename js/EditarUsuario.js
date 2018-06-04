@@ -41,7 +41,7 @@ $(document).ready(function(){
     })
     .always(function(data){
       if (data != "1" || data !="2") {
-        location.reload();
+        // location.reload();
       }
     })
   })
