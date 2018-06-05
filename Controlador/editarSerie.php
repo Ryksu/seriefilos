@@ -19,8 +19,58 @@ if (isset($_FILES['Poster'])&&!empty($_FILES['Poster'])) {
         $poster = implode("_",$titulo).".".$extension[1];
         $url = "../img/poster/".$poster;
          if(move_uploaded_file($_FILES['Poster']['tmp_name'],$url)){
+           $postertmp = $url;
+           $ancho = 1000;
+           $alto = 1000;
+           list($anchoOring,$altoOring) = getimagesize($postertmp);
+           $ratioOriginal = $anchoOring/$altoOring;
+           if ($ancho/$alto > $ratioOriginal) {
+             $ancho = $alto * $ratioOriginal;
+           }
+           else{
+             $alto = $ancho * $ratioOriginal;
+           }
+           $lienzo = imagecreatetruecolor($ancho,$alto);
+           switch ($Poster_tipo) {
+             case 'image/jpg':
+             $origen = imagecreatefromjpeg($postertmp);
+               break;
+             case 'image/jpeg':
+             $origen = imagecreatefromjpeg($postertmp);
+               break;
+             case 'image/png':
+             $origen = imagecreatefrompng($postertmp);
+               break;
+             case 'image/gif':
+               $origen = imagecreatefromgif($postertmp);
+               break;
+           }
+           imagecopyresampled($lienzo,$origen,0,0,0,0,$ancho,$alto,$anchoOring,$altoOring);
 
-           var_dump($Series->Actulizar("serie","Poster = '../$url'"," id = '$id'"));
+           switch ($Poster_tipo) {
+             case 'image/jpg':
+             imagejpeg($lienzo,$url);
+             imagedestroy($lienzo);
+               break;
+             case 'image/jpeg':
+             imagejpeg($lienzo,$url);
+
+             imagedestroy($lienzo);
+
+               break;
+             case 'image/png':
+             imagepng($lienzo,$url);
+             imagedestroy($lienzo);
+
+               break;
+             case 'image/gif':
+               imagegif($lienzo,$url);
+               imagedestroy($lienzo);
+
+               break;
+           }
+           $Series->Actulizar("serie","Poster = '../$url'"," id = '$id'");
+
            $comprobarURL = 1; // La imagen se ha cargado correctamente
            echo $comprobarURL;
          }

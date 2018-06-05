@@ -27,21 +27,27 @@ $(document).ready(function(){
     })
     .done(function(data){
       if (data === "0") {
-        alert("La imagen se cargado correctamente");
+        alert("Error al cargar en la base de datos");
       }
       if (data === "1") {
+        alert("La imagen se cargado correctamente");
+      }
+      if (data === "2") {
+        alert("Lo siento aun no tenemos soporte para esta extension prueba con jpg, png o gif");
+      }
+      if (data === "3") {
         console.log(data);
         alert("La imagen es muy pesada imagen menos de 1MB");
 
       }
-      if (data === "2") {
-        alert("Lo siento aun no tenemos soporte para esta extension prueba con jpg, png o gif ");
+      if (data === "e0") {
+        alert("El correo ya esta en uso");
       }
 
     })
     .always(function(data){
-      if (data != "1" || data !="2") {
-        // location.reload();
+      if (data != "2" || data !="3" || data != "e0") {
+        location.reload();
       }
     })
   })

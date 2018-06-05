@@ -9,8 +9,10 @@
   <link rel="icon" href="../img/favicon.png" type="image/x-png">
   <link rel="stylesheet" href="../../estilo/css/estilo_contacto.css">
   <script src="../../lib/jquery/jquery-3.3.1.min.js"></script>
-  <script src="../../js/ListaDatos.js"></script>
   <script src="../../js/buscador.js"></script>
+  <script src="../../js/enviarCorreo.js"></script>
+  <script src='https://www.google.com/recaptcha/api.js'></script>
+
 </head>
 
 <body>
@@ -51,20 +53,21 @@
     <!-- cabecera-->
     <main class="contenido" id="contenido">
       <div class="formulario">
-        <form class="contacto" id="contacto" action="../php/formulario.php" method="post" enctype="multipart/form-data">
+        <form class="contacto" id="contacto" method="post" enctype="multipart/form-data">
           <fieldset>
-            <legend>Informacion y conctactos</legend>
+            <legend>Informacion y conctacto</legend>
             <?php if (!isset($_SESSION['usuario'])&&empty($_SESSION['usuario'])): ?>
               <label for="nombre">Nombre</label>
-              <input type="text" name="nombre" id="nombre" value="" placeholder="Nombre" required>
+              <input type="text" name="nombre" id="nombre" value="" required>
               <label for="correo">Correo</label>
               <input type="email" name="correo" id="correo" value="" required>
             <?php endif; ?>
             <label for="asunto">Asunto</label>
-            <input type="text" name="asunto" value="" required>
+            <input type="text" name="asunto" value=""  id="asunto" required>
             <label for="comentario">Comentario</label>
             <textarea name="comentario" id="comentario" required></textarea>
           </fieldset>
+                  <div class="g-recaptcha" data-sitekey="6Lc6nVwUAAAAACbVVbJvzAcHhVdGUqzPwATI3YVh"></div>
           <div class="c-enviar">
             <button type="reset" name="Deshacer">
               <span class="fas fa-redo-alt"></span>

@@ -26,7 +26,11 @@
           color: $enlaces;
           font-weight: bold;
           text-decoration: none;
+        &:hover{
+          text-decoration: underline;
         }
+        }
+
       }
 
     }
@@ -60,6 +64,9 @@
           color: $enlaces;
           font-weight: bold;
           text-decoration: none;
+          &:hover{
+            text-decoration: underline;
+          }
         }
       }
     }
@@ -92,6 +99,9 @@
           color: $enlaces;
           font-weight: bold;
           text-decoration: none;
+          &:hover{
+            text-decoration: underline;
+          }
         }
       }
     }
@@ -124,6 +134,9 @@
           color: $enlaces;
           font-weight: bold;
           text-decoration: none;
+          &:hover{
+            text-decoration: underline;
+          }
         }
       }
     }

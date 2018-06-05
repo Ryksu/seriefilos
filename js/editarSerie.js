@@ -13,7 +13,11 @@ $(document).ready(function(){
       type:"POST"
     })
     .done(function(data){
+      if (data == "1111111") {
+        alert("serie e imagen actulizada");
+        location.replace("perfil.php");
 
+      }
       if(data==="111111"){
         alert("Serie Actulizada");
         location.replace("perfil.php");

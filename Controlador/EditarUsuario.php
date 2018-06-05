@@ -10,15 +10,67 @@ if (isset($_FILES['foto'])&&!empty($_FILES['foto'])) {
     $foto = $_FILES['foto']['name'];
     $extension = explode(".",$foto);
     $foto_tipo = $_FILES['foto']['type'];
+
       if ($foto_tipo == "image/jpeg" || $foto_tipo == "image/png" || $foto_tipo == "image/gif") {
+
         $hora = date('dmy');
         $alt = rand();
         $image = "$alt".$hora.".".$extension[1];
         $url = "../img/perfiles/".$image;
         move_uploaded_file($_FILES['foto']['tmp_name'],$url);
 
-        $Usuarios->setFoto("../".$url,$usuario);
-        echo 0; // La imagen se cargado correctamente
+        $fototmp = $url;
+        $ancho = 250;
+        $alto = 250;
+        list($Oancho,$Oalto) = getimagesize($fototmp);
+        $ratioOriginal  = $Oancho/$Oalto;
+        if ($ancho/$alto > $ratioOriginal) {
+          $ancho = $alto * $ratioOriginal;
+        }else {
+          $alto = $ancho * $ratioOriginal;
+        }
+        $lienzo = imagecreatetruecolor($ancho,$alto);
+        switch ($foto_tipo) {
+          case 'image/jpg':
+          $origen = imagecreatefromjpeg($fototmp);
+            break;
+          case 'image/jpeg':
+          $origen = imagecreatefromjpeg($fototmp);
+            break;
+          case 'image/png':
+          $origen = imagecreatefrompng($fototmp);
+            break;
+          case 'image/gif':
+            $origen = imagecreatefromgif($fototmp);
+            break;
+        }
+        // Set the content type header - in this case image/jpeg
+         imagecopyresampled($lienzo,$origen,0,0,0,0,$ancho,$alto,$Oancho,$Oalto);
+         switch ($foto_tipo) {
+           case 'image/jpg':
+           imagejpeg($lienzo,$url);
+           imagedestroy($lienzo);
+             break;
+           case 'image/jpeg':
+           imagejpeg($lienzo,$url);
+
+           imagedestroy($lienzo);
+
+             break;
+           case 'image/png':
+           imagepng($lienzo,$url);
+           imagedestroy($lienzo);
+
+             break;
+           case 'image/gif':
+             imagegif($lienzo,$url);
+             imagedestroy($lienzo);
+
+             break;
+         }
+
+        echo $Usuarios->setFoto("../".$url,$usuario);
+         // La imagen se cargado correctamente
       }
       else{
         echo 2; // Lo siento aun no tenemos soporte para esta extension prueba con jpg, png o gif
@@ -26,15 +78,24 @@ if (isset($_FILES['foto'])&&!empty($_FILES['foto'])) {
     }
   }
   else {
-    echo 1;
+    echo 3;
   }
 }
 
 
 if (isset($_POST['email'])&&!empty($_POST['email'])) {
   $email =$_POST['email'];
-  $Usuarios->Actulizar("usuarios","Email = '$email'","usuario = '$usuario'");
+  $resultado = $Usuarios->Leer("email","usuarios"," where email ='$email'");
+  $resultado = json_decode($resultado,true);
+  if (empty($resultado)) {
+     $Usuarios->Actulizar("usuarios","Email = '$email'","usuario = '$usuario'");
+  }else {
+    echo "e0";
+
+  }
+
 }
+
 if (isset($_POST['password'])&&!empty($_POST['password'])&&isset($_POST['repeat'])&&!empty($_POST['repeat'])) {
 
   $password =$_POST['password'];
