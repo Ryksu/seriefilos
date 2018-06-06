@@ -50,7 +50,7 @@ $(document).ready(function(){
                 .done(function(data){
                   if (data) {
                     alert("contraseña cambiada");
-                    location.replace("../login.php");
+                    location.replace("../login");
                   }
                   else{
                     alert("hubo un error con la base de datos");

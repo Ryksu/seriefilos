@@ -10,10 +10,10 @@ $(document).ready(function(){
     .done(function(data){
       if (data) {
         alert("Cuenta verifica");
-        location.replace("login.php");
+        location.replace("login");
       }
       else{
-        alert("Error al verficar la cuenta");
+        alert("Error al verificar la cuenta");
       }
     })
   }

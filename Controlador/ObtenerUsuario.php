@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['usuario'])&&empty($_SESSION['usuario'])) {
-  header('location: ../login.php');
+  header('location: ../login');
 }
 require_once '../../Conf/Usuarios.php';
 require_once '../../Conf/Series.php';

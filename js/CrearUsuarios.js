@@ -98,7 +98,7 @@ $("#repeat").focus(function(){
     .done(function(data){
       if (data) {
         $("#msg").html("<p>Genial ya estas registrado verifique su Email</p>");
-        setTimeout(function(){location.replace("../login.php");},2000);
+        setTimeout(function(){location.replace("../login");},2000);
       }else{
         $("#msg").html("<p>Vuelve a repetir la contraseña</p>");
       }
@@ -215,7 +215,6 @@ function ComprobarRepeat(){
 function ComprobarEmail(data){
   var inputEmail = document.getElementById("email");
   var expr=   /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-  console.log(data);
   if (inputEmail.value<0) {
     inputUsEmail.style.border = "2px solid red";
     document.getElementById("singup").disabled= true;

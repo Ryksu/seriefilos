@@ -26,13 +26,13 @@
             Seriefilos
           </li>
           <!--t-logo-->
-          <li><a href="../../index.php">Inicio</a></li>
-          <li><a href="catalogos.php">Catálogo</a></li>
-          <li><a href="../login.php">Iniciar sesión</a></li>
+          <li><a href="../../index">Inicio</a></li>
+          <li><a href="catalogo">Catálogo</a></li>
+          <li><a href="../login">Iniciar sesión</a></li>
 
         </ul>
         <div class="c-buscador">
-          <form class="b-buscador" id="form_search" method="get" action="catalogos.php">
+          <form class="b-buscador" id="form_search" method="get" action="catalogo">
             <button id="button_search" type="button" class="m-buscador">
         <span class="fa fa-search"></span>
       </button>

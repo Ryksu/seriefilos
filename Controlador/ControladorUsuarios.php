@@ -37,7 +37,7 @@ if ($_POST['action']=="Registrar") {
       $resultado = $Usuarios->CrearUsuario($usuario,$pass_hash,$email);
       $resultado = json_encode($resultado);
       $subject = " Verificar registro";
-      $url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]/src/login.php?action=verificar&usuario=$usuario";
+      $url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]/login?action=verificar&usuario=$usuario";
       $mensaje = '
       <!DOCTYPE html>
       <html lang="es" dir="ltr">

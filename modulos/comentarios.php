@@ -27,6 +27,6 @@
 <script src="../../js/ObtenerComentarios.js"></script>
 <?php else: ?>
   <div class="c-comentarios">
-    <p>Para comentar <a href="signup.php">Registarte</a> o <a href="../login.php">Iniciar sesión</a></p>
+    <p>Para comentar <a href="signup.php">Registarte</a> o <a href="../login">Iniciar sesión</a></p>
   </div>
 <?php endif; ?>

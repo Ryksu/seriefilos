@@ -12,6 +12,8 @@ RewriteRule ^contacto$ src/page/contacto.php
 RewriteRule ^perfil$ src/page/perfil.php
 RewriteRule ^signup$ src/page/signup.php
 RewriteRule ^logout$ src/page/logout.php
+RewriteRule ^reset$ src/page/reset.php
+
 RewriteRule ^404$ src/error/404.php
 
 RewriteRule ^series/(\d+)/?$ src/page/series.php?id=$1

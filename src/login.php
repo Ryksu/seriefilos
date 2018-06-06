@@ -60,7 +60,7 @@
             <label for="recodar">Recodar sesión</label>
           </div>
           <div class="c-olvidado">
-            <a href="page/reset.php">¿Has olvidado la contraseña?</a>
+            <a href="/reset">¿Has olvidado la contraseña?</a>
           </div>
         </div>
             <div id="msg" class="msg"></div>
