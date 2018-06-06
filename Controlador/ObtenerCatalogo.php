@@ -20,7 +20,7 @@ $getseries= new Series();
 
     if ($res ==NULL) {
       http_response_code(404);
-      header('location: ../error/404.php');
+      header('location:404');
     }
   }
   if (isset($_GET['año']) && !empty($_GET['año'])) {
@@ -30,7 +30,7 @@ $getseries= new Series();
 
     if ($res ==NULL) {
       http_response_code(404);
-      header('location: ../error/404.php');
+      header('location:404');
     }
   }
   if (isset($_GET['temporada']) && !empty($_GET['temporada'])) {
@@ -41,7 +41,7 @@ $getseries= new Series();
 
     if ($res ==NULL) {
       http_response_code(404);
-      header('location: ../error/404.php');
+      header('location: 404');
     }
   }
 
@@ -53,7 +53,7 @@ $getseries= new Series();
 
     if ($res ==NULL) {
       http_response_code(404);
-      header('location: ../error/404.php');
+      header('location:404');
     }
   }
 
@@ -64,7 +64,7 @@ $getseries= new Series();
     $res = json_decode($res,true);
     if ($res ==NULL) {
       http_response_code(404);
-      header('location: ../error/404.php');
+      header('location:404');
     }
   }
 

@@ -1,5 +1,6 @@
 $(document).ready(function(){
-    var id = getURLparamentro("id");
+
+    var id = getId();
     var paginacionComentarios = $(".paginacionComentarios");
     $("#sincomentar").attr("hidden",true);
     $("#comment").attr("disabled",true);
@@ -160,6 +161,13 @@ function CargarComentarios(data){
       $(".c-comentarios").append(comentario);
      }
   }
+}
+
+function getId(){
+  var local = window.location.href ;
+  var url = local.split("/");
+  var get = url.slice(-1);
+  return get[0];
 }
 
 /*obtiene el tiempo de la base de datos y la devuelve de tipo date */

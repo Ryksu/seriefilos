@@ -88,7 +88,7 @@
         instagram
       </a>
           </li>
-          <li><a href="contacto.php">
+          <li><a href="contacto">
             <span class="fas fa-info"></span>
             nfo
           </a></li>

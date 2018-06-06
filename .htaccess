@@ -1,2 +1,18 @@
 RewriteEngine on
 ErrorDocument 404 /src/error/404.php
+
+#Entrada catalogo
+#salida catalogo.php
+RewriteRule ^index$ index.php
+RewriteRule ^login$ src/login.php
+
+RewriteRule ^catalogo$ src/page/catalogos.php
+RewriteRule ^agregar$ src/page/agregar.php
+RewriteRule ^contacto$ src/page/contacto.php
+RewriteRule ^perfil$ src/page/perfil.php
+RewriteRule ^signup$ src/page/signup.php
+RewriteRule ^logout$ src/page/logout.php
+RewriteRule ^404$ src/error/404.php
+
+RewriteRule ^series/(\d+)/?$ src/page/series.php?id=$1
+RewriteRule ^editar/(\d+)/?$ src/page/editar.php?id=$1

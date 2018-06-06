@@ -1,7 +1,7 @@
 <?php
 require_once '../../Controlador/ObtenerSerie.php';
 if (isset($_SESSION['usuario'])&&!empty($_SESSION['usuario'])&&$_SESSION['usuario']!='admin') {
-  header('location: ../login.php');
+  header('location:login');
 
 }
 ?>
@@ -31,17 +31,17 @@ if (isset($_SESSION['usuario'])&&!empty($_SESSION['usuario'])&&$_SESSION['usuari
           <li class="t-logo">
             Seriefilos
           </li>
-          <li><a href="../../index.php">Inicio</a></li>
-          <li><a href="catalogos.php">Catálogo</a></li>
+          <li><a href="../../index">Inicio</a></li>
+          <li><a href="/catalogo">Catálogo</a></li>
           <li class="s-menu">
             <?php if (isset($_SESSION['usuario'])&&!empty($_SESSION['usuario'])): ?>
-              <a href="perfil.php"><?php echo $_SESSION['usuario'] ?></a>
+              <a href="/perfil"><?php echo $_SESSION['usuario'] ?></a>
               <div class="s-menu-contenido">
-             <a href="logout.php">Cerrar sesión</a>
+             <a href="/logout">Cerrar sesión</a>
             <?php else: ?>
-              <a href="../login.php">Iniciar sesión</a>
+              <a href="../login">Iniciar sesión</a>
               <div class="s-menu-contenido">
-                <a href="../../index.html#Registrate">Registrate</a>
+                <a href="../../index#Registrate">Registrate</a>
             <?php endif; ?>
             </div>
           </li>
@@ -148,7 +148,7 @@ if (isset($_SESSION['usuario'])&&!empty($_SESSION['usuario'])&&$_SESSION['usuari
         instagram
       </a>
           </li>
-          <li><a href="contacto.php">
+          <li><a href="contacto">
             <span class="fas fa-info"></span>
             nfo
           </a></li>

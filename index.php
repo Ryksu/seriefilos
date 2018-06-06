@@ -19,22 +19,22 @@
       <nav class="menu">
         <ul>
           <li class="t-logo">Inicio</li>
-          <li><a href="src/page/catalogos.php">Catálogo</a></li>
+          <li><a href="catalogo">Catálogo</a></li>
           <li class="s-menu">
             <?php if (isset($_SESSION['usuario'])&&!empty($_SESSION['usuario'])): ?>
-              <a href="src/page/perfil.php"><?php echo $_SESSION['usuario']; ?></a>
+              <a href="perfil"><?php echo $_SESSION['usuario']; ?></a>
               <div class="s-menu-contenido">
-                <a href="src/page/logout.php">Cerrar sesión</a>
+                <a href="logout">Cerrar sesión</a>
             <?php else: ?>
-              <a href="src/login.php">Iniciar sesión</a>
+              <a href="login">Iniciar sesión</a>
               <div class="s-menu-contenido">
-                <a href="src/page/signup.php#Registrate">Registrate</a>
+                <a href="signup#Registrate">Registrate</a>
             <?php endif; ?>
             </div>
           </li>
         </ul>
         <div class="c-buscador">
-          <form class="b-buscador" id="form_search" method="get" action="src/page/catalogos.php">
+          <form class="b-buscador" id="form_search" method="get" action="catalogo">
             <button id="button_search" type="button" class="m-buscador">
         <span class="fa fa-search"></span>
       </button>
@@ -193,7 +193,7 @@
         instagram
       </a>
           </li>
-          <li><a href="src/page/contacto.php">
+          <li><a href="contacto">
             <span class="fas fa-info"></span>
             nfo
           </a></li>

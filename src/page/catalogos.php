@@ -24,18 +24,18 @@ require_once '../../Controlador/ObtenerCatalogo.php';
                Seriefilos
              </li>
              <!--t-logo-->
-             <li><a href="../../index.php">Inicio</a></li>
-             <li><a href="catalogos.php#contenido">Catálogo</a></li>
+             <li><a href="../../index">Inicio</a></li>
+             <li><a href="catalogo#contenido">Catálogo</a></li>
              <li class="s-menu">
                <?php if (isset($_SESSION['usuario'])&&!empty($_SESSION['usuario'])): ?>
-                 <a href="perfil.php"><?php echo $_SESSION['usuario'] ?></a>
+                 <a href="perfil"><?php echo $_SESSION['usuario'] ?></a>
                  <div class="s-menu-contenido">
-                <a href="agregar.php">Añadir serie</a>
-                <a href="logout.php">Cerrar sesión</a>
+                <a href="agregar">Añadir serie</a>
+                <a href="logout">Cerrar sesión</a>
                <?php else: ?>
-                 <a href="../login.php">Iniciar sesión</a>
+                 <a href="../login">Iniciar sesión</a>
                  <div class="s-menu-contenido">
-                   <a href="signup.php#Registrate">Registrate</a>
+                   <a href="signup#Registrate">Registrate</a>
                <?php endif; ?>
                </div>
              </li>
@@ -53,7 +53,7 @@ require_once '../../Controlador/ObtenerCatalogo.php';
 
    <div class="catalogos" id="catalogo">
      <?php foreach($res as $row):?>
-       <a href="series.php?id=<?php echo $row['id']?>">
+       <a href="series/<?php echo $row['id']?>">
          <article class="serie">
            <img src="<?php echo $row['Poster'];?>" alt="<?php echo $row['Titulo']?>">
 
@@ -91,7 +91,7 @@ require_once '../../Controlador/ObtenerCatalogo.php';
     instagram
   </a>
       </li>
-      <li><a href="contacto.php">
+      <li><a href="contacto">
         <span class="fas fa-info"></span>
         nfo
       </a></li>

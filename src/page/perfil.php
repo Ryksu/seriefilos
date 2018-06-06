@@ -28,12 +28,12 @@ require_once '../../Controlador/ObtenerUsuario.php';
             Seriefilos
           </li>
           <!--t-logo-->
-          <li><a href="../../index.php">Inicio</a></li>
-          <li><a href="catalogos.php">Catálogo</a></li>
-          <li class=""><a href="logout.php">Cerrar sesión</a></li>
+          <li><a href="../../index">Inicio</a></li>
+          <li><a href="catalogo">Catálogo</a></li>
+          <li class=""><a href="logout">Cerrar sesión</a></li>
         </ul>
         <div class="c-buscador">
-          <form class="b-buscador" id="form_search" method="get" action="catalogos.php">
+          <form class="b-buscador" id="form_search" method="get" action="catalogo">
             <button id="button_search" type="button" class="m-buscador">
         <span class="fa fa-search"></span>
       </button>
@@ -123,7 +123,7 @@ require_once '../../Controlador/ObtenerUsuario.php';
         instagram
       </a>
           </li>
-          <li><a href="contacto.php">
+          <li><a href="contacto">
             <span class="fas fa-info"></span>
             nfo
           </a></li>

@@ -24,12 +24,12 @@
             Seriefilos
           </li>
           <!--t-logo-->
-          <li><a href="../index.php">inicio</a></li>
-          <li><a href="page/catalogos.php">Catálogo</a></li>
-          <li><a href="page/signup.php">Registrate</a></li>
+          <li><a href="../index">inicio</a></li>
+          <li><a href="catalogo">Catálogo</a></li>
+          <li><a href="signup">Registrate</a></li>
         </ul>
         <div class="c-buscador">
-          <form class="b-buscador" id="form_search" method="get" action="page/catalogos.php">
+          <form class="b-buscador" id="form_search" method="get" action="catalogo">
             <button id="button_search" type="button" class="m-buscador">
         <span class="fa fa-search"></span>
       </button>
@@ -99,7 +99,7 @@
         instagram
       </a>
           </li>
-          <li><a href="page/contacto.php">
+          <li><a href="contacto">
             <span class="fas fa-info"></span>
             nfo
           </a></li>

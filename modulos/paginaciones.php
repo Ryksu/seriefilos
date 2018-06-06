@@ -11,11 +11,11 @@ $pagina = Series::$pagina;
       }
       elseif (isset($_GET['buscador'])) {
 
-          echo '<a href="'.$_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING'].'&pg='.$i.'">'.$i.'</a>';
+          echo '<a href="catalogo?'.$_SERVER['QUERY_STRING'].'&pg='.$i.'">'.$i.'</a>';
       }
 
       else  {
-        echo '<a href="'.$_SERVER['PHP_SELF'].'?pg='.$i.'">'.$i.'</a>';
+        echo '<a href="catalogo?pg='.$i.'">'.$i.'</a>';
 
       }
     } ?>

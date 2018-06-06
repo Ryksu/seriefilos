@@ -1,7 +1,7 @@
 <?php
 
  ?>
-   <form class="form_search" method="get" >
+   <form class="form_search" method="get"  action="catalogo">
      <div class="b-buscador">
        <button id="button_search" type="submit" class="m-buscador">     <span class="fa fa-search"></span>
        </button>

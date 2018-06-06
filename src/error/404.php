@@ -29,18 +29,18 @@ if (isset($_GET['buscador'])) {
                Seriefilos
              </li>
              <!--t-logo-->
-             <li><a href="../../index.php">Inicio</a></li>
-             <li><a href="../page/catalogos.php#contenido">Catálogo</a></li>
+             <li><a href="../../index">Inicio</a></li>
+             <li><a href="../catalogo#contenido">Catálogo</a></li>
              <li class="s-menu">
                <?php if (isset($_SESSION['usuario'])&&!empty($_SESSION['usuario'])): ?>
-                 <a href="../page/perfil.php"><?php echo $_SESSION['usuario'] ?></a>
+                 <a href="../perfil"><?php echo $_SESSION['usuario'] ?></a>
                  <div class="s-menu-contenido">
-                <a href="../page/agregar.php">Añadir serie</a>
-                <a href="../page/logout.php">Cerrar sesión</a>
+                <a href="../agregar">Añadir serie</a>
+                <a href="../logout">Cerrar sesión</a>
                <?php else: ?>
-                 <a href="../login.php">Iniciar sesión</a>
+                 <a href="../login">Iniciar sesión</a>
                  <div class="s-menu-contenido">
-                   <a href="../page/signup.php#Registrate">Registrate</a>
+                   <a href="../signup#Registrate">Registrate</a>
                <?php endif; ?>
                </div>
              </li>
@@ -56,7 +56,7 @@ if (isset($_GET['buscador'])) {
          <div class="consulta">
            <h1>UPPS! :(</h1>
            <span></span>
-           <p>No se encuentra o aún no ha sido añadida por favor contacte con nosotros: <a href="/src/page/contacto.php">Contacto</a></p>
+           <p>No se encuentra o aún no ha sido añadida por favor contacte con nosotros: <a href="/contacto">Contacto</a></p>
          </div>
 
          <div class="c-buscador">
@@ -84,7 +84,7 @@ if (isset($_GET['buscador'])) {
     instagram
   </a>
       </li>
-      <li><a href="page/contacto.php">
+      <li><a href="contacto">
         <span class="fas fa-info"></span>
         nfo
       </a></li>

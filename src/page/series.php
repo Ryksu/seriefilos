@@ -36,16 +36,16 @@ require_once '../../Controlador/ObtenerSerie.php';
               Seriefilos
              </li>
              <!--t-logo-->
-             <li> <a href="../../index.php#t-logo">Inicio</a></li>
-             <li><a href="catalogos.php">Catálogo</a></li>
+             <li> <a href="../../index#t-logo">Inicio</a></li>
+             <li><a href="catalogos">Catálogo</a></li>
              <li class="s-menu">
                <?php if (isset($_SESSION['usuario'])&&!empty($_SESSION['usuario'])): ?>
-                 <a href="perfil.php"><?php echo $_SESSION['usuario'] ?></a>
+                 <a href="perfil"><?php echo $_SESSION['usuario'] ?></a>
                  <div class="s-menu-contenido">
-                <a href="agregar.php">Añadir serie</a>
-                <a href="logout.php">Cerrar sesión</a>
+                <a href="agregar">Añadir serie</a>
+                <a href="logout">Cerrar sesión</a>
                <?php else: ?>
-                 <a href="../login.php">Iniciar sesión</a>
+                 <a href="../login">Iniciar sesión</a>
                  <div class="s-menu-contenido">
                    <a href="signup.php">Registrate</a>
                <?php endif; ?>
@@ -64,11 +64,11 @@ require_once '../../Controlador/ObtenerSerie.php';
            <nav class="c-navegacion">
              <ul>
                <li><span class="fas fa-angle-left"></span>
-                 <a href="catalogos.php">volver a Catálogos</a>
+                 <a href="/catalogo">volver a Catálogos</a>
                </li>
                <li>
                  <span class="fas fa-angle-left"></span>
-                 <a href="catalogos.php?buscador=&año=&temporada=&Categoria=<?php echo $categoria ?>&Estado=&Enviar="><?php echo $categoria ?></a>
+                 <a href="/catalogo?buscador=&año=&temporada=&Categoria=<?php echo $categoria ?>&Estado=&Enviar="><?php echo $categoria ?></a>
 
                </li>
                <li>
@@ -171,7 +171,7 @@ require_once '../../Controlador/ObtenerSerie.php';
     instagram
   </a>
       </li>
-      <li><a href="contacto.php">
+      <li><a href="/contacto">
         <span class="fas fa-info"></span>
         nfo
       </a></li>

@@ -64,7 +64,7 @@ $(document).ready(function(){
       $(".editarSeries").click(function(e){
         e.preventDefault();
         var valor = $(this).val();
-        location.href ="editar.php?id="+valor;
+        location.href ="editar/"+valor;
       })
       $(".npage").on("click",function(ev){
         ev.preventDefault();

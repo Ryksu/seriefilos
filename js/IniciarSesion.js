@@ -33,7 +33,7 @@ $(document).ready(function(){
     .done(function(data) {
       if (data) {
 
-       window.location.replace("page/perfil.php");
+       window.location.replace("perfil");
 
       }else {
         $("#msg").html("<p>Puede que su contraseña o usuario no se ha introducido correctamente o no ha verificado la cuenta</p>");

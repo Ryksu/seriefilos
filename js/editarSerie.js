@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  var id = getURLparamentro("id");
+  var id = getId();
   $("#Editar").submit(function(ev){
     ev.preventDefault();
     var form = new FormData(this);
@@ -35,6 +35,13 @@ $(document).ready(function(){
     window.history.back();
     })
 })
+
+function getId(){
+  var local = window.location.href ;
+  var url = local.split("/");
+  var get = url.slice(-1);
+  return get[0];
+}
 
 function getURLparamentro(paramentro) {
   var pagURL = window.location.search.substring(1);

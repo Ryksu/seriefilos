@@ -1,5 +1,5 @@
 $(document).ready(function(){
-var id = getURLparamentro("id");
+var id = getId();
 $.ajax({
   url:"../../Controlador/ObtenerPuntuacion.php",
   data:{action:"serie",thumb:"get",id:id},
@@ -34,6 +34,12 @@ $.ajax({
 
 });
 
+function getId(){
+  var local = window.location.href ;
+  var url = local.split("/");
+  var get = url.slice(-1);
+  return get[0];
+}
 
 
 /** Permite obtener El paramentro de la url */
