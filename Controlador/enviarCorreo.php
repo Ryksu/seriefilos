@@ -1,10 +1,17 @@
 <?php
+session_start();
 require '../Conf/Usuarios.php';
-$nombre = (isset($_SESSION['usuario'])&&!empy($_SESSION['usuario'])) ? $_SESSION['usuario'] : $_POST['nombre'];
+$nombre ="";
+$email = "";
+if(isset($_SESSION['usuario'])&&!empty($_SESSION['usuario'])){
+  $nombre = $_SESSION['usuario'];
+}else{
+  $nombre = $_POST['nombre'];
+}
 
-if (isset($_SESSION['usuario'])&&!empty($_POST['usuario'])) {
+if (isset($_SESSION['usuario'])&&!empty($_SESSION['usuario'])) {
 $Usuarios = new Usuarios();
-$usuario = $_POST['usuario'];
+$usuario = $_SESSION['usuario'];
 $resultado = $Usuarios->Leer("email","usuarios","where usuario = '$usuario'");
 $resultado = json_decode($resultado,true);
   if (!empty($resultado[0]['email'])) {
@@ -30,7 +37,7 @@ $verificar = file_get_contents("https://www.google.com/recaptcha/api/siteverify?
         <title>Tienes un nuevo mensaje</title>
       </head>
       <body>
-        <p> Hola Admin tienes un nuevo mensaje del usuario con el nombre de <b>'.$nombre.'</b> y el email  <b>'.$email.'</b></p>
+        <p> Hola Admin tienes un nuevo mensaje del usuario: <b>'.$nombre.'</b>, con el email  <b>'.$email.'</b></p>
         <p> el comentario es:</p>
         <p>'.$comentario.'</p>
       </body>
