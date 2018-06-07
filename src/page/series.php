@@ -33,7 +33,7 @@ require_once '../../Controlador/ObtenerSerie.php';
          <nav class="menu">
            <ul>
              <li class="t-logo">
-              Seriefilos
+              Seriefilos  <span class="fas fa-angle-down"></span>
              </li>
              <!--t-logo-->
              <li> <a href="../../index#t-logo">Inicio</a></li>

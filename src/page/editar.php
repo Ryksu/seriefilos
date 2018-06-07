@@ -29,7 +29,7 @@ if (isset($_SESSION['usuario'])&&!empty($_SESSION['usuario'])&&$_SESSION['usuari
       <nav class="menu">
         <ul>
           <li class="t-logo">
-            Seriefilos
+            Seriefilos  <span class="fas fa-angle-down"></span>
           </li>
           <li><a href="../../index">Inicio</a></li>
           <li><a href="/catalogo">Catálogo</a></li>

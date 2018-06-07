@@ -33,6 +33,10 @@
             text-decoration: none;
             display: block;
             padding: .9em 1em;
+            span.fas::after{
+              content: fa-content($fa-var-angle-down);
+              font-size: 1em;
+            }
 
         }
         li{
@@ -396,6 +400,10 @@ div.paginacion{
             text-decoration: none;
             display: block;
             padding: .9em 1em;
+            span.fas::after{
+              content: fa-content($fa-var-angle-down);
+              font-size: 1em;
+            }
 
         }
         li{
@@ -752,9 +760,7 @@ div.paginacion{
               text-decoration: none;
               display: block;
               padding: 14px 16px;
-
             animation: Titulo .3s  ease-in;
-
           }
           li.s-menu{
             display: flex;
@@ -768,7 +774,7 @@ div.paginacion{
                 z-index: 1;
                 position: absolute;
                 top: 50px;
-                left: 365px;
+                left: 320px;
                 background: $back_default;
                 box-shadow: 5px 5px 10px #7e7e7e
               }
@@ -852,6 +858,7 @@ div.paginacion{
           h1{
             text-align: center;
             font-family: $titulo;
+            font-size: 1.2em;
             color: rgb(41, 41, 42) ;
             &:hover{
               color: $hover;

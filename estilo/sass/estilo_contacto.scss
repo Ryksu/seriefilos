@@ -36,6 +36,10 @@
             text-decoration: none;
             display: block;
             padding: 14px 16px;
+            span.fas::after{
+              content: fa-content($fa-var-angle-down);
+              font-size: 1em;
+            }
         }
         li{
           float: left;
@@ -318,7 +322,7 @@
         padding: 0;
         list-style: none;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         flex-wrap: nowrap;
         overflow: hidden;
         li.t-logo{
@@ -329,7 +333,6 @@
           text-decoration: none;
           display: block;
           padding: 14px 16px;
-
         }
         li{
           float: left;
@@ -599,47 +602,61 @@
     flex-direction: row;
     flex-wrap: nowrap;
     background: $back_default;
-  nav.menu{
-    display: inline-flex;
-    flex-direction: row;
-    @include font-title($texto,1em);
-    justify-content: space-between;
-    ul{
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      flex-wrap: nowrap;
-      overflow: hidden;
-      li.t-logo{
-        animation: Titulo .3s  ease-in;
-        padding: 14px 16px;
-          color: $letra;
-          font-family: $titulo;
-          font-size: 1.2em;
-          text-decoration: none;
-          display: block;
-      }
-      li{
-        float: left;
-        background: $back_default;
-        a{
-          display:block;
-          text-decoration: none;
-          padding: .9em 1em;
-          color: $letra;
+    nav.menu{
+      display: inline-flex;
+      flex-direction: row;
+      @include font-title($texto,1em);
+      justify-content: space-between;
+      ul{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        overflow: hidden;
+
+        li.t-logo{
+          align-self: center;
+
+            color: $letra;
+            font-family: $titulo;
+            font-size: 1.2em;
+            text-decoration: none;
+            display: block;
+            padding: 14px 16px;
+          animation: Titulo .3s  ease-in;
+
+        }
+        li.s-menu{
+          display: flex;
+          flex-direction: column;
+          div.s-menu-contenido{
+            display: none;
+          }
           &:hover{
-            background: $hover;
+            div.s-menu-contenido{
+              display: block;
+              z-index: 1;
+              position: absolute;
+              top: 50px;
+              left: 320px;
+              background: $back_default;
+              box-shadow: 5px 5px 10px #7e7e7e
+            }
+          }
+        }
+        li{
+          float: left;
+          a{
+            display:block;
+            text-decoration: none;
+            padding: 14px 16px;
+            color: $letra;
+            &:hover{
+              background: $hover;
+            }
           }
         }
       }
-      &:hover{
-        overflow: visible;
-        z-index: 1;
-      }
     }
-  }
   div.c-buscador{
     display: inline-flex;
     align-self: center;

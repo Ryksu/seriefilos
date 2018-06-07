@@ -21,7 +21,7 @@ require_once '../../Controlador/ObtenerCatalogo.php';
          <nav class="menu">
            <ul>
              <li class="t-logo">
-               Seriefilos
+               Seriefilos  <span class="fas fa-angle-down"></span>
              </li>
              <!--t-logo-->
              <li><a href="../../index">Inicio</a></li>

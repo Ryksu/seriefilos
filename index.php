@@ -18,7 +18,7 @@
     <header class="cabecera">
       <nav class="menu">
         <ul>
-          <li class="t-logo">Inicio</li>
+          <li class="t-logo">Inicio <span class="fas fa-angle-down"></span></li>
           <li><a href="catalogo">Catálogo</a></li>
           <li class="s-menu">
             <?php if (isset($_SESSION['usuario'])&&!empty($_SESSION['usuario'])): ?>
