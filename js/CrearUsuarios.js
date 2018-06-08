@@ -195,13 +195,11 @@ function ComprobarRepeat(){
       var expr = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&#.$($)$-$_])[A-Za-z\d$@$!%*?&#.$($)$-$_]{4,16}$/;
 
       if (expr.exec(inputRepeat.value)) {
-        if (inputPass.value === inputRepeat.value) {
-          inputRepeat.style.border = "2px solid green";
-          $("#msg").empty();
-
+        if (inputPass.value !== inputRepeat.value) {
+          $("#msg").html("<p> No son iguales </p>");
       }else{
-
-        $("#msg").html("<p> No son iguales </p>");
+        inputRepeat.style.border = "2px solid green";
+        $("#msg").empty();
       }
     }
     else{
@@ -231,7 +229,6 @@ function ComprobarEmail(data){
     }
   }
   else{
-    console.log("Ya existe");
     inputEmail.style.border = "2px solid red";
     document.getElementById("singup").disabled= true;
     for (var valor in data) {

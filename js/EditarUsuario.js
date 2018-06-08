@@ -104,7 +104,7 @@ function ComprobarRepeat(){
   var expr = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&#.$($)$-$_])[A-Za-z\d$@$!%*?&#.$($)$-$_]{4,16}$/;
 
   if (expr.exec(inputRepeat.value)) {
-    if (inputPass.value === inputRepeat.value) {
+    if (inputPass.value == inputRepeat.value) {
       inputRepeat.style.border = "2px solid green";
 
   }

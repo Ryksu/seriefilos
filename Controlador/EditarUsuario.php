@@ -1,8 +1,10 @@
 <?php
 session_start();
 require_once '../Conf/Usuarios.php';
-$usuario = (isset($_POST['usuario'])&&!empty($_POST['usuario'])) ? $_POST['usuario'] : $_SESSION['usuario'] ;;
+$usuario = (isset($_POST['usuario'])&&!empty($_POST['usuario'])) ? $_POST['usuario'] : $_SESSION['usuario'] ;
 $Usuarios = new Usuarios();
+$usuarioDatos = $Usuarios->ObtenerUsuario($_SESSION['usuario']);
+$usuarioDatos = json_decode($usuarioDatos,true);
 
 if (isset($_FILES['foto'])&&!empty($_FILES['foto'])) {
   if ($_FILES['foto']['size']<=2000000) {
@@ -82,6 +84,7 @@ if (isset($_FILES['foto'])&&!empty($_FILES['foto'])) {
   }
 }
 
+<<<<<<< HEAD
 
 if (isset($_POST['email'])&&!empty($_POST['email'])) {
   $email =$_POST['email'];
@@ -91,9 +94,23 @@ if (isset($_POST['email'])&&!empty($_POST['email'])) {
      $Usuarios->Actulizar("usuarios","Email = '$email'","usuario = '$usuario'");
   }
   
+=======
+if ($_POST['email']!=$usuarioDatos[0]['email']) {
+  if (isset($_POST['email'])&&!empty($_POST['email'])) {
+    $email =$_POST['email'];
+    $resultado = $Usuarios->Leer("email","usuarios"," where email ='$email'");
+    $resultado = json_decode($resultado,true);
+    if (empty($resultado)) {
+       $Usuarios->Actulizar("usuarios","Email = '$email'","usuario = '$usuario'");
+     }else {
+      echo "e0";
+    }
+  }
+>>>>>>> 2cce48277686cf1d7a84b51f2a1fc2f95a28ec36
 }
 
-if (isset($_POST['password'])&&!empty($_POST['password'])&&isset($_POST['repeat'])&&!empty($_POST['repeat'])) {
+
+if(isset($_POST['password'])&&!empty($_POST['password'])&&isset($_POST['repeat'])&&!empty($_POST['repeat'])) {
 
   $password =$_POST['password'];
   $repeat = $_POST['repeat'];
@@ -103,18 +120,24 @@ if (isset($_POST['password'])&&!empty($_POST['password'])&&isset($_POST['repeat'
   }
 }
 
+if ($_POST['nombre']!=$usuarioDatos[0]['nombre']) {
+  if (isset($_POST['nombre'])&&!empty($_POST['nombre'])) {
+    $nombre =$_POST['nombre'];
+    $Usuarios->Actulizar("usuarios","Nombre = '$nombre'","usuario = '$usuario'");
+  }
 
-if (isset($_POST['nombre'])&&!empty($_POST['nombre'])) {
-  $nombre =$_POST['nombre'];
-  $Usuarios->Actulizar("usuarios","Nombre = '$nombre'","usuario = '$usuario'");
 }
-if (isset($_POST['apellidos'])&&!empty($_POST['apellidos'])) {
-  $apellidos =$_POST['apellidos'];
-  $Usuarios->Actulizar("usuarios","Apellidos = '$apellidos'","usuario = '$usuario'");
+if ($_POST['apellidos']!=$usuarioDatos[0]['apellidos']) {
+  if (isset($_POST['apellidos'])&&!empty($_POST['apellidos'])) {
+    $apellidos =$_POST['apellidos'];
+    $Usuarios->Actulizar("usuarios","Apellidos = '$apellidos'","usuario = '$usuario'");
+  }
 }
-if (isset($_POST['cumple'])&&!empty($_POST['cumple'])) {
-  $cumple =$_POST['cumple'];
-  $Usuarios->Actulizar("usuarios","Cumple = '$cumple'","usuario = '$usuario'");
+if ($_POST['cumple']!=$usuarioDatos[0]['cumple']) {
+  if (isset($_POST['cumple'])&&!empty($_POST['cumple'])) {
+    $cumple =$_POST['cumple'];
+    $Usuarios->Actulizar("usuarios","Cumple = '$cumple'","usuario = '$usuario'");
+  }
 }
 
  ?>

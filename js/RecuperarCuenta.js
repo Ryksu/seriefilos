@@ -1,4 +1,5 @@
 $(document).ready(function(){
+  var cont = 0;
   $(".recuperar").submit(function(ev){
     ev.preventDefault();
     var email = $("#email").val();
@@ -8,6 +9,7 @@ $(document).ready(function(){
       type:"POST"
     })
     .done(function(data){
+      console.log(cont);
       if (data[0]) {
         CargarVerificar();
         $(".recuperar").submit(function(ev){
@@ -55,21 +57,24 @@ $(document).ready(function(){
                   else{
                     alert("hubo un error con la base de datos");
                   }
-                })
+                });
 
-              })
+              });
             }
-          })
+          });
 
-        })
+        });
       }
       else{
-        alert("Este email no se encuentra en la base de datos");
+        if (cont==0) {
+          alert("Error no se encuentra en la base de datos");
+          cont++;
+        }
       }
     });
-  })
+  });
 
-})
+});
 
 function CargarVerificar(){
     $("#reset").find("label,input").remove();
@@ -85,10 +90,6 @@ function CargarVerificar(){
     $(iToken).prop("required",true);
     fieldset.append(lToken,iToken);
     $("#reset").prepend(fieldset);
-
-
-
-
 }
 
 function CargarDatos(data){
@@ -201,12 +202,13 @@ function ComprobarRepeat(){
       var expr = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&#.$($)$-$_])[A-Za-z\d$@$!%*?&#.$($)$-$_]{4,16}$/;
 
       if (expr.exec(inputRepeat.value)) {
-        if (inputPass.value === inputRepeat.value) {
+        if (inputPass.value == inputRepeat.value) {
           inputRepeat.style.border = "2px solid green";
 
       }
-    }
-    else{
+
+      }
+      else{
       inputRepeat.style.border = "2px solid red";
-    }
+      }
 }
