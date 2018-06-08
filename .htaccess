@@ -19,3 +19,5 @@ RewriteRule ^404$ src/error/404.php
 
 RewriteRule ^series/(\d+)/?$ src/page/series.php?id=$1
 RewriteRule ^editar/(\d+)/?$ src/page/editar.php?id=$1
+
+RewriteRule ^perfil/(\w+)/?$ src/page/perfil_publico.php?usuario=$1

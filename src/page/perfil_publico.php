@@ -1,8 +1,7 @@
 <?php
-// session_start();
+session_start();
+require_once '../../Controlador/ControladorPerfilPublico.php';
 
-require_once '../../Controlador/ObtenerUsuario.php';
-// require_once '../../Controlador/ObtenerSeries.php';
 ?>
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
@@ -12,7 +11,7 @@ require_once '../../Controlador/ObtenerUsuario.php';
   <link rel="icon" href="/img/icons/favicon.png" type="image/x-png">
   <link rel="manifest" href="/manifest.json" >
   <meta charset="utf-8">
-  <title>Seriefilos: <?php echo $_SESSION['usuario'] ?></title>
+  <title>Seriefilos: <?php echo $resultado[0]['usuario'] ?></title>
   <link rel="stylesheet" href="../../estilo/css/estilo_contacto.css">
   <link rel="stylesheet" href="../../estilo/css/estilo_perfil.css">
   <script src="../../lib/jquery/jquery-3.3.1.min.js"></script>
@@ -51,7 +50,7 @@ require_once '../../Controlador/ObtenerUsuario.php';
           <fieldset>
             <legend>Datos del usuario</legend>
             <div class="c-foto">
-              <img src="<?php echo $resultado[0]['foto'] ?>" id="imagen" alt="<?php echo "imagen de perfil de ". $_SESSION['usuario'] ?>">
+              <img src="<?php echo $resultado[0]['foto'] ?>" id="imagen" alt="<?php echo "imagen de perfil de ". $resultado[0]['usuario'] ?>">
               <div id="c-subir" hidden>
                 <label for="subir">Subir foto de perfil</label>
                 <input type="file" name="foto" id="foto" value="" accept="image/jpeg,image/gif,image/x-png">
@@ -79,30 +78,8 @@ require_once '../../Controlador/ObtenerUsuario.php';
             <label for="cumple">Cumpleaños</label>
             <input type="date" name="cumple" id="cumple" value="<?php echo $resultado[0]['cumple']; ?>" disabled>
           </fieldset>
-          <div class="c-editar" id="c-editar">
-              <button  type="button" name="Editar" id="Editar">
-                <span class="fas fa-edit"></span>
-                Editar
-              </button>
-          </div>
-          <div hidden id="c-enviar">
-            <button type="reset" name="Deshacer">
-              <span class="fas fa-redo-alt"></span>
-              Deshacer
-            </button>
-            <button type="submit" name="Enviar" id="Enviar">
-              <span class="far fa-paper-plane"></span>
-              Enviar
-            </button>
-          </div>
-        </form>
-        <script src="../../js/EditarUsuario.js"></script>
       </div>
-    <!-- Adminitrador -->
-        <?php include_once '../../modulos/administrador.php'; ?>
-
-    <!-- Adminitrador -->
-    </main>
+  </main>
     <footer>
       <div class="redes_sociales">
         <ul>

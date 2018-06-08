@@ -10,7 +10,7 @@ $(document).ready(function(){
     .done(function(data){
       if (data) {
         alert("Cuenta verifica");
-        location.replace("login");
+        location.replace("/login");
       }
       else{
         alert("Error al verificar la cuenta");
@@ -33,7 +33,7 @@ $(document).ready(function(){
     .done(function(data) {
       if (data) {
 
-       window.location.replace("perfil");
+       window.location.replace("/perfil");
 
       }else {
         $("#msg").html("<p>Puede que su contraseña o usuario no se ha introducido correctamente o no ha verificado la cuenta</p>");

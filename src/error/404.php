@@ -11,8 +11,9 @@ if (isset($_GET['buscador'])) {
  <html lang="es" dir="ltr">
    <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/img/icons/favicon.png" type="image/x-png">
+    <link rel="manifest" href="/manifest.json" >
      <meta charset="utf-8">
-     <link rel="icon" href="../img/favicon.png" type="image/x-png">
      <link rel="stylesheet" href="../../estilo/css/estilo_catalogo.css">
      <link rel="stylesheet" href="../../estilo/css/Error.css">
      <script src="../../lib/jquery/jquery-3.3.1.min.js"></script>
