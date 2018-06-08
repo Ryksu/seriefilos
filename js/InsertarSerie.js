@@ -46,7 +46,7 @@ $(document).ready(function(){
     })
     .always(function(data){
       if (data ==="11") {
-        setTimeout(function(){location.replace('catalogos.php');},1000);
+        setTimeout(function(){location.replace('catalogo');},1000);
       }
     })
   })

@@ -89,11 +89,8 @@ if (isset($_POST['email'])&&!empty($_POST['email'])) {
   $resultado = json_decode($resultado,true);
   if (empty($resultado)) {
      $Usuarios->Actulizar("usuarios","Email = '$email'","usuario = '$usuario'");
-  }else {
-    echo "e0";
-
   }
-
+  
 }
 
 if (isset($_POST['password'])&&!empty($_POST['password'])&&isset($_POST['repeat'])&&!empty($_POST['repeat'])) {

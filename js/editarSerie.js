@@ -15,12 +15,12 @@ $(document).ready(function(){
     .done(function(data){
       if (data == "1111111") {
         alert("serie e imagen actulizada");
-        location.replace("perfil.php");
+        location.replace("/perfil");
 
       }
       if(data==="111111"){
         alert("Serie Actulizada");
-        location.replace("perfil.php");
+        location.replace("/perfil");
       }
       if(data==="111112"){
         alert("Hubo un error al insertar el video");

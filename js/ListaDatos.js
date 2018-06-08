@@ -31,5 +31,4 @@ categorias.sort();
        option = new Option(categorias[i],categorias[i]);
        categoria.add(option);
   }
-
 }

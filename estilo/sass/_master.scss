@@ -90,14 +90,7 @@ img,video,iframe{
   }
 }
 
-@keyframes Titulo {
-  from {
-    opacity: 0;
-  }
-  to{
-    opacity: 1;
-  }
-}
+
 
 
 @keyframes moveArriba{
@@ -122,6 +115,7 @@ img,video,iframe{
     transform: skewY(-20deg) scale(1.5);
   }
 }
+
 
 /*formulario*/
 button,input,textarea:focus{

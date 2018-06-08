@@ -102,7 +102,7 @@ $(document).ready(function(){
           $(".editarSeries").click(function(e){
             e.preventDefault();
             var valor = $(this).val();
-            location.href ="editar.php?id="+valor;
+            location.href ="editar/"+valor;
           })
         })
       })

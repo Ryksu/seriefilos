@@ -32,7 +32,7 @@ if (isset($_SESSION['usuario'])&&!empty($_SESSION['usuario'])&&$_SESSION['usuari
             Seriefilos  <span class="fas fa-angle-down"></span>
           </li>
           <li><a href="../../index">Inicio</a></li>
-          <li><a href="/catalogo">Catálogo</a></li>
+          <li><a href="catalogo">Catálogo</a></li>
           <li class="s-menu">
             <?php if (isset($_SESSION['usuario'])&&!empty($_SESSION['usuario'])): ?>
               <a href="/perfil"><?php echo $_SESSION['usuario'] ?></a>
@@ -47,7 +47,7 @@ if (isset($_SESSION['usuario'])&&!empty($_SESSION['usuario'])&&$_SESSION['usuari
           </li>
         </ul>
         <div class="c-buscador">
-          <form class="b-buscador" id="form_search" method="get" action="catalogos.php">
+          <form class="b-buscador" id="form_search" method="get" action="/catalogo">
             <button id="button_search" type="button" class="m-buscador">
         <span class="fa fa-search"></span>
       </button>
@@ -91,10 +91,10 @@ if (isset($_SESSION['usuario'])&&!empty($_SESSION['usuario'])&&$_SESSION['usuari
                 echo 'En emisión';
                 break;
                 case 2:
-                echo 'Terminado';
+                echo 'Esperando nueva temporada';
                 break;
                 case 3:
-                echo 'Esperando nueva temporada';
+                echo 'Terminado';
                 break;
               }
               $estado ?></option>

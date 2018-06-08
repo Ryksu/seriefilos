@@ -40,7 +40,7 @@
           </li>
         </ul>
         <div class="c-buscador">
-          <form class="b-buscador" id="form_search" method="get" action="catalogos.php">
+          <form class="b-buscador" id="form_search" method="get" action="/catalogo">
             <button id="button_search" type="button" class="m-buscador">
         <span class="fa fa-search"></span>
       </button>

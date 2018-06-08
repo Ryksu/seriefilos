@@ -37,13 +37,13 @@ require_once '../../Controlador/ObtenerSerie.php';
              </li>
              <!--t-logo-->
              <li> <a href="../../index#t-logo">Inicio</a></li>
-             <li><a href="catalogos">Catálogo</a></li>
+             <li><a href="/catalogo">Catálogo</a></li>
              <li class="s-menu">
                <?php if (isset($_SESSION['usuario'])&&!empty($_SESSION['usuario'])): ?>
-                 <a href="perfil"><?php echo $_SESSION['usuario'] ?></a>
+                 <a href="/perfil"><?php echo $_SESSION['usuario'] ?></a>
                  <div class="s-menu-contenido">
-                <a href="agregar">Añadir serie</a>
-                <a href="logout">Cerrar sesión</a>
+                <a href="/agregar">Añadir serie</a>
+                <a href="/logout">Cerrar sesión</a>
                <?php else: ?>
                  <a href="../login">Iniciar sesión</a>
                  <div class="s-menu-contenido">
@@ -90,16 +90,16 @@ require_once '../../Controlador/ObtenerSerie.php';
                      break;
                      case 2:
                      echo "<p>
+                     <span>Estado:</span>
+                     Esperando nueva temporada
+                     </p>";
+                     break;
+                     case 3:
+                     echo "<p>
                         <span>Estado:</span>
                         Terminado
                       </p>";
                        break;
-                       case 3:
-                       echo "<p>
-                            <span>Estado:</span>
-                            Esperando nueva temporada
-                            </p>";
-                         break;
 
                  } ?>
 

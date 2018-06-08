@@ -156,16 +156,20 @@
       </div>
       <div class="c-descripcion">
         <div class="articulo">
-          <h2>Busca...</h2>
-            <img src="img/icons/busca.svg" alt="Buscar-icon">
+          <h2>Busca serie...</h2>
+            <img class="search-icon" src="img/icons/busca.svg" alt="Buscar-icon">
         </div>
         <div class="articulo">
-          <h2>Puntua... </h2>
-            <img src="img/icons/fav.svg" alt="Favorito-icon">
+          <h2>Si te gusta... </h2>
+            <img  class="fav-icon" src="img/icons/fav.svg" alt="Favorito-icon">
+        </div>
+        <div class="articulo">
+          <h2>¿No está? Añade</h2>
+            <img class="add-icon" src="img/icons/agregar.svg" alt="Agregar-icon">
         </div>
         <div class="articulo">
           <h2>Y comparte.. </h2>
-            <img src="img/icons/share.svg" alt="Compartir-icon">
+            <img  class="share-icon" src="img/icons/share.svg" alt="Compartir-icon">
         </div>
       </div>
 

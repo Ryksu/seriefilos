@@ -1,7 +1,7 @@
 <?php
 header($_SERVER['SERVER_PROTOCOL']." 404 Not Found");
 if (isset($_GET['buscador'])) {
-  header('location: /src/page/catalogos.php?'.$_SERVER['QUERY_STRING']);
+  header('location: catalogo?'.$_SERVER['QUERY_STRING']);
 }
 
 
