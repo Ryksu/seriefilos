@@ -133,7 +133,8 @@ function CargarComentarios(data){
       var c_usuario = document.createElement("div");
       $(c_usuario).addClass("c-usuario");
 
-      var  usuario = document.createElement("h3");
+      var  usuario = document.createElement("a");
+      $(usuario).attr("href","/perfil/"+data[valor]['id_usuario']);
       usuario.append(data[valor]['id_usuario']);
       c_usuario.append(foto,usuario);
 

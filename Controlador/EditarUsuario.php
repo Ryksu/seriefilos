@@ -1,6 +1,8 @@
 <?php
 session_start();
 require_once '../Conf/Usuarios.php';
+require_once '../lib/parsedown-master/Parsedown.php';
+
 $usuario = (isset($_POST['usuario'])&&!empty($_POST['usuario'])) ? $_POST['usuario'] : $_SESSION['usuario'] ;
 $Usuarios = new Usuarios();
 $usuarioDatos = $Usuarios->ObtenerUsuario($_SESSION['usuario']);
@@ -22,8 +24,8 @@ if (isset($_FILES['foto'])&&!empty($_FILES['foto'])) {
         move_uploaded_file($_FILES['foto']['tmp_name'],$url);
 
         $fototmp = $url;
-        $ancho = 250;
-        $alto = 250;
+        $ancho = 200;
+        $alto = 200;
         list($Oancho,$Oalto) = getimagesize($fototmp);
         $ratioOriginal  = $Oancho/$Oalto;
         if ($ancho/$alto > $ratioOriginal) {
@@ -84,17 +86,6 @@ if (isset($_FILES['foto'])&&!empty($_FILES['foto'])) {
   }
 }
 
-<<<<<<< HEAD
-
-if (isset($_POST['email'])&&!empty($_POST['email'])) {
-  $email =$_POST['email'];
-  $resultado = $Usuarios->Leer("email","usuarios"," where email ='$email'");
-  $resultado = json_decode($resultado,true);
-  if (empty($resultado)) {
-     $Usuarios->Actulizar("usuarios","Email = '$email'","usuario = '$usuario'");
-  }
-  
-=======
 if ($_POST['email']!=$usuarioDatos[0]['email']) {
   if (isset($_POST['email'])&&!empty($_POST['email'])) {
     $email =$_POST['email'];
@@ -106,7 +97,6 @@ if ($_POST['email']!=$usuarioDatos[0]['email']) {
       echo "e0";
     }
   }
->>>>>>> 2cce48277686cf1d7a84b51f2a1fc2f95a28ec36
 }
 
 
@@ -137,6 +127,17 @@ if ($_POST['cumple']!=$usuarioDatos[0]['cumple']) {
   if (isset($_POST['cumple'])&&!empty($_POST['cumple'])) {
     $cumple =$_POST['cumple'];
     $Usuarios->Actulizar("usuarios","Cumple = '$cumple'","usuario = '$usuario'");
+  }
+}
+
+if ($_POST['informacion']!=$usuarioDatos[0]['informacion']) {
+  if (isset($_POST['informacion'])&&!empty($_POST['informacion'])) {
+    $info = $_POST['informacion'];
+    $info = str_replace("'","\"",$info);
+    $sobremi= Parsedown::instance()
+              ->setMarkupEscaped(true)
+              ->text($info);
+  $Usuarios->Actulizar("usuarios","informacion = '$sobremi'","usuario = '$usuario'");
   }
 }
 

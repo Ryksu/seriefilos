@@ -1,8 +1,6 @@
 <?php
 // session_start();
-
 require_once '../../Controlador/ObtenerUsuario.php';
-// require_once '../../Controlador/ObtenerSeries.php';
 ?>
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
@@ -30,11 +28,11 @@ require_once '../../Controlador/ObtenerUsuario.php';
           </li>
           <!--t-logo-->
           <li><a href="../../index">Inicio</a></li>
-          <li><a href="catalogo">Catálogo</a></li>
-          <li class=""><a href="logout">Cerrar sesión</a></li>
+          <li><a href="/catalogo">Catálogo</a></li>
+          <li class=""><a href="/logout">Cerrar sesión</a></li>
         </ul>
         <div class="c-buscador">
-          <form class="b-buscador" id="form_search" method="get" action="catalogo">
+          <form class="b-buscador" id="form_search" method="get" action="/catalogo">
             <button id="button_search" type="button" class="m-buscador">
         <span class="fa fa-search"></span>
       </button>
@@ -78,6 +76,8 @@ require_once '../../Controlador/ObtenerUsuario.php';
             <input type="text" name="apellidos" id="apellidos" value="<?php echo $resultado[0]['apellidos']; ?>" disabled>
             <label for="cumple">Cumpleaños</label>
             <input type="date" name="cumple" id="cumple" value="<?php echo $resultado[0]['cumple']; ?>" disabled>
+            <label for="informacion">Sobre ti</label>
+            <textarea name="informacion" disabled><?php echo strip_tags($resultado[0]['informacion']) ?></textarea>
           </fieldset>
           <div class="c-editar" id="c-editar">
               <button  type="button" name="Editar" id="Editar">

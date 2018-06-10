@@ -57,6 +57,7 @@ $(document).ready(function(){
 function Cargar(){
   $("div").removeAttr("hidden");
   $("input").removeAttr("disabled");
+  $("textarea").removeAttr("disabled");
   $("#usuario").attr('disabled',true);
   $("#c-enviar").addClass("c-enviar ");
   $("#c-editar").removeClass("c-editar");

@@ -246,13 +246,21 @@
             padding: .5em;
             img{
               width: 64px;
+              height: 64px;
+              max-width: none;
               border-radius: 50%;
               align-self: center;
             }
-            h3{
+            a{
               align-self: center;
               font-size: 1em;
               font-family: $titulo;
+              color:$enlaces;
+              text-decoration: none;
+              &:hover{
+                text-decoration: underline;
+
+              }
             }
           }
           div.c-texto{
@@ -535,14 +543,22 @@
             flex-direction: column;
             padding: .5em;
             img{
-              width: 128px;
+              width: 100px;
+              height:100px;
+              max-width: none;
               border-radius: 50%;
               align-self: center;
             }
-            h3{
+            a{
               align-self: center;
               font-size: 1em;
               font-family: $titulo;
+              color:$enlaces;
+              text-decoration: none;
+              &:hover{
+                text-decoration: underline;
+
+              }
             }
           }
           div.c-texto{
@@ -823,14 +839,22 @@
             flex-direction: column;
             padding: .5em;
             img{
-              width: 128px;
+              width: 100px;
+              height:100px;
+              max-width: none;
               border-radius: 50%;
               align-self: center;
             }
-            h3{
+            a{
               align-self: center;
               font-size: 1em;
               font-family: $titulo;
+              color:$enlaces;
+              text-decoration: none;
+              &:hover{
+                text-decoration: underline;
+
+              }
             }
           }
           div.c-texto{
@@ -1110,14 +1134,22 @@
             flex-direction: column;
             padding: .5em;
             img{
-              width: 128px;
+              width: 100px;
+              height:100px;
+              max-width: none;
               border-radius: 50%;
               align-self: center;
             }
-            h3{
+            a{
               align-self: center;
               font-size: 1em;
               font-family: $titulo;
+              color:$enlaces;
+              text-decoration: none;
+              &:hover{
+                text-decoration: underline;
+
+              }
             }
           }
           div.c-texto{

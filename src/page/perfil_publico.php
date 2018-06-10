@@ -13,7 +13,7 @@ require_once '../../Controlador/ControladorPerfilPublico.php';
   <meta charset="utf-8">
   <title>Seriefilos: <?php echo $resultado[0]['usuario'] ?></title>
   <link rel="stylesheet" href="../../estilo/css/estilo_contacto.css">
-  <link rel="stylesheet" href="../../estilo/css/estilo_perfil.css">
+  <link rel="stylesheet" href="../../estilo/css/estilo_publico.css">
   <script src="../../lib/jquery/jquery-3.3.1.min.js"></script>
   <script src="../../js/buscador.js"></script>
 
@@ -29,11 +29,11 @@ require_once '../../Controlador/ControladorPerfilPublico.php';
           </li>
           <!--t-logo-->
           <li><a href="../../index">Inicio</a></li>
-          <li><a href="catalogo">Catálogo</a></li>
-          <li class=""><a href="logout">Cerrar sesión</a></li>
+          <li><a href="/catalogo">Catálogo</a></li>
+          <li class=""><a href="/logout">Cerrar sesión</a></li>
         </ul>
         <div class="c-buscador">
-          <form class="b-buscador" id="form_search" method="get" action="catalogo">
+          <form class="b-buscador" id="form_search" method="get" action="/catalogo">
             <button id="button_search" type="button" class="m-buscador">
         <span class="fa fa-search"></span>
       </button>
@@ -45,40 +45,39 @@ require_once '../../Controlador/ControladorPerfilPublico.php';
     </header>
     <!-- cabecera-->
     <main class="contenido" id="contenido">
-      <div class="formulario">
-        <form class="perfil" id="perfil" method="post" enctype="multipart/form-data" >
-          <fieldset>
-            <legend>Datos del usuario</legend>
+      <div class="public">
+
             <div class="c-foto">
               <img src="<?php echo $resultado[0]['foto'] ?>" id="imagen" alt="<?php echo "imagen de perfil de ". $resultado[0]['usuario'] ?>">
-              <div id="c-subir" hidden>
-                <label for="subir">Subir foto de perfil</label>
-                <input type="file" name="foto" id="foto" value="" accept="image/jpeg,image/gif,image/x-png">
-            </div>
+              <h1><?php echo $resultado[0]['usuario'] ?></h1>
           </div>
-              <label for="usuario">Usuario</label>
-              <input type="text" name="usuario" id="usuario" value="<?php echo $resultado[0]['usuario']?>" disabled>
-              <label for="email">Email</label>
-              <input type="email" name="email" id="email" value="<?php echo $resultado[0]['email'] ?>" disabled>
-              <div>
-                <div class="password" hidden>
-                  <label for="password">Nueva contraseña</label>
-                  <input type="password" name="password" value="" id=password pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&#.$($)$-$_])[A-Za-z\d$@$!%*?&#.$($)$-$_]{4,16}$">
+          <div class="datos">
+            <p>
+                <span>Email:</span>
+                <?php echo $resultado[0]['email'] ?></p>
+              <p>
+                <span>Nombre:</span>
+                 <?php echo $nombre = (!empty($resultado[0]['nombre'])) ?  $resultado[0]['nombre'] :  "Sin nombre "; ?></p>
+             <p>
+               <span>Apellidos:</span>
+               <?php echo $apellidos = (!empty($resultado[0]['apellidos'])) ? $resultado[0]['apellidos'] : "Sin apellidos" ; ?> </p>
+             <p>
+               <span>Cumpleaños:</span>
+               <?php
+               if (!empty($resultado[0]['cumple'])) {
+                 $time = strtotime($resultado[0]['cumple']);
+                 echo date("d M Y",$time);
+               }else {
+                 echo "Sin cumpleaños";
+               }
 
-                  <label for="repeat">Repetir la nueva contraseña</label>
-                  <input type="password" name="repeat" value="" id="repeat" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&#.$($)$-$_])[A-Za-z\d$@$!%*?&#.$($)$-$_]{4,16}$">
-                </div>
-            </fieldset>
-          <fieldset>
-            <legend>Datos personales</legend>
-            <label for="nombre">Nombre</label>
-            <input type="text" name="nombre" id="nombre" value="<?php echo $resultado[0]['nombre'] ?>" disabled>
-            <label for="apellidos">Apellidos</label>
-            <input type="text" name="apellidos" id="apellidos" value="<?php echo $resultado[0]['apellidos']; ?>" disabled>
-            <label for="cumple">Cumpleaños</label>
-            <input type="date" name="cumple" id="cumple" value="<?php echo $resultado[0]['cumple']; ?>" disabled>
-          </fieldset>
-      </div>
+               ?></p>
+         </div>
+          <div class="sobremi">
+            <h2>Sobre <?php echo $resultado[0]['usuario'] ?></h2>
+            <?php echo $info = (!empty($resultado[0]['informacion'])) ? $resultado[0]['informacion'] : "<p>No hay informacion sobre el usuario</p>" ?>
+          </div>
+        </div>
   </main>
     <footer>
       <div class="redes_sociales">

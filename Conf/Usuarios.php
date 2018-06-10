@@ -29,7 +29,7 @@ class Usuarios extends NewCrud
 
   function ObtenerUsuario($usuario){
     $condicion = "WHERE usuario = '$usuario'";
-    $resultado = $this->Leer("foto,usuario,email,nombre,apellidos,cumple,rol","usuarios",$condicion);
+    $resultado = $this->Leer("foto,usuario,email,nombre,apellidos,cumple,informacion,rol","usuarios",$condicion);
     return $resultado;
   }
   function ObtenerUsuarios(){
