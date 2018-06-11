@@ -13,19 +13,28 @@ $(document).ready(function(){
       type:"POST"
     })
     .done(function(data){
-      if (data == "1111111") {
+      switch (data) {
+        case "11c0111":
+        alert("Error solo puede a ver maxima dos categorias");
+          break;
+        case "1111111":
         alert("serie e imagen actulizada");
-        location.replace("/perfil");
+        break;
+        default:
 
-      }
-      if(data==="111111"){
-        alert("Serie Actulizada");
-        location.replace("/perfil");
-      }
-      if(data==="111112"){
+        case "111111":
+        alert("Serie actulizada");
+        break;
+
+        case "111112":
         alert("Hubo un error al insertar el video");
+        break;
       }
-
+    })
+    .always(function(data){
+      if (data == "1111111" | data == "111111") {
+        location.replace("/perfil");
+      }
     })
   });
 

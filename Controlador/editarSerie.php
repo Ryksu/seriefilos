@@ -102,8 +102,13 @@ if (isset($_POST['Texto'])&&!empty($_POST['Texto'])) {
   echo $Series->Actulizar("serie","Texto = '$texto'","id = '$id'");
 }
 if (isset($_POST['Categoria'])&&!empty($_POST['Categoria'])) {
-  $categoria = $_POST['Categoria'];
-  echo $Series->Actulizar("serie","Categoria = '$categoria'","id = '$id'");
+
+  if (count($_POST['Categoria'])<=2) {
+    $categoria = implode(",",$_POST['Categoria']);
+    echo $Series->Actulizar("serie","Categoria = '$categoria'","id = '$id'");
+  }else {
+    echo 'c0';
+  }
 }
 
 if (isset($_POST['Year'])&&!empty($_POST['Year'])) {

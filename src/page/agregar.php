@@ -72,8 +72,8 @@
               <input type="number" name="Temporada" id="Temporada" value="" required>
             </div>
             <label for="Categoria">Categoria</label>
-            <select  required name="Categoria" id="Categoria" >
-              <option value="">Seleccione una Categoria</option>
+            <select  multiple required name="Categoria[]" id="Categoria" >
+              <option value="" >Seleccione una Categoria</option>
             </select>
           <label for="Estado">Estado</label>
             <select required name="Estado" id="Estado" >

@@ -42,6 +42,8 @@ $(document).ready(function(){
         case "31":
           alert("Imagen muy grande");
         break;
+        case '1c0':
+        alert("Seleccione un o dos categorias");
       }
     })
     .always(function(data){

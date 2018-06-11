@@ -33,7 +33,7 @@ if (isset($_SESSION['usuario'])&&!empty($_SESSION['usuario'])&&$_SESSION['usuari
             Seriefilos  <span class="fas fa-angle-down"></span>
           </li>
           <li><a href="../../index">Inicio</a></li>
-          <li><a href="catalogo">Catálogo</a></li>
+          <li><a href="/catalogo">Catálogo</a></li>
           <li class="s-menu">
             <?php if (isset($_SESSION['usuario'])&&!empty($_SESSION['usuario'])): ?>
               <a href="/perfil"><?php echo $_SESSION['usuario'] ?></a>
@@ -79,7 +79,7 @@ if (isset($_SESSION['usuario'])&&!empty($_SESSION['usuario'])&&$_SESSION['usuari
               <input type="number" name="Temporada" id="Temporada" value="<?php echo $temporada ?>" >
             </div>
             <label for="Categoria">Categoria</label>
-            <select   name="Categoria" id="Categoria" >
+            <select   name="Categoria[]" id="Categoria" multiple>
               <option value="">Seleccione una Categoria</option>
               <option value="<?php echo $categoria ?>" selected><?php echo $categoria ?></option>
             </select>
@@ -149,7 +149,7 @@ if (isset($_SESSION['usuario'])&&!empty($_SESSION['usuario'])&&$_SESSION['usuari
         instagram
       </a>
           </li>
-          <li><a href="contacto">
+          <li><a href="/contacto">
             <span class="fas fa-info"></span>
             nfo
           </a></li>
