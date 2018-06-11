@@ -81,7 +81,13 @@ if (isset($_SESSION['usuario'])&&!empty($_SESSION['usuario'])&&$_SESSION['usuari
             <label for="Categoria">Categoria</label>
             <select   name="Categoria[]" id="Categoria" multiple>
               <option value="">Seleccione una Categoria</option>
-              <option value="<?php echo $categoria ?>" selected><?php echo $categoria ?></option>
+              <?php if (count($categoria)>=2): ?>
+                <option value="<?php echo $categoria[0] ?>" selected><?php echo $categoria[0] ?></option>
+                <option value="<?php echo $categoria[1] ?>" selected><?php echo $categoria[1] ?></option>
+                <?php else: ?>
+                  <option value="<?php echo $categoria[0] ?>" selected><?php echo $categoria[0] ?></option>
+              <?php endif; ?>
+
             </select>
           <label for="Estado">Estado</label>
             <select  name="Estado" id="Estado" >

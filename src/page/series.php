@@ -4,6 +4,8 @@ require_once '../../Controlador/ObtenerSerie.php';
  <!DOCTYPE html>
  <html lang="es" dir="ltr">
    <head>
+     <meta name="title" content="Seriefilos: <?php echo $titulo ?>">
+     <meta name="description" content="<?php echo strip_tags(substr($texto,0,300)) ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/img/icons/favicon.png" type="image/x-png">
     <link rel="manifest" href="/manifest.json" >
@@ -69,8 +71,11 @@ require_once '../../Controlador/ObtenerSerie.php';
                </li>
                <li>
                  <span class="fas fa-angle-left"></span>
-                 <a href="/catalogo?buscador=&año=&temporada=&Categoria=<?php echo $categoria ?>&Estado=&Enviar="><?php echo $categoria ?></a>
-
+                 <a href="/catalogo?buscador=&año=&temporada=&Categoria=<?php echo $categoria[0]?>&Estado=&Enviar="><?php  echo $categoria[0]?></a>
+                 <?php if (count($categoria)>=2): ?>
+                 |
+              <a href="/catalogo?buscador=&año=&temporada=&Categoria=<?php echo $categoria[1]?>&Estado=&Enviar="><?php  echo $categoria[1]?></a>
+            <?php endif; ?>
                </li>
                <li>
                  <span class="fas fa-angel-left"></span>

@@ -3,6 +3,9 @@
 <html lang="es" dir="ltr">
 
 <head>
+  <meta name="title" content="Seriefilos">
+  <meta name="description" content="La web para amantes de las series">
+  <meta name="robots" content="index">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="img/icons/favicon.png" type="image/x-png">
   <link rel="manifest" href="manifest.json" >
@@ -10,6 +13,7 @@
   <title>Seriefilos: La web para amantes de las series </title>
   <link rel="stylesheet" href="estilo/css/estilo_index.css">
   <script src="lib/jquery/jquery-3.3.1.min.js"></script>
+  <script src="js/scroll.js" charset="utf-8"></script>
   <script src="js/buscador.js"></script>
 </head>
 
