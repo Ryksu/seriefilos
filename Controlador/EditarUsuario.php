@@ -5,7 +5,7 @@ require_once '../lib/parsedown-master/Parsedown.php';
 
 $usuario = (isset($_POST['usuario'])&&!empty($_POST['usuario'])) ? $_POST['usuario'] : $_SESSION['usuario'] ;
 $Usuarios = new Usuarios();
-$usuarioDatos = $Usuarios->ObtenerUsuario($_SESSION['usuario']);
+$usuarioDatos = $Usuarios->ObtenerUsuario($usuario);
 $usuarioDatos = json_decode($usuarioDatos,true);
 
 if (isset($_FILES['foto'])&&!empty($_FILES['foto'])) {
@@ -17,9 +17,8 @@ if (isset($_FILES['foto'])&&!empty($_FILES['foto'])) {
 
       if ($foto_tipo == "image/jpeg" || $foto_tipo == "image/png" || $foto_tipo == "image/gif") {
 
-        $hora = date('dmy');
-        $alt = rand();
-        $image = "$alt".$hora.".".$extension[1];
+
+        $image = $usuario.".".$extension[1];
         $url = "../img/perfiles/".$image;
         move_uploaded_file($_FILES['foto']['tmp_name'],$url);
 
@@ -44,9 +43,9 @@ if (isset($_FILES['foto'])&&!empty($_FILES['foto'])) {
           case 'image/png':
           $origen = imagecreatefrompng($fototmp);
             break;
-          case 'image/gif':
-            $origen = imagecreatefromgif($fototmp);
-            break;
+          // case 'image/gif':
+          //   $origen = imagecreatefromgif($fototmp);
+          //   break;
         }
         // Set the content type header - in this case image/jpeg
          imagecopyresampled($lienzo,$origen,0,0,0,0,$ancho,$alto,$Oancho,$Oalto);
@@ -66,11 +65,10 @@ if (isset($_FILES['foto'])&&!empty($_FILES['foto'])) {
            imagedestroy($lienzo);
 
              break;
-           case 'image/gif':
-             imagegif($lienzo,$url);
-             imagedestroy($lienzo);
-
-             break;
+           // case 'image/gif':
+           //   imagegif($lienzo,$url);
+           //   imagedestroy($lienzo);
+           //   break;
          }
 
         echo $Usuarios->setFoto("../".$url,$usuario);
