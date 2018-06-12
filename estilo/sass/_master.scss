@@ -78,19 +78,49 @@ img,video,iframe{
   }
 }
 
-@keyframes  toggle{
+
+@keyframes thumbup{
   0%{
-
-  }
-  50%{
-
+    transform: rotate(20deg);
   }
   100%{
-
+    transform: rotate(-20deg);
   }
 }
 
-
+@keyframes search{
+  0%{
+    transform: translateY(10px)
+  }
+  25%{
+    transform:  translateX(-10px);
+  }
+  50%{
+    transform: translateY(10px);
+  }
+  75%{
+    transform:  translateX(10px);
+  }
+  100%{
+    transform: translateY(-10px);
+  }
+}
+@keyframes add{
+  0%{
+    transform: scale(0.5) rotate(360deg);
+  }
+  100%{
+    transform: scale(1) rotate(0deg);
+  }
+}
+@keyframes share{
+  0%{
+    transform: skew(10deg);
+  }
+  100%{
+    transform: skew(-10deg);
+  }
+}
 
 
 @keyframes moveArriba{

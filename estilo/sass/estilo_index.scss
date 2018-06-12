@@ -1,46 +1,5 @@
 @import "master";
-@keyframes thumbup{
-  0%{
-    transform: rotate(20deg);
-  }
-  100%{
-    transform: rotate(-20deg);
-  }
-}
 
-@keyframes search{
-  0%{
-    transform: translateY(10px)
-  }
-  25%{
-    transform:  translateX(-10px);
-  }
-  50%{
-    transform: translateY(10px);
-  }
-  75%{
-    transform:  translateX(10px);
-  }
-  100%{
-    transform: translateY(-10px);
-  }
-}
-@keyframes add{
-  0%{
-    transform: scale(0.5) rotate(360deg);
-  }
-  100%{
-    transform: scale(1) rotate(0deg);
-  }
-}
-@keyframes share{
-  0%{
-    transform: skew(10deg);
-  }
-  100%{
-    transform: skew(-10deg);
-  }
-}
 /*web_mobile_low */
 @media screen and (max-width:$web_mobile_medium) {
   div.container{
@@ -233,19 +192,19 @@ div.logo{
         width: 100%;
         padding: 1em;
       }
-      img.fav-icon_enable{
+      img.fav-icon:hover{
         animation: thumbup 1.2s ease-in infinite alternate;
 
       }
-      img.search-icon_enable{
+      img.search-icon:hover{
         animation: search 1.2s linear infinite alternate;
 
       }
 
-      img.add-icon_enable{
+      img.add-icon:hover{
         animation: add 1.2s ease infinite alternate;
       }
-      img.share-icon_enable{
+      img.share-icon:hover{
         animation: share 1.2s ease infinite alternate;
 
       }
@@ -531,19 +490,19 @@ div.logo{
       display: grid;
       grid-template-columns: auto;
       grid-template-rows: repeat(3,1fr);
-      img.fav-icon_enable{
+      img.fav-icon:hover{
         animation: thumbup 1.2s ease-in infinite alternate;
 
       }
-      img.search-icon_enable{
+      img.search-icon:hover{
         animation: search 1.2s linear infinite alternate;
 
       }
 
-      img.add-icon_enable{
+      img.add-icon:hover{
         animation: add 1.2s ease infinite alternate;
       }
-      img.share-icon_enable{
+      img.share-icon:hover{
         animation: share 1.2s ease infinite alternate;
 
       }
@@ -823,19 +782,19 @@ z-index: 1;
     grid-template-rows: repeat(3,1fr);
     grid-gap: 1%;
     width: 100%;
-    img.fav-icon_enable{
+    img.fav-icon:hover{
       animation: thumbup 1.2s ease-in infinite alternate;
 
     }
-    img.search-icon_enable{
+    img.search-icon:hover{
       animation: search 1.2s linear infinite alternate;
 
     }
 
-    img.add-icon_enable{
+    img.add-icon:hover{
       animation: add 1.2s ease infinite alternate;
     }
-    img.share-icon_enable{
+    img.share-icon:hover{
       animation: share 1.2s ease infinite alternate;
 
     }
@@ -1122,19 +1081,19 @@ z-index: 1;
     grid-template-rows: repeat(3,1fr);
     grid-gap: 1%;
     width: 100%;
-    img.fav-icon_enable{
+    img.fav-icon:hover{
       animation: thumbup 1.2s ease-in infinite alternate;
 
     }
-    img.search-icon_enable{
+    img.search-icon:hover{
       animation: search 1.2s linear infinite alternate;
 
     }
 
-    img.add-icon_enable{
+    img.add-icon:hover{
       animation: add 1.2s ease infinite alternate;
     }
-    img.share-icon_enable{
+    img.share-icon:hover{
       animation: share 1.2s ease infinite alternate;
 
     }

@@ -13,7 +13,6 @@
   <title>Seriefilos: La web para amantes de las series </title>
   <link rel="stylesheet" href="estilo/css/estilo_index.css">
   <script src="lib/jquery/jquery-3.3.1.min.js"></script>
-  <script src="js/scroll.js"></script>
   <script src="js/buscador.js"></script>
 </head>
 
