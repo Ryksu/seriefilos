@@ -1,2 +1,0 @@
-INSERT INTO serie(Poster,Titulo,Texto,Categoria,Year,Temporada,Estado,Trailer) VALUES('','THE FLASH','AFADFDFAFD', 'DRAMA',2014,4,0,'');
-INSERT INTO usuarios_series(id_Usuarios,id_Serie) Values('Admin',LAST_INSERT_ID()); 
