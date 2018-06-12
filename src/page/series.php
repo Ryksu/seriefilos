@@ -71,10 +71,10 @@ require_once '../../Controlador/ObtenerSerie.php';
                </li>
                <li>
                  <span class="fas fa-angle-left"></span>
-                 <a href="/catalogo?buscador=&año=&temporada=&Categoria=<?php echo $categoria[0]?>&Estado=&Enviar="><?php  echo $categoria[0]?></a>
+                 <a href="/catalogo?buscador=&año=&temporada=&Categoria=<?php echo $categoria1= str_replace(" ","+",$categoria[0])?>&Estado=&Enviar="><?php  echo $categoria[0]?></a>
                  <?php if (count($categoria)>=2): ?>
                  |
-              <a href="/catalogo?buscador=&año=&temporada=&Categoria=<?php echo $categoria[1]?>&Estado=&Enviar="><?php  echo $categoria[1]?></a>
+              <a href="/catalogo?buscador=&año=&temporada=&Categoria=<?php echo $categoria2= str_replace(" ","+",$categoria[1])?>&Estado=&Enviar="><?php  echo $categoria[1]?></a>
             <?php endif; ?>
                </li>
                <li>

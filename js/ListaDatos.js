@@ -24,7 +24,7 @@ function Categorias(){
   var categoria = document.getElementById("Categoria");
   var option;
   var categorias = [
-    "Acción","Animadas","Aventura","Ciencia ficción","Comedia","Sitcom","Crimenes","Policiacas","Sobrenaturales","Eroticas","Humor negro","Historica","Fantasias","Infatiles","Drama"
+    "Acción","Animada","Aventura","Ciencia ficción","Comedia","Sitcom","Crimenes","Policiacas","Sobrenaturales","Eroticas","Humor negro","Historica","Fantasias","Infatiles","Drama","Comedia dramatica","Satirica",
 ];
 categorias.sort();
   for (var i = 0; i < categorias.length; i++) {

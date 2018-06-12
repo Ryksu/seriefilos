@@ -13,7 +13,7 @@
   <title>Seriefilos: La web para amantes de las series </title>
   <link rel="stylesheet" href="estilo/css/estilo_index.css">
   <script src="lib/jquery/jquery-3.3.1.min.js"></script>
-  <script src="js/scroll.js" charset="utf-8"></script>
+  <script src="js/scroll.js"></script>
   <script src="js/buscador.js"></script>
 </head>
 
@@ -179,7 +179,6 @@
 
     </main>
     <!-- fin contenido-->
-    <script src="js/CrearUsuarios.js" charset="utf-8"></script>
     <footer>
       <div class="redes_sociales">
         <ul>

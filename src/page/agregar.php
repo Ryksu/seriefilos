@@ -71,7 +71,7 @@
               <label for="Temporada">Temporada</label>
               <input type="number" name="Temporada" id="Temporada" value="" required>
             </div>
-            <label for="Categoria">Categoria</label>
+            <label for="Categoria"><dfn title="Para seleccionar varios matenga pulsado contr">Categoria</dfn></label>
             <select  multiple required name="Categoria[]" id="Categoria" >
               <option value="" >Seleccione una Categoria</option>
             </select>
