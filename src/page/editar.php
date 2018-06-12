@@ -78,7 +78,7 @@ if (isset($_SESSION['usuario'])&&!empty($_SESSION['usuario'])&&$_SESSION['usuari
               <label for="Temporada">Temporada</label>
               <input type="number" name="Temporada" id="Temporada" value="<?php echo $temporada ?>" >
             </div>
-            <label for="Categoria">Categoria</label>
+            <label for="Categoria"><dfn title="Para seleccionar varios matenga pulsado contr">Categoria</dfn></label>
             <select   name="Categoria[]" id="Categoria" multiple>
               <option value="">Seleccione una Categoria</option>
               <?php if (count($categoria)>=2): ?>

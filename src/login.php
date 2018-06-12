@@ -78,7 +78,7 @@
         </form>
       </div>
     </main>
-    <script src="../js/IniciarSesion.js" charset="utf-8"></script>
+    <script src="../js/IniciarSesion.js"></script>
     <footer>
       <div class="redes_sociales">
         <ul>

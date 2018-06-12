@@ -70,7 +70,7 @@
         </form>
       </div>
     </main>
-    <script src="../../js/CrearUsuarios.js" charset="utf-8"></script>
+    <script src="../../js/CrearUsuarios.js"></script>
     <footer>
       <div class="redes_sociales">
         <ul>

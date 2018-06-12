@@ -127,3 +127,12 @@ button,input,textarea:focus{
 div.disabled{
   display: none;
 }
+
+dfn{
+  font-style: normal;
+  text-decoration-line: underline;
+  text-decoration-style: dashed;
+  &:hover{
+    cursor: help;
+  }
+}
