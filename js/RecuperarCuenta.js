@@ -74,7 +74,6 @@ $(document).ready(function(){
 });
 
 function CargarVerificar(){
-    // $("#reset").find("label,input").remove();
     $(".comprobar").remove();
     $(".verificar").attr("hidden",false);
     $("#enviar").attr("id","verificar");
