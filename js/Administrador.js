@@ -253,16 +253,16 @@ function CargarSeries(data){
   }
 }
 
-/* Funcion permite introducir el numero de pagina totales en un div ya creado*/
-function PaginacionJs(divPaginacion,paginaTotal){
-  var paginacion = divPaginacion;
-  paginacion.empty();
-
-  for (var i = 1; i <= paginaTotal; i++) {
-      var enlace = document.createElement("a");
-      $(enlace).addClass("npage");
-      $(enlace).attr("data",i);
-      enlace.append(i);
-      paginacion.append(enlace);
-  }
-}
+// /* Funcion permite introducir el numero de pagina totales en un div ya creado*/
+// function PaginacionJs(divPaginacion,paginaTotal){
+//   var paginacion = divPaginacion;
+//   paginacion.empty();
+//
+//   for (var i = 1; i <= paginaTotal; i++) {
+//       var enlace = document.createElement("a");
+//       $(enlace).addClass("npage");
+//       $(enlace).attr("data",i);
+//       enlace.append(i);
+//       paginacion.append(enlace);
+//   }
+// }

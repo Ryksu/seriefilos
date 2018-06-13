@@ -35,7 +35,6 @@ if ($_POST['action'] === "comprobar") {
         mail($to,$subject,$mensaje,$headers);
     }
   }
-
   $comprobar = json_encode($comprobar);
   header("Content-Type: application/json; charset=UTF-8");
   echo $comprobar;
@@ -50,6 +49,9 @@ if ($_POST['action'] == "verificar") {
       $resultado = $Usuarios->Leer("foto,usuario,email","usuarios"," WHERE email = '$email'");
       header("Content-Type: application/json; charset=UTF-8");
       echo $resultado;
+    }
+    else {
+      echo "FAIL";
     }
   }
 }

@@ -43,6 +43,9 @@ $(document).ready(function(){
       if (data === "e0") {
         alert("El correo ya esta en uso");
       }
+      if (data == "i0") {
+        alert("Correo incorrecto");
+      }
 
     })
     .always(function(data){
@@ -63,55 +66,4 @@ function Cargar(){
   $("#c-editar").removeClass("c-editar");
   $("#c-editar").attr('hidden',true);
 
-}
-
-function ComprobarPass(){
-  /*
-  min: 8 caracter
-  max: 15 caracter
-  al menos una mayuscula
-  al menos una minuscula
-  al menos un numero
-  al menos un caracter especial
-  no se acepta espacio
-  */
-  var expr = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&#.$($)$-$_])[A-Za-z\d$@$!%*?&#.$($)$-$_]{4,16}$/;
-
-  var inputPass = document.getElementById("password");
-
-  /*comprueba la expresion regular*/
-  if (expr.exec(inputPass.value)) {
-    // console.log("comprueba la expresion");
-    inputPass.style.border ="2px solid green";
-  }
-  else{
-    console.log("no acepta la expresion");
-    inputPass.style.border ="2px solid red";
-  }
-}
-
-function ComprobarRepeat(){
-  var inputPass = document.getElementById("password");
-  var inputRepeat = document.getElementById("repeat");
-  /*
-  min: 8 caracter
-  max: 15 caracter
-  al menos una mayuscula
-  al menos una minuscula
-  al menos un numero
-  al menos un caracter especial
-  no se acepta espacio
-  */
-  var expr = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&#.$($)$-$_])[A-Za-z\d$@$!%*?&#.$($)$-$_]{4,16}$/;
-
-  if (expr.exec(inputRepeat.value)) {
-    if (inputPass.value == inputRepeat.value) {
-      inputRepeat.style.border = "2px solid green";
-
-  }
-
-}
-else{
-  inputRepeat.style.border = "2px solid red";
-}
 }

@@ -43,15 +43,3 @@ $(document).ready(function(){
   })
 
 })
-
-
-function getURLparamentro(paramentro) {
-  var pagURL = window.location.search.substring(1);
-  var variableURL = pagURL.split('&');
-  for (var i = 0; i < variableURL.length; i++) {
-    var NombreParamentro = variableURL[i].split("=");
-    if (NombreParamentro[0] == paramentro) {
-      return NombreParamentro[1];
-    }
-  }
-}

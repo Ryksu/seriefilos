@@ -10,6 +10,7 @@
   <title>Seriefilos: Contacto</title>
   <link rel="stylesheet" href="../../estilo/css/estilo_contacto.css">
   <script src="../../lib/jquery/jquery-3.3.1.min.js"></script>
+  <script src="../../js/api.js"></script>
   <script src="../../js/buscador.js"></script>
   <script src="../../js/enviarCorreo.js"></script>
   <script src='https://www.google.com/recaptcha/api.js'></script>

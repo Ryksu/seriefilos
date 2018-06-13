@@ -1,84 +1,85 @@
+var hash;
 $(document).ready(function(){
   var cont = 0;
-  $(".recuperar").submit(function(ev){
+  $("#enviar").click(function(ev){
     ev.preventDefault();
     var email = $("#email").val();
     $.ajax({
       url:'../../Controlador/RecuperarCuenta.php',
+      cache:false,
       data:{action:"comprobar",email:email},
       type:"POST"
     })
     .done(function(data){
-      console.log(cont);
       if (data[0]) {
+        hash = data[1];
         CargarVerificar();
-        $(".recuperar").submit(function(ev){
+        $("#verificar").click(function(ev){
           ev.preventDefault();
           var codigo = $("#codigo").val();
-          var valor  = data[1];
+          var valor  = hash;
+          console.log(hash);
           $.ajax({
             url:'../../Controlador/RecuperarCuenta.php',
+            cache:false,
             data:{action:"verificar",codigo:codigo,email:email,valor:valor},
             type:"POST"
           })
           .done(function(data){
-
             if (data.length>0) {
-                CargarDatos(data);
-                $("#password").keyup(function(){
-                  ComprobarPass();
-                })
-                $("#password").focus(function(){
-                  ComprobarPass();
-                });
-                $("#repeat").keyup(function(){
-                  ComprobarRepeat();
-                })
-                $("#repeat").focus(function(){
-                  ComprobarRepeat();
-
+              CargarDatos(data);
+              $("#password").keyup(function(){
+                ComprobarPass();
+              })
+              $("#password").focus(function(){
+                ComprobarPass();
               });
-
-              $("#reset").submit(function(ev){
+              $("#repeat").keyup(function(){
+                ComprobarRepeat();
+              })
+              $("#repeat").focus(function(){
+                ComprobarRepeat();
+              })
+              $("#cambiar").click(function(ev){
                 ev.preventDefault();
                 var usuario = $("#usuario").val();
                 var password = $("#password").val();
                 var repeat = $("#repeat").val();
                 $.ajax({
                   url:"../../Controlador/RecuperarCuenta.php",
+                  cache:false,
                   data:{action:"cambiar",usuario:usuario,password:password,repeat:repeat},
                   type:"POST"
                 })
                 .done(function(data){
                   if (data) {
                     alert("contraseña cambiada");
+                    delete data;
                     location.replace("../login");
                   }
                   else{
                     alert("hubo un error con la base de datos");
                   }
                 });
-
               });
             }
-          });
+          })
+        })
+      }
+    })
+  })
 
-        });
-      }
-      else{
-        if (cont==0) {
-          alert("Error no se encuentra en la base de datos");
-          cont++;
-        }
-      }
-    });
-  });
+
 
 });
 
 function CargarVerificar(){
-    $("#reset").find("label,input").remove();
+    // $("#reset").find("label,input").remove();
+    $(".comprobar").remove();
+    $(".verificar").attr("hidden",false);
+    $("#enviar").attr("id","verificar");
     var fieldset = $('fieldset');
+    var verificar = $('.verificar');
     var lToken = document.createElement("label");
     $(lToken).attr("for","codigo");
     lToken.append("Codigo");
@@ -88,12 +89,17 @@ function CargarVerificar(){
     $(iToken).attr("id","codigo");
     $(iToken).attr("value","");
     $(iToken).prop("required",true);
-    fieldset.append(lToken,iToken);
+    verificar.append(lToken,iToken);
+    fieldset.append(verificar);
     $("#reset").prepend(fieldset);
 }
 
 function CargarDatos(data){
-    $("#reset").find("label,input,img").remove();
+    $(".verificar").remove();
+    $(".cambiar").attr("hidden",false);
+    $("#verificar").attr("id","cambiar");
+
+    var cambiar = $(".cambiar");
     var fieldset = $("fieldset");
 
     for (var valor in data) {
@@ -154,61 +160,9 @@ function CargarDatos(data){
       $(iRepeat).prop("required",true);
 
       cPass.append(lPass,iPass,lRepeat,iRepeat);
-
-      fieldset.append(cfoto,cUsuario,cPass);
+      cambiar.append(cfoto,cUsuario,cPass);
+      fieldset.append(cambiar);
       $("#reset").prepend(fieldset);
     }
   }
-}
-
-
-function ComprobarPass(){
-  /*
-  min: 8 caracter
-  max: 15 caracter
-  al menos una mayuscula
-  al menos una minuscula
-  al menos un numero
-  al menos un caracter especial
-  no se acepta espacio
-  */
-  var expr = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&#.$($)$-$_])[A-Za-z\d$@$!%*?&#.$($)$-$_]{4,16}$/;
-
-  var inputPass = document.getElementById("password");
-
-  /*comprueba la expresion regular*/
-  if (expr.exec(inputPass.value)) {
-    // console.log("comprueba la expresion");
-    inputPass.style.border ="2px solid green";
-  }
-  else{
-    console.log("no acepta la expresion");
-    inputPass.style.border ="2px solid red";
-  }
-}
-
-function ComprobarRepeat(){
-      var inputPass = document.getElementById("password");
-      var inputRepeat = document.getElementById("repeat");
-      /*
-      min: 8 caracter
-      max: 15 caracter
-      al menos una mayuscula
-      al menos una minuscula
-      al menos un numero
-      al menos un caracter especial
-      no se acepta espacio
-      */
-      var expr = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&#.$($)$-$_])[A-Za-z\d$@$!%*?&#.$($)$-$_]{4,16}$/;
-
-      if (expr.exec(inputRepeat.value)) {
-        if (inputPass.value == inputRepeat.value) {
-          inputRepeat.style.border = "2px solid green";
-
-      }
-
-      }
-      else{
-      inputRepeat.style.border = "2px solid red";
-      }
 }

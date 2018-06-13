@@ -151,64 +151,6 @@ function ComprobarUsuario(data){
   }
 }
 
-function ComprobarPass(){
-  /*
-  min: 8 caracter
-  max: 15 caracter
-  al menos una mayuscula
-  al menos una minuscula
-  al menos un numero
-  al menos un caracter especial
-  no se acepta espacio
-  */
-  var expr = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&#.$($)$-$_])[A-Za-z\d$@$!%*?&#.$($)$-$_]{4,16}$/;
-
-  var inputPass = document.getElementById("password");
-  $("#msg").html("<ul><li>4 o 16 caracteres</li> "+
-  "<li>Tiene Que llevar al menos una minuscula y mayuscula, un numero y un caracter especial(@!%*?%#.$_())</li> </ul>");
-
-  /*comprueba la expresion regular*/
-  if (expr.exec(inputPass.value)) {
-    // console.log("comprueba la expresion");
-    inputPass.style.border ="2px solid green";
-    $("#msg").empty();
-
-  }
-  else{
-    inputPass.style.border ="2px solid red";
-    // $("#msg").html("<p>No acepta la expresión</p>");
-  }
-}
-
-function ComprobarRepeat(){
-      var inputPass = document.getElementById("password");
-      var inputRepeat = document.getElementById("repeat");
-      /*
-      min: 8 caracter
-      max: 15 caracter
-      al menos una mayuscula
-      al menos una minuscula
-      al menos un numero
-      al menos un caracter especial
-      no se acepta espacio
-      */
-      var expr = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&#.$($)$-$_])[A-Za-z\d$@$!%*?&#.$($)$-$_]{4,16}$/;
-
-      if (expr.exec(inputRepeat.value)) {
-        if (inputPass.value !== inputRepeat.value) {
-          $("#msg").html("<p> No son iguales </p>");
-      }else{
-        inputRepeat.style.border = "2px solid green";
-        $("#msg").empty();
-      }
-    }
-    else{
-      inputRepeat.style.border = "2px solid red";
-      // $("#msg").html("<p>No acepta la expresión</p>");
-
-
-    }
-}
 
 function ComprobarEmail(data){
   var inputEmail = document.getElementById("email");
@@ -238,10 +180,5 @@ function ComprobarEmail(data){
         }
       }
     }
-
-
-
-
   }
-
 }

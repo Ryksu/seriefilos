@@ -12,6 +12,7 @@ require_once '../../Controlador/ObtenerCatalogo.php';
      <meta charset="utf-8">
      <link rel="stylesheet" href="../../estilo/css/estilo_catalogo.css">
      <script src="../../lib/jquery/jquery-3.3.1.min.js"></script>
+     <script src="../../js/api.js"></script>
      <script src="../../js/ListaDatos.js"></script>
      <script src="../../js/buscador.js"></script>
      <title>Seriefilos: Catálogo</title>

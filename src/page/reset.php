@@ -14,6 +14,7 @@
 
   <script src="../../lib/jquery/jquery-3.3.1.min.js"></script>
   <script src="../../js/buscador.js"></script>
+  <script src="../../js/api.js"></script>
   <script src="../../js/RecuperarCuenta.js"></script>
 
 </head>
@@ -49,8 +50,16 @@
         <form id="reset" class="recuperar" method="post">
           <fieldset>
             <legend>¿Has olvidado la contraseña?</legend>
-            <label for="email">Email</label>
-            <input type="email" name="email" value="" id="email" required>
+            <div class="comprobar">
+              <label for="email">Email</label>
+              <input type="email" name="email" value="" id="email" required>
+            </div>
+            <div class="verificar" hidden>
+
+            </div>
+            <div class="cambiar" hidden>
+
+            </div>
           </fieldset>
           <div id="msg" class="msg"></div>
           <div class="c-enviar">
@@ -58,7 +67,7 @@
               <span class="fas fa-redo-alt"></span>
               Deshacer
             </button>
-            <button type="submit" name="singup" id="enviar">
+            <button type="button" name="singup" id="enviar">
               <span class="far fa-paper-plane"></span>
               Enviar
             </button>

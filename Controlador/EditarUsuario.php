@@ -87,12 +87,18 @@ if (isset($_FILES['foto'])&&!empty($_FILES['foto'])) {
 if ($_POST['email']!=$usuarioDatos[0]['email']) {
   if (isset($_POST['email'])&&!empty($_POST['email'])) {
     $email =$_POST['email'];
-    $resultado = $Usuarios->Leer("email","usuarios"," where email ='$email'");
-    $resultado = json_decode($resultado,true);
-    if (empty($resultado)) {
-       $Usuarios->Actulizar("usuarios","Email = '$email'","usuario = '$usuario'");
-     }else {
-      echo "e0";
+    if (filter_var($email,FILTER_VALIDATE_EMAIL)) {
+      $resultado = $Usuarios->Leer("email","usuarios"," where email ='$email'");
+      $resultado = json_decode($resultado,true);
+      if (empty($resultado)) {
+        $Usuarios->Actulizar("usuarios","Email = '$email'","usuario = '$usuario'");
+      }
+      else {
+        echo "e0";
+      }
+    }
+    else {
+      echo "i0";
     }
   }
 }

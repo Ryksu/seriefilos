@@ -163,35 +163,3 @@ function CargarComentarios(data){
      }
   }
 }
-
-function getId(){
-  var local = window.location.href ;
-  var url = local.split("/");
-  var get = url.slice(-1);
-  return get[0];
-}
-
-/*obtiene el tiempo de la base de datos y la devuelve de tipo date */
-function formatoTiempo(timestap){
-  var tiempo = timestap.split(/[- :]/);
-
-  var tiempoUTC = new Date(Date.UTC(tiempo[0], tiempo[1]-1,tiempo[2], tiempo[3], tiempo[4], tiempo[5]));
-
-  return tiempoUTC;
-}
-
-
-function PaginacionJs(divPaginacion,paginaTotal){
-  var paginacion = divPaginacion;
-  paginacion.empty();
-  if (paginaTotal>1) {
-    for (var i = 1; i <= paginaTotal; i++) {
-      var enlace = document.createElement("a");
-      $(enlace).addClass("npage");
-      $(enlace).attr("data",i);
-      enlace.append(i);
-      paginacion.append(enlace);
-    }
-
-  }
-}

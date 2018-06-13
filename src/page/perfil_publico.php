@@ -15,6 +15,7 @@ require_once '../../Controlador/ControladorPerfilPublico.php';
   <link rel="stylesheet" href="../../estilo/css/estilo_contacto.css">
   <link rel="stylesheet" href="../../estilo/css/estilo_publico.css">
   <script src="../../lib/jquery/jquery-3.3.1.min.js"></script>
+  <script src="../../js/api.js"></script>
   <script src="../../js/buscador.js"></script>
 
 </head>
