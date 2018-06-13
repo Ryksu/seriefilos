@@ -6,8 +6,6 @@ $(document).ready(function(){
     var asunto = $("#asunto").val();
     var comentario = $("#comentario").val();
     var key = grecaptcha.getResponse();
-    // console.log(key);
-
     $.ajax({
       url:'../../Controlador/enviarCorreo.php',
       data:{nombre:nombre,email:email,asunto:asunto,comentario:comentario,captcha:key},

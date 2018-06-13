@@ -273,6 +273,12 @@ div.paginacion{
     font-family: $texto;
     background: #e4e4e4;
     color: $enlaces;
+    span.fa-angle-left::before{
+      content: fa-content($fa-var-angle-left);
+    }
+    span.fa-angle-right::before{
+      content: fa-content($fa-var-angle-right);
+    }
     &:hover:not(.activo){
       background: #ededed;
       cursor: pointer;
@@ -634,6 +640,12 @@ div.paginacion{
     font-family: $texto;
     background: #e4e4e4;
     color: $enlaces;
+    span.fa-angle-left::before{
+      content: fa-content($fa-var-angle-left);
+    }
+    span.fa-angle-right::before{
+      content: fa-content($fa-var-angle-right);
+    }
     &:hover:not(.activo){
       background: #ededed;
       cursor: pointer;
@@ -1006,6 +1018,12 @@ div.paginacion{
     font-family: $texto;
     background: #e4e4e4;
     color: $enlaces;
+    span.fa-angle-left::before{
+      content: fa-content($fa-var-angle-left);
+    }
+    span.fa-angle-right::before{
+      content: fa-content($fa-var-angle-right);
+    }
     &:hover:not(.activo){
       background: #ededed;
       cursor: pointer;
@@ -1376,6 +1394,12 @@ div.paginacion{
     font-family: $texto;
     background: #e4e4e4;
     color: $enlaces;
+    span.fa-angle-left::before{
+      content: fa-content($fa-var-angle-left);
+    }
+    span.fa-angle-right::before{
+      content: fa-content($fa-var-angle-right);
+    }
     &:hover:not(.activo){
       background: #ededed;
       cursor: pointer;
