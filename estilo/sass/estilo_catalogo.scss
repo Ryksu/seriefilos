@@ -273,11 +273,11 @@ div.paginacion{
     font-family: $texto;
     background: #e4e4e4;
     color: $enlaces;
-    span.fa-angle-left::before{
-      content: fa-content($fa-var-angle-left);
+    span.fa-angle-double-left::before{
+      content: fa-content($fa-var-angle-double-left);
     }
-    span.fa-angle-right::before{
-      content: fa-content($fa-var-angle-right);
+    span.fa-angle-double-right::before{
+      content: fa-content($fa-var-angle-double-right);
     }
     &:hover:not(.activo){
       background: #ededed;
@@ -640,11 +640,11 @@ div.paginacion{
     font-family: $texto;
     background: #e4e4e4;
     color: $enlaces;
-    span.fa-angle-left::before{
-      content: fa-content($fa-var-angle-left);
+    span.fa-angle-double-left::before{
+      content: fa-content($fa-var-angle-double-left);
     }
-    span.fa-angle-right::before{
-      content: fa-content($fa-var-angle-right);
+    span.fa-angle-double-right::before{
+      content: fa-content($fa-var-angle-double-right);
     }
     &:hover:not(.activo){
       background: #ededed;
@@ -1018,11 +1018,11 @@ div.paginacion{
     font-family: $texto;
     background: #e4e4e4;
     color: $enlaces;
-    span.fa-angle-left::before{
-      content: fa-content($fa-var-angle-left);
+    span.fa-angle-double-left::before{
+      content: fa-content($fa-var-angle-double-left);
     }
-    span.fa-angle-right::before{
-      content: fa-content($fa-var-angle-right);
+    span.fa-angle-double-right::before{
+      content: fa-content($fa-var-angle-double-right);
     }
     &:hover:not(.activo){
       background: #ededed;
@@ -1394,11 +1394,11 @@ div.paginacion{
     font-family: $texto;
     background: #e4e4e4;
     color: $enlaces;
-    span.fa-angle-left::before{
-      content: fa-content($fa-var-angle-left);
+    span.fa-angle-double-left::before{
+      content: fa-content($fa-var-angle-double-left);
     }
-    span.fa-angle-right::before{
-      content: fa-content($fa-var-angle-right);
+    span.fa-angle-double-right::before{
+      content: fa-content($fa-var-angle-double-right);
     }
     &:hover:not(.activo){
       background: #ededed;

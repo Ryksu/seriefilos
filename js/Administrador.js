@@ -41,10 +41,7 @@ $(document).ready(function(){
 
       CargarSeries(data);
       paginacionSeries = $(".paginacionSeries");
-        PaginacionJs(paginacionSeries,paginaTotal);
-        $(".npage[data="+pagina+"]").addClass("activo");
-
-
+        PaginacionJs(paginacionSeries,paginaTotal,pagina);
 
       $(".eliminarSeries").click(function(e){
         e.preventDefault();
@@ -116,7 +113,7 @@ $(document).ready(function(){
 
 
 })
-/* Coge los usuarios de la base de datos luego los transforma */
+/* Coge los usuarios de la base de datos luego los carga en el DOM */
 
 function CargarUsuarios(data){
   $("#users-table").find("tr:not(:nth-child(1))").remove();
@@ -252,17 +249,3 @@ function CargarSeries(data){
     $("#serie-table").append(tr);
   }
 }
-
-// /* Funcion permite introducir el numero de pagina totales en un div ya creado*/
-// function PaginacionJs(divPaginacion,paginaTotal){
-//   var paginacion = divPaginacion;
-//   paginacion.empty();
-//
-//   for (var i = 1; i <= paginaTotal; i++) {
-//       var enlace = document.createElement("a");
-//       $(enlace).addClass("npage");
-//       $(enlace).attr("data",i);
-//       enlace.append(i);
-//       paginacion.append(enlace);
-//   }
-// }

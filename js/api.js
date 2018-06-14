@@ -86,17 +86,30 @@ function formatoTiempo(timestap){
 }
 
 
-function PaginacionJs(divPaginacion,paginaTotal){
-  var paginacion = divPaginacion;
+function PaginacionJs(paginacion,paginaTotal,pagina){
   paginacion.empty();
   if (paginaTotal>1) {
+    if (pagina!=1) {
+      var enlace = document.createElement("a");
+      var span = document.createElement("span");
+      $(span).addClass("fas fa-angle-double-left")
+      $(enlace).addClass("npage");
+      enlace.append(span);
+      paginacion.append(enlace);
+    }
     for (var i = 1; i <= paginaTotal; i++) {
       var enlace = document.createElement("a");
       $(enlace).addClass("npage");
       $(enlace).attr("data",i);
       enlace.append(i);
       paginacion.append(enlace);
+      if (pagina==i) {
+        $(".npage[data="+pagina+"]").addClass("activo");
+      }
+
     }
+
+
 
   }
 }

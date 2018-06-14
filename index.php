@@ -11,9 +11,9 @@
   <link rel="manifest" href="manifest.json" >
   <meta charset="utf-8">
   <title>Seriefilos: La web para amantes de las series </title>
+  <script src="/lib/jquery/jquery-3.3.1.min.js"></script>
+  <script src="/js/buscador.js" ></script>
   <link rel="stylesheet" href="estilo/css/estilo_index.css">
-  <script src="lib/jquery/jquery-3.3.1.min.js"></script>
-  <script src="js/buscador.js"></script>
 </head>
 
 <body>
