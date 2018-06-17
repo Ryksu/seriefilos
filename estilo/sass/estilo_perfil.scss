@@ -96,6 +96,22 @@
               background: #ededed;
             }
           }
+          a{
+            border: 1px solid #d8ded9;
+            padding: 8px 6px;
+            background: #e4e4e4;
+            border-radius: 4px 4px 4px 4px;
+            text-decoration: none;
+            color: black;
+
+            span::before{
+              content: fa-content($fa-var-address-card);
+            }
+            &:hover{
+              cursor: pointer;
+              background: #ededed;
+            }
+          }
         }
         div.c-enviar{
           display: inline-flex;
@@ -380,6 +396,22 @@
 
             span::before{
               content: fa-content($fa-var-edit);
+            }
+            &:hover{
+              cursor: pointer;
+              background: #ededed;
+            }
+          }
+          a{
+            border: 1px solid #d8ded9;
+            padding: 8px 6px;
+            background: #e4e4e4;
+            border-radius: 4px 4px 4px 4px;
+            text-decoration: none;
+            color: black;
+
+            span::before{
+              content: fa-content($fa-var-address-card);
             }
             &:hover{
               cursor: pointer;
@@ -687,6 +719,22 @@
               background: #ededed;
             }
           }
+          a{
+            border: 1px solid #d8ded9;
+            padding: 8px 6px;
+            background: #e4e4e4;
+            border-radius: 4px 4px 4px 4px;
+            text-decoration: none;
+            color: black;
+
+            span::before{
+              content: fa-content($fa-var-address-card);
+            }
+            &:hover{
+              cursor: pointer;
+              background: #ededed;
+            }
+          }
         }
 
         div.c-enviar{
@@ -919,7 +967,6 @@
             width: 250px;
             align-self: center;
             border-radius: 50%;
-            // border:1px solid #c0c5c6;
           }
 
         }
@@ -975,6 +1022,22 @@
 
             span::before{
               content: fa-content($fa-var-edit);
+            }
+            &:hover{
+              cursor: pointer;
+              background: #ededed;
+            }
+          }
+          a{
+            border: 1px solid #d8ded9;
+            padding: 8px 6px;
+            background: #e4e4e4;
+            border-radius: 4px 4px 4px 4px;
+            text-decoration: none;
+            color: black;
+
+            span::before{
+              content: fa-content($fa-var-address-card);
             }
             &:hover{
               cursor: pointer;

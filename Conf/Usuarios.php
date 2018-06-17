@@ -5,7 +5,7 @@
  require_once "NewCrud.php";
 class Usuarios extends NewCrud
 {
-  public $usuario;
+  // public $usuario;
   static $NumToken = 0;
 /* pasamos los datos importante del usuario y registramos en la base de datos */
   function CrearUsuario($usuario,$password,$email)

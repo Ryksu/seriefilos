@@ -44,6 +44,8 @@ function ComprobarRepeat(){
       if (expr.exec(inputRepeat.value)) {
         if (inputPass.value !== inputRepeat.value) {
           $("#msg").html("<p> No son iguales </p>");
+          inputRepeat.style.border = "2px solid red";
+          
       }else{
         inputRepeat.style.border = "2px solid green";
         $("#msg").empty();

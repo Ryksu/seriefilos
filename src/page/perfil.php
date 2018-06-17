@@ -85,6 +85,13 @@ require_once '../../Controlador/ObtenerUsuario.php';
                 <span class="fas fa-edit"></span>
                 Editar
               </button>
+              <?php if ($_SESSION['rol']!=1): ?>
+                <a href="/publico/<?php echo $_SESSION['usuario'] ?>">
+                  <span class="fas fa-address-card"></span>
+                  Ver perfil publico
+
+                </a>
+              <?php endif; ?>
           </div>
           <div hidden id="c-enviar">
             <button type="reset" name="Deshacer">

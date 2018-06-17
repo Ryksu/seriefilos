@@ -18,7 +18,6 @@ $(document).ready(function(){
           ev.preventDefault();
           var codigo = $("#codigo").val();
           var valor  = hash;
-          console.log(hash);
           $.ajax({
             url:'../../Controlador/RecuperarCuenta.php',
             cache:false,
@@ -26,7 +25,7 @@ $(document).ready(function(){
             type:"POST"
           })
           .done(function(data){
-            if (data.length>0) {
+            if (data!="FAIL") {
               CargarDatos(data);
               $("#password").keyup(function(){
                 ComprobarPass();
@@ -62,6 +61,9 @@ $(document).ready(function(){
                   }
                 });
               });
+            }
+            else{
+              alert("Error en el codigo");
             }
           })
         })

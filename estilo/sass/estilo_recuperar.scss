@@ -67,6 +67,25 @@
             width: 100%
           }
         }
+        div.msg{
+          display: flex;
+          align-self: center;
+          margin-bottom: 1em;
+          font-size: .8em;
+          padding: 0 1em;
+          width: 100%;
+
+          p{
+
+            a{
+              color:$enlaces;
+              text-decoration: none;
+              &:hover{
+                text-decoration: underline;
+              }
+            }
+          }
+        }
 
         div.c-enviar{
           display: inline-flex;
@@ -172,6 +191,63 @@
             border: 1px solid #c0c5c6;
             padding: 6px 8px;
             width: 100%
+          }
+        }
+        div.msg{
+          display: flex;
+          align-self: center;
+          margin-bottom: 1em;
+          font-size: .8em;
+          padding: 0 1em;
+          width: 100%;
+
+          p{
+
+            a{
+              color:$enlaces;
+              text-decoration: none;
+              &:hover{
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+        div.msg{
+          display: flex;
+          align-self: center;
+          margin-bottom: 1em;
+          font-size: .8em;
+          padding: 0 1em;
+          width: 100%;
+
+          p{
+
+            a{
+              color:$enlaces;
+              text-decoration: none;
+              &:hover{
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+        div.msg{
+          display: flex;
+          align-self: center;
+          margin-bottom: 1em;
+          font-size: .8em;
+          padding: 0 1em;
+          width: 100%;
+
+          p{
+
+            a{
+              color:$enlaces;
+              text-decoration: none;
+              &:hover{
+                text-decoration: underline;
+              }
+            }
           }
         }
 
@@ -302,6 +378,20 @@
               background: #ededed;
             }
           }
+          button{
+            border: 1px solid #d8ded9;
+            padding: 8px 6px;
+            background: #e4e4e4;
+            border-radius: 4px 4px 4px 4px;
+
+            span::before{
+              content: fa-content($fa-var-paper-plane);
+            }
+            &:hover{
+              cursor: pointer;
+              background: #ededed;
+            }
+          }
         }
       }
     }
@@ -377,6 +467,25 @@
             width: 100%
           }
         }
+        div.msg{
+          display: flex;
+          align-self: center;
+          margin-bottom: 1em;
+          font-size: .8em;
+          padding: 0 1em;
+          width: 100%;
+
+          p{
+
+            a{
+              color:$enlaces;
+              text-decoration: none;
+              &:hover{
+                text-decoration: underline;
+              }
+            }
+          }
+        }
         div.c-enviar{
           display: inline-flex;
           justify-content: space-around;
@@ -389,6 +498,20 @@
 
             span::before{
               content: fa-content($fa-var-redo-alt);
+            }
+            &:hover{
+              cursor: pointer;
+              background: #ededed;
+            }
+          }
+          button{
+            border: 1px solid #d8ded9;
+            padding: 8px 6px;
+            background: #e4e4e4;
+            border-radius: 4px 4px 4px 4px;
+
+            span::before{
+              content: fa-content($fa-var-paper-plane);
             }
             &:hover{
               cursor: pointer;
