@@ -29,11 +29,11 @@
      </select>
    </div>
      <div class="c-enviar">
-       <button type="reset" name="Deshacer">
+       <button type="reset">
        <span class="fas fa-redo-alt"></span>
        Deshacer
      </button>
-       <button type="submit" name="Enviar">
+       <button type="submit">
        <span class="far fa-paper-plane"></span>
        Enviar
      </button>

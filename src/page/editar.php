@@ -1,6 +1,6 @@
 <?php
 require_once '../../Controlador/ObtenerSerie.php';
-if (isset($_SESSION['usuario'])&&!empty($_SESSION['usuario'])&&$_SESSION['usuario']!='admin') {
+if (isset($_SESSION['usuario'])&&!empty($_SESSION['usuario'])&&$_SESSION['rol']!=1) {
   header('location:login');
 
 }

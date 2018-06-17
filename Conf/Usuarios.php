@@ -20,7 +20,7 @@ class Usuarios extends NewCrud
    $resultado = $this->Leer("usuario,password","usuarios",$condicion);
    $resultado = json_decode($resultado,true);
   if (!empty($resultado)) {
-     if (password_verify($password,$resultado[0]['password'])) {
+     if (password_verify($password,$resultado[0]['password'])&&($resultado[0]['usuario']===$usuario)) {
        $iniciar = true;
      }
    }

@@ -108,8 +108,13 @@ function PaginacionJs(paginacion,paginaTotal,pagina){
       }
 
     }
+  }
+}
 
-
-
+function OptionsRepetidas(idselect){
+  for (var i = 3; i < idselect.options.length; i++) {
+    if ((idselect.options[1].text === idselect.options[i].text) ||(idselect.options[2].text=== idselect.options[i].text) ) {
+      idselect.options[i].remove();
+    }
   }
 }

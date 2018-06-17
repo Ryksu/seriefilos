@@ -9,6 +9,5 @@ require_once '../../Conf/Series.php';
 $Usuarios = new Usuarios();
 $resultado = $Usuarios->ObtenerUsuario($_SESSION['usuario']);
  $resultado = json_decode($resultado,true);
-
-
- ?>
+$_SESSION['rol'] = $resultado[0]['rol'];
+?>

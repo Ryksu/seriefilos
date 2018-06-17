@@ -1,6 +1,5 @@
 <?php
 require_once '../../Conf/Series.php';
-
 $getseries= new Series();
   if (!isset($_GET['pg'])) {
     $res = $getseries->paginacion('id','serie');
@@ -17,21 +16,13 @@ $getseries= new Series();
       $datos = $_GET['buscador'];
     $res = $getseries->paginacionResultado("Titulo","serie",$datos);
     $res = json_decode($res,true);
-
-    if ($res ==NULL) {
-      http_response_code(404);
-      header('location:404');
-    }
   }
   if (isset($_GET['año']) && !empty($_GET['año'])) {
       $datos = $_GET['año'];
     $res = $getseries->paginacionResultado("Year","serie",$datos);
     $res = json_decode($res,true);
 
-    if ($res ==NULL) {
-      http_response_code(404);
-      header('location:404');
-    }
+
   }
   if (isset($_GET['temporada']) && !empty($_GET['temporada'])) {
       $datos = $_GET['temporada'];
@@ -39,10 +30,7 @@ $getseries= new Series();
     $res = $getseries->paginacionResultado("Temporada","serie",$datos);
     $res = json_decode($res,true);
 
-    if ($res ==NULL) {
-      http_response_code(404);
-      header('location: 404');
-    }
+
   }
 
   if (isset($_GET['Categoria']) && !empty($_GET['Categoria'])) {
@@ -51,10 +39,6 @@ $getseries= new Series();
     $res = $getseries->paginacionResultado("Categoria","serie",$datos);
     $res = json_decode($res,true);
 
-    if ($res ==NULL) {
-      http_response_code(404);
-      header('location:404');
-    }
   }
 
   if (isset($_GET['Estado']) && !empty($_GET['Estado'])) {
@@ -62,12 +46,12 @@ $getseries= new Series();
 
     $res = $getseries->paginacionResultado("Estado","serie",$datos);
     $res = json_decode($res,true);
-    if ($res ==NULL) {
-      http_response_code(404);
-      header('location:404');
-    }
-  }
 
+  }
+else if($res==NULL) {
+    http_response_code(404);
+    header('location:404');
+}
 
 
 

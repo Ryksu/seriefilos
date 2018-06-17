@@ -53,6 +53,10 @@ class Series extends NewCrud
     return $this->Leer("serie.*,usuarios_series.id_Usuarios","serie","RiGHT JOIN usuarios_series ON serie.id = usuarios_series.id_serie WHERE serie.$columna LIKE '%{$patron}%' ORDER BY serie.Titulo LIMIT $inicio,$limite");
   }
 
+  function publicacionesDeUsuarios($usuario,$inicio,$limite){
+  return $this->Leer("serie.*,usuarios_series.id_Usuarios","usuarios_series INNER JOIN serie ON usuarios_series.id_serie = serie.id AND usuarios_series.id_Usuarios = '$usuario' ORDER BY serie.Titulo LIMIT $inicio,$limite");
+  }
+
   function paginacion($columna,$tablas,array $request = NULL){
       $nfilas = $this->ContadorFila($columna,$tablas);
       if ($nfilas>0) {
@@ -81,6 +85,21 @@ class Series extends NewCrud
       return $series;
     }
   }
+
+  function paginacionPublicaciones($usuario,array $request = NULL){
+    $nfilas = $this->ContadorFila('id_Usuarios','usuarios_series',"WHERE id_Usuarios = '$usuario'");
+    if ($nfilas>0) {
+      $limite = 6;
+      if (isset($request['pg'])) {
+        Series::$pagina = $request['pg'];
+      }
+      $inicio = (Series::$pagina-1)*$limite;
+      Series::$pagina_total = ceil($nfilas/$limite);
+      $series = $this->publicacionesDeUsuarios($usuario,$inicio,$limite);
+      return $series;
+    }
+  }
+
 }
 
 

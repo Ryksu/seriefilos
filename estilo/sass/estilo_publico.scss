@@ -30,11 +30,105 @@
         font-family: $titulo;
       }
     }
+    div.c-publicaciones{
+      h2{
+        font-family: $titulo;
+      }
+    div.publicaciones{
+      display: flex;
+      flex-direction: column;
+      margin: 1em 0;
+      padding: 1em;
+      p{
+        @include font-title($texto,0.85em);
+      }
+
+      a{
+        text-decoration: none;
+        border-radius: 8px 8px 8px 8px;
+        margin-bottom: 1em;
+        padding:1em;
+        &:hover{
+          background: #ebedee;
+          box-shadow: 8px 8px 10px #b9b9b9;
+          z-index: 1          }
+      article.serie{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+          img{
+            width: 100%;
+            height: 100%;
+            max-width: 100%;
+            max-height: 100%;
+            align-self: center;
+            border-radius: 8px 8px 8px 8px;
+
+          }
+          h1{
+            color: rgb(41, 41, 42) ;
+            text-align: center;
+            font-family: $titulo;
+            &:hover{
+              color: $hover;
+            }
+          }
+        }
+      }
+    }
+  }
+    div.paginacion{
+      display: flex;
+      justify-content: center;
+      padding: 14px 16px;
+      a{
+        padding: 14px 14px;
+        display: block;
+        text-decoration: none;
+        font-size: 1.2em;
+        font-family: $texto;
+        background: #e4e4e4;
+        color: $enlaces;
+        span.fa-angle-double-left::before{
+          content: fa-content($fa-var-angle-double-left);
+        }
+        span.fa-angle-double-right::before{
+          content: fa-content($fa-var-angle-double-right);
+        }
+        &:hover:not(.activo){
+          background: #ededed;
+          cursor: pointer;
+        }
+        &:first-child{
+          border-radius:4px 0px 0px 4px;
+        }
+        &:last-child{
+          border-radius: 0px 4px 4px 0px;
+        }
+      }
+        a.activo{
+          padding: 14px 14px;
+          margin: 0;
+          display: block;
+          font-size: 1.2em;
+          font-family: $texto;
+          color: $letra;
+          background: $enlaces;
+          // border: 1px solid $hover;
+          pointer-events: none;
+          &:first-child{
+            border-radius:4px 0px 0px 4px;
+          }
+          &:last-child{
+            border-radius: 0px 4px 4px 0px;
+          }
+        }
+      }
 
   }
 }
 
-@media screen and (min-width:481px) and (max-width:600px){
+@media screen and (min-width:481px) and (max-width:$web_table){
   main.contenido{
     display: flex;
     justify-content: center;
@@ -73,6 +167,102 @@
         font-family: $titulo;
       }
     }
+    div.c-publicaciones{
+      h2{
+        font-family: $titulo;
+      }
+    div.publicaciones{
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      margin: 1em 0;
+      padding: 1em;
+      p{
+        @include font-title($texto,0.85em);
+      }
+      h2{
+        font-family: $titulo;
+      }
+      a{
+        text-decoration: none;
+        border-radius: 8px 8px 8px 8px;
+        margin-bottom: 1em;
+        padding:1em;
+        &:hover{
+          background: #ebedee;
+          box-shadow: 8px 8px 10px #b9b9b9;
+          z-index: 1          }
+      article.serie{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+          img{
+            width: 100%;
+            height: 100%;
+            max-width: 100%;
+            max-height: 100%;
+            align-self: center;
+            border-radius: 8px 8px 8px 8px;
+
+          }
+          h1{
+            color: rgb(41, 41, 42) ;
+            text-align: center;
+            font-family: $titulo;
+            &:hover{
+              color: $hover;
+            }
+          }
+        }
+      }
+    }
+  }
+    div.paginacion{
+      display: flex;
+      justify-content: center;
+      padding: 14px 16px;
+      a{
+        padding: 14px 14px;
+        display: block;
+        text-decoration: none;
+        font-size: 1.2em;
+        font-family: $texto;
+        background: #e4e4e4;
+        color: $enlaces;
+        span.fa-angle-double-left::before{
+          content: fa-content($fa-var-angle-double-left);
+        }
+        span.fa-angle-double-right::before{
+          content: fa-content($fa-var-angle-double-right);
+        }
+        &:hover:not(.activo){
+          background: #ededed;
+          cursor: pointer;
+        }
+        &:first-child{
+          border-radius:4px 0px 0px 4px;
+        }
+        &:last-child{
+          border-radius: 0px 4px 4px 0px;
+        }
+      }
+        a.activo{
+          padding: 14px 14px;
+          margin: 0;
+          display: block;
+          font-size: 1.2em;
+          font-family: $texto;
+          color: $letra;
+          background: $enlaces;
+          // border: 1px solid $hover;
+          pointer-events: none;
+          &:first-child{
+            border-radius:4px 0px 0px 4px;
+          }
+          &:last-child{
+            border-radius: 0px 4px 4px 0px;
+          }
+        }
+      }
 
   }
 
@@ -84,14 +274,10 @@
     flex-direction: row;
     flex-wrap: wrap;
     div.public{
-      display: grid;
-      grid-template-columns: repeat(4,1fr);
-      grid-template-rows: repeat(2,.3fr);
-
+      display: flex;
+      flex-direction: column;
       justify-content: center;
-      width: 70%;
-
-
+      max-width: 70%;
 
     div.c-foto{
       display: flex;
@@ -123,13 +309,111 @@
       }
       h2{
         font-family: $titulo;
+        }
+      }
+    }
+    div.c-publicaciones{
+      display: flex;
+      flex-direction: column;
+      h2{
+        font-family: $titulo;
+      }
+    div.publicaciones{
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      margin: 1em 0;
+      padding: 1em;
+      p{
+        @include font-title($texto,0.85em);
+      }
+      h2{
+        font-family: $titulo;
+      }
+      a{
+        text-decoration: none;
+        border-radius: 8px 8px 8px 8px;
+        margin-bottom: 1em;
+        padding:1em;
+        &:hover{
+          background: #ebedee;
+          box-shadow: 8px 8px 10px #b9b9b9;
+          z-index: 1          }
+      article.serie{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+          img{
+            width: 100%;
+            height: 100%;
+            max-width: 100%;
+            max-height: 100%;
+            align-self: center;
+            border-radius: 8px 8px 8px 8px;
+
+          }
+          h1{
+            color: rgb(41, 41, 42) ;
+            text-align: center;
+            font-family: $titulo;
+            &:hover{
+              color: $hover;
+            }
+          }
+        }
       }
     }
   }
+    div.paginacion{
+      display: flex;
+      justify-content: center;
+      padding: 14px 16px;
+      a{
+        padding: 14px 14px;
+        display: block;
+        text-decoration: none;
+        font-size: 1.2em;
+        font-family: $texto;
+        background: #e4e4e4;
+        color: $enlaces;
+        span.fa-angle-double-left::before{
+          content: fa-content($fa-var-angle-double-left);
+        }
+        span.fa-angle-double-right::before{
+          content: fa-content($fa-var-angle-double-right);
+        }
+        &:hover:not(.activo){
+          background: #ededed;
+          cursor: pointer;
+        }
+        &:first-child{
+          border-radius:4px 0px 0px 4px;
+        }
+        &:last-child{
+          border-radius: 0px 4px 4px 0px;
+        }
+      }
+        a.activo{
+          padding: 14px 14px;
+          margin: 0;
+          display: block;
+          font-size: 1.2em;
+          font-family: $texto;
+          color: $letra;
+          background: $enlaces;
+          // border: 1px solid $hover;
+          pointer-events: none;
+          &:first-child{
+            border-radius:4px 0px 0px 4px;
+          }
+          &:last-child{
+            border-radius: 0px 4px 4px 0px;
+          }
+        }
+      }
   }
 }
 
-@media screen and (min-width:$web_full){
+@media screen and (min-width:1025px){
   main.contenido{
     display: flex;
     justify-content: center;
@@ -139,16 +423,11 @@
       display: grid;
       grid-template-columns: repeat(4,1fr);
       grid-template-rows: repeat(2,.3fr);
-
       justify-content: center;
-      width: 50%;
-
-
-
     div.c-foto{
       display: flex;
       flex-direction: column;
-      grid-column: 1/3;
+      grid-column: 2/3;
       img{
         align-self: center;
         border-radius: 50%;
@@ -159,7 +438,7 @@
     div.datos{
       display: flex;
       flex-direction: column;
-      grid-column: 3/5;
+      grid-column: 3/4;
       @include font-title($texto,0.85em);
       span{
         font-weight: bold;
@@ -168,7 +447,7 @@
     div.sobremi{
       display: flex;
       flex-direction: column;
-      grid-column: 1/5;
+      grid-column: 2/4;
       grid-row: 2;
       p{
         @include font-title($texto,0.85em);
@@ -177,6 +456,106 @@
         font-family: $titulo;
       }
     }
+    div.c-publicaciones{
+      display: flex;
+      flex-direction: column;
+      grid-column: 2/4;
+      h2{
+        font-family: $titulo;
+      }
+    div.publicaciones{
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      margin: 1em 0;
+      padding: 1em;
+      p{
+        @include font-title($texto,0.85em);
+      }
+      h2{
+        font-family: $titulo;
+      }
+      a{
+        text-decoration: none;
+        border-radius: 8px 8px 8px 8px;
+        margin-bottom: 1em;
+        padding:1em;
+        &:hover{
+          background: #ebedee;
+          box-shadow: 8px 8px 10px #b9b9b9;
+          z-index: 1          }
+      article.serie{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+          img{
+            width: 100%;
+            height: 100%;
+            max-width: 100%;
+            max-height: 100%;
+            align-self: center;
+            border-radius: 8px 8px 8px 8px;
+
+          }
+          h1{
+            color: rgb(41, 41, 42) ;
+            text-align: center;
+            font-family: $titulo;
+            &:hover{
+              color: $hover;
+            }
+          }
+        }
+      }
+    }
+  }
+    div.paginacion{
+      display: flex;
+      justify-content: center;
+      padding: 14px 16px;
+      grid-column: 2/4;
+      a{
+        padding: 14px 14px;
+        display: block;
+        text-decoration: none;
+        font-size: 1.2em;
+        font-family: $texto;
+        background: #e4e4e4;
+        color: $enlaces;
+        span.fa-angle-double-left::before{
+          content: fa-content($fa-var-angle-double-left);
+        }
+        span.fa-angle-double-right::before{
+          content: fa-content($fa-var-angle-double-right);
+        }
+        &:hover:not(.activo){
+          background: #ededed;
+          cursor: pointer;
+        }
+        &:first-child{
+          border-radius:4px 0px 0px 4px;
+        }
+        &:last-child{
+          border-radius: 0px 4px 4px 0px;
+        }
+      }
+        a.activo{
+          padding: 14px 14px;
+          margin: 0;
+          display: block;
+          font-size: 1.2em;
+          font-family: $texto;
+          color: $letra;
+          background: $enlaces;
+          // border: 1px solid $hover;
+          pointer-events: none;
+          &:first-child{
+            border-radius:4px 0px 0px 4px;
+          }
+          &:last-child{
+            border-radius: 0px 4px 4px 0px;
+          }
+        }
+      }
   }
   }
 }

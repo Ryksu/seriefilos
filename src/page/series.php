@@ -5,7 +5,12 @@ require_once '../../Controlador/ObtenerSerie.php';
  <html lang="es" dir="ltr">
    <head>
      <meta name="title" content="Seriefilos: <?php echo $titulo ?>">
-     <meta name="description" content="<?php echo strip_tags(substr($texto,0,300)) ?>">
+     <meta name="description" content="<?php
+     $descrip = substr($texto,0,300);
+     $descrip= strip_tags($descrip);
+     $descrip = str_replace('"','',$descrip);
+     echo $descrip;
+      ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/img/icons/favicon.png" type="image/x-png">
     <link rel="manifest" href="/manifest.json" >

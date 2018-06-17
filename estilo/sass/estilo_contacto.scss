@@ -299,7 +299,7 @@
   }
 }
 /*web_mobile_medium */
-@media screen and (min-width:481px) and (max-width:600px){
+@media screen and (min-width:481px) and (max-width:$web_table){
   div.container{
     display: grid;
   grid-template-columns: auto;
@@ -322,9 +322,10 @@
         padding: 0;
         list-style: none;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         flex-wrap: nowrap;
         overflow: hidden;
+
         li.t-logo{
           animation: Titulo .3s  ease-in;
           color: $letra;
@@ -333,6 +334,11 @@
           text-decoration: none;
           display: block;
           padding: 14px 16px;
+          span.fas::before{
+            content: fa-content($fa-var-angle-down);
+            font-size: 1em;
+          }
+
         }
         li{
           float: left;

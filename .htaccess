@@ -9,7 +9,7 @@ ErrorDocument 404 /src/error/404.php
 RewriteRule ^index$ index.php
 RewriteRule ^login$ src/login.php
 
-RewriteRule ^catalogo$ src/page/catalogos.php
+RewriteRule ^catalogo$ src/page/catalogo.php
 RewriteRule ^agregar$ src/page/agregar.php
 RewriteRule ^contacto$ src/page/contacto.php
 RewriteRule ^perfil$ src/page/perfil.php
@@ -21,5 +21,7 @@ RewriteRule ^404$ src/error/404.php
 
 RewriteRule ^series/(\d+)/?$ src/page/series.php?id=$1
 RewriteRule ^editar/(\d+)/?$ src/page/editar.php?id=$1
+RewriteRule ^catalogo/pg/(\d+)/?$ src/page/catalogo.php?pg=$1
 
-RewriteRule ^perfil/(\w+)/?$ src/page/perfil_publico.php?usuario=$1
+RewriteRule ^publico/(\w+)/?$ src/page/publico.php?usuario=$1
+RewriteRule ^publico/(\w+)/(\d+)/?$ src/page/publico.php?usuario=$1&pg=$2

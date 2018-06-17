@@ -1,11 +1,10 @@
 $(document).ready(function(){
   var id = getId();
   var selectCategorias = document.getElementById("Categoria");
-  for (var i = 3; i < selectCategorias.options.length; i++) {
-    if ((selectCategorias.options[1].text === selectCategorias.options[i].text) ||(selectCategorias.options[2].text=== selectCategorias.options[i].text) ) {
-      selectCategorias.options[i].remove();
-    }
-  }
+  var selectEstados = document.getElementById("Estado");
+  OptionsRepetidas(selectCategorias);
+  OptionsRepetidas(selectEstados);
+
   $("#Editar").submit(function(ev){
     ev.preventDefault();
     var form = new FormData(this);

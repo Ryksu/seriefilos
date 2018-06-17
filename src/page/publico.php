@@ -31,7 +31,18 @@ require_once '../../Controlador/ControladorPerfilPublico.php';
           <!--t-logo-->
           <li><a href="../../index">Inicio</a></li>
           <li><a href="/catalogo">Catálogo</a></li>
-          <li class=""><a href="/logout">Cerrar sesión</a></li>
+          <li class="s-menu">
+            <?php if (isset($_SESSION['usuario'])&&!empty($_SESSION['usuario'])): ?>
+              <a href="/perfil"><?php echo $_SESSION['usuario'] ?></a>
+              <div class="s-menu-contenido">
+             <a href="/logout">Cerrar sesión</a>
+            <?php else: ?>
+              <a href="../login">Iniciar sesión</a>
+              <div class="s-menu-contenido">
+                <a href="../../index#Registrate">Registrate</a>
+            <?php endif; ?>
+            </div>
+          </li>
         </ul>
         <div class="c-buscador">
           <form class="b-buscador" id="form_search" method="get" action="/catalogo">
@@ -78,7 +89,16 @@ require_once '../../Controlador/ControladorPerfilPublico.php';
             <h2>Sobre <?php echo $resultado[0]['usuario'] ?></h2>
             <?php echo $info = (!empty($resultado[0]['informacion'])) ? $resultado[0]['informacion'] : "<p>No hay informacion sobre el usuario</p>" ?>
           </div>
+        <div class="c-publicaciones">
+          <h2>Publicaciones de <?php echo $resultado[0]['usuario'] ?></h2>
+          <div class="publicaciones">
+            <?php include '../../modulos/publicaciones.php' ?>
+          </div>
         </div>
+          <?php include '../../modulos/paginaciones.php' ?>
+
+        </div>
+
   </main>
     <footer>
       <div class="redes_sociales">

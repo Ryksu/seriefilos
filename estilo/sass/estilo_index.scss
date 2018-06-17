@@ -307,7 +307,7 @@ div.logo{
 }
 }
 /*web_mobile_medium */
-@media screen and (min-width:481px) and (max-width:600px){
+@media screen and (min-width:481px) and (max-width:$web_table){
   div.container{
     display: grid;
   grid-template-columns: auto;
