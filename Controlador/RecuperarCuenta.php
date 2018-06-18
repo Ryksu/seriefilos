@@ -1,4 +1,5 @@
 <?php
+session_start();
 require '../Conf/Usuarios.php';
 $Usuarios = new Usuarios();
 
@@ -7,8 +8,8 @@ if ($_POST['action'] === "comprobar") {
   $comprobar[0] = false;
   if (isset($_POST['email'])&&!empty($_POST['email'])) {
     $email = $_POST['email'];
-    $resultado = $Usuarios->Leer("email","usuarios"," WHERE email = '$email'");
-    $res = json_decode($resultado,true);
+    $comprueba = $Usuarios->Leer("email","usuarios"," WHERE email = '$email'");
+    $res = json_decode($comprueba,true);
     if (count($res)>0) {
       $token =  Usuarios::getToken();
       $codigo = password_hash(Usuarios::$NumToken,PASSWORD_DEFAULT);
@@ -57,19 +58,24 @@ if ($_POST['action'] == "verificar") {
 }
 
 if ($_POST['action']=="cambiar") {
-  $resultado = false;
   if (isset($_POST['password'])&&!empty($_POST['password'])&&isset($_POST['repeat'])&&!empty($_POST['repeat'])) {
 
     $password =$_POST['password'];
     $repeat = $_POST['repeat'];
-    if ($password==$repeat) {
-      $pass_hash = password_hash($password,PASSWORD_BCRYPT);
-      $resultado = $Usuarios->Actulizar("usuarios","Password = '$pass_hash'","usuario = '$usuario'");
-    }
 
+    if ($password==$repeat) {
+
+      $pass_hash = password_hash($password,PASSWORD_BCRYPT);
+      var_dump($pass_hash);
+      $cambiar = $Usuarios->Actulizar("usuarios","Password = '$pass_hash'","usuario = '$usuario'");
+      $cambiar = json_encode($cambiar);
+      header("Content-Type: application/json; charset=UTF-8");
+      echo $cambiar;
+    }
+    else {
+      echo "FAIL";
+    }
   }
-  header("Content-Type: application/json; charset=UTF-8");
-  echo $resultado;
 }
 
  ?>

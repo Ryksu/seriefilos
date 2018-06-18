@@ -59,7 +59,7 @@
         <div class="c-opciones">
           <div class="c-recordar">
             <input type="checkbox" id="recodar" name="recodar" value="1">
-            <label for="recodar">Recodar sesión</label>
+            <label for="recodar">Recodar Usuario</label>
           </div>
           <div class="c-olvidado">
             <a href="/reset">¿Has olvidado la contraseña?</a>

@@ -6,7 +6,6 @@ $(document).ready(function(){
     var email = $("#email").val();
     $.ajax({
       url:'../../Controlador/RecuperarCuenta.php',
-      cache:false,
       data:{action:"comprobar",email:email},
       type:"POST"
     })
@@ -20,7 +19,6 @@ $(document).ready(function(){
           var valor  = hash;
           $.ajax({
             url:'../../Controlador/RecuperarCuenta.php',
-            cache:false,
             data:{action:"verificar",codigo:codigo,email:email,valor:valor},
             type:"POST"
           })
@@ -42,19 +40,21 @@ $(document).ready(function(){
               $("#cambiar").click(function(ev){
                 ev.preventDefault();
                 var usuario = $("#usuario").val();
+                console.log(usuario);
                 var password = $("#password").val();
+                console.log(password);
                 var repeat = $("#repeat").val();
                 $.ajax({
                   url:"../../Controlador/RecuperarCuenta.php",
-                  cache:false,
                   data:{action:"cambiar",usuario:usuario,password:password,repeat:repeat},
                   type:"POST"
                 })
                 .done(function(data){
+
                   if (data) {
+
                     alert("contraseña cambiada");
-                    delete data;
-                    location.replace("../login");
+                    // location.replace("../login");
                   }
                   else{
                     alert("hubo un error con la base de datos");

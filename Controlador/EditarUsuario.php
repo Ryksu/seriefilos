@@ -111,6 +111,7 @@ if(isset($_POST['password'])&&!empty($_POST['password'])&&isset($_POST['repeat']
   if ($password==$repeat) {
     $pass_hash = password_hash($password,PASSWORD_BCRYPT);
     $Usuarios->Actulizar("usuarios","Password = '$pass_hash'","usuario = '$usuario'");
+
   }
 }
 
