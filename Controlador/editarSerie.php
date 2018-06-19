@@ -135,7 +135,7 @@ if (isset($_POST['Trailer'])&&!empty($_POST['Trailer'])) {
     $trailer = $iframe;
     echo $Series->Actulizar("serie","Trailer = '$trailer'","id = '$id'");
   }
-  if (strlen($_POST['Trailer'])==28) {
+  else if (strlen($_POST['Trailer'])==28) {
     $video = explode("/",$_POST['Trailer']);
         $iframe = '<iframe width="560" height="315" src="https://www.youtube.com/embed/'.$video[3].'" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
         $trailer = $iframe;

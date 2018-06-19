@@ -79,9 +79,11 @@
             </select>
           <label for="Trailer">Insertar trailer</label>
           <input type="text" name="Trailer" value="" placeholder="enlace de Youtube">
-          <label for="Texto">Sinopsis</label>
+          <label for="Texto">Sinopsis*</label>
             <textarea name="Texto" id="Texto" required></textarea>
+          <small>*Usa markdown</small>
           </div>
+
           </fieldset>
 
           <div class="c-enviar">

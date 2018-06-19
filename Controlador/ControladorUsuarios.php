@@ -5,7 +5,7 @@ if ($_POST['action']=="ComprobarUsuario") {
   $usuario = $_POST['usuario'];
   $condicion = "WHERE usuario = '$usuario' and usuario !='Admin'";
   $comprobar = $Usuarios->Leer('usuario','usuarios',$condicion);
-  if ($_POST['usuario']=="admin") {
+  if ($_POST['usuario']=="Admin") {
     $comprobar = 0;
   }
   header("Content-Type: application/json; charset=UTF-8");

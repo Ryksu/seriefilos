@@ -202,11 +202,11 @@ function CargarSeries(data){
         case '1':
             estado.append('En emisión');
           break;
-        case '2':
-          estado.append('Terminado');
+          case '2':
+          estado.append('Esperando nueva temporada');
           break;
         case '3':
-          estado.append('Esperando nueva temporada');
+          estado.append('Terminado');
           break;
 
       }

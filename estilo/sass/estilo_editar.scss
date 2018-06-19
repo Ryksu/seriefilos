@@ -1,4 +1,8 @@
 @import "variables";
+small{
+  text-align: right;
+  color: #7f7f7f;
+}
 @media screen and (max-width:$web_mobile_medium){
   main.contenido{
     display: flex;

@@ -54,7 +54,7 @@ $(document).ready(function(){
                   if (data) {
 
                     alert("contraseña cambiada");
-                    // location.replace("../login");
+                    location.replace("../login");
                   }
                   else{
                     alert("hubo un error con la base de datos");

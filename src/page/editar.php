@@ -117,6 +117,7 @@ if (isset($_SESSION['usuario'])&&!empty($_SESSION['usuario'])&&$_SESSION['rol']!
           <input type="text" name="Trailer" value="" placeholder="enlace de Youtube">
           <label for="Texto">Sinopsis</label>
             <textarea name="Texto" id="Texto"><?php echo strip_tags($texto);?></textarea>
+            <small>*Usa markdown</small>
           </div>
           </fieldset>
 

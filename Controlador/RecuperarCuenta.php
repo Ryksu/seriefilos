@@ -62,11 +62,10 @@ if ($_POST['action']=="cambiar") {
 
     $password =$_POST['password'];
     $repeat = $_POST['repeat'];
-
+    $usuario = $_POST['usuario'];
     if ($password==$repeat) {
 
       $pass_hash = password_hash($password,PASSWORD_BCRYPT);
-      var_dump($pass_hash);
       $cambiar = $Usuarios->Actulizar("usuarios","Password = '$pass_hash'","usuario = '$usuario'");
       $cambiar = json_encode($cambiar);
       header("Content-Type: application/json; charset=UTF-8");
